@@ -1,0 +1,36 @@
+Missions need better interaction
+
+- green for triggerable
+- yellow for active
+-
+
+
+states
+
+available - green
+beaten - yellow
+active - purple
+active but no benefit - yellow / blue?
+
+
+can be entered: green
+incomplete: grey
+active: purple
+
+
+mission states
+
+locked
+unlocked
+beaten 1x
+beaten +
+active
+
+locked
+beaten
+
+
+unbeaten - yellow
+beaten - green
+active - pink
+

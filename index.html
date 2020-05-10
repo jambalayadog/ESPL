@@ -1,0 +1,857 @@
+<html>
+<head>
+  <title>Epic Starfighter Pilot Legacy</title>  <!-- Just Another Battle in Space -->
+  <script src="break_eternity.js"></script>
+  <script src="saving.js"></script>
+  <script src="ach_and_lore.js"></script>
+  <script src="ach_display.js"></script>
+  <script src="auto_display.js"></script>
+  <script src="auto.js"></script>
+  <script src="challenges.js"></script>
+  <script src="dilation.js"></script>
+  <script src="fill_in.js"></script>
+  <script src="format.js"></script>
+  <script src="get_effect.js"></script>
+  <script src="lonely_info_display.js"></script>
+  <script src="lore_display.js"></script>
+  <script src="main_update_display.js"></script>
+  <script src="patience.js"></script>
+  <script src="tab_display.js"></script>
+  <script src="update.js"></script>
+  <script src="5hours.js"></script>
+  <link href="style.css" rel="stylesheet" type="text/css" >
+</head>
+<body>
+
+<!--   NAV BAR -----------------------------------------          -->
+<!--   NAV BAR -----------------------------------------          -->
+<!--   NAV BAR -----------------------------------------          -->
+<!--   NAV BAR -----------------------------------------          -->
+<!--   NAV BAR -----------------------------------------          -->
+<!--   NAV BAR -----------------------------------------          -->
+<!--   NAV BAR -----------------------------------------          -->
+<!--   NAV BAR -----------------------------------------          -->
+
+
+<!--  TRIALS, TEST, CHALLENGE, UNDERTAKING (TASK, OPERATION, MISSION, PROJECTS, ), QUESTS, ADVENTURES,  -->
+  <input class="debugspeedup" id="debug_speedup" type="text" onchange="updateDebugSpeed()"></input>
+  <div class="navbar">
+    <button class="navitem navitem-selected" id="main-tab-button" onclick="setTab('main')">STARFIGHT</button>
+    <button class="navitem" id="challenges-tab-button" onclick="setTab('challenges')" style="display: none;">MISSIONS</button> 
+    <button class="navitem" id="update-tab-button" onclick="setTab('update')" style="display: none;">LEGACY</button>
+    <button class="navitem" id="achievements-tab-button" onclick="setTab('achievements')">RECORDS</button>
+    <button class="navitem" id="lore-tab-button" onclick="setTab('lore')">STORY GOALS</button> 
+    <button class="navitem" id="completion-milestones-tab-button" onclick="setTab('completion-milestones')" style="display: none;">MILESTONES</button>
+  </div>
+
+<!--   MAIN PAGE -----------------------------------------          -->
+<!--   MAIN PAGE -----------------------------------------          -->
+<!--   MAIN PAGE -----------------------------------------          -->
+<!--   MAIN PAGE -----------------------------------------          -->
+<!--   MAIN PAGE -----------------------------------------          -->
+<!--   MAIN PAGE -----------------------------------------          -->
+<!--   MAIN PAGE -----------------------------------------          -->
+<!--   MAIN PAGE -----------------------------------------          -->
+
+
+
+
+  <div id="main-div" style="display: none;">
+    <div class="main_page">
+      <!---- SPACE BATTLE ---->
+      <div class="battle">
+        <div class="activity_title">STARFIGHT
+        </div>
+        <div class="activity_progress">
+          <div><span id="progress-span-0">0:00:00</span></div>
+        </div>
+        <div class="activity_effect">
+          <div></div>
+        </div>
+        <div class="activity_skill">
+          <div>Skill: <span id="devs-0"></span></div>
+          <div><button onclick="addDev(0)">+</button><button onclick="subtractDev(0)">-</button><button onclick="maxDev(0)">M</button><button onclick="zeroDev(0)">0</button></div>
+        </div>
+        <div class="activity_fraction">
+          <div>Fraction of Skill to assign: <input class="fraction_input" id="auto-dev-0" type="text" onchange="updateAutoDev(0)"></input></div>
+        </div>
+        <div class="activity_prestige_name"> 
+        </div>
+        <div class="activity_prestige_effect">
+        </div>
+        <div class="activity_prestige_control">
+          <div><button class="prestige_button" id="update-button" onclick="update()">Win Space War<br/></button></div>
+        </div>
+        <div class="activity_prestige_info">
+          <div><span id="update-gain"></span></div>
+        </div>
+      </div>
+      <!---- PILOTING ---->
+      <div class="skill">
+        <div class="activity_title">PILOTING
+        </div>
+        <div class="activity_progress">
+          <div><span id="progress-span-3">0:00:00</span></div>
+        </div>
+        <div class="activity_effect">
+          <div><span id="effect-span-3"></span> total Skill</div>
+          <div><span id="unassigned-devs"></span> unassigned</div>
+        </div>
+        <div class="activity_skill">
+          <div>Skill: <span id="devs-3"></span></div>
+          <div><button onclick="addDev(3)">+</button><button onclick="subtractDev(3)">-</button><button onclick="maxDev(3)">M</button><button onclick="zeroDev(3)">0</button></div>
+        </div>
+        <div class="activity_fraction">
+          <div>Fraction of Skill to assign: <input class="fraction_input" id="auto-dev-3" type="text" onchange="updateAutoDev(3)"></input></div>
+        </div>
+        <div class="activity_prestige_name"> 
+        </div>
+        <div class="activity_prestige_effect">
+          
+        </div>
+        <div class="activity_prestige_control">
+        </div>
+        <div class="activity_prestige_info">
+        </div>
+      </div>
+      <!---- SYSTEMS ---->
+      <div class="prestige">
+        <div class="activity_title">SYSTEMS
+        </div>
+        <div class="activity_progress">
+          <div><span id="progress-span-2">0:00:00</span></div>
+        </div>
+        <div class="activity_effect">
+          <div><span id="effect-span-2"></span> power handling</div>
+        </div>
+        <div class="activity_skill">
+          <div>Skill: <span id="devs-2"></span></div>
+          <div><button onclick="addDev(2)">+</button><button onclick="subtractDev(2)">-</button><button onclick="maxDev(2)">M</button><button onclick="zeroDev(2)">0</button></div>
+        </div>
+        <div class="activity_fraction">
+          <div>Fraction of Skill to assign: <input class="fraction_input" id="auto-dev-2" type="text" onchange="updateAutoDev(2)"></input></div>
+        </div>
+        <div class="activity_prestige_name">FLEET SYSTEMS
+        </div>
+        <div class="activity_prestige_effect">
+          <div><span id="progress-span-6">0:00:00</span></div>
+          <div><span id="effect-span-6"></span> Fleet Ship Power</div>
+        </div>
+        <div class="activity_prestige_control">
+          <div><button class="prestige_button" id="prestige-6-button" onclick="prestige(6)">Retrofit ship upgrades<br/></button></div>
+        </div>
+        <div class="activity_prestige_info">
+          <div><span id="prestige-6"></span></div>
+        </div>
+      </div>
+      <!---- WEAPONS ---->
+      <div class="prestige">
+        <div class="activity_title">WEAPONS
+        </div>
+        <div class="activity_progress">
+          <div><span id="progress-span-1">0:00:00</span></div>
+        </div>
+        <div class="activity_effect">
+          <div><span id="effect-span-1"></span> multiplier to all</div>
+        </div>
+        <div class="activity_skill">
+          <div>Skill: <span id="devs-1"></span></div>
+          <!--<div><button onclick="addDev(1)">+</button><button onclick="subtractDev(1)">-</button><button onclick="maxDev(1)">M</button><button onclick="zeroDev(1)">0</button></div>-->
+          <div><button onclick="addDev(1)">+</button><button onclick="subtractDev(1)">-</button><button onclick="maxDev(1)">M</button><button onclick="zeroDev(1)">0</button></div>
+        </div>
+        <div class="activity_fraction">
+          <div>Fraction of Skill to assign: <input class="fraction_input" id="auto-dev-1" type="text" onchange="updateAutoDev(1)"></input></div>
+        </div>
+        <div class="activity_prestige_name">FLEET WEAPONS
+        </div>
+        <div class="activity_prestige_effect">
+          <div><span id="progress-span-5">0:00:00</span></div>
+          <div><span id="effect-span-5"></span> additional multiplier to all production</div>
+        </div>
+        <div class="activity_prestige_control">
+          <div><button class="prestige_button" id="prestige-5-button" onclick="prestige(5)">Retrofit weapon upgrades<br/></button></div>
+        </div>
+        <div class="activity_prestige_info">
+          <div><span id="prestige-5"></span></div>
+        </div>
+      </div>
+      <!---- COOL ---->
+      <div class="prestige">
+        <div class="activity_title">COOL
+        </div>
+        <div class="activity_progress">
+          <div><span id="progress-span-4">0:00:00</span></div>
+        </div>
+        <div class="activity_effect">
+          <div><span id="effect-span-4"></span> to fill</div>
+          <div><span id="enlightened"></span> Leadership Rank<span id="enlightened-plural"></span></div>
+        </div>
+        <div class="activity_skill">
+          <div>Skill: <span id="devs-4"></span></div>
+          <div><button onclick="addDev(4)">+</button><button onclick="subtractDev(4)">-</button><button onclick="maxDev(4)">M</button><button onclick="zeroDev(4)">0</button></div>
+        </div>
+        <div class="activity_fraction">
+          <div>Fraction of Skill to assign: <input class="fraction_input" id="auto-dev-4" type="text" onchange="updateAutoDev(4)"></input></div>
+        </div>
+        <div class="activity_prestige_name">LEADERSHIP
+        </div>
+        <div class="activity_prestige_effect">
+          <div><span id="progress-span-7">0.0000</span></div>
+          <div><span id="effect-span-7"></span> boost to Player + Fleet Weapons and Systems</div>
+        </div>
+        <div class="activity_prestige_control">
+          <div><button class="prestige_button" id="enlightened-button" onclick="enlightened()">Leader Up<br/></button></div>
+        </div>
+        <div class="activity_prestige_info">
+          <div><span id="enlightened-desc"></span></div>
+        </div>
+      </div>
+    </div>
+
+
+    
+<!--   AUTO OPTIONS PAGE -----------------------------------------          -->
+<!--   AUTO OPTIONS PAGE -----####---##--##--######---####-------------          -->
+<!--   AUTO OPTIONS PAGE ----##--##--##--##----##----##--##----------          -->
+<!--   AUTO OPTIONS PAGE ----######--##--##----##----##--##----------          -->
+<!--   AUTO OPTIONS PAGE ----##--##--##--##----##----##--##----------          -->
+<!--   AUTO OPTIONS PAGE ----##--##---####-----##-----####---------          -->
+<!--   AUTO OPTIONS PAGE -----------------------------------------          -->
+
+    <div class="autooption_container" id="autooptions">
+      <!--   AUTO BATTLE -->
+      <div class="autooption_column" id="auto-update-span" style="visibility: hidden;">   <!--   AUTO BATTLE -->
+        <div class="auto_option">
+          <span class="auto_spacewar" style="display:none"><input id="auto-update-on" onclick="toggleAutoOn('update')" type="checkbox"></input>Auto-Finish</span>
+        </div>
+        <div class="auto_button">
+          <span class="auto_spacewar" style="display:none"><button id="auto-update-setting" onclick="nextAutoSetting('update')"></button></span>
+        </div>
+        <div>
+          <span class="auto_spacewar" style="display:none"><input class="auto_input" id="auto-update-value" type="text" onchange="updateAutoValue('update')"></input></span>
+        </div>
+      </div>
+      <!--   AUTO SKILL -->
+      <div class="autooption_column" id="auto-dev-span">  <!--   AUTO SKILL -->
+        <div class="auto_option">
+          <input id="auto-dev-on" onclick="toggleAutoOn('dev')" type="checkbox"></input><span>Auto-Skills <span id="auto-dev-lonely-info"></span></span>
+        </div>
+      </div>
+      <!--   LEGACY OPTIONS -->
+      <div class="autooption_column">  <!--   LEGACY OPTIONS -->
+        <div class="auto_option">
+          <span class="auto_option" id="auto-assign-update-points-span" style="display: none;"><input id="auto-assign-update-points-on" onclick="toggleAutoOn('assignUpdatePoints')" type="checkbox"></input>Auto-Legacy Points </span>
+        </div>
+        <div class="auto_retrofit" style="display:none">
+          <span>Method</span>
+        </div>
+        <div class="auto_retrofit" style="display:none">
+          <span>Enter time as Seconds or HH:MM:SS</span>
+        </div>
+        <div class="auto_option">
+          LEGACY OPTIONS
+        </div>
+        <!--<div>
+          <span id="auto-help-span" style="display: none;">Enter time as either: number of seconds or in HH:MM:SS.</span>
+        </div>-->
+      </div>
+      <!--   AUTO RETROFIT   -->
+      <div class="autooption_column" id="auto-prestige-span" style="visibility: hidden;">  <!--   AUTO RETROFIT   -->
+        <div class="auto_option">
+          <span class="auto_retrofit" style="display:none"><input id="auto-prestige-on" onclick="toggleAutoOn('prestige')" type="checkbox"></input>Auto-Retrofit</span>
+        </div>
+        <div>
+          <span class="auto_retrofit" style="display:none"><button class="auto_button" id="auto-prestige-setting" onclick="nextAutoSetting('prestige')"></button></span>
+        </div>
+        <div>
+          <span class="auto_retrofit" style="display:none"><input class="auto_input" id="auto-prestige-value" type="text" onchange="updateAutoValue('prestige')"></input></span>
+        </div>
+        <div>
+          <span class="auto_retrofit" style="display:none">Prioritize: <button class="auto_button" id="auto-prestige-initial" onclick="toggleAutoPrestigeInitial()"></button></span>
+        </div>
+        <div>
+          <span class="auto_retrofit" style="display:none"><input id="auto-prestige-alternate" onclick="toggleAutoPrestigeAlternate()" type="checkbox"></input>Toggle Retrofits</span>
+        </div>
+      </div>
+      <!--   AUTO LEADER UP   -->
+      <div class="autooption_column" id="auto-enlightened-span" style="visibility: hidden;"> <!--   AUTO LEADER UP   -->
+        <div class="auto_option">
+          <span class="auto_leaderup" style="display:none"><input id="auto-enlightened-on" onclick="toggleAutoOn('enlightened')" type="checkbox"></input>Auto-Leader Up</span>
+        </div>
+        <div>
+          <span class="auto_leaderup" style="display:none"><button class="auto_button" id="auto-enlightened-setting" onclick="nextAutoSetting('enlightened')"></button></span>
+        </div>
+        <div>
+          <span class="auto_leaderup" style="display:none"><input class="auto_input" id="auto-enlightened-value" type="text" onchange="updateAutoValue('enlightened')"></input></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!--  ACHIEVEMENTS -----------------------------------------          -->
+<!--  ACHIEVEMENTS -----------------------------------------          -->
+<!--  ACHIEVEMENTS -----------------------------------------          -->
+<!--  ACHIEVEMENTS -----------------------------------------          -->
+<!--  ACHIEVEMENTS -----------------------------------------          -->
+<!--  ACHIEVEMENTS -----------------------------------------          -->
+<!--  ACHIEVEMENTS -----------------------------------------          -->
+<!--  ACHIEVEMENTS -----------------------------------------          -->
+
+
+  <div id="achievements-div" style="display: none;">
+    <div class="achievements_page">
+      <div class="achievements_title">
+        <div class="title_text">STATS</div>
+      </div>
+      <div class="achievements_grouping">
+        <span>You have <span id="total-normal-achievements"></span> normal achievement<span id="total-normal-achievements-plural"></span>: 
+        <ul>
+          <li><span id="normal-achievements-effect"></span>x multiplier to all production</li>
+          <li><span id="normal-achievements-patience-effect"></span>x patience meter gain</li>
+          <li><span id="normal-achievements-patience-kept-effect"></span>x patience meter kept on enlightenment.</li>
+        </ul>
+      </div>
+      <div class="achievements_title">
+        <div class="title_text">STATS²</div>
+      </div>
+      <div class="achievements_grouping">
+        <span>You have <span id="total-lategame-achievements"></span> end game achievement<span id="total-lategame-achievements-plural"></span></span>
+        <ul>
+          <li><span id="lategame-achievements-patience-effect"></span>x patience meter gain</li>
+          <li><span id="lategame-achievements-completions-effect"></span>x multiplier to total challenge completions</li>
+          <li><span id="lategame-achievements-patience-kept-effect"></span>x patience meter kept on enlightenment.</li>
+        </ul>
+      </div>      
+      <div class="achievements_title">
+        <div class="title_text">EARLY</div>
+      </div>
+      <div class="achievements_grouping">
+        <span id="normal-ach-status-0">&#x2610;</span><span> Assign a skill. </span>
+        <br/>
+        <span id="normal-ach-status-1">&#x2610;</span><span> Have at least one skill asigned to space battle, weapons, systems, piloting, and cool at once. </span>
+        <br/>
+        <span id="normal-ach-status-2">&#x2610;</span><span> Retrofit. </span>
+        <br/>
+        <span id="normal-ach-status-3">&#x2610;</span><span> No skills assigned, with one hour of progress in space battle, weapons, systems, piloting, and cool. </span>
+        <br/>
+        <span id="normal-ach-status-4">&#x2610;</span><span> Have space battle, weapons, systems, piloting, and cool all within a minute of each other and all over an hour. </span>
+        <br/>
+        <span id="normal-ach-status-5">&#x2610;</span><span> Have your Destruction multiplier from Weapons above your number of Skill, with more than one Skill. </span>
+        <br/>
+        <span id="normal-ach-status-6">&#x2610;</span><span> Gain at least 1:00:00 in one Retrofit. </span>
+        <br/>
+        <span id="normal-ach-status-7">&#x2610;</span><span> Become a leader. </span>
+        <br/>
+        <span id="normal-ach-status-8">&#x2610;</span><span> Win a Space War. </span>
+        <br/>
+      </div>
+      <div class="achievements_title">
+        <div class="title_text">MID</div>
+      </div>
+      <div class="achievements_grouping">
+        <span id="normal-ach-status-9">&#x2610;</span><span> Have at least one experience of each type (Resolve, Resources, Reputation). </span>
+        <br/>
+        <span id="normal-ach-status-10">&#x2610;</span><span> Win a Space War in an hour. </span>
+        <br/>
+        <span id="normal-ach-status-11">&#x2610;</span><span> Get at least 2 Legacy Points in one Space War. </span>
+        <br/>
+        <span id="normal-ach-status-12">&#x2610;</span><span> Get all the Legacy upgrades. </span>
+        <br/>
+        <span id="normal-ach-status-13">&#x2610;</span><span> Win a Space War in a minute. </span>
+        <br/>
+        <span id="normal-ach-status-14">&#x2610;</span><span> Win a Space War without becoming a Leader. </span>
+        <br/>
+        <span id="normal-ach-status-15">&#x2610;</span><span> Get 24:00:00 of Space Battle (Unlock Challenges!). </span>
+        <br/>
+        <span id="normal-ach-status-16">&#x2610;</span><span> Win a Space War in 1 second. </span>
+        <br/>
+        <span id="normal-ach-status-17">&#x2610;</span><span> Get fifty thousand Skill. </span>
+        <br/>
+        <span id="normal-ach-status-18">&#x2610;</span><span> Win a Space War in Logarithmic. </span>
+        <br/>
+      </div>
+      <div class="achievements_title">
+        <div class="title_text">LATE</div>
+      </div>
+      <div class="achievements_grouping">
+        <span id="normal-ach-status-19">&#x2610;</span><span> Get 12 challenge completions. </span>
+        <br/>
+        <span id="normal-ach-status-20">&#x2610;</span><span> Get 20 challenge completions. </span>
+        <br/>
+        <span id="normal-ach-status-21">&#x2610;</span><span> Update without ever having any skills assigned. </span>
+        <br/>
+        <span id="normal-ach-status-22">&#x2610;</span><span> Start production of dilation. </span>
+        <br/>
+        <span id="normal-ach-status-23">&#x2610;</span><span> Get 33.3333 dilation. </span>
+        <br/>
+        <span id="normal-ach-status-24">&#x2610;</span><span> Leader Up x 40. </span>
+        <br/>
+        <span id="normal-ach-status-25">&#x2610;</span><span> Get a billion Skill. </span>
+        <br/>
+        <span id="normal-ach-status-26">&#x2610;</span><span> Get at least 1.80e308 Legacy Points in one Space War. </span>
+        <br/>
+      </div>
+      <div class="achievements_title">
+        <div class="title_text">END</div>
+      </div>
+      <div class="achievements_grouping">
+        <span id="lategame-ach-status-0">&#x2610;</span><span> Get all the normal achievements. </span>
+        <br/>
+        <span id="lategame-ach-status-1">&#x2610;</span><span> Have the last 10 Space Wars give at least 1.80e308x more Legacy Points than the previous, with none giving 0 LP. </span>
+        <br/>
+        <span id="lategame-ach-status-2">&#x2610;</span><span> Gain at least 4383:00:00 in one Retrofit. </span>
+        <br/>
+        <span id="lategame-ach-status-3">&#x2610;</span><span> Get the Leadership meter effect to be at least a 10x boost. </span>
+        <br/>
+        <span id="lategame-ach-status-4">&#x2610;</span><span> Get 42 challenge completions. </span>
+        <br/>
+        <span id="lategame-ach-status-5">&#x2610;</span><span> Get a trillion dilation. </span>
+        <br/>
+        <span id="lategame-ach-status-6">&#x2610;</span><span> Leader Up x 80. </span>
+        <br/>
+        <span id="lategame-ach-status-7">&#x2610;</span><span> Get ten trillion Skill. </span>
+        <br/>
+        <span id="lategame-ach-status-8">&#x2610;</span><span> Get 17532:00:00 record Space Battle. </span>
+        <br/> 
+      </div>
+    </div>
+  </div>
+  <div id="lore-div" style="display: none;">
+  </div>
+
+<!--  LEGACY -----------------------------------------          -->
+<!--  LEGACY -----------------------------------------          -->
+<!--  LEGACY -----------------------------------------          -->
+<!--  LEGACY -----------------------------------------          -->
+<!--  LEGACY -----------------------------------------          -->
+<!--  LEGACY -----------------------------------------          -->
+<!--  LEGACY -----------------------------------------          -->
+<!--  LEGACY -----------------------------------------          -->
+<!--  LEGACY -----------------------------------------          -->
+<!--  LEGACY -----------------------------------------          -->
+<!--  LEGACY -----------------------------------------          -->
+
+
+  <div id="update-div" style="display: none;">
+    <div class="legacy_page">
+      <div>
+        <span>You have <span id="update-points">0</span> update point<span id="update-points-plural"></span>, and have updated <span id="updates">0</span> time<span id="updates-plural"></span> (corresponding to <span id="power-gain-per-experience">0.01</span> power per experience per second)</span>
+        <br/>
+        <span>You are getting <span id="additional-devs-due-to-updates"></span> additional dev<span id="additional-devs-due-to-updates-plural"></span> based on your updates.<span id="additional-devs-due-to-updates-info"></span></span>
+      </div>
+      <div class="legacyupgrade_group">
+        <div class="legacyupgrade_upgrade">
+          <div>Resolve
+          </div>
+          <div>
+            <div><span id="update-experience-span-2">0</span> Resolve experience
+            </div>
+            <div><span id="update-power-span-2">0</span> Resolve power
+            </div>
+            <div><span id="update-effect-span-2">1</span>x dev gain from recruitment
+            </div>
+          </div>
+          <div>
+            <div><button onclick="assignOne(2)">Turn 1 of your update points into Resolve experience.</button>
+            </div>
+            <div><button onclick="assignThird(2)">Turn 1/3 your update points into Resolve experience.</button>
+            </div>
+            <div><button onclick="assignAll(2)">Turn all your update points into Reputation experience.</button>
+            </div>
+          </div>
+          <div>
+            <div><button id="up-0-2-button" onclick="buyUpdateUpgrade(0, 2)">Start with 10 devs, and unlock auto dev assignment.<br/>Cost: <span id="up-0-2-cost"></span> Resolve experience<span id="up-0-2-bought"></span></button>
+            </div>
+            <div><button id="up-1-2-button" onclick="buyUpdateUpgrade(1, 2)">All your devs act as working on development, in addition to whatever they're working on.<br/>Cost: <span id="up-1-2-cost"></span> Resolve experience<span id="up-1-2-bought"></span></button>
+            </div>
+          </div>
+          <div class="legacyfraction" id="auto-assign-update-points-row">Fraction of update points to assign: <input id="auto-assign-update-points-2" type="text" onchange="updateAutoAssignUpdatePoints(2)"></input>
+          </div>
+        </div>
+        <div class="legacyupgrade_upgrade">
+          <div>Reputation
+          </div>
+          <div>
+            <div><span id="update-experience-span-1">0</span> Reputation experience
+            </div>
+            <div><span id="update-power-span-1">0</span> Reputation power
+            </div>
+            <div><span id="update-effect-span-1">1</span>x patience meter gain
+            </div>
+          </div>
+          <div>
+            <div><button onclick="assignOne(1)">Turn 1 of your update points into Reputation experience.</button>
+            </div>
+            <div><button onclick="assignThird(1)">Turn 1/3 your update points into Reputation experience.</button>
+            </div>
+            <div><button onclick="assignAll(1)">Turn all your update points into Reputation experience.</button>
+            </div>
+          </div>
+          <div>
+            <div><button id="up-0-1-button" onclick="buyUpdateUpgrade(0, 1)">Patience affects the patience meter more strongly.<br/>2.00x per 00:30:00 to 2.50x per 00:30:00<br/>00:01:00 softcap to 00:00:10 softcap<br/>Cost: <span id="up-0-1-cost"></span> Reputation experience<span id="up-0-1-bought"></span></button>
+            </div>
+            <div><button id="up-1-1-button" onclick="buyUpdateUpgrade(1, 1)">The patience meter increases with greatly reduced effect past 1.<br/>Cost: <span id="up-1-1-cost"></span> Reputation experience<span id="up-1-1-bought"></span></button>
+            </div>
+          </div>
+          <div class="legacyfraction" id="auto-assign-update-points-row">Fraction of update points to assign: <input id="auto-assign-update-points-1" type="text" onchange="updateAutoAssignUpdatePoints(1)"></input>
+          </div>
+        </div>
+        <div class="legacyupgrade_upgrade">
+          <div>Resource
+          </div>
+          <div>
+            <div><span id="update-experience-span-0">0</span> Resource experience
+            </div>
+            <div><span id="update-power-span-0">0</span> Resource power
+            </div>
+            <div><span id="update-effect-span-0">1</span>x multiplier to all production
+            </div>
+          </div>
+          <div>
+            <div><button onclick="assignOne(0)">Turn 1 of your update points into Resource experience.</button>
+            </div>
+            <div><button onclick="assignThird(0)">Turn 1/3 your update points into Resource experience.</button>
+            </div>
+            <div><button onclick="assignAll(0)">Turn all your update points into Resource experience.</button>
+            </div>
+          </div>
+          <div>
+            <div><button id="up-0-0-button" onclick="buyUpdateUpgrade(0, 0)">Scaling becomes slower after 4:30:00.<br/>Cost: <span id="up-0-0-cost"></span> Resource experience<span id="up-0-0-bought"></span></button>
+            </div>
+            <div><button id="up-1-0-button" onclick="buyUpdateUpgrade(1, 0)">Improve the update point gain formula<br/>10x multiplier, 2.00x per 01:00:00 to <span id="upgradeless-reward-up-1-0"></span>x per 01:00:00<br/>Cost: <span id="up-1-0-cost"></span> Resource experience<span id="up-1-0-bought"></span></button>
+            </div>
+          </div>
+          <div class="legacyfraction" id="auto-assign-update-points-row">Fraction of update points to assign: <input id="auto-assign-update-points-0" type="text" onchange="updateAutoAssignUpdatePoints(0)"></input>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!--  CHALLENGES -     -->
+<!--  CHALLENGES ---##----##-######--#####--######-######- ####  #####   #####      -->
+<!--  CHALLENGES ---###--###---##---##-----##--------##---##  ## ##  ## ##           -->
+<!--  CHALLENGES ---##-##-##---##---#####---#####----##-- ##  ## ##  ##  ####        -->
+<!--  CHALLENGES ---##----##---##-------##------##---##---##  ## ##  ##     ##       -->
+<!--  CHALLENGES ---##----##-######-#####--######--######- ####  ##  ## #####         -->
+<!--  CHALLENGES   -->
+<!--  CHALLENGES           -->
+
+  <div id="challenges-div" style="display: none;">
+    <div class="missions_container">
+      <div class="missions_meta">
+        <div class="mission">
+          You have <span id="total-challenge-completions"></span> total challenge completions.
+          <br>You are currently in <span id="current-challenge"></span>
+          <br><span id="next-challenge-unlock">Next challenge unlocks eventually.</span>
+          <br><span><button onclick="exitChallenge()">Exit current challenge</button></span>
+        </div>
+        <div class="mission" id="dilation" style="display: none;">
+          <span id="dilation-text"></span>
+          <br/>
+          <button id="dilation-upgrade-0-button" onclick="buyDilationUpgrade(0)"></button>
+        </div>
+      </div>
+      <div class="missions_list">
+        <div class="mission" id="logarithmic-td" style="display: none;">
+          <button class="tooltip" id="logarithmic-button" onclick="enterChallenge('logarithmic')">
+            Mission: Hard
+            <br/>
+            Your starfighter is nerfed but you're boosted by the missions you've done.
+            <br/>
+            Goal: <span id="logarithmic-goal"></span> Starfight
+            <span class=tooltiptext>
+              In this challenge, you gain extra boost from your total missions complete.
+              <br>However, Weapons, Systems, and Piloting are severely nerfed. 
+              <br>Reaching milestones (01:00:00 to 05:00:00, every 00:30:00) gives permanent rewards. 
+              <br>After 12:00:00, you produce dilation which boosts Player Weapons and Fleet Weapons.
+            </span>
+          </button>
+          <br/>
+          Farthest reached: <span id="record-development-in-logarithmic"></span>
+          <br/>
+          <span id="logarithmic-reward-description"></span>
+          <br/>
+          <span id="logarithmic-completed-description"></span>
+        </div>
+        <div class="mission" id="inefficient-td" style="display: none;">
+          <button id="inefficient-button" onclick="enterChallenge('inefficient')">
+            Weaponless
+            <br/>
+            Player Weapons and Fleet Weapons are useless.
+            <br/>
+            Goal: <span id="inefficient-goal"></span> Starfight
+          </button>
+          <br/>
+          Farthest reached: <span id="record-development-in-inefficient"></span>
+          <br/>
+          <span id="inefficient-reward-description"></span>
+          <br/>
+          <br/>
+          <span id="inefficient-completed-description"></span>
+        </div>
+        <div class="mission" id="ufd-td" style="display: none;">
+          <button id="ufd-button" onclick="enterChallenge('ufd')">
+            Systems Down
+            <br/>
+            Player Systems and Fleet Systems are useless.
+            <br/>
+            Goal: <span id="ufd-goal"></span> Starfight
+          </button>
+          <br/>
+          Farthest reached: <span id="record-development-in-ufd"></span>
+          <br/>
+          <span id="ufd-reward-description"></span>
+          <br/>
+          <br/>
+          <span id="ufd-completed-description"></span>
+        </div>
+        <div class="mission" id="lonely-td" style="display: none;">
+          <button id="lonely-button" onclick="enterChallenge('lonely')">
+            Unskilled
+            <br/>
+            You always only have one skill point.
+            <br/>
+            Goal: <span id="lonely-goal"></span> Starfight
+          </button>
+          <br/>
+          Farthest reached: <span id="record-development-in-lonely"></span>
+          <br/>
+          <span id="lonely-reward-description"></span>
+          <br/>
+          <span id="lonely-completed-description"></span>
+        </div>
+        <div class="mission" id="impatient-td" style="display: none;">
+          <button id="impatient-button" onclick="enterChallenge('impatient')">
+            No Leadership
+            <br/>
+            The Leadership meter is always at 0.
+            <br/>
+            Goal: <span id="impatient-goal"></span> Starfight
+          </button>
+          <br/>
+          Farthest reached: <span id="record-development-in-impatient"></span>
+          <br/>
+          <span id="impatient-reward-description"></span>
+          <br/>
+          <span id="impatient-completed-description"></span>
+        </div>
+        <div class="mission" id="unprestigious-td" style="display: none;">
+          <button id="unprestigious-button" onclick="enterChallenge('unprestigious')">
+            Solo
+            <br/>
+            You can't Retrofit your Fleets.
+            <br/>
+            Goal: <span id="unprestigious-goal"></span> Starfight
+          </button>
+          <br/>
+          Farthest reached: <span id="record-development-in-unprestigious"></span>
+          <br/>
+          <span id="unprestigious-reward-description"></span>
+          <br/>
+          <span id="unprestigious-completed-description"></span>
+        </div>
+        <div class="mission" id="slow-td" style="display: none;">
+          <button id="slow-button" onclick="enterChallenge('slow')">
+            Slog
+            <br/>
+            Everything (including Leadership and __power gain__) is a thousand times slower.
+            <br/>
+            Goal: <span id="slow-goal"></span> Starfight
+          </button>
+          <br/>
+          Farthest reached: <span id="record-development-in-slow"></span>
+          <br/>
+          <span id="slow-reward-description"></span>
+          <br/>
+          <span id="slow-completed-description"></span>
+        </div>
+        <div class="mission" id="powerless-td" style="display: none;">
+          <button id="powerless-button" onclick="enterChallenge('powerless')">
+            No Legacy
+            <br/>
+            Power from your Legacy is not produced.
+            <br/>
+            Goal: <span id="powerless-goal"></span> Starfight
+          </button>
+          <br/>
+          Farthest reached: <span id="record-development-in-powerless"></span>
+          <br/>
+          <span id="powerless-reward-description"></span>
+          <br/>
+          <br/>
+          <span id="powerless-completed-description"></span>
+        </div>
+        <div class="mission" id="upgradeless-td" style="display: none;">
+          <button id="upgradeless-button" onclick="enterChallenge('upgradeless')">
+            ____Upgradeless____
+            <br/>
+            _____All Resource Legacy upgrades are useless._____
+            <br/>
+            Goal: <span id="upgradeless-goal"></span> Starfight
+          </button>
+          <br/>
+          Farthest reached: <span id="record-development-in-upgradeless"></span>
+          <br/>
+          <span id="upgradeless-reward-description"></span>
+          <br/>
+          <br/>
+          <span id="upgradeless-completed-description"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!--- MILESTONES --------------------------------------------------------- -->
+<!--- MILESTONES --------------------------------------------------------- -->
+<!--- MILESTONES --------------------------------------------------------- -->
+<!--- MILESTONES --------------------------------------------------------- -->
+<!--- MILESTONES --------------------------------------------------------- -->
+<!--- MILESTONES --------------------------------------------------------- -->
+<!--- MILESTONES --------------------------------------------------------- -->
+<!--- MILESTONES --------------------------------------------------------- -->
+<!--- MILESTONES --------------------------------------------------------- -->
+
+
+  <div id="completion-milestones-div" style="display: none;">
+    <span>You have <span id="total-challenge-completions-milestone-tab"></span> total challenge completions.</span>
+    <br/>
+    <span>2 total challenge completions: Auto-Leadership. <span id="milestone-status-0">&#x2718;</span></span>
+    <br/>
+    <span>4 total challenge completions: Auto-Retrofit. <span id="milestone-status-1">&#x2718;</span></span>
+    <br/>
+    <span>8 total challenge completions: Auto-SpaceBattle. <span id="milestone-status-2">&#x2718;</span></span>
+    <br/>
+    <span>16 total challenge completions: Auto update Legacy points. <span id="milestone-status-3">&#x2718;</span></span>
+    <br/>
+    <span>32 total challenge completions: All your skill points contribute to everything with 1% effectiveness, in addition to whatever they're assigned to. <span id="milestone-status-4">&#x2718;</span></span>
+    <hr/>
+  </div>
+
+<!--- OTHER INFORMATION --------------------------------------------------------- -->
+<!--- OTHER INFORMATION --------------------------------------------------------- -->
+<!--- OTHER INFORMATION ---------####--######-##--##-######-#####--------------- -->
+<!--- OTHER INFORMATION --------##--##---##---##--##-##-----##--##--------------- -->
+<!--- OTHER INFORMATION --------##--##---##---######-#####--#####---------------- -->
+<!--- OTHER INFORMATION --------##--##---##---##--##-##-----##--##--------------- -->
+<!--- OTHER INFORMATION ---------####----##---##--##-######-##--##---------------- -->
+<!--- OTHER INFORMATION --------------------------------------------------------- -->
+
+  <div class="progressstats_container">
+    <div class="progressstats_title">
+      BATTLE STATS
+    </div>
+    <div class="progressstats_section">
+      <div class="progressstats_stat">
+        <div>Progress Milestones
+        </div>
+        <div><span id="progress-milestones"></span> 
+        </div>
+        <div><span id="progress-milestones-effect"></span> x multiplier to all
+        </div>
+        <div>
+        </div>
+      </div>
+      <div class="progressstats_stat">
+        <div>Last Space War Won: 
+        </div>
+        <div><span id="time-since-last-update"></span>
+        </div>
+        <div>Last Leader-Up: 
+        </div>
+        <div><span id="time-since-last-enlightened"></span>
+        </div>
+        <div>Last Retrofit: 
+        </div>
+        <div><span id="time-since-last-prestige"></span>
+        </div>
+      </div>
+      <div class="progressstats_stat">
+        <div>Last Legacy Points: 
+        </div>
+        <div><span id="last-update-point-gain"></span>
+        </div>
+        <div>Game Speed:  
+        </div>
+        <div><span id="game-speed"></span>
+        </div>
+        <div>Record Space Battle: 
+        </div>
+        <div><span id="record-development"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!--- OPTIONS --------------------------------------------------------- -->
+  <!--- OPTIONS --------------------------------------------------------- -->
+  <!--- OPTIONS --------------------------------------------------------- -->
+  <!--- OPTIONS --------------------------------------------------------- -->
+  <!--- OPTIONS --------------------------------------------------------- -->
+  <!--- OPTIONS --------------------------------------------------------- -->
+
+  <div class="options_container" style="display:none">
+    <div class="options_title">
+      OPTIONS
+    </div>
+    <div class="options_section">
+      <div class="options_option">
+        <div><input id="prestige-confirmation" onclick="toggleConfirmation('prestige')" type="checkbox"></input> 
+        </div>
+        <div>Retrofit confirmation 
+        </div>
+        <div><input id="prestige-without-gain-confirmation" onclick="toggleConfirmation('prestigeWithoutGain')" type="checkbox"></input>
+        </div>
+        <div>Retrofit-without-gain confirmation 
+        </div>
+      </div>
+      <div class="options_option">
+        <div><input id="update-confirmation" onclick="toggleConfirmation('update')" type="checkbox"></input>
+        </div>
+        <div>Win Space War confirmation 
+        </div>
+        <div><input id="update-challenge" onclick="toggleOption('updateChallenge')" type="checkbox"></input>
+        </div>
+        <div>Win a Space War if possible when entering or exiting a challenge 
+        </div>
+      </div>
+      <div class="options_option">
+        <div><input id="enter-challenge-confirmation" onclick="toggleConfirmation('enterChallenge')" type="checkbox"></input>
+        </div>
+        <div>Enter-challenge confirmation 
+        </div>
+        <div><input id="exit-challenge-confirmation" onclick="toggleConfirmation('exitChallenge')" type="checkbox"></input>
+        </div>
+        <div>Exit-challenge confirmation
+        </div>
+      </div>
+      <div class="options_option">
+        <div><input id="turn-all-update-points-into-experience-confirmation" onclick="toggleConfirmation('turnAllUpdatePointsIntoExperience')" type="checkbox"></input>
+        </div>
+        <div>Turn-all-Legacy-Points-into-experience confirmation 
+        </div>
+        <div><input id="offline-progress" onclick="toggleOption('offlineProgress')" type="checkbox"></input>
+        </div>
+        <div>Offline progress 
+        </div>
+      </div>
+    </div>
+    <br/>
+    <span><span id="hard-mode-span">Hard mode: off</span> <button onclick="toggleHardMode()">Toggle hard mode</button></span>
+    <br/>
+    
+  </div>
+  <span><button onclick="saveGame()">Save</button> <button onclick="exportGame()">Export</button> <button onclick="loadGamePrompt()">Load</button> <button onclick="resetGameWithConfirmation()">RESET</button></span>
+  <br/>
+  <span style="display: none;">Exported save (also copied to clipboard): <input id="export-output"></input></span>
+  
+
+<!--  END ---------------------------------------------------------------------------------------------------- -->
+<!--  END ---------------------------------------------------------------------------------------------------- -->
+<!--  END ---------------------------------------------------------------------------------------------------- -->
+<!--  END ---------------------------------------------------------------------------------------------------- -->
+<!--  END ---------------------------------------------------------------------------------------------------- -->
+
+</body>
+</html>

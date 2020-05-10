@@ -1,0 +1,551 @@
+:root {
+    /* NAV BAR */
+    --nav_def_bg: black;
+    --nav_def_font: tan;
+    --nav_def_border: tan;
+    --nav_sel_bg: tan;
+    --nav_sel_font: white;
+    --nav_sel_border: yellow;
+    --nav_hov_bg: tan;
+    --nav_hov_font: white;
+    --nav_hov_border: yellow;
+    /* PAGE COLORS */
+    --page_bg: tan;
+    --act_bg: black;
+    --act_color: rgb(140, 173, 210);
+    /* COMMON */
+    --box_shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 2px 5px 0 rgba(0,0,0,0.12);
+    --debug_border: 0.0px solid grey;
+    --text_primary: lightgreen;
+    --text_secondary: lightyellow;
+    --text_progress: lightblue;
+    --text_title: white;
+    --tip_bg: lightgrey;
+    --tip_text: black;
+    --tip_border: darkgrey;
+
+}
+
+html {
+    width: 100%;
+    height: 100%;
+    background-color: black;}
+
+body {
+    width: 100%;
+    height: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    min-width: 480px;
+    max-width: 800px;
+    margin: auto;
+    font-size: 12px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+
+/*  NAV BAR --------------------------------------------------------------------- */
+/*  NAV BAR --------------------------------------------------------------------- */
+/*  NAV BAR --------------------------------------------------------------------- */
+/*  NAV BAR --------------------------------------------------------------------- */
+/*  NAV BAR --------------------------------------------------------------------- */
+
+.navbar {
+    width:100%;
+    overflow:hidden;
+    /*color:#fff;*/
+    /*background-color:rgb(73, 73, 73);*/
+    border: 5px solid var(--nav_def_border);
+    color: var(--nav_def_fg);
+    background-color: var(--nav_def_bg);
+    display: flex; 
+    justify-content: center;
+    box-sizing: border-box;
+
+}
+.navitem {
+    padding:0px 0px;
+    height: 30px;
+    float:left;
+    width: 16%;
+    /*border: 0.5px solid lightgrey;*/
+    /*border: 0.5px solid var(--nav_def_border);*/
+    border: 0px;
+    display:block;
+    outline:0;
+    color: var(--nav_def_font);
+    background-color: var(--nav_def_bg);
+}
+
+.navitem-selected {
+    color:var(--nav_sel_font)!important;
+    font-weight: bold;
+    background-color: var(--nav_sel_bg)!important;
+}
+
+.navitem:hover {
+    font-weight: bold;
+    color:var(--nav_hov_font)!important;
+    /*background-color: var(--nav_hov_bg)!important;*/
+}
+
+
+
+/*  MAIN --------------------------------------------------------------------- */
+/*  MAIN --------------------------------------------------------------------- */
+/*  MAIN --------------------------------------------------------------------- */
+/*  MAIN --------------------------------------------------------------------- */
+/*  MAIN --------------------------------------------------------------------- */
+
+.main_page {
+    width:100%;
+    max-width:800px;
+    display: grid;  /* 450px min, max 600px */
+    grid-template-columns: 
+        minmax(90px,160px) minmax(90px,160px) minmax(90px,160px) minmax(90px,160px) minmax(90px,160px);    /*achievements_stats earlygame midmame lategame end_stats endgame */
+    grid-column-gap: 5px;
+    padding:5px;
+    background-color: var(--page_bg);
+    box-sizing: border-box;
+    font-size: 12px;
+}
+
+.battle {grid-column: 'battle';}
+.skill {grid-column: 'skill';}
+.prestige {grid-column: 'prestige';}
+
+.battle, .skill, .prestige {
+    display: grid;
+    grid-template-rows:
+        45px 20px 25px 45px 45px 45px 60px 45px 60px;
+    grid-row-gap: 5px;
+    box-shadow: var(--box_shadow);
+    border: 1px solid lightgrey;
+    background-color: var(--act_bg);
+    color: var(--text_primary);
+    justify-content: center;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 12px;
+}
+
+.activity_title { 
+    font-weight: bold;
+    border: var(--debug_border);
+    padding: 1px;
+    color: var(--text_title);
+    font-size: 16px;  
+}
+
+.activity_progress {
+    border: var(--debug_border);
+    padding: 1px;
+    color: var(--text_progress);
+    font-weight: bold;
+    font-size: 14px;    
+}
+
+.activity_effect {
+    border: var(--debug_border);
+    padding: 1px;
+    color: var(--text_secondary);
+}
+
+.activity_skill {
+    border: var(--debug_border);
+    padding: 1px;
+}
+.activity_fraction {
+    border: var(--debug_border);
+    padding: 1px;
+}
+.activity_prestige_name {
+    font-weight: bold;
+    border: var(--debug_border);
+    padding: 1px;
+    color: var(--text_title);
+    font-size: 16px; 
+}
+.activity_prestige_effect {
+    display: grid;
+    grid-template-rows:
+        auto auto;
+    border: var(--debug_border);
+    padding: 1px;
+    color: var(--text_secondary);
+}
+.activity_prestige_control {
+    border: var(--debug_border);
+    padding: 1px;
+}
+.activity_prestige_info {
+    border: var(--debug_border);
+    padding: 1px;
+}
+
+.fraction_input {
+    width: 50px;
+}
+
+.prestige_button {
+    border: 1px solid; 
+    background-color: rgb(255, 200, 200);
+    /*padding: 0px;*/
+    height: 40px;
+    width: 120px;
+}
+
+/*  AUTO OPTIONS PAGE -----------------------------------------          -->
+<!--   AUTO OPTIONS PAGE -----####---##--##--######---####-------------          -->
+<!--   AUTO OPTIONS PAGE ----##--##--##--##----##----##--##----------          -->
+<!--   AUTO OPTIONS PAGE ----######--##--##----##----##--##----------          -->
+<!--   AUTO OPTIONS PAGE ----##--##--##--##----##----##--##----------          -->
+<!--   AUTO OPTIONS PAGE ----##--##---####-----##-----####---------          -->
+<!--   AUTO OPTIONS PAGE -----------------------------------------          -->*/
+
+
+.autooption_container {
+    width:100%;
+    max-width:800px;
+    display: grid;  /* 450px min, max 600px */
+    grid-template-columns:
+        minmax(90px,160px) minmax(90px,160px) minmax(90px,160px) minmax(90px,160px) minmax(90px,160px);    /*stats legacy_upgrades*/
+    grid-column-gap: 5px;
+    justify-content: center;
+    padding:5px;
+    background-color: var(--page_bg);
+    box-sizing: border-box; 
+}
+
+.autooption_column {
+    display: grid;
+    grid-template-rows:
+        20px 40px 40px 40px 40px 40px;
+    box-shadow: var(--box_shadow);
+    border: 1px solid lightgrey;
+    grid-row-gap: 5px;
+    background-color: var(--act_bg);
+    color: var(--act_color);
+    padding: 2px;
+    box-sizing: border-box;
+    justify-content: center;
+    place-content: center;
+    text-align: center;
+
+}
+
+.auto_option {
+    text-align: center;
+    color: var(--text_primary);
+}
+
+.auto_button {
+    display: flex;
+    align-items: center;
+    width: 90%;
+    justify-content: center;
+    min-height: 32px;
+
+}
+
+.auto_input {
+    width: 90%;
+    text-align: center;
+}
+
+
+
+
+/*  ACHIEVEMENTS --------------------------------------------------------------------- */
+/*  ACHIEVEMENTS --------------------------------------------------------------------- */
+/*  ACHIEVEMENTS --------------------------------------------------------------------- */
+/*  ACHIEVEMENTS --------------------------------------------------------------------- */
+/*  ACHIEVEMENTS --------------------------------------------------------------------- */
+
+
+.achievements_page {
+    width: 100%;
+    display: grid;  /* 450px min, max 600px */
+    grid-template-columns:
+        minmax(45px,60px) minmax(180px,340px) minmax(45px,60px) minmax(180px,340px);
+    grid-template-rows:
+        auto auto auto auto auto auto;    /*achievements_stats earlygame midmame lategame end_stats endgame */
+    grid-row-gap: 5px;
+    grid-column-gap: 5px;
+    justify-content: center;
+    font-size: 12px;
+    padding:5px;
+    /*box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12); */
+    background-color: var(--page_bg);
+    box-sizing: border-box; 
+}
+
+.achievements_grouping {
+    box-shadow: var(--box_shadow);
+    border: 1px solid lightgrey;
+    grid-column-gap: 30px;
+    font-size: 12px;
+    padding: 5px;
+    background-color: var(--act_bg);
+    color: var(--text_progress);
+}
+
+.achievements_title {
+    box-shadow: var(--box_shadow);
+    border: 1px solid lightgrey;
+    grid-column-gap: 30px;
+    font-weight: bold;
+    font-size: 14px;
+    padding: 5px;
+    background-color: var(--act_bg);
+    color: var(--text_primary);
+}
+
+.title_text {
+    font-weight: bold;
+}
+
+
+/* --- LEGACY --------------------------------------------------- */
+/* --- LEGACY --------------------------------------------------- */
+/* --- LEGACY --------------------------------------------------- */
+/* --- LEGACY --------------------------------------------------- */
+/* --- LEGACY --------------------------------------------------- */
+/* --- LEGACY --------------------------------------------------- */
+/* --- LEGACY --------------------------------------------------- */
+/* --- LEGACY --------------------------------------------------- */
+
+
+.legacy_page {
+    display: grid;  /* 450px min, max 600px */
+    grid-template-rows:
+        auto auto;    /*stats legacy_upgrades*/
+    grid-row-gap: 5px;
+    grid-column-gap: 5px;
+    justify-content: center;
+    font-size: 12px;
+    padding:5px;
+    /*box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12); */
+    background-color: var(--page_bg);
+    box-sizing: border-box; 
+}
+
+.legacyupgrade_group {
+    display: grid;
+    grid-template-columns:
+        minmax(160px, 266px) minmax(160px, 266px) minmax(160px, 266px);
+    grid-column-gap: 5px;
+    font-size: 12px;
+    background-color: var(--page_bg);
+    color: var(--act_color);
+}
+
+.legacyupgrade_upgrade {
+    display: grid;
+    grid-template-rows:
+        30px 90px 120px 150px 30px;
+    box-shadow: var(--box_shadow);
+    border: 1px solid lightgrey;
+    grid-column-gap: 30px;
+    font-size: 12px;
+    padding: 5px;
+    background-color: var(--act_bg);
+    color: var(--act_color);
+}
+
+/* --- LOWER STATS --------------------------------------------------- */
+/* --- LOWER STATS --------------------------------------------------- */
+/* --- LOWER STATS --------------------------------------------------- */
+/* --- LOWER STATS --------------------------------------------------- */
+/* --- LOWER STATS --------------------------------------------------- */
+/* --- LOWER STATS --------------------------------------------------- */
+/* --- LOWER STATS --------------------------------------------------- */
+
+.progressstats_container {
+    width:100%;
+    max-width:800px;
+    display: grid;  /* 450px min, max 600px */
+    grid-template-columns:
+        minmax(90px,160px) minmax(360px,640px);   
+    grid-column-gap: 5px;
+    justify-content: center;
+    padding:5px;
+    background-color: var(--page_bg);
+    box-sizing: border-box;
+}
+
+.progressstats_title {
+    box-shadow: var(--box_shadow);
+    border: 1px solid lightgrey;
+    font-weight: bold;
+    font-size: 14px;
+    background-color: var(--act_bg);
+    color: var(--text_primary);
+    padding:5px;
+}
+
+.progressstats_section {
+    display: grid;
+    box-shadow: var(--box_shadow);
+    border: 1px solid lightgrey;
+    font-size: 12px;
+    background-color: var(--act_bg);
+    color: var(--text_secondary);
+    padding:5px;
+    grid-template-columns: 
+        auto auto auto;
+}
+
+.progressstats_stat {
+    display: grid;
+    box-shadow: var(--box_shadow);
+    border: var(--debug_border);
+    font-size: 12px;
+    background-color: var(--act_bg);
+    color: var(--text_secondary);
+    padding:0px;
+    grid-template-columns: 
+        auto auto;
+}
+
+
+/*  CHALLENGES -     -->
+/*  CHALLENGES ---##----##-######--#####--######-######- ####  #####   #####      -->
+/*  CHALLENGES ---###--###---##---##-----##--------##---##  ## ##  ## ##           -->
+/*  CHALLENGES ---##-##-##---##---#####---#####----##-- ##  ## ##  ##  ####        -->
+/*  CHALLENGES ---##----##---##-------##------##---##---##  ## ##  ##     ##       -->
+/*  CHALLENGES ---##----##-######-#####--######--######- ####  ##  ## #####         -->
+/*  CHALLENGES   -->
+/*  CHALLENGES           */
+
+.missions_container {
+    width:100%;
+    max-width:800px;
+    display: grid;  /* 450px min, max 600px */
+    grid-template-rows:
+        auto auto;
+    grid-row-gap: 5px;
+    justify-content: center;
+    padding:5px;
+    background-color: var(--page_bg);
+    box-sizing: border-box;
+}
+
+.missions_meta {
+    display: grid;  /* 450px min, max 600px */
+    grid-template-columns:
+        minmax(225px, 400px) minmax(225px, 400px);
+    grid-column-gap: 5px;
+    justify-content: center;
+    padding:5px;
+    background-color: var(--page_bg);
+    box-sizing: border-box;
+}
+
+.missions_list {
+    display: grid;
+    grid-template-columns:
+        minmax(150px, 33.33%) minmax(150px, 33.33%) minmax(150px, 33.33%);
+    grid-template-rows:
+        auto auto auto;
+    grid-gap: 5px;
+}
+
+.mission {  
+    font-size: 12px;
+    border: 1px solid lightgrey;
+    background-color: var(--act_bg);
+    color: var(--text_secondary);
+    padding: 5px;
+}
+
+
+
+
+
+
+
+
+
+/* --- OPTIONS --------------------------------------------------- */
+/* --- OPTIONS --------------------------------------------------- */
+/* --- OPTIONS --------------------------------------------------- */
+/* --- OPTIONS --------------------------------------------------- */
+/* --- OPTIONS --------------------------------------------------- */
+/* --- OPTIONS --------------------------------------------------- */
+
+.options_container {
+    width:100%;
+    max-width:800px;
+    display: grid;  /* 450px min, max 600px */
+    grid-template-columns:
+        minmax(90px,160px) minmax(360px,640px);   
+    grid-column-gap: 5px;
+    justify-content: center;
+    padding:5px;
+    background-color: var(--page_bg);
+    box-sizing: border-box;
+}
+
+.options_title {
+    box-shadow: var(--box_shadow);
+    border: 1px solid lightgrey;
+    font-weight: bold;
+    font-size: 14px;
+    background-color: var(--act_bg);
+    color: var(--text_primary);
+    padding:5px;
+}
+
+.options_section {
+    display: grid;
+    box-shadow: var(--box_shadow);
+    border: 1px solid lightgrey;
+    font-size: 12px;
+    background-color: var(--act_bg);
+    color: var(--text_secondary);
+    padding:5px;
+    grid-template-columns: 
+        auto auto auto auto;
+}
+
+.options_option {
+    display: grid;
+    box-shadow: var(--box_shadow);
+    border: var(--debug_border);
+    font-size: 12px;
+    background-color: var(--act_bg);
+    color: var(--text_secondary);
+    padding:0px;
+    grid-template-columns: 
+        auto auto;
+}
+
+
+
+/* TOOLTIPS */
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+  }
+  
+  .tooltip .tooltiptext {
+    visibility: hidden;
+    width: 300px;
+    background-color: var(--tip_bg);
+    color: var(--tip_text);
+    border-color: var(--tip_border);
+    text-align: left;
+    border-radius: 6px;
+    padding: 5px;
+  
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+  }
+  
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+  }
