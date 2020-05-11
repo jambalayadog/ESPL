@@ -119,9 +119,11 @@ function updateAutoDisplay() {
     }
     document.getElementById('auto-assign-update-points-span').style.display = 'none';
   }
+  /*
   if (hasAuto(AUTO_LIST[0])) {
     document.getElementById('auto-help-span').style.display = '';  //THIS IS LEFT JUSTIFYING THINGS
   } else {
     document.getElementById('auto-help-span').style.display = 'none';
   }
+  */
 }

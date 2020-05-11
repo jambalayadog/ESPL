@@ -104,7 +104,7 @@ function checkForAchievementsAndLore() {
     Math.max.apply(null, progress), player.stats.recordDevelopment['']);
   giveLore(0);
   if (devs.some(i => i !== 0)) {
-    giveNormalAchievement(0);
+    giveNormalAchievement(0);                                                       // assigned a skill
     giveLore(1);
   }
   if (loreFarthest >= 120) {
@@ -117,19 +117,19 @@ function checkForAchievementsAndLore() {
     giveLore(4);
   }
   if (devs.every(i => i !== 0)) {
-    giveNormalAchievement(1);
+    giveNormalAchievement(1);                                                       // skill in all 5 base columns
   }
-  if (getEffect(1).gte(1.2)) {
-    giveLore(5);
+  if (getEffect(1).gte(1.2)) {                                                      
+    giveLore(5);                                                                    // x1.20 weapons / efficiency
   }
-  if (getEffect(2) >= 0.5) {
-    giveLore(6);
+  if (getEffect(2) >= 0.5) {                                                        
+    giveLore(6);                                                                    // 0.50 power handling / scaling
   }
-  if (devs.every(i => i === 0) && progress.every(x => x >= 3600)) {
-    giveNormalAchievement(3);
+  if (devs.every(i => i === 0) && progress.every(x => x >= 3600)) {                 
+    giveNormalAchievement(3);                                                       // everything to 1 hour, no skills
   }
-  if (Math.max.apply(null, progress) - Math.min.apply(null, progress) <= 60 && progress.every(x => x >= 3600)) {
-    giveNormalAchievement(4);
+  if (Math.max.apply(null, progress) - Math.min.apply(null, progress) <= 60 && progress.every(x => x >= 3600)) {      
+    giveNormalAchievement(4);                                                       // all 5 columns close to each other
   }
   if (getEffect(1).gt(getTotalDevs()) && getTotalDevs() > 1) {
     giveNormalAchievement(5);

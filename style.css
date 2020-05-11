@@ -220,7 +220,7 @@ body {
 .autooption_column {
     display: grid;
     grid-template-rows:
-        20px 40px 40px 40px 40px 40px;
+        20px 40px 40px 40px 40px;
     box-shadow: var(--box_shadow);
     border: 1px solid lightgrey;
     grid-row-gap: 5px;
@@ -267,9 +267,10 @@ body {
     width: 100%;
     display: grid;  /* 450px min, max 600px */
     grid-template-columns:
-        minmax(45px,60px) minmax(180px,340px) minmax(45px,60px) minmax(180px,340px);
+        /*minmax(45px,60px) minmax(180px,340px) minmax(45px,60px) minmax(180px,340px);*/
+        minmax(90px,120px) minmax(360px,680px);
     grid-template-rows:
-        auto auto auto auto auto auto;    /*achievements_stats earlygame midmame lategame end_stats endgame */
+        auto auto auto auto auto;    /*achievements_stats earlygame midmame lategame end_stats endgame */
     grid-row-gap: 5px;
     grid-column-gap: 5px;
     justify-content: center;
@@ -299,6 +300,11 @@ body {
     padding: 5px;
     background-color: var(--act_bg);
     color: var(--text_primary);
+}
+
+.achievements_stats {
+    display: grid;
+    grid-template-columns: auto auto;
 }
 
 .title_text {
@@ -461,7 +467,29 @@ body {
 
 
 
+/* LORE --------------------------------------------------- */
+/* LORE --------------------------------------------------- */
+/* LORE --------------------------------------------------- */
+/* LORE --------------------------------------------------- */
+/* LORE --------------------------------------------------- */
 
+.lore_container {
+    width:100%;
+    max-width:800px;
+    background-color: var(--page_bg);
+    box-sizing: border-box;
+    padding: 5px;
+}
+
+.lore {
+    color: var(--text_secondary);
+    height: 38px;
+    display: flex;
+    overflow-y: scroll;
+    flex-direction: column-reverse;
+    line-height: normal;  
+    scroll-snap-type: y mandatory;
+}
 
 
 

@@ -1,4 +1,5 @@
-const TAB_LIST = ['main', 'achievements', 'lore', 'update', 'challenges', 'completion-milestones'];
+/* const TAB_LIST = ['main', 'achievements', 'lore', 'update', 'challenges', 'completion-milestones'];*/
+const TAB_LIST = ['main', 'achievements', 'update', 'challenges', 'completion-milestones'];
 
 function updateTabButtonDisplay () {
   if (player.updates > 0) {

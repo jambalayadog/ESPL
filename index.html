@@ -40,8 +40,12 @@
     <button class="navitem" id="challenges-tab-button" onclick="setTab('challenges')" style="display: none;">MISSIONS</button> 
     <button class="navitem" id="update-tab-button" onclick="setTab('update')" style="display: none;">LEGACY</button>
     <button class="navitem" id="achievements-tab-button" onclick="setTab('achievements')">RECORDS</button>
-    <button class="navitem" id="lore-tab-button" onclick="setTab('lore')">STORY GOALS</button> 
+    <!--<button class="navitem" id="lore-tab-button" onclick="setTab('lore')">STORY GOALS</button> -->
     <button class="navitem" id="completion-milestones-tab-button" onclick="setTab('completion-milestones')" style="display: none;">MILESTONES</button>
+  </div>
+  <div class="lore_container" >
+    <div class="lore" id="lore_goal">
+    </div>
   </div>
 
 <!--   MAIN PAGE -----------------------------------------          -->
@@ -219,6 +223,7 @@
 <!--   AUTO OPTIONS PAGE -----------------------------------------          -->
 
     <div class="autooption_container" id="autooptions">
+      
       <!--   AUTO BATTLE -->
       <div class="autooption_column" id="auto-update-span" style="visibility: hidden;">   <!--   AUTO BATTLE -->
         <div class="auto_option">
@@ -231,12 +236,14 @@
           <span class="auto_spacewar" style="display:none"><input class="auto_input" id="auto-update-value" type="text" onchange="updateAutoValue('update')"></input></span>
         </div>
       </div>
+      
       <!--   AUTO SKILL -->
       <div class="autooption_column" id="auto-dev-span">  <!--   AUTO SKILL -->
         <div class="auto_option">
           <input id="auto-dev-on" onclick="toggleAutoOn('dev')" type="checkbox"></input><span>Auto-Skills <span id="auto-dev-lonely-info"></span></span>
         </div>
       </div>
+      
       <!--   LEGACY OPTIONS -->
       <div class="autooption_column">  <!--   LEGACY OPTIONS -->
         <div class="auto_option">
@@ -255,6 +262,7 @@
           <span id="auto-help-span" style="display: none;">Enter time as either: number of seconds or in HH:MM:SS.</span>
         </div>-->
       </div>
+      
       <!--   AUTO RETROFIT   -->
       <div class="autooption_column" id="auto-prestige-span" style="visibility: hidden;">  <!--   AUTO RETROFIT   -->
         <div class="auto_option">
@@ -273,6 +281,7 @@
           <span class="auto_retrofit" style="display:none"><input id="auto-prestige-alternate" onclick="toggleAutoPrestigeAlternate()" type="checkbox"></input>Toggle Retrofits</span>
         </div>
       </div>
+      
       <!--   AUTO LEADER UP   -->
       <div class="autooption_column" id="auto-enlightened-span" style="visibility: hidden;"> <!--   AUTO LEADER UP   -->
         <div class="auto_option">
@@ -303,25 +312,24 @@
       <div class="achievements_title">
         <div class="title_text">STATS</div>
       </div>
-      <div class="achievements_grouping">
-        <span>You have <span id="total-normal-achievements"></span> normal achievement<span id="total-normal-achievements-plural"></span>: 
-        <ul>
-          <li><span id="normal-achievements-effect"></span>x multiplier to all production</li>
-          <li><span id="normal-achievements-patience-effect"></span>x patience meter gain</li>
-          <li><span id="normal-achievements-patience-kept-effect"></span>x patience meter kept on enlightenment.</li>
-        </ul>
-      </div>
-      <div class="achievements_title">
-        <div class="title_text">STATS²</div>
-      </div>
-      <div class="achievements_grouping">
-        <span>You have <span id="total-lategame-achievements"></span> end game achievement<span id="total-lategame-achievements-plural"></span></span>
-        <ul>
-          <li><span id="lategame-achievements-patience-effect"></span>x patience meter gain</li>
-          <li><span id="lategame-achievements-completions-effect"></span>x multiplier to total challenge completions</li>
-          <li><span id="lategame-achievements-patience-kept-effect"></span>x patience meter kept on enlightenment.</li>
-        </ul>
-      </div>      
+      <div class="achievements_grouping achievements_stats">
+        <div>
+          <span>You have <span id="total-normal-achievements"></span> normal achievement<span id="total-normal-achievements-plural"></span>: 
+          <ul>
+            <li><span id="normal-achievements-effect"></span>x multiplier to all production</li>
+            <li><span id="normal-achievements-patience-effect"></span>x patience meter gain</li>
+            <li><span id="normal-achievements-patience-kept-effect"></span>x patience meter kept on enlightenment.</li>
+          </ul>
+        </div>
+        <div>
+          <span>You have <span id="total-lategame-achievements"></span> end game achievement<span id="total-lategame-achievements-plural"></span></span>
+          <ul>
+            <li><span id="lategame-achievements-patience-effect"></span>x patience meter gain</li>
+            <li><span id="lategame-achievements-completions-effect"></span>x multiplier to total challenge completions</li>
+            <li><span id="lategame-achievements-patience-kept-effect"></span>x patience meter kept on enlightenment.</li>
+          </ul>
+        </div> 
+      </div>   
       <div class="achievements_title">
         <div class="title_text">EARLY</div>
       </div>
@@ -390,7 +398,7 @@
         <br/>
         <span id="normal-ach-status-26">&#x2610;</span><span> Get at least 1.80e308 Legacy Points in one Space War. </span>
         <br/>
-      </div>
+      </div>  
       <div class="achievements_title">
         <div class="title_text">END</div>
       </div>
@@ -416,6 +424,14 @@
       </div>
     </div>
   </div>
+
+<!--  LORE AND STORY -----------------------------------------          -->
+<!--  LORE AND STORY -----------------------------------------          -->
+<!--  LORE AND STORY -----------------------------------------          -->
+<!--  LORE AND STORY -----------------------------------------          -->
+<!--  LORE AND STORY -----------------------------------------          -->
+
+
   <div id="lore-div" style="display: none;">
   </div>
 
