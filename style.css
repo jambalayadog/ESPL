@@ -41,6 +41,7 @@ body {
     font-size: 12px;
     overflow-x: hidden;
     overflow-y: scroll;
+
 }
 
 
@@ -108,6 +109,18 @@ body {
 .main_page {
     width:100%;
     max-width:800px;
+    height: 450px;
+    overflow-y: scroll;
+    padding:5px;
+    background-color: var(--page_bg);
+    box-sizing: border-box;
+    font-size: 12px;
+}
+
+  
+.starfight_page {
+    width:100%;
+    max-width:800px;
     display: grid;  /* 450px min, max 600px */
     grid-template-columns: 
         minmax(90px,160px) minmax(90px,160px) minmax(90px,160px) minmax(90px,160px) minmax(90px,160px);    /*achievements_stats earlygame midmame lategame end_stats endgame */
@@ -125,7 +138,7 @@ body {
 .battle, .skill, .prestige {
     display: grid;
     grid-template-rows:
-        45px 20px 25px 45px 45px 45px 60px 45px 60px;
+        auto 20px 25px 45px auto 45px 60px 45px 60px;
     grid-row-gap: 5px;
     box-shadow: var(--box_shadow);
     border: 1px solid lightgrey;
