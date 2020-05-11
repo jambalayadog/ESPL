@@ -22,11 +22,11 @@ function updateTabDisplay() {
   for (let i = 0; i < TAB_LIST.length; i++) {
     if (player.tab === TAB_LIST[i]) {
       document.getElementById(TAB_LIST[i] + '-div').style.display = '';
-      document.getElementById(TAB_LIST[i] + '-tab-button').className += " navitem-selected";
+      document.getElementById(TAB_LIST[i] + '-tab-button').className = "navitem navitem-selected";
     } else {
       console.log(TAB_LIST[i])
       document.getElementById(TAB_LIST[i] + '-div').style.display = 'none';
-      document.getElementById(TAB_LIST[i] + '-tab-button').className = document.getElementById(TAB_LIST[i] + '-tab-button').className.replace(" navitem-selected", "");
+      document.getElementById(TAB_LIST[i] + '-tab-button').className = "navitem";
     }
   }
 }
