@@ -281,14 +281,12 @@ body {
 
 .achievements_page {
     width: 100%;
-    display: grid;  /* 450px min, max 600px */
-    grid-template-columns:
-        /*minmax(45px,60px) minmax(180px,340px) minmax(45px,60px) minmax(180px,340px);*/
-        minmax(90px,120px) minmax(360px,680px);
+    height: 420px;
+    overflow-y: scroll;
+    /*display: grid;  /* 450px min, max 600px 
     grid-template-rows:
         auto auto auto auto auto;    /*achievements_stats earlygame midmame lategame end_stats endgame */
-    grid-row-gap: 5px;
-    grid-column-gap: 5px;
+    /*grid-row-gap: 5px;*/
     justify-content: center;
     font-size: 12px;
     padding:5px;
@@ -298,40 +296,54 @@ body {
 }
 
 .achievements_row {
-    
+    display: flex;             
+    flex-direction: row;       
+    align-items: stretch;      
+    height: auto;
+    width: 100%;
 }
 
 .achievements_grouping {
     box-shadow: var(--box_shadow);
     border: 1px solid lightgrey;
-    grid-column-gap: 30px;
     font-size: 12px;
     padding: 5px;
     background-color: var(--act_bg);
     color: var(--text_progress);
+    width: 100%;
+    
 }
 
 .achievements_title {
     box-shadow: var(--box_shadow);
     border: 1px solid lightgrey;
-    grid-column-gap: 30px;
     font-weight: bold;
     font-size: 14px;
     padding: 5px;
     background-color: var(--act_bg);
     color: var(--text_primary);
-    margin: auto;
-    width: 100%;
-    box-sizing: border-box; 
+    width: 6%;
+    box-sizing: border-box;
+    /*transform: rotate(90deg);*/
+    writing-mode: vertical-lr;
 }
 
 .achievements_stats {
     display: grid;
     grid-template-columns: auto auto;
+    grid-column-gap: 30px;
+    width: 100%;
 }
 
 .title_text {
     font-weight: bold;
+    
+}
+
+.title_support {
+    font-size: 12px;
+    font-weight: normal;
+    /*writing-mode: vertical-lr;*/
 }
 
 
