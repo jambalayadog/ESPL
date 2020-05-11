@@ -135,6 +135,7 @@ body {
     padding: 1px;
     color: var(--text_title);
     font-size: 16px;  
+    margin: auto;
 }
 
 .activity_progress {
@@ -164,7 +165,8 @@ body {
     border: var(--debug_border);
     padding: 1px;
     color: var(--text_title);
-    font-size: 16px; 
+    font-size: 16px;
+    margin: auto; 
 }
 .activity_prestige_effect {
     display: grid;
@@ -281,6 +283,10 @@ body {
     box-sizing: border-box; 
 }
 
+.achievements_row {
+    
+}
+
 .achievements_grouping {
     box-shadow: var(--box_shadow);
     border: 1px solid lightgrey;
@@ -300,6 +306,9 @@ body {
     padding: 5px;
     background-color: var(--act_bg);
     color: var(--text_primary);
+    margin: auto;
+    width: 100%;
+    box-sizing: border-box; 
 }
 
 .achievements_stats {
@@ -360,11 +369,11 @@ body {
 }
 
 /* --- BATTLE STATS --------------------------------------------------- */
-/* --- BATTLE STATS --------------------------------------------------- */
-/* --- BATTLE STATS --------------------------------------------------- */
-/* --- BATTLE STATS --------------------------------------------------- */
-/* --- BATTLE STATS --------------------------------------------------- */
-/* --- BATTLE STATS --------------------------------------------------- */
+/* --- BATTLE STATS ----####--######---####---######--####------------- */
+/* --- BATTLE STATS ---##-------##----##--##----##---##---------------- */
+/* --- BATTLE STATS ----####----##----######----##----####------------- */
+/* --- BATTLE STATS -------##---##----##--##----##-------##------------ */
+/* --- BATTLE STATS ----####----##----##--##----##----####------------- */
 /* --- BATTLE STATS --------------------------------------------------- */
 
 .progressstats_container {
@@ -381,13 +390,17 @@ body {
 }
 
 .progressstats_title {
+    width: 100%;
     box-shadow: var(--box_shadow);
     border: 1px solid lightgrey;
     font-weight: bold;
     font-size: 14px;
     background-color: var(--act_bg);
     color: var(--text_primary);
-    padding:5px;
+    padding: 19px;
+    margin: auto;
+    box-sizing: border-box;
+    text-align: center;
 }
 
 .progressstats_section {
@@ -399,7 +412,7 @@ body {
     color: var(--text_secondary);
     padding:5px;
     grid-template-columns: 
-        auto auto auto;
+        auto auto;
 }
 
 .progressstats_stat {
@@ -412,8 +425,12 @@ body {
     padding:0px;
     grid-template-columns: 
         auto auto;
+    text-align: right;
 }
 
+.p_stat_right {
+    text-align: right
+}
 
 /*  CHALLENGES -     -->
 /*  CHALLENGES ---##----##-######--#####--######-######- ####  #####   #####      -->

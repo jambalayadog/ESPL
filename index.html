@@ -39,7 +39,7 @@
     <button class="navitem navitem-selected" id="main-tab-button" onclick="setTab('main')">STARFIGHT</button>
     <button class="navitem" id="challenges-tab-button" onclick="setTab('challenges')" style="display: none;">MISSIONS</button> 
     <button class="navitem" id="update-tab-button" onclick="setTab('update')" style="display: none;">LEGACY</button>
-    <button class="navitem" id="achievements-tab-button" onclick="setTab('achievements')">RECORDS</button>
+    <button class="navitem" id="achievements-tab-button" onclick="setTab('achievements')">OBJECTIVES</button>
     <!--<button class="navitem" id="lore-tab-button" onclick="setTab('lore')">STORY GOALS</button> -->
     <button class="navitem" id="completion-milestones-tab-button" onclick="setTab('completion-milestones')" style="display: none;">MILESTONES</button>
   </div>
@@ -309,29 +309,32 @@
 
   <div id="achievements-div" style="display: none;">
     <div class="achievements_page">
-      <div class="achievements_title">
-        <div class="title_text">STATS</div>
-      </div>
-      <div class="achievements_grouping achievements_stats">
-        <div>
-          <span>You have <span id="total-normal-achievements"></span> normal achievement<span id="total-normal-achievements-plural"></span>: 
-          <ul>
-            <li><span id="normal-achievements-effect"></span>x multiplier to all production</li>
-            <li><span id="normal-achievements-patience-effect"></span>x patience meter gain</li>
-            <li><span id="normal-achievements-patience-kept-effect"></span>x patience meter kept on enlightenment.</li>
-          </ul>
+      <!--<div class="achievements_row">-->
+        <div class="achievements_title">
+          <div class="title_text">OBJECTIVE BENEFITS</div>
         </div>
-        <div>
-          <span>You have <span id="total-lategame-achievements"></span> end game achievement<span id="total-lategame-achievements-plural"></span></span>
-          <ul>
-            <li><span id="lategame-achievements-patience-effect"></span>x patience meter gain</li>
-            <li><span id="lategame-achievements-completions-effect"></span>x multiplier to total challenge completions</li>
-            <li><span id="lategame-achievements-patience-kept-effect"></span>x patience meter kept on enlightenment.</li>
-          </ul>
+        <div class="achievements_grouping achievements_stats">
+          <div>
+            <span><span id="total-normal-achievements"></span> Objective<span id="total-normal-achievements-plural"></span> complete: </span>
+            <ul>
+              <li><span id="normal-achievements-effect"></span>x multiplier to all production</li>
+              <li><span id="normal-achievements-patience-effect"></span>x Cool Meter gain</li>
+              <li><span id="normal-achievements-patience-kept-effect"></span>x Cool Meter kept on Leader Up.</li>
+            </ul>
+          </div>
+          <div>
+            <span><span id="total-lategame-achievements"></span> Master Objective<span id="total-lategame-achievements-plural"></span> complete:</span>
+            <ul>
+              <li><span id="lategame-achievements-patience-effect"></span>x Cool Meter gain</li>
+              <li><span id="lategame-achievements-completions-effect"></span>x multiplier to total Missions complete</li>
+              <li><span id="lategame-achievements-patience-kept-effect"></span>x Cool Meter kept on Leader Up.</li>
+            </ul>
+          </div> 
         </div> 
-      </div>   
+      <!--</div>  -->
       <div class="achievements_title">
-        <div class="title_text">EARLY</div>
+        <div class="title_text">EARLY GAME</div>
+        <div style="font-size:12px;">(Become a Starfighter)</div>
       </div>
       <div class="achievements_grouping">
         <span id="normal-ach-status-0">&#x2610;</span><span> Assign a skill. </span>
@@ -354,7 +357,8 @@
         <br/>
       </div>
       <div class="achievements_title">
-        <div class="title_text">MID</div>
+        <div class="title_text">MID GAME</div>
+        <div style="font-size:12px;">(Conquer the Galaxy)</div>
       </div>
       <div class="achievements_grouping">
         <span id="normal-ach-status-9">&#x2610;</span><span> Have at least one experience of each type (Resolve, Resources, Reputation). </span>
@@ -379,7 +383,8 @@
         <br/>
       </div>
       <div class="achievements_title">
-        <div class="title_text">LATE</div>
+        <div class="title_text">LATE GAME</div>
+        <div style="font-size:12px;">(Build Your Legacy)</div>
       </div>
       <div class="achievements_grouping">
         <span id="normal-ach-status-19">&#x2610;</span><span> Get 12 challenge completions. </span>
@@ -400,7 +405,8 @@
         <br/>
       </div>  
       <div class="achievements_title">
-        <div class="title_text">END</div>
+        <div class="title_text">END GAME</div>
+        <div style="font-size:12px;">(Become the Master)</div>
       </div>
       <div class="achievements_grouping">
         <span id="lategame-ach-status-0">&#x2610;</span><span> Get all the normal achievements. </span>
