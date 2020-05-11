@@ -103,7 +103,7 @@ body {
     display: grid;  /* 450px min, max 600px */
     grid-template-columns: 
         minmax(90px,160px) minmax(90px,160px) minmax(90px,160px) minmax(90px,160px) minmax(90px,160px);    /*achievements_stats earlygame midmame lategame end_stats endgame */
-    grid-column-gap: 5px;
+    /*grid-column-gap: 5px;*/
     padding:5px;
     background-color: var(--page_bg);
     box-sizing: border-box;
@@ -359,13 +359,13 @@ body {
     color: var(--act_color);
 }
 
-/* --- LOWER STATS --------------------------------------------------- */
-/* --- LOWER STATS --------------------------------------------------- */
-/* --- LOWER STATS --------------------------------------------------- */
-/* --- LOWER STATS --------------------------------------------------- */
-/* --- LOWER STATS --------------------------------------------------- */
-/* --- LOWER STATS --------------------------------------------------- */
-/* --- LOWER STATS --------------------------------------------------- */
+/* --- BATTLE STATS --------------------------------------------------- */
+/* --- BATTLE STATS --------------------------------------------------- */
+/* --- BATTLE STATS --------------------------------------------------- */
+/* --- BATTLE STATS --------------------------------------------------- */
+/* --- BATTLE STATS --------------------------------------------------- */
+/* --- BATTLE STATS --------------------------------------------------- */
+/* --- BATTLE STATS --------------------------------------------------- */
 
 .progressstats_container {
     width:100%;
