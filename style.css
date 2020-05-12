@@ -15,7 +15,7 @@
     --act_color: rgb(140, 173, 210);
     /* COMMON */
     --box_shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 2px 5px 0 rgba(0,0,0,0.12);
-    --debug_border: 0.0px solid grey;
+    --debug_border: 0.5px solid grey;
     --text_primary: lightgreen;
     --text_secondary: lightyellow;
     --text_progress: lightblue;
@@ -144,7 +144,7 @@ body {
 .battle, .skill, .prestige {
     display: grid;
     grid-template-rows:
-        auto 20px 25px 45px auto 45px 60px 45px 60px;
+        auto 20px 25px 45px auto 45px 60px 60px;
     grid-row-gap: 5px;
     box-shadow: var(--box_shadow);
     border: 1px solid lightgrey;
@@ -210,18 +210,21 @@ body {
 .activity_prestige_info {
     border: var(--debug_border);
     padding: 1px;
+    font-size: 10px;
+    color: black;
 }
 
 .fraction_input {
-    width: 50px;
+    width: 40px;
+    text-align: center;
 }
 
 .prestige_button {
     border: 1px solid; 
     background-color: rgb(255, 200, 200);
     /*padding: 0px;*/
-    height: 40px;
-    width: 120px;
+    height: 60px;
+    width: auto;
 }
 
 /*  AUTO OPTIONS PAGE -----------------------------------------          -->
