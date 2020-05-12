@@ -20,6 +20,7 @@
     --text_secondary: lightyellow;
     --text_progress: lightblue;
     --text_title: white;
+    --text_tertiary: lightgrey;
     --tip_bg: lightgrey;
     --tip_text: black;
     --tip_border: darkgrey;
@@ -42,6 +43,11 @@ body {
     overflow-x: hidden;
     overflow-y: scroll;
 
+}
+
+.page_container {
+    max-height: 600px;
+    overflow-y: scroll;
 }
 
 
@@ -454,7 +460,12 @@ body {
     color: var(--text_secondary);
     padding:5px;
     grid-template-columns: 
-        auto auto;
+        auto auto auto;
+}
+
+.battlestat_title {
+    font-size: 12px;
+    color: var(--text_tertiary)
 }
 
 .progressstats_stat {

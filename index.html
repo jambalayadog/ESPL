@@ -33,9 +33,12 @@
                                                                           
    NAV BAR -----------------------------------------          -->
 
+<div class="page_container">
+
+
 
 <!--  TRIALS, TEST, CHALLENGE, UNDERTAKING (TASK, OPERATION, MISSION, PROJECTS, ), QUESTS, ADVENTURES,  -->
-  <input class="debugspeedup" id="debug_speedup" type="text" onchange="updateDebugSpeed()"></input>
+  <!-- <input class="debugspeedup" id="debug_speedup" type="text" onchange="updateDebugSpeed()"></input> -->
   <div class="navbar">
     <button class="navitem" id="main-tab-button" onclick="setTab('main')">STARFIGHT</button>
     <button class="navitem" id="achievements-tab-button" onclick="setTab('achievements')">OBJECTIVES</button>
@@ -102,7 +105,6 @@
           </div>
           <div class="activity_effect">
             <div><span id="effect-span-3"></span> total Skill</div>
-            <div><span id="unassigned-devs"></span> unassigned</div>
           </div>
           <div class="activity_skill">
             <div>Skill: <span id="devs-3"></span></div>
@@ -191,7 +193,6 @@
           </div>
           <div class="activity_effect">
             <div><span id="effect-span-4"></span> to fill</div>
-            <div><span id="enlightened"></span> Leadership Rank<span id="enlightened-plural"></span></div>
           </div>
           <div class="activity_skill">
             <div>Skill: <span id="devs-4"></span></div>
@@ -793,35 +794,28 @@
     </div>
     <div class="progressstats_section">
       <div class="progressstats_stat">
-        <div>
-          Space War Confidence (per 30min)
-        </div>
-        <div>
-          <span id="progress-milestones"></span>
-        </div>
-        <div style="text-align:right;">
-          <span><span id="progress-milestones-effect"></span> x multiplier to all</span>
-        </div>
-        <div>
-        </div>
-        <div>Game Speed:  
-        </div>
-        <div><span id="game-speed"></span>
-        </div>
+        <div class="battlestat_title">Current Starfight:</div>
+        <div>34534</div>
+        <div class="battlestat_title">Unassigned Skill:</div>
+        <div><span id="unassigned-devs"></span></div>
+        <div class="battlestat_title">Leader Ranks:</div>
+        <div><span id="enlightened"></span></div>
       </div>
       <div class="progressstats_stat">
-        <div>Last Space War Won: 
-        </div>
-        <div><span id="time-since-last-update"></span>
-        </div>
-        <div>Last Legacy Points: 
-        </div>
-        <div><span id="last-update-point-gain"></span>
-        </div>
-        <div>Record Space Battle: 
-        </div>
-        <div><span id="record-development"></span>
-        </div>
+        <div class="battlestat_title">War Confidence (per 30min):</div>
+        <div><span id="progress-milestones"></span></div>
+        <div style="text-align:right;color:lightblue;font-size:10px;"><span><span id="progress-milestones-effect"></span> x multiplier to all</span></div>
+        <div></div>
+        <div class="battlestat_title">Game Speed:</div>
+        <div><span id="game-speed"></span></div>
+      </div>
+      <div class="progressstats_stat">
+        <div class="battlestat_title">Last Space War Won: </div>
+        <div><span id="time-since-last-update"></span></div>
+        <div class="battlestat_title">Last Legacy Points:</div>
+        <div><span id="last-update-point-gain"></span></div>
+        <div class="battlestat_title">Best Space Battle:</div>
+        <div><span id="record-development"></span></div>
       </div>
     </div>
   </div>
@@ -888,11 +882,11 @@
     <br/>
     
   </div>
-  <span><button onclick="saveGame()">Save</button> <button onclick="exportGame()">Export</button> <button onclick="loadGamePrompt()">Load</button> <button onclick="resetGameWithConfirmation()">RESET</button></span>
+  <!--<span><button onclick="saveGame()">Save</button> <button onclick="exportGame()">Export</button> <button onclick="loadGamePrompt()">Load</button> <button onclick="resetGameWithConfirmation()">RESET</button></span>
   <br/>
-  <span style="display: none;">Exported save (also copied to clipboard): <input id="export-output"></input></span>
+  <span style="display: none;">Exported save (also copied to clipboard): <input id="export-output"></input></span>-->
   
-
+</div>
 <!--  END ---------------------------------------------------------------------------------------------------- -->
 <!--  END ---------------------------------------------------------------------------------------------------- -->
 <!--  END ---------------------------------------------------------------------------------------------------- -->
