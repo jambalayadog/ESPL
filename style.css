@@ -15,7 +15,7 @@
     --act_color: rgb(140, 173, 210);
     /* COMMON */
     --box_shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 2px 5px 0 rgba(0,0,0,0.12);
-    --debug_border: 0.5px solid grey;
+    --debug_border: 0.0px solid grey;
     --text_primary: lightgreen;
     --text_secondary: lightyellow;
     --text_progress: lightblue;
@@ -115,8 +115,8 @@ body {
 .main_page {
     width:100%;
     max-width:800px;
-    height: 450px;
-    overflow-y: scroll;
+    height: 440px;
+    overflow-y: hidden;
     padding:5px;
     background-color: var(--page_bg);
     box-sizing: border-box;
@@ -131,7 +131,6 @@ body {
     grid-template-columns: 
         minmax(90px,160px) minmax(90px,160px) minmax(90px,160px) minmax(90px,160px) minmax(90px,160px);    /*achievements_stats earlygame midmame lategame end_stats endgame */
     /*grid-column-gap: 5px;*/
-    padding:5px;
     background-color: var(--page_bg);
     box-sizing: border-box;
     font-size: 12px;
@@ -144,7 +143,7 @@ body {
 .battle, .skill, .prestige {
     display: grid;
     grid-template-rows:
-        auto 20px 25px 45px auto 45px 60px 60px;
+        30px 20px 20px 40px 25px 30px 35px 60px;
     grid-row-gap: 5px;
     box-shadow: var(--box_shadow);
     border: 1px solid lightgrey;
@@ -186,6 +185,7 @@ body {
 .activity_fraction {
     border: var(--debug_border);
     padding: 1px;
+    color: var(--act_color);
 }
 .activity_prestige_name {
     font-weight: bold;
@@ -244,9 +244,8 @@ body {
     display: grid;  /* 450px min, max 600px */
     grid-template-columns:
         minmax(90px,160px) minmax(90px,160px) minmax(90px,160px) minmax(90px,160px) minmax(90px,160px);    /*stats legacy_upgrades*/
-    grid-column-gap: 5px;
+    
     justify-content: center;
-    padding:5px;
     background-color: var(--page_bg);
     box-sizing: border-box; 
 }
@@ -254,7 +253,7 @@ body {
 .autooption_column {
     display: grid;
     grid-template-rows:
-        20px 40px 40px 40px 40px;
+        15px 20px 25px 25px 15px;
     box-shadow: var(--box_shadow);
     border: 1px solid lightgrey;
     grid-row-gap: 5px;
@@ -278,15 +277,31 @@ body {
     align-items: center;
     width: 90%;
     justify-content: center;
-    min-height: 32px;
+    min-height: 25px;
+    font-size:10px;
 
+}
+
+.auto_prioritize {
+    display: inline;
+    width: 50%!important;
+    vertical-align: middle;
 }
 
 .auto_input {
-    width: 90%;
+    width: 50%;
     text-align: center;
+    vertical-align: middle;
+    
 }
 
+.auto_checkbox {
+    vertical-align: middle;
+}
+
+.debug_border {
+    border: var(--debug_border);
+}
 
 
 
@@ -347,7 +362,7 @@ body {
     width: 6%;
     box-sizing: border-box;
     /*transform: rotate(90deg);*/
-    writing-mode: vertical-lr;
+    writing-mode: vertical-rl;
 }
 
 .achievements_stats {
@@ -432,10 +447,9 @@ body {
     max-width:800px;
     display: grid;  /* 450px min, max 600px */
     grid-template-columns:
-        minmax(90px,160px) minmax(360px,640px);   
-    grid-column-gap: 5px;
+        minmax(90px,160px) minmax(360px,640px);
     justify-content: center;
-    padding:5px;
+    padding:0px 5px 0px 5px;
     background-color: var(--page_bg);
     box-sizing: border-box;
 }
@@ -448,7 +462,7 @@ body {
     font-size: 14px;
     background-color: var(--act_bg);
     color: var(--text_primary);
-    padding: 19px;
+    padding: 19px 0px 19px 0px;
     margin: auto;
     box-sizing: border-box;
     text-align: center;
@@ -461,7 +475,7 @@ body {
     font-size: 12px;
     background-color: var(--act_bg);
     color: var(--text_secondary);
-    padding:5px;
+    padding: 5px 5px 5px 5px;
     grid-template-columns: 
         auto auto auto;
 }
@@ -470,6 +484,13 @@ body {
     font-size: 12px;
     color: var(--text_tertiary)
 }
+
+.battlestat_stat {
+    text-align:right;
+    color:lightblue;
+    font-size:12px;
+}
+
 
 .progressstats_stat {
     display: grid;
@@ -556,7 +577,7 @@ body {
     max-width:800px;
     background-color: var(--page_bg);
     box-sizing: border-box;
-    padding: 5px;
+    padding: 0px 5px 0px 5px;
 }
 
 .lore {

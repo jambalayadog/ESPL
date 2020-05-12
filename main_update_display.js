@@ -9,6 +9,7 @@ var UIColors = {
 
 function updateDisplay () {
   updateTabButtonDisplay();
+  document.getElementById("current-fight-time").innerHTML = toTime(player.progress[0]);
   for (let i = 0; i <= 6; i++) {
     document.getElementById("progress-span-" + i).innerHTML = toTime(player.progress[i]);
   }
@@ -38,10 +39,10 @@ function updateDisplay () {
     }
   }
   if (player.progress[7] >= 1) {
-    document.getElementById('enlightened-desc').innerHTML = 'Reset Cool meter and make it slower, but slightly stronger.';
+    document.getElementById('enlightened-desc').innerHTML = 'Reset Leadership and make it slower, but stronger.';
     document.getElementById('enlightened-button').style.backgroundColor = UIColors.button_active;
   } else {
-    document.getElementById('enlightened-desc').innerHTML = 'Requires max Cool meter.';
+    document.getElementById('enlightened-desc').innerHTML = 'Requires full Leadership';
     document.getElementById('enlightened-button').style.backgroundColor = UIColors.button_inactive;
   }
   if (canUpdate()) {
@@ -82,7 +83,7 @@ function updateDisplay () {
   document.getElementById('total-challenge-completions-milestone-tab').innerHTML = format(getTotalChallengeCompletions());
   // Also one line of code, it can go here too.
   document.getElementById('upgradeless-reward-up-1-0').innerHTML = format(challengeReward('upgradeless'))
-  document.getElementById('progress-milestones').innerHTML = player.milestones;
+  //document.getElementById('progress-milestones').innerHTML = player.milestones;
   document.getElementById('progress-milestones-effect').innerHTML = getMilestoneEffect();
   document.getElementById('record-development').innerHTML = toTime(player.stats.recordDevelopment['']);
   document.getElementById('unassigned-devs').innerHTML = format(getUnassignedDevs());
@@ -104,6 +105,6 @@ function updateDisplay () {
   /* document.getElementById('progress-milestones-plural').innerHTML = (player.milestones === 1) ? '' : 's'; */
   /* document.getElementById('progress-milestones-to-be').innerHTML = (player.milestones === 1) ? 'is' : 'are'; */
   /* document.getElementById('unassigned-devs-plural').innerHTML = (getUnassignedDevs() === 1) ? '' : 's'; */
-  document.getElementById('enlightened-plural').innerHTML = (getTotalEnlightened() === 1) ? '' : 's';
+  //document.getElementById('enlightened-plural').innerHTML = (getTotalEnlightened() === 1) ? '' : 's';
   /* document.getElementById('last-update-point-gain-plural').innerHTML = player.stats.last.updatePointGain.eq(1) ? '' : 's'; */
 }
