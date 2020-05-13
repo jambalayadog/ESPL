@@ -27,7 +27,7 @@
     --tip_border: darkgrey;
     --background_common: rgba(0, 0, 0, .75);
     --background_title: rgba(255, 255, 255, 0.25);
-    --background_grad1: rgba(0,0,255, .25);
+    --background_grad1: rgba(100,100,255, .35);
     --background_grad2: rgba(0,255,0, .25);
     --background_grad3: rgba(255,255,0, .25);
     --background_grad4: rgba(255,0,0, .25);
@@ -352,11 +352,11 @@ body {
 }
 
 .achievements_grouping {
-    box-shadow: var(--box_shadow);
-    border: 1px solid lightgrey;
     font-size: 12px;
     padding: 5px;
     background-color: var(--background_common);
+    box-shadow: var(--box_shadow);
+    border: 1px solid lightgrey;
     color: var(--text_progress);
     width: 100%;
     
@@ -409,14 +409,25 @@ body {
 .legacy_page {
     display: grid;  /* 450px min, max 600px */
     grid-template-rows:
-        auto auto;    /*stats legacy_upgrades*/
-    grid-row-gap: 5px;
-    grid-column-gap: 5px;
+        auto auto auto;    /*stats legacy_upgrades*/
     justify-content: center;
     font-size: 12px;
     padding:5px;
     /*box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12); */
-    background-color: var(--page_bg);
+    /*background-color: var(--page_bg);*/
+    box-sizing: border-box; 
+}
+
+.legacystatus_row {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    width: 100%;
+    font-size: 12px;
+    padding: 5px;
+    background-color: var(--background_common);
+    box-shadow: var(--box_shadow);
+    border: 1px solid lightgrey;
+    color: var(--text_progress);
     box-sizing: border-box; 
 }
 
@@ -424,24 +435,37 @@ body {
     display: grid;
     grid-template-columns:
         minmax(160px, 266px) minmax(160px, 266px) minmax(160px, 266px);
-    grid-column-gap: 5px;
     font-size: 12px;
     background-color: var(--page_bg);
     color: var(--act_color);
 }
 
-.legacyupgrade_upgrade {
+.legacygroup_upgrades {
     display: grid;
     grid-template-rows:
-        30px 90px 120px 150px 30px;
+        30px 25px 35px 60px 60px 25px;   /* 450 - status - milestones?   */
+    grid-column-gap: 30px;
+    padding: 5px;
+    background-color: var(--background_common);
     box-shadow: var(--box_shadow);
     border: 1px solid lightgrey;
-    grid-column-gap: 30px;
     font-size: 12px;
-    padding: 5px;
-    background-color: var(--act_bg);
     color: var(--act_color);
 }
+
+.legacygroup_title {
+    font-weight: bold;
+    border: var(--debug_border);
+    padding: 1px;
+    color: var(--text_title);
+    font-size: 16px;
+}
+
+
+.legacygroup_subtext {
+    font-size: 10px;
+}
+
 
 /* --- BATTLE STATS ---------------------------------------------------
 

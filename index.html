@@ -403,96 +403,111 @@
 
   <div id="update-div" style="display: none;">
     <div class="legacy_page">
-      <div>
-        <span>You have <span id="update-points">0</span> update point<span id="update-points-plural"></span>, and have updated <span id="updates">0</span> time<span id="updates-plural"></span> (corresponding to <span id="power-gain-per-experience">0.01</span> power per experience per second)</span>
-        <br/>
-        <span>You are getting <span id="additional-devs-due-to-updates"></span> additional dev<span id="additional-devs-due-to-updates-plural"></span> based on your updates.<span id="additional-devs-due-to-updates-info"></span></span>
+      <div class="legacystatus_row">
+        <div>
+          <ul>
+            <li>Legacy Points: <span id="update-points">0</span></li>
+            <li>Starfights Won: <span id="updates">0</span></li>
+            <li>Power per experience per second <span id="power-gain-per-experience">0.01</span></li>
+          </ul>
+          <span>You are getting <span id="additional-devs-due-to-updates"></span> additional Skill<span id="additional-devs-due-to-updates-plural"></span> based on your Wins.<span id="additional-devs-due-to-updates-info"></span></span>
+        </div>
+        <div>
+        </div>
       </div>
       <div class="legacyupgrade_group">
         <div class="legacyupgrade_upgrade">
-          <div>Resolve
-          </div>
-          <div>
-            <div><span id="update-experience-span-2">0</span> Resolve experience
+          <div class="legacygroup_upgrades">
+            <div class="bg_systems">Resolve</div>
+            <div>
+              <!--<div><button onclick="assignOne(2)">Convert 1 Legacy into Resolve</button></div>
+              <div><button onclick="assignThird(2)">Convert 1/3 into Resolve</button></div>
+              <div><button onclick="assignAll(2)">Convert all Legacy into Resolve</button></div>-->
+              <span><button onclick="convertLegacy(2)">Convert</button><button onclick="ToggleAmount(2)">Toggle</button></span>
             </div>
-            <div><span id="update-power-span-2">0</span> Resolve power
+            
+            <div>
+              <div>Resolve: <span id="update-experience-span-2">0</span></div>
+              <!--<div>Resolve Power: <span id="update-power-span-2">0</span></div>-->
+              <div>Piloting Skill Multiplier: <span id="update-effect-span-2">1</span>x</div>
             </div>
-            <div><span id="update-effect-span-2">1</span>x dev gain from recruitment
+            <div>
+              <div><button id="up-0-2-button" onclick="buyUpdateUpgrade(0, 2)">Unlock: Auto-Skill Assignment<br/><span class="legacygroup_subtext">Start with 10 Skill</span><br/>Cost: <span id="up-0-2-cost"></span> Resolve<span id="up-0-2-bought"></span></button></div>
             </div>
-          </div>
-          <div>
-            <div><button onclick="assignOne(2)">Turn 1 of your update points into Resolve experience.</button>
+            <div>
+              <div><button id="up-1-2-button" onclick="buyUpdateUpgrade(1, 2)">Your Skills also generate Starfight<br/>Cost: <span id="up-1-2-cost"></span> Resolve<span id="up-1-2-bought"></span></button></div>
             </div>
-            <div><button onclick="assignThird(2)">Turn 1/3 your update points into Resolve experience.</button>
-            </div>
-            <div><button onclick="assignAll(2)">Turn all your update points into Reputation experience.</button>
-            </div>
-          </div>
-          <div>
-            <div><button id="up-0-2-button" onclick="buyUpdateUpgrade(0, 2)">Start with 10 devs, and unlock auto dev assignment.<br/>Cost: <span id="up-0-2-cost"></span> Resolve experience<span id="up-0-2-bought"></span></button>
-            </div>
-            <div><button id="up-1-2-button" onclick="buyUpdateUpgrade(1, 2)">All your devs act as working on development, in addition to whatever they're working on.<br/>Cost: <span id="up-1-2-cost"></span> Resolve experience<span id="up-1-2-bought"></span></button>
-            </div>
-          </div>
-          <div class="legacyfraction" id="auto-assign-update-points-row">Fraction of update points to assign: <input id="auto-assign-update-points-2" type="text" onchange="updateAutoAssignUpdatePoints(2)"></input>
+            <div class="legacyfraction" id="auto-assign-update-points-row">Auto Legacy Fraction: <input class="fraction_input" id="auto-assign-update-points-2" type="text" onchange="updateAutoAssignUpdatePoints(2)"></input></div>
           </div>
         </div>
         <div class="legacyupgrade_upgrade">
-          <div>Reputation
-          </div>
-          <div>
-            <div><span id="update-experience-span-1">0</span> Reputation experience
+          <div class="legacygroup_upgrades">
+            <div>Reputation</div>
+            <div>
+              <div><span id="update-experience-span-1">0</span> Reputation</div>
+              <div>Reputation Power: <span id="update-power-span-1">0</span></div>
+              <div>Cool Multiplier: <span id="update-effect-span-1">1</span>x</div>
             </div>
-            <div><span id="update-power-span-1">0</span> Reputation power
+            <div>
+              <div><button onclick="assignOne(1)">Convert 1 Legacy into Reputation</button></div>
+              <div><button onclick="assignThird(1)">Convert 1/3 into Reputation</button></div>
+              <div><button onclick="assignAll(1)">Convert all Legacy into Reputation</button></div>
             </div>
-            <div><span id="update-effect-span-1">1</span>x patience meter gain
+            <div>
+              <div><button id="up-0-1-button" onclick="buyUpdateUpgrade(0, 1)">Cool affects Leadership more<br/><span class="legacygroup_subtext">2.00x per 00:30:00 to 2.50x per 00:30:00<br/>00:01:00 softcap to 00:00:10 softcap</span><br/>Cost: <span id="up-0-1-cost"></span> Reputation<span id="up-0-1-bought"></span></button></div>
+              <div><button id="up-1-1-button" onclick="buyUpdateUpgrade(1, 1)">Leadership increases past 1<br/>Cost: <span id="up-1-1-cost"></span> Reputation<span id="up-1-1-bought"></span></button></div>
             </div>
-          </div>
-          <div>
-            <div><button onclick="assignOne(1)">Turn 1 of your update points into Reputation experience.</button>
-            </div>
-            <div><button onclick="assignThird(1)">Turn 1/3 your update points into Reputation experience.</button>
-            </div>
-            <div><button onclick="assignAll(1)">Turn all your update points into Reputation experience.</button>
-            </div>
-          </div>
-          <div>
-            <div><button id="up-0-1-button" onclick="buyUpdateUpgrade(0, 1)">Patience affects the patience meter more strongly.<br/>2.00x per 00:30:00 to 2.50x per 00:30:00<br/>00:01:00 softcap to 00:00:10 softcap<br/>Cost: <span id="up-0-1-cost"></span> Reputation experience<span id="up-0-1-bought"></span></button>
-            </div>
-            <div><button id="up-1-1-button" onclick="buyUpdateUpgrade(1, 1)">The patience meter increases with greatly reduced effect past 1.<br/>Cost: <span id="up-1-1-cost"></span> Reputation experience<span id="up-1-1-bought"></span></button>
-            </div>
-          </div>
-          <div class="legacyfraction" id="auto-assign-update-points-row">Fraction of update points to assign: <input id="auto-assign-update-points-1" type="text" onchange="updateAutoAssignUpdatePoints(1)"></input>
+            <div class="legacyfraction" id="auto-assign-update-points-row">Legacy Fraction: <input id="auto-assign-update-points-1" type="text" onchange="updateAutoAssignUpdatePoints(1)"></input></div>
           </div>
         </div>
         <div class="legacyupgrade_upgrade">
-          <div>Resource
-          </div>
-          <div>
-            <div><span id="update-experience-span-0">0</span> Resource experience
+          <div class="legacygroup_upgrades">
+            <div>Resource</div>
+            <div>
+              <div>Resource: <span id="update-experience-span-0">0</span></div>
+              <div>Resource Power: <span id="update-power-span-0">0</span></div>
+              <div>Multiplier To All: <span id="update-effect-span-0">1</span>x</div>
             </div>
-            <div><span id="update-power-span-0">0</span> Resource power
+            <div>
+              <div><button onclick="assignOne(0)">Convert 1 Legacy into Resource</button></div>
+              <div><button onclick="assignThird(0)">Convert 1/3 into Resource</button></div>
+              <div><button onclick="assignAll(0)">Convert all Legacy into Resource</button></div>
             </div>
-            <div><span id="update-effect-span-0">1</span>x multiplier to all production
+            <div>
+              <div><button id="up-0-0-button" onclick="buyUpdateUpgrade(0, 0)">Starfights get easier after 4:30:00<br/>Cost: <span id="up-0-0-cost"></span> Resource<span id="up-0-0-bought"></span></button></div>
+              <div><button id="up-1-0-button" onclick="buyUpdateUpgrade(1, 0)">Improve Legacy Point Gain<br/><span class="legacygroup_subtext">10x multiplier, 2.00x per 01:00:00 to <span id="upgradeless-reward-up-1-0"></span>x per 01:00:00</span><br/>Cost: <span id="up-1-0-cost"></span> Resource<span id="up-1-0-bought"></span></button></div>
             </div>
-          </div>
-          <div>
-            <div><button onclick="assignOne(0)">Turn 1 of your update points into Resource experience.</button>
-            </div>
-            <div><button onclick="assignThird(0)">Turn 1/3 your update points into Resource experience.</button>
-            </div>
-            <div><button onclick="assignAll(0)">Turn all your update points into Resource experience.</button>
-            </div>
-          </div>
-          <div>
-            <div><button id="up-0-0-button" onclick="buyUpdateUpgrade(0, 0)">Scaling becomes slower after 4:30:00.<br/>Cost: <span id="up-0-0-cost"></span> Resource experience<span id="up-0-0-bought"></span></button>
-            </div>
-            <div><button id="up-1-0-button" onclick="buyUpdateUpgrade(1, 0)">Improve the update point gain formula<br/>10x multiplier, 2.00x per 01:00:00 to <span id="upgradeless-reward-up-1-0"></span>x per 01:00:00<br/>Cost: <span id="up-1-0-cost"></span> Resource experience<span id="up-1-0-bought"></span></button>
-            </div>
-          </div>
-          <div class="legacyfraction" id="auto-assign-update-points-row">Fraction of update points to assign: <input id="auto-assign-update-points-0" type="text" onchange="updateAutoAssignUpdatePoints(0)"></input>
+            <div class="legacyfraction" id="auto-assign-update-points-row">Legacy Fraction: <input id="auto-assign-update-points-0" type="text" onchange="updateAutoAssignUpdatePoints(0)"></input></div>
           </div>
         </div>
+      </div>
+      <div class="achievements_row">  <!-- LEGACY MILESTONES -->
+        <div class="achievements_title" style="background-color: initial; background-color: var(--background_title);">
+          <div class="title_support">LEGACY</div>
+          <div class="title_support">UPGRADES</div>
+        </div>
+        <div class="achievements_grouping">
+          <span id="lategame-ach-status-0">&#x2610;</span><span> Get all the normal achievements. </span>
+          <br/>
+          <span id="lategame-ach-status-1">&#x2610;</span><span> Have the last 10 Space Wars give at least 1.80e308x more Legacy Points than the previous, with none giving 0 LP. </span>
+          <br/>
+          <span id="lategame-ach-status-2">&#x2610;</span><span> Gain at least 4383:00:00 in one Retrofit. </span>
+          <br/>
+          <span id="lategame-ach-status-3">&#x2610;</span><span> Get the Leadership meter effect to be at least a 10x boost. </span>
+          <br/>
+          <span id="lategame-ach-status-4">&#x2610;</span><span> Get 42 challenge completions. </span>
+          <br/>
+          <span id="lategame-ach-status-5">&#x2610;</span><span> Get a trillion dilation. </span>
+          <br/>
+          <span id="lategame-ach-status-6">&#x2610;</span><span> Leader Up x 80. </span>
+          <br/>
+          <span id="lategame-ach-status-7">&#x2610;</span><span> Get ten trillion Skill. </span>
+          <br/>
+          <span id="lategame-ach-status-8">&#x2610;</span><span> Get 17532:00:00 record Space Battle. </span>
+          <br/> 
+        </div>
+
+
       </div>
     </div>
   </div>
