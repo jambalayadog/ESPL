@@ -2,7 +2,7 @@
     /* NAV BAR */
     --nav_def_bg: black;
     --nav_def_font: tan;
-    --nav_def_border: tan;
+    --nav_def_border: rgba(210, 180, 140, 0.5);
     --nav_sel_bg: tan;
     --nav_sel_font: white;
     --nav_sel_border: yellow;
@@ -10,7 +10,8 @@
     --nav_hov_font: white;
     --nav_hov_border: yellow;
     /* PAGE COLORS */
-    --page_bg: tan;
+    --page_bg: rgba(80, 80, 80, 0.66);
+    /*--page_bg: tan;*/
     --act_bg: black;
     --act_color: rgb(140, 173, 210);
     /* COMMON */
@@ -24,7 +25,12 @@
     --tip_bg: lightgrey;
     --tip_text: black;
     --tip_border: darkgrey;
-
+    --background_common: rgba(0, 0, 0, .75);
+    --background_title: rgba(255, 255, 255, 0.25);
+    --background_grad1: rgba(0,0,255, .25);
+    --background_grad2: rgba(0,255,0, .25);
+    --background_grad3: rgba(255,255,0, .25);
+    --background_grad4: rgba(255,0,0, .25);
 }
 
 html {
@@ -36,6 +42,7 @@ body {
     width: 100%;
     height: 100%;
     font-family: Arial, Helvetica, sans-serif;
+    /*font-family: monospace;*/
     min-width: 480px;
     max-width: 800px;
     margin: auto;
@@ -48,6 +55,12 @@ body {
 .page_container {
     max-height: 600px;
     overflow-y: scroll;
+    /*background-image: url("https://upload.wikimedia.org/wikipedia/en/1/16/Bloodbath_of_B-R5RB.jpg");*/
+    /*background-image: url("https://image.shutterstock.com/image-illustration/alien-mothership-deep-space-futuristic-600w-200577308.jpg");*/
+    background-image: url("https://now.northropgrumman.com/wp-content/uploads/2018/04/now-stars.jpg");
+    background-blend-mode: screen;
+    background-repeat: no-repeat;
+    background-size: 800px 600px;
 }
 
 
@@ -118,7 +131,6 @@ body {
     height: 440px;
     overflow-y: hidden;
     padding:5px;
-    background-color: var(--page_bg);
     box-sizing: border-box;
     font-size: 12px;
 }
@@ -130,11 +142,16 @@ body {
     display: grid;  /* 450px min, max 600px */
     grid-template-columns: 
         minmax(90px,160px) minmax(90px,160px) minmax(90px,160px) minmax(90px,160px) minmax(90px,160px);    /*achievements_stats earlygame midmame lategame end_stats endgame */
-    /*grid-column-gap: 5px;*/
-    background-color: var(--page_bg);
     box-sizing: border-box;
     font-size: 12px;
 }
+
+.bg_starfight {background-color: var(--background_grad4)}
+.bg_piloting {background-color: var(--background_grad3);}
+.bg_systems {background-color: var(--background_grad2);}
+.bg_weapons {background-color: var(--background_grad2);}
+.bg_cool {background-color: var(--background_grad1);}
+
 
 .battle {grid-column: 'battle';}
 .skill {grid-column: 'skill';}
@@ -147,11 +164,9 @@ body {
     grid-row-gap: 5px;
     box-shadow: var(--box_shadow);
     border: 1px solid lightgrey;
-    background-color: var(--act_bg);
+    background-color: var(--background_common);
     color: var(--text_primary);
-    justify-content: center;
     text-align: center;
-    vertical-align: middle;
     font-size: 12px;
 }
 
@@ -160,8 +175,8 @@ body {
     border: var(--debug_border);
     padding: 1px;
     color: var(--text_title);
-    font-size: 16px;  
-    margin: auto;
+    font-size: 16px;
+    
 }
 
 .activity_progress {
@@ -193,7 +208,6 @@ body {
     padding: 1px;
     color: var(--text_title);
     font-size: 16px;
-    margin: auto; 
 }
 .activity_prestige_effect {
     display: grid;
@@ -244,9 +258,8 @@ body {
     display: grid;  /* 450px min, max 600px */
     grid-template-columns:
         minmax(90px,160px) minmax(90px,160px) minmax(90px,160px) minmax(90px,160px) minmax(90px,160px);    /*stats legacy_upgrades*/
-    
+    background-color: var(--background_common);
     justify-content: center;
-    background-color: var(--page_bg);
     box-sizing: border-box; 
 }
 
@@ -257,7 +270,6 @@ body {
     box-shadow: var(--box_shadow);
     border: 1px solid lightgrey;
     grid-row-gap: 5px;
-    background-color: var(--act_bg);
     color: var(--act_color);
     padding: 2px;
     box-sizing: border-box;
@@ -328,7 +340,6 @@ body {
     font-size: 12px;
     padding:5px;
     /*box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12); */
-    background-color: var(--page_bg);
     box-sizing: border-box; 
 }
 
@@ -345,7 +356,7 @@ body {
     border: 1px solid lightgrey;
     font-size: 12px;
     padding: 5px;
-    background-color: var(--act_bg);
+    background-color: var(--background_common);
     color: var(--text_progress);
     width: 100%;
     
@@ -450,7 +461,6 @@ body {
         minmax(90px,160px) minmax(360px,640px);
     justify-content: center;
     padding:0px 5px 0px 5px;
-    background-color: var(--page_bg);
     box-sizing: border-box;
 }
 
@@ -575,7 +585,6 @@ body {
 .lore_container {
     width:100%;
     max-width:800px;
-    background-color: var(--page_bg);
     box-sizing: border-box;
     padding: 0px 5px 0px 5px;
 }
@@ -588,6 +597,9 @@ body {
     flex-direction: column-reverse;
     line-height: normal;  
     scroll-snap-type: y mandatory;
+    background-color: var(--act_bg);
+    box-shadow: var(--box_shadow);
+    border: 1px solid lightgrey;
 }
 
 

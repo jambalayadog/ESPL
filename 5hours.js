@@ -213,7 +213,7 @@ function canPrestige(i) {
 }
 
 function confirmPrestige(i) {
-  let whatWillReset = 'development, efficiency, refactoring, recruitment, patience, patience meter, and times enlightened';
+  let whatWillReset = 'Starfight, Piloting, Systems, Weapons, Cool, and Leader Ranks';
   if (canPrestigeWithoutGain(i) &&
   player.options.confirmations.prestigeWithoutGain) {
     return confirm('Are you sure you want to prestige? You will gain nothing, and your ' + whatWillReset + ' will reset.');

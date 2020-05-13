@@ -37,7 +37,7 @@ function updateAutoValue(x) {
 
 function toggleAutoPrestigeInitial() {
   player.auto.prestige.initial = 5 + player.auto.prestige.initial % 2;
-  document.getElementById('auto-prestige-initial').innerHTML = 'meta-' + ['efficiency', 'refactoring'][player.auto.prestige.initial - 5];
+  document.getElementById('auto-prestige-initial').innerHTML = ['Weapons', 'Systems'][player.auto.prestige.initial - 5];
 }
 
 function toggleAutoPrestigeAlternate() {
@@ -63,7 +63,7 @@ function updateAutoDisplay() {
   }
   for (let i = 0; i <= 2; i++) {
     if (hasAuto(AUTO_LIST[i])) {
-      document.getElementById('auto-' + AUTO_LIST[i] + '-span').style.visibility = '';
+      /*document.getElementById('auto-' + AUTO_LIST[i] + '-span').style.visibility = '';*/
       if (AUTO_LIST[i] = 'enlightened') {
         var ele = document.getElementsByClassName("auto_leaderup");
         for (var j = 0; j < ele.length; j++) {
@@ -83,7 +83,7 @@ function updateAutoDisplay() {
         }
       }
     } else {
-      document.getElementById('auto-' + AUTO_LIST[i] + '-span').style.visibility = 'hidden';
+      /*document.getElementById('auto-' + AUTO_LIST[i] + '-span').style.visibility = 'hidden';*/
       if (AUTO_LIST[i] = 'enlightened') {
         var ele = document.getElementsByClassName("auto_leaderup");
         for (var j = 0; j < ele.length; j++) {
