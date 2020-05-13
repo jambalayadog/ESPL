@@ -123,7 +123,7 @@ function nextChallengeUnlock() {
 
 function getChallengeForDisplay(challenge) {
   if (challenge === '') {
-    return 'no challenge';
+    return 'no mission';
   } else if (challenge === 'ufd') {
     return 'UFD';
   } else {
@@ -163,8 +163,8 @@ function exitChallenge() {
 
 function confirmEnterChallenge (x) {
   if (player.options.confirmations.enterChallenge) {
-    return confirm('Are you sure you want to enter the \'' + getChallengeForDisplay(x) + '\' challenge? ' +
-    'The described special conditions will apply, and everything update resets will reset.');
+    return confirm('Are you sure you undertake the \'' + getChallengeForDisplay(x) + '\' mission? ' +
+    'The described special conditions will apply, and every Starfight Win resets everything.');
   } else {
     return true;
   }
@@ -172,8 +172,8 @@ function confirmEnterChallenge (x) {
 
 function confirmExitChallenge() {
   if (player.options.confirmations.exitChallenge) {
-    return confirm('Are you sure you want to exit the \'' + getChallengeForDisplay(player.currentChallenge) + '\' challenge? ' +
-    'You will not get further in it than you are now until you enter it again, and everything update resets will reset.');
+    return confirm('Are you sure you want to abandon the \'' + getChallengeForDisplay(player.currentChallenge) + '\' mission? ' +
+    'You will not get further in it than you are now until you enter it again, and every Starfight Win resets will reset.');
   } else {
     return true;
   }

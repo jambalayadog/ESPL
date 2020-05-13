@@ -438,6 +438,7 @@ body {
     font-size: 12px;
     background-color: var(--page_bg);
     color: var(--act_color);
+    text-align: center;
 }
 
 .legacygroup_upgrades {
@@ -451,6 +452,7 @@ body {
     border: 1px solid lightgrey;
     font-size: 12px;
     color: var(--act_color);
+    color: rgb(0, 183, 255)
 }
 
 .legacygroup_title {
@@ -461,9 +463,15 @@ body {
     font-size: 16px;
 }
 
-
 .legacygroup_subtext {
     font-size: 10px;
+}
+
+.legacyupgrade_button {
+    border: 1px solid; 
+    /*padding: 0px;*/
+    height: 60px;
+    width: auto;
 }
 
 

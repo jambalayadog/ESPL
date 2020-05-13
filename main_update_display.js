@@ -1,10 +1,10 @@
-var UIColors = {
+var MainUIColors = {
   button_inactive: '#666666',
   button_active: '#88DD88',
   button_useless: '#CCCC44',
   button_inactive_text: '#444444',
-  button_active_text: '#444444'
-
+  button_active_text: '#444444',
+  button_bought: '#00C0F0'
 }
 
 function updateDisplay () {
@@ -66,13 +66,13 @@ function updateDisplay () {
       document.getElementById('up-' + j + '-' + i + '-bought').innerHTML = updateUpgradeBought(j, i) ? ' (bought)' : '';
       let btn = document.getElementById('up-' + j + '-' + i + '-button');
       if (updateUpgradeActive(j, i)) {
-        btn.style.backgroundColor = UIColors.button_useless;
+        btn.style.backgroundColor = MainUIColors.button_bought;
       } else if (updateUpgradeBought(j, i)) {
-        btn.style.backgroundColor = '#F020F0';
+        btn.style.backgroundColor = MainUIColors.button_useless;
       } else if (canBuyUpdateUpgrade(j, i)) {
-        btn.style.backgroundColor = UIColors.button_active;
+        btn.style.backgroundColor = MainUIColors.button_active;
       } else {
-        btn.style.backgroundColor = UIColors.button_inactive;
+        btn.style.backgroundColor = MainUIColors.button_inactive;
       }
     }
   }

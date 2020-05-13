@@ -2,7 +2,7 @@ var UIColors = {
   button_inactive: '#666666',
   button_active: '#88DD88',
   button_useless: '#CCCC44',
-  button_mission: '#CC44CC',
+  button_mission: '#00C0F0',
   button_inactive_text: '#444444',
   button_active_text: '#444444'
 }
@@ -332,7 +332,7 @@ function updateChallengeDisplay() {
   }
   if (player.dilation > 0) {
     document.getElementById('dilation').style.display = '';
-    document.getElementById('dilation-text').innerHTML = 'You have ' + format(player.dilation, 4) + ' dilation, ' + format(getDilationPerSecond(), 4) + ' dilation per second, raising the exponents of efficiency and meta-efficiency ^' + format(getDilationEffect(), 4) + '.';
+    document.getElementById('dilation-text').innerHTML = 'You have ' + format(player.dilation, 4) + ' Prominence, ' + format(getDilationPerSecond(), 4) + ' Prominence per second, raising Systems and Weapons Power ^' + format(getDilationEffect(), 4) + '.';
   } else {
     document.getElementById('dilation').style.display = 'none';
   }
@@ -354,12 +354,12 @@ function confirmToggleHardMode() {
   if (player.options.hardMode) {
     return confirm(
       'Turning hard mode off will make various things easier again. ' +
-      'This includes upgrade costs, challenge requirements, and some challenge goals being lowered. ' +
+      'This includes upgrade costs, mission requirements, and some mission goals being lowered. ' +
       'Are you sure you want to do this?');
   } else {
     return confirm(
       'Turning hard mode on will make various things harder. ' +
-      'This includes upgrade costs, challenge requirements, and some challenge goals being increased. ' +
+      'This includes upgrade costs, mission requirements, and some mission goals being increased. ' +
       'Also note that the intended default mode is non-hard-mode. Are you sure you want to do this?');
   }
 }
