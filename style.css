@@ -100,6 +100,7 @@ body {
     outline:0;
     color: var(--nav_def_font);
     background-color: var(--nav_def_bg);
+    font-weight: bold;
 }
 
 .navitem-selected {
@@ -161,7 +162,7 @@ body {
 .battle, .skill, .prestige {
     display: grid;
     grid-template-rows:
-        30px 20px 20px 40px 25px 30px 35px 60px;
+        30px 20px 20px 40px 25px 30px 20px 15px 60px;
     grid-row-gap: 5px;
     box-shadow: var(--box_shadow);
     border: 1px solid lightgrey;
@@ -174,7 +175,7 @@ body {
 .activity_title { 
     font-weight: bold;
     border: var(--debug_border);
-    padding: 1px;
+    padding: 6px;
     color: var(--text_title);
     font-size: 16px;
     
@@ -197,23 +198,23 @@ body {
 .activity_skill {
     border: var(--debug_border);
     padding: 1px;
+    font-weight: bold;
 }
 .activity_fraction {
     border: var(--debug_border);
     padding: 1px;
     color: var(--act_color);
+    font-size: 10px;
+    font-weight: bold;
 }
 .activity_prestige_name {
     font-weight: bold;
     border: var(--debug_border);
-    padding: 1px;
+    padding: 6px;
     color: var(--text_title);
     font-size: 16px;
 }
 .activity_prestige_effect {
-    display: grid;
-    grid-template-rows:
-        auto auto;
     border: var(--debug_border);
     padding: 1px;
     color: var(--text_secondary);
@@ -240,6 +241,11 @@ body {
     /*padding: 0px;*/
     height: 60px;
     width: auto;
+}
+
+.button_title {
+    font-weight: bold;
+    font-size: 12px;
 }
 
 /*  AUTO OPTIONS PAGE -----------------------------------------          -->

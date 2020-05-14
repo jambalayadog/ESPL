@@ -74,16 +74,17 @@
           <div class="activity_effect">
           </div>
           <div class="activity_skill">
-            <div>Skill: <span id="devs-0"></span></div>
+            <div>SKILL: <span style="color:black"> ... </span><span id="devs-0"></span></div>
             <div><button onclick="addDev(0)">+</button><button onclick="subtractDev(0)">-</button><button onclick="maxDev(0)">M</button><button onclick="zeroDev(0)">0</button></div>
           </div>
           <div class="activity_fraction">
-            <div>Skill Fraction: <input class="fraction_input" id="auto-dev-0" type="text" onchange="updateAutoDev(0)"></input></div>
+            <div>AUTO FRACTION: <input class="fraction_input" id="auto-dev-0" type="text" onchange="updateAutoDev(0)"></input></div>
           </div>
           <div class="activity_prestige_name"></div>
+          <div class="activity_progress"> </div>
           <div class="activity_prestige_effect"></div>
           <div class="activity_prestige_control">
-            <div><button class="prestige_button" id="update-button" onclick="update()">Win Starfight<br/><span class="activity_prestige_info" id="update-gain"></span></button></div>
+            <div><button class="prestige_button" id="update-button" onclick="update()"><span class="button_title">WIN STARFIGHT</span><br/><span class="activity_prestige_info" id="update-gain"></span></button></div>
           </div>
         </div>
         <!---- PILOTING ---->
@@ -93,16 +94,17 @@
             <div><span id="progress-span-3">0:00:00</span></div>
           </div>
           <div class="activity_effect">
-            <div><span id="effect-span-3"></span> total Skill</div>
+            <div><span id="effect-span-3"></span> TOTAL SKILL</div>
           </div>
           <div class="activity_skill">
-            <div>Skill: <span id="devs-3"></span></div>
+            <div>SKILL: <span style="color:black"> ... </span><span id="devs-3"></span></div>
             <div><button onclick="addDev(3)">+</button><button onclick="subtractDev(3)">-</button><button onclick="maxDev(3)">M</button><button onclick="zeroDev(3)">0</button></div>
           </div>
           <div class="activity_fraction">
-            <div>Skill Fraction: <input class="fraction_input" id="auto-dev-3" type="text" onchange="updateAutoDev(3)"></input></div>
+            <div>AUTO FRACTION: <input class="fraction_input" id="auto-dev-3" type="text" onchange="updateAutoDev(3)"></input></div>
           </div>
           <div class="activity_prestige_name"> </div>
+          <div class="activity_progress"> </div>
           <div class="activity_prestige_effect"></div>
           <div class="activity_prestige_control"></div>
           <div class="activity_prestige_info"></div>
@@ -114,22 +116,20 @@
             <div><span id="progress-span-2">0:00:00</span></div>
           </div>
           <div class="activity_effect">
-            <div><span id="effect-span-2"></span> Power</div>
+            <div><span id="effect-span-2"></span> POWER</div>
           </div>
           <div class="activity_skill">
-            <div>Skill: <span id="devs-2"></span></div>
+            <div>SKILL: <span style="color:black"> ... </span><span id="devs-2"></span></div>
             <div><button onclick="addDev(2)">+</button><button onclick="subtractDev(2)">-</button><button onclick="maxDev(2)">M</button><button onclick="zeroDev(2)">0</button></div>
           </div>
           <div class="activity_fraction">
-            <div>Skill Fraction: <input class="fraction_input" id="auto-dev-2" type="text" onchange="updateAutoDev(2)"></input></div>
+            <div>AUTO FRACTION: <input class="fraction_input" id="auto-dev-2" type="text" onchange="updateAutoDev(2)"></input></div>
           </div>
           <div class="activity_prestige_name bg_systems">FLEET SYSTEMS</div>
-          <div class="activity_prestige_effect">
-            <div><span id="progress-span-6">0:00:00</span></div>
-            <div><span id="effect-span-6"></span> Fleet Power</div>
-          </div>
+          <div class="activity_progress"><span id="progress-span-6">0:00:00</span></div>
+          <div class="activity_prestige_effect"><span id="effect-span-6"></span> FLEET POWER</div>
           <div class="activity_prestige_control">
-            <div><button class="prestige_button" id="prestige-6-button" onclick="prestige(6)">Retrofit Systems<br/><span class="activity_prestige_info" id="prestige-6"></span></button></div>
+            <div><button class="prestige_button" id="prestige-6-button" onclick="prestige(6)"><span class="button_title">RETROFIT SYSTEMS</span><br/><span class="activity_prestige_info" id="prestige-6"></span></button></div>
           </div>
         </div>
         <!---- WEAPONS ---->
@@ -139,23 +139,21 @@
             <div><span id="progress-span-1">0:00:00</span></div>
           </div>
           <div class="activity_effect">
-            <div><span id="effect-span-1"></span> to All</div>
+            <div><span id="effect-span-1"></span> TO ALL</div>
           </div>
           <div class="activity_skill">
-            <div>Skill: <span id="devs-1"></span></div>
+            <div>SKILL: <span style="color:black"> ... </span><span id="devs-1"></span></div>
             <!--<div><button onclick="addDev(1)">+</button><button onclick="subtractDev(1)">-</button><button onclick="maxDev(1)">M</button><button onclick="zeroDev(1)">0</button></div>-->
             <div><button onclick="addDev(1)">+</button><button onclick="subtractDev(1)">-</button><button onclick="maxDev(1)">M</button><button onclick="zeroDev(1)">0</button></div>
           </div>
           <div class="activity_fraction">
-            <div>Skill Fraction: <input class="fraction_input" id="auto-dev-1" type="text" onchange="updateAutoDev(1)"></input></div>
+            <div>AUTO FRACTION: <input class="fraction_input" id="auto-dev-1" type="text" onchange="updateAutoDev(1)"></input></div>
           </div>
           <div class="activity_prestige_name bg_weapons">FLEET WEAPONS</div>
-          <div class="activity_prestige_effect">
-            <div><span id="progress-span-5">0:00:00</span></div>
-            <div><span id="effect-span-5"></span> to All</div>
-          </div>
+          <div class="activity_progress"><span id="progress-span-5">0:00:00</span></div>
+          <div class="activity_prestige_effect"><span id="effect-span-5"></span> TO ALL</div>
           <div class="activity_prestige_control">
-            <div><button class="prestige_button" id="prestige-5-button" onclick="prestige(5)">Retrofit Weapons<br/><span class="activity_prestige_info" id="prestige-5"></span></button></div>
+            <div><button class="prestige_button" id="prestige-5-button" onclick="prestige(5)"><span class="button_title">RETROFIT WEAPONS</span><br/><span class="activity_prestige_info" id="prestige-5"></span></button></div>
           </div>
         </div>
         <!---- COOL ---->
@@ -165,22 +163,20 @@
             <div><span id="progress-span-4">0:00:00</span></div>
           </div>
           <div class="activity_effect">
-            <div>Fill: <span id="effect-span-4"></span></div>
+            <div>Fill: <span style="color:black"> ... </span><span id="effect-span-4"></span></div>
           </div>
           <div class="activity_skill">
-            <div>Skill: <span id="devs-4"></span></div>
+            <div>SKILL: <span style="color:black"> ... </span><span id="devs-4"></span></div>
             <div><button onclick="addDev(4)">+</button><button onclick="subtractDev(4)">-</button><button onclick="maxDev(4)">M</button><button onclick="zeroDev(4)">0</button></div>
           </div>
           <div class="activity_fraction">
-            <div>Skill Fraction: <input class="fraction_input" id="auto-dev-4" type="text" onchange="updateAutoDev(4)"></input></div>
+            <div>AUTO FRACTION: <input class="fraction_input" id="auto-dev-4" type="text" onchange="updateAutoDev(4)"></input></div>
           </div>
           <div class="activity_prestige_name bg_cool">LEADERSHIP</div>
-          <div class="activity_prestige_effect">
-            <div><span id="progress-span-7">0.0000</span></div>
-            <div><span id="effect-span-7"></span> Boost</div>
-          </div>
+          <div class="activity_progress"><span id="progress-span-7">0.0000</span></div>
+          <div class="activity_prestige_effect"><span id="effect-span-7"></span> BOOST</div>
           <div class="activity_prestige_control">
-            <div><button class="prestige_button" id="enlightened-button" onclick="enlightened()">Leader Up<br/><span class="activity_prestige_info" id="enlightened-desc"></span></button></div>
+            <div><button class="prestige_button" id="enlightened-button" onclick="enlightened()"><span class="button_title">LEADER UP</span><br/><span class="activity_prestige_info" id="enlightened-desc"></span></button></div>
           </div>
         </div>
       </div>
@@ -201,18 +197,18 @@
         
         <!--   AUTO BATTLE -->
         <div class="autooption_column" id="auto-update-span" >   <!--   AUTO BATTLE -->
-          <div class="auto_option"><span class="auto_spacewar" style="display:none"><input class="auto_checkbox" id="auto-update-on" onclick="toggleAutoOn('update')" type="checkbox"></input>Auto-Win</span></div>
+          <div class="auto_option"><span class="auto_spacewar" style="display:none"><input class="auto_checkbox" id="auto-update-on" onclick="toggleAutoOn('update')" type="checkbox"></input>AUTO-STARFIGHT</span></div>
           <div><span class="auto_spacewar" style="display:none">Value: <input class="auto_input" id="auto-update-value" type="text" onchange="updateAutoValue('update')"></input></span></div>
           <div><span class="auto_spacewar" style="display:none"><button class="auto_button" id="auto-update-setting" onclick="nextAutoSetting('update')"></button></span></div>  
         </div> 
         <!--   AUTO SKILL -->
         <div class="autooption_column" id="auto-dev-span">  <!--   AUTO SKILL -->
-          <div class="auto_option"><span><input class="auto_checkbox" id="auto-dev-on" onclick="toggleAutoOn('dev')" type="checkbox"></input>Auto-Skills <span id="auto-dev-lonely-info"></span></span></div>
+          <div class="auto_option"><span><input class="auto_checkbox" id="auto-dev-on" onclick="toggleAutoOn('dev')" type="checkbox"></input>AUTO-SKILLS <span id="auto-dev-lonely-info"></span></span></div>
         </div>
         <!--   LEGACY OPTIONS -->
         <div class="autooption_column">  <!--   LEGACY OPTIONS -->
           <div class="auto_option"><span id="auto-assign-update-points-span" style="display: none;">
-            <input class="auto_checkbox" id="auto-assign-update-points-on" onclick="toggleAutoOn('assignUpdatePoints')" type="checkbox"></input>Auto-Legacy Points </span>
+            <input class="auto_checkbox" id="auto-assign-update-points-on" onclick="toggleAutoOn('assignUpdatePoints')" type="checkbox"></input>AUTO-SPEND LEGACY </span>
           </div>
           <div class="auto_retrofit" style="display:none"><span>Enter time as Seconds or HH:MM:SS</span></div>
           <div class="auto_retrofit" style="display:none"><span>Toggle Method</span></div>    
@@ -220,7 +216,7 @@
         </div>
         <!--   AUTO RETROFIT   -->
         <div class="autooption_column" id="auto-prestige-span">  <!--   AUTO RETROFIT   -->
-          <div class="auto_option"><span class="auto_retrofit" style="display:none"><input class="auto_checkbox" id="auto-prestige-on" onclick="toggleAutoOn('prestige')" type="checkbox"></input>Auto-Retrofit</span></div>
+          <div class="auto_option"><span class="auto_retrofit" style="display:none"><input class="auto_checkbox" id="auto-prestige-on" onclick="toggleAutoOn('prestige')" type="checkbox"></input>AUTO-RETROFIT</span></div>
           <div><span class="auto_retrofit" style="display:none">Value: <input class="auto_input" id="auto-prestige-value" type="text" onchange="updateAutoValue('prestige')"></input></span></div>
           <div><span class="auto_retrofit" style="display:none"><button class="auto_button" id="auto-prestige-setting" onclick="nextAutoSetting('prestige')"></button></span></div>
           <div><span class="auto_retrofit" style="display:none">Prioritize: <button class="auto_prioritize auto_button" id="auto-prestige-initial" onclick="toggleAutoPrestigeInitial()"></button></span></div>
@@ -228,7 +224,7 @@
         </div>
         <!--   AUTO LEADER UP   -->
         <div class="autooption_column" id="auto-enlightened-span"> <!--   AUTO LEADER UP   -->
-          <div class="auto_option"><span class="auto_leaderup" style="display:none"><input class="auto_checkbox" id="auto-enlightened-on" onclick="toggleAutoOn('enlightened')" type="checkbox"></input>Auto-Leader Up</span></div>
+          <div class="auto_option"><span class="auto_leaderup" style="display:none"><input class="auto_checkbox" id="auto-enlightened-on" onclick="toggleAutoOn('enlightened')" type="checkbox"></input>AUTO LEADER UP</span></div>
           <div><span class="auto_leaderup" style="display:none">Value: <input class="auto_input" id="auto-enlightened-value" type="text" onchange="updateAutoValue('enlightened')"></input></span></div>
           <div><span class="auto_leaderup" style="display:none"><button class="auto_button" id="auto-enlightened-setting" onclick="nextAutoSetting('enlightened')"></button></span></div>
         </div>
@@ -708,11 +704,11 @@
     </div>
     <div class="progressstats_section">
       <div class="progressstats_stat">
-        <div class="battlestat_title">Current Starfight:</div>
+        <div class="battlestat_title">CURRENT:</div>
         <div><span class="battlestat_stat" id="current-fight-time"></span></div>
-        <div class="battlestat_title">Unassigned Skill:</div>
+        <div class="battlestat_title">UNUSED SKILL:</div>
         <div><span class="battlestat_stat" id="unassigned-devs"></span></div>
-        <div class="battlestat_title">Leader Ranks:</div>
+        <div class="battlestat_title">LEADER RANKS:</div>
         <div><span class="battlestat_stat" id="enlightened"></span></div>
       </div>
       <div class="progressstats_stat">
@@ -722,19 +718,19 @@
         <div></div>
         <div class="battlestat_title">Game Speed:</div>
         <div><span id="game-speed"></span></div>-->
-        <div class="battlestat_title">War Confidence:</div>
+        <div class="battlestat_title">MORALE: (per 30min)</div>
         <div class="battlestat_stat"><span><span id="progress-milestones-effect"></span> x</span></div>
-        <div class="battlestat_title"><span>(per 30min)</span></div>
+        <div class="battlestat_title"><span></span></div>
         <div></div>
-        <div class="battlestat_title">Game Speed:</div>
+        <div class="battlestat_title">GAME SPEED:</div>
         <div><span class="battlestat_stat" id="game-speed"></span></div>
       </div>
       <div class="progressstats_stat">
-        <div class="battlestat_title">Last Win: </div>
+        <div class="battlestat_title">LAST WIN: </div>
         <div class="battlestat_stat" ><span id="time-since-last-update"></span> ago</div>
-        <div class="battlestat_title">Previous Legacy:</div>
-        <div class="battlestat_stat" ><span id="last-update-point-gain"></span> points</div>
-        <div class="battlestat_title">Best War:</div>
+        <div class="battlestat_title">LAST LEGACY:</div>
+        <div class="battlestat_stat" ><span id="last-update-point-gain"></span> pts</div>
+        <div class="battlestat_title">BEST WAR:</div>
         <div><span class="battlestat_stat" id="record-development"></span></div>
       </div>
     </div>
