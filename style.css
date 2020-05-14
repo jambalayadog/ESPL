@@ -25,12 +25,13 @@
     --tip_bg: lightgrey;
     --tip_text: black;
     --tip_border: darkgrey;
-    --background_common: rgba(0, 0, 0, .75);
-    --background_title: rgba(255, 255, 255, 0.25);
-    --background_grad1: rgba(100,100,255, .35);
-    --background_grad2: rgba(0,255,0, .25);
-    --background_grad3: rgba(255,255,0, .25);
-    --background_grad4: rgba(255,0,0, .25);
+    --background_common: rgba(0, 0, 0, .50);
+    --background_moretransparent: rgba(0, 0, 0, .50);
+    --background_title: rgba(255, 255, 255, 0.5);
+    --background_grad1: rgba(000,200,255, .5);
+    --background_grad2: rgba(100,255,0, .5);
+    --background_grad3: rgba(255,255,100, .5);
+    --background_grad4: rgba(255,000,100, .5);
 }
 
 html {
@@ -354,7 +355,7 @@ body {
 .achievements_grouping {
     font-size: 12px;
     padding: 5px;
-    background-color: var(--background_common);
+    background-color: var(--background_moretransparent);
     box-shadow: var(--box_shadow);
     border: 1px solid lightgrey;
     color: var(--text_progress);
@@ -385,12 +386,14 @@ body {
 
 .title_text {
     font-weight: bold;
+    color: var(--text_title);
     
 }
 
 .title_support {
     font-size: 12px;
     font-weight: normal;
+    color: var(--text_title);
     /*writing-mode: vertical-lr;*/
 }
 
@@ -424,7 +427,7 @@ body {
     width: 100%;
     font-size: 12px;
     padding: 5px;
-    background-color: var(--background_common);
+    background-color: var(--background_moretransparent);
     box-shadow: var(--box_shadow);
     border: 1px solid lightgrey;
     color: var(--text_progress);
@@ -436,7 +439,6 @@ body {
     grid-template-columns:
         minmax(160px, 266px) minmax(160px, 266px) minmax(160px, 266px);
     font-size: 12px;
-    background-color: var(--page_bg);
     color: var(--act_color);
     text-align: center;
 }

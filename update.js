@@ -1,4 +1,5 @@
-let EXPERIENCE_TYPES = ['endgame', 'patience', 'headstart'];
+let EXPERIENCE_TYPES = ['endgame', 'patience', 'eadstart'];
+let TOGGLE_AMOUNTS = ['1', '1/3', 'All']
 
 function updateCore(now, gain, oldChallenge) {
   for (let i = 0; i <= 7; i++) {
@@ -80,6 +81,42 @@ function getPowerGainPerExperience() {
   } else {
     return Decimal.max(0, (1 + Math.log2(player.updates)) / 100).times(challengeReward('powerless'));
   }
+}
+
+function toggleAmount(i) {
+  console.log("Toggle: ", i, "Player legacy toggles", player.legacy.toggles)
+  if (player.legacy.toggles[i] == '1') {
+    player.legacy.toggles[i] = '1/3';
+  } else if (player.legacy.toggles[i] == '1/3') {
+    player.legacy.toggles[i] = 'All';
+  } else {
+    player.legacy.toggles[i] = "1";
+  }
+  console.log("oggled: ", i, "Player legacy toggles", player.legacy.toggles)
+}
+
+function reverseLegacyToggles(i) {
+  if (i == 0) {
+    return 2;    
+  } else if (i == 2) {
+    return 0;
+  } else {
+    return 1;
+  }
+}
+
+function convertLegacy(i) {
+  console.log("Convert: ", i, "Player legacy toggles", player.legacy.toggles)
+  
+  console.log(player.legacy.toggles, player.legacy.toggles[i])
+  if (player.legacy.toggles[i] == '1'){
+    assignOne(reverseLegacyToggles(i));
+  } else if (player.legacy.toggles[i] == '1/3'){
+    assignThird(reverseLegacyToggles(i));
+  } else {
+    assignAll(reverseLegacyToggles(i));
+  }
+  console.log("onvertd: ", i, "Player legacy toggles", player.legacy.toggles)
 }
 
 function assignAll(i) {

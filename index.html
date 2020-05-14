@@ -423,7 +423,7 @@
               <!--<div><button onclick="assignOne(2)">Convert 1 Legacy into Resolve</button></div>
               <div><button onclick="assignThird(2)">Convert 1/3 into Resolve</button></div>
               <div><button onclick="assignAll(2)">Convert all Legacy into Resolve</button></div>-->
-              <span><button onclick="convertLegacy(2)">Convert</button><button onclick="ToggleAmount(2)">Toggle</button></span>
+              <span><button onclick="convertLegacy(0)">Convert</button><button id="legacy_to_resolve" onclick="toggleAmount(0)">Toggle</button></span>
             </div>            
             <div>
               <div>Resolve: <span id="update-experience-span-2">0</span></div>
@@ -437,12 +437,12 @@
         </div>
         <div class="legacyupgrade_upgrade">
           <div class="legacygroup_upgrades">
-            <div class="activity_title bg_piloting">REPUTATION</div>
+            <div class="activity_title bg_piloting">RESONANCE</div>   <!-- REPUTE RESORT RESONANCE RENOWN REASON -->
             <div>
               <!--<div><button onclick="assignOne(1)">Convert 1 Legacy into Reputation</button></div>
               <div><button onclick="assignThird(1)">Convert 1/3 into Reputation</button></div>
               <div><button onclick="assignAll(1)">Convert all Legacy into Reputation</button></div>-->
-              <span><button onclick="convertLegacy(1)">Convert</button><button onclick="ToggleAmount(1)">Toggle</button></span>
+              <span><button onclick="convertLegacy(1)">Convert</button><button id="legacy_to_resonance" onclick="toggleAmount(1)">Toggle</button></span>
             </div>
             <div>
               <div><span id="update-experience-span-1">0</span> Reputation</div>
@@ -461,7 +461,7 @@
               <!--<div><button onclick="assignOne(0)">Convert 1 Legacy into Resource</button></div>
               <div><button onclick="assignThird(0)">Convert 1/3 into Resource</button></div>
               <div><button onclick="assignAll(0)">Convert all Legacy into Resource</button></div>-->
-              <span><button onclick="convertLegacy(0)">Convert</button><button onclick="ToggleAmount(0)">Toggle</button></span>
+              <span><button onclick="convertLegacy(2)">Convert</button><button id="legacy_to_resource" onclick="toggleAmount(2)">Toggle</button></span>
             </div>
             <div>
               <div>Resource: <span id="update-experience-span-0">0</span></div>

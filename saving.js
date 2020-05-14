@@ -186,6 +186,11 @@ function fixPlayer () {
   if (!('turnAllUpdatePointsIntoExperience' in player.options.confirmations)) {
     player.options.confirmations.turnAllUpdatePointsIntoExperience = true;
   }
+  if (!('toggles' in player.legacy)) {
+    player.legacy = {
+      toggles: ['1', '1', '1']
+    }
+  }
 }
 
 function convertSaveToDecimal () {
@@ -339,6 +344,9 @@ let initialPlayer = {
       noDevsForThat: true,
       yoDawg: 0
     }
+  },
+  legacy: {
+    toggles: ['1', '1', '1']
   },
   lore: [],
   dilation: 0,
