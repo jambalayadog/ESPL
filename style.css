@@ -440,6 +440,9 @@ body {
     box-sizing: border-box; 
 }
 
+
+
+
 .legacyupgrade_group {
     display: grid;
     grid-template-columns:
@@ -452,7 +455,7 @@ body {
 .legacygroup_upgrades {
     display: grid;
     grid-template-rows:
-        30px 25px 35px 60px 60px 25px;   /* 450 - status - milestones?   */
+        30px 25px 45px 60px 60px 25px;   /* 450 - status - milestones?   */
     grid-column-gap: 30px;
     padding: 5px;
     background-color: var(--background_common);
@@ -482,6 +485,13 @@ body {
     width: auto;
 }
 
+.legacyfraction {
+    border: var(--debug_border);
+    padding: 1px;
+    color: var(--act_color);
+    font-size: 10px;
+    font-weight: bold;
+}
 
 /* --- BATTLE STATS ---------------------------------------------------
 

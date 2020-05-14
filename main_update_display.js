@@ -59,7 +59,7 @@ function updateDisplay () {
   document.getElementById('additional-devs-due-to-updates').innerHTML = format(getAdditionalDevsDueToUpdates());
   for (let i = 0; i <= 2; i++) {
     document.getElementById('update-experience-span-' + i).innerHTML = format(player.experience[i]);
-    /* document.getElementById('update-power-span-' + i).innerHTML = format(player.power[i]); */
+    document.getElementById('update-power-span-' + i).innerHTML = format(player.power[i]);    // POWER SPAN
     document.getElementById('update-effect-span-' + i).innerHTML = format(getUpdatePowerEffect(i));
     for (let j = 0; j <= 1; j++) {
       document.getElementById('up-' + j + '-' + i + '-cost').innerHTML = format(getUpgradeCost(j));
@@ -104,7 +104,7 @@ function updateDisplay () {
   /* document.getElementById('devs-plural').innerHTML = (getTotalDevs() === 1) ? '' : 's'; */
   /* document.getElementById('update-points-plural').innerHTML = (player.updatePoints.eq(1)) ? '' : 's';*/
  /*  document.getElementById('updates-plural').innerHTML = (player.updates === 1) ? '' : 's';*/
-  document.getElementById('additional-devs-due-to-updates-plural').innerHTML = (getAdditionalDevsDueToUpdates() === 1) ? '' : 's';
+  /* document.getElementById('additional-devs-due-to-updates-plural').innerHTML = (getAdditionalDevsDueToUpdates() === 1) ? '' : 's';*/
   /* document.getElementById('progress-milestones-plural').innerHTML = (player.milestones === 1) ? '' : 's'; */
   /* document.getElementById('progress-milestones-to-be').innerHTML = (player.milestones === 1) ? 'is' : 'are'; */
   /* document.getElementById('unassigned-devs-plural').innerHTML = (getUnassignedDevs() === 1) ? '' : 's'; */
