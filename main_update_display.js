@@ -62,7 +62,7 @@ function updateDisplay () {
     document.getElementById('update-power-span-' + i).innerHTML = format(player.power[i]);    // POWER SPAN
     document.getElementById('update-effect-span-' + i).innerHTML = format(getUpdatePowerEffect(i));
     for (let j = 0; j <= 1; j++) {
-      document.getElementById('up-' + j + '-' + i + '-cost').innerHTML = format(getUpgradeCost(j));
+      document.getElementById('up-' + j + '-' + i + '-cost').innerHTML = format(getUpgradeCost(j, i));
       document.getElementById('up-' + j + '-' + i + '-bought').innerHTML = updateUpgradeBought(j, i) ? ' (bought)' : '';
       let btn = document.getElementById('up-' + j + '-' + i + '-button');
       if (updateUpgradeActive(j, i)) {

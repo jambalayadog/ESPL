@@ -45,6 +45,7 @@ function toggleAutoPrestigeAlternate() {
 }
 
 function updateAutoDisplay() {
+  
   if (updateUpgradeActive(0, 2)) {                                          // check if player has Piloting's first upgrade (auto assign skills)
     var ele = document.getElementsByClassName("activity_fraction");         // show the auto fractions
     for (var i = 0; i < ele.length; i++) {
@@ -61,45 +62,53 @@ function updateAutoDisplay() {
     document.getElementById('auto-dev-span').style.visibility = 'hidden';
     document.getElementById('autooptions').style.display = 'none';
   }
-  for (let i = 0; i <= 2; i++) {
+
+  for (let i = 0; i <= 2; i++) {                                            // CHECK FOR AUTO OPTIONS
+    /*console.log("i = ", i, "Auto_list[i]", AUTO_LIST[i], "HasAuto: ", hasAuto(AUTO_LIST[i]))*/
     if (hasAuto(AUTO_LIST[i])) {
       /*document.getElementById('auto-' + AUTO_LIST[i] + '-span').style.visibility = '';*/
-      if (AUTO_LIST[i] = 'enlightened') {
+      if (AUTO_LIST[i] == 'enlightened') {
         var ele = document.getElementsByClassName("auto_leaderup");
         for (var j = 0; j < ele.length; j++) {
           ele[j].style.display='';
+          console.log("showing leaderup")
         }
       }
-      if (AUTO_LIST[i] = 'prestige') {
+      if (AUTO_LIST[i] == 'prestige') {
         var ele = document.getElementsByClassName("auto_retrofit");
         for (var j = 0; j < ele.length; j++) {
           ele[j].style.display='';
+          console.log("showing retrofit")
         }
       }
-      if (AUTO_LIST[i] = 'update') {
+      if (AUTO_LIST[i] == 'update') {
         var ele = document.getElementsByClassName("auto_spacewar");
         for (var j = 0; j < ele.length; j++) {
           ele[j].style.display='';
+          console.log("showing spacewar")
         }
       }
     } else {
       /*document.getElementById('auto-' + AUTO_LIST[i] + '-span').style.visibility = 'hidden';*/
-      if (AUTO_LIST[i] = 'enlightened') {
+      if (AUTO_LIST[i] == 'enlightened') {
         var ele = document.getElementsByClassName("auto_leaderup");
         for (var j = 0; j < ele.length; j++) {
           ele[j].style.display='none';
+          console.log("hiding leaderup")
         }
       }
-      if (AUTO_LIST[i] = 'prestige') {
+      if (AUTO_LIST[i] == 'prestige') {
         var ele = document.getElementsByClassName("auto_retrofit");
         for (var j = 0; j < ele.length; j++) {
           ele[j].style.display='none';
+          console.log("hiding retrofit")
         }
       }
-      if (AUTO_LIST[i] = 'update') {
+      if (AUTO_LIST[i] == 'update') {
         var ele = document.getElementsByClassName("auto_spacewar");
         for (var j = 0; j < ele.length; j++) {
           ele[j].style.display='none';
+          console.log("hiding spacewar")
         }
       }
     }

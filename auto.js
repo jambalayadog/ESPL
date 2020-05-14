@@ -1,6 +1,7 @@
 function hasAuto(x) {
   // dev-one-percent isn't really auto, except insofar as it means
   // you don't have to manually do some stuff (lonely, upgradeless).
+  //console.log("X: ", x);
   let table = {
     'enlightened': 0,
     'prestige': 1,
@@ -8,6 +9,7 @@ function hasAuto(x) {
     'assign-update-points': 3,
     'dev-one-percent': 4
   }
+  //console.log("Milestones: ", player.completionMilestones, "Table X: ", table[x])
   return player.completionMilestones > table[x];
 }
 

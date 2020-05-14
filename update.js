@@ -54,7 +54,7 @@ function getUpdateGain() {
 function confirmUpdate() {
   let whatWillReset = 'Fleet Systems and Weapons, progress milestones, along with every Retrofit resets,';
   if (player.updates > 0) {
-    whatWillReset = whatWillReset.replace('and progress milestones', 'progress milestones, and Resolve, Reputation, and Resources power')
+    whatWillReset = whatWillReset.replace('and progress milestones', 'progress milestones, and Resolve, Resonance, and Resources power')
   }
   if (player.options.confirmations.update) {
     return confirm('Are you sure you want to Win the Space War? Your ' + whatWillReset + ' will reset.');
@@ -151,14 +151,18 @@ function getUpdatePowerEffect(i) {
 }
 
 const UPGRADE_COSTS = [5, 1e4];
+const UPGRADE_COSTS_NEW = [15, 3e4, 10, 2e4, 5, 1e4];
+
 
 const HARD_MODE_UPGRADE_COSTS = [10, 1e6];
 
-function getUpgradeCost(x) {
+function getUpgradeCost(x, y) {
+  let new_x = y*2+x
+  /*console.log(new_x)*/
   if (player.options.hardMode) {
     return HARD_MODE_UPGRADE_COSTS[x];
   } else {
-    return UPGRADE_COSTS[x];
+    return UPGRADE_COSTS_NEW[new_x];
   }
 }
 
@@ -171,13 +175,13 @@ function updateUpgradeActive(i, j) {
 }
 
 function canBuyUpdateUpgrade(i, j) {
-  return !updateUpgradeBought(i, j) && player.experience[j].gte(getUpgradeCost(i));
+  return !updateUpgradeBought(i, j) && player.experience[j].gte(getUpgradeCost(i,j));
 }
 
 function buyUpdateUpgrade(i, j) {
   if (!canBuyUpdateUpgrade(i, j)) {
     return false;
   }
-  player.experience[j] = player.experience[j].minus(getUpgradeCost(i));
+  player.experience[j] = player.experience[j].minus(getUpgradeCost(i,j));
   player.upgrades[i][j] = true;
 }
