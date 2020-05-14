@@ -55,7 +55,7 @@ body {
 
 .page_container {
     max-height: 600px;
-    overflow-y: scroll;
+    /*overflow-y: scroll;*/
     /*background-image: url("https://upload.wikimedia.org/wikipedia/en/1/16/Bloodbath_of_B-R5RB.jpg");*/
     /*background-image: url("https://image.shutterstock.com/image-illustration/alien-mothership-deep-space-futuristic-600w-200577308.jpg");*/
     background-image: url("https://now.northropgrumman.com/wp-content/uploads/2018/04/now-stars.jpg");
@@ -127,6 +127,7 @@ body {
 
   MAIN --------------------------------------------------------------------- */
 
+ 
 .main_page {
     width:100%;
     max-width:800px;
@@ -162,7 +163,7 @@ body {
 .battle, .skill, .prestige {
     display: grid;
     grid-template-rows:
-        30px 20px 20px 40px 25px 30px 20px 15px 60px;
+        30px 20px 15px 40px 25px 30px 20px 15px 60px;
     grid-row-gap: 5px;
     box-shadow: var(--box_shadow);
     border: 1px solid lightgrey;
@@ -337,7 +338,7 @@ body {
 
 .achievements_page {
     width: 100%;
-    height: 420px;
+    height: 440px;
     overflow-y: scroll;
     /*display: grid;  /* 450px min, max 600px 
     grid-template-rows:
@@ -424,7 +425,8 @@ body {
     padding:5px;
     /*box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12); */
     /*background-color: var(--page_bg);*/
-    box-sizing: border-box; 
+    box-sizing: border-box;
+    height: 440px; 
 }
 
 .legacystatus_row {
@@ -590,6 +592,8 @@ body {
     padding:5px;
     background-color: var(--page_bg);
     box-sizing: border-box;
+    height: 440px;
+    overflow-y: scroll;
 }
 
 .missions_meta {

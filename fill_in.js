@@ -33,7 +33,7 @@ function fillInAutoAssignUpdatePoints() {
 }
 
 function fillInDilationUpgrades() {
-  document.getElementById('dilation-upgrade-0-button').innerHTML = 'Multiply patience meter speed by 1.1. Currently: ' + format(getDilationUpgradeEffect(0)) + 'x, Cost: ' + format(getDilationUpgradeCost(0)) + ' dilation';
+  document.getElementById('dilation-upgrade-0-button').innerHTML = 'Multiply Leadership speed by 1.1. Currently: ' + format(getDilationUpgradeEffect(0)) + 'x, Cost: ' + format(getDilationUpgradeCost(0)) + ' Provenance';
 }
 
 function fillInOptions() {

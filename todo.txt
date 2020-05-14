@@ -48,6 +48,10 @@ May 13, 2020, 5:15pm
 
 
 
+// EPIC STARFIGHTER PILOT LEGACY 2
+--- secret page that's running in the background, and the bonus only occurs when you click it, but that bonus is locked in
+- this is non-destructive, as there are mechanics to fully restore the secret page's engine.   This is a matter of finding the sweetspot to unlocking the secret page.
+
 
 
 
