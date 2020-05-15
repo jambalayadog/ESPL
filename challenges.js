@@ -59,7 +59,7 @@ function challengeReward(x) {
 
 function describeChallengeReward(x) {
   if (x === 'logarithmic') {
-    return getPermaEnlightened() + ' permanent time' + ((getPermaEnlightened() === 1) ? '' : 's') + ' Leader Up<br/>Cool meter is ' + format(getEnlightenedSlowFactor()) + 'x slower per time enlightened';
+    return getPermaEnlightened() + ' <span class="legacygroup_subtext">(Leadership: ' + format(getEnlightenedSlowFactor()) + 'x slower per Rank)</span>';
   } else {
     let table = {
       'inefficient': x => format(x) + 'x multiplier to all production',
@@ -80,7 +80,7 @@ function describeChallengeCompleted(x) {
   if (cc === 0) {
     return 'You have not yet completed this Mission.';
   } else {
-    return 'Mission completed: ' + format(cc) + ' times.';
+    return format(cc);
   }
 }
 

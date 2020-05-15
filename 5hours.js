@@ -114,7 +114,6 @@ function checkForCompletionMilestones() {
 
 function addToUpdatePower(diff) {
   for (let i = 0; i <= 2; i++) {
-    console.log('------------- HOW OFTEN IS THIS APPLIED ----------------- ')
     player.power[i] = player.power[i].plus(new Decimal(diff).times(player.experience[i]).times(getPowerGainPerExperience()));
   }
 }
@@ -266,7 +265,7 @@ var changeDev = null
 
 
 function tryToChangeDevs(i, change) {
-  console.log("changing devs")
+  /*console.log("changing devs")*/
   if (player.devs.reduce((a, b) => a + b) + change <= getTotalDevs() && player.devs[i] + change >= 0) {
     setDevs(i, player.devs[i] + change);
   }
@@ -333,6 +332,7 @@ function updateChallengeDisplay() {
   if (player.dilation > 0) {
     document.getElementById('dilation').style.display = '';
     document.getElementById('dilation-text').innerHTML = 'Provenance: ' + format(player.dilation, 4) + '<br/>Provenance/sec: ' + format(getDilationPerSecond(), 4) + '<br/>Weapons & Systems Power: ^' + format(getDilationEffect(), 4);
+    document.getElementById('missions_provenance_per_second').innerHTML = format(getDilationPerSecond(), 4);
   } else {
     document.getElementById('dilation').style.display = 'none';
   }

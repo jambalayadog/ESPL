@@ -84,7 +84,6 @@ function getPowerGainPerExperience() {
 }
 
 function toggleAmount(i) {
-  console.log("Toggle: ", i, "Player legacy toggles", player.legacy.toggles)
   if (player.legacy.toggles[i] == '1') {
     player.legacy.toggles[i] = '1/3';
   } else if (player.legacy.toggles[i] == '1/3') {
@@ -92,7 +91,6 @@ function toggleAmount(i) {
   } else {
     player.legacy.toggles[i] = "1";
   }
-  console.log("oggled: ", i, "Player legacy toggles", player.legacy.toggles)
 }
 
 function reverseLegacyToggles(i) {
@@ -106,9 +104,6 @@ function reverseLegacyToggles(i) {
 }
 
 function convertLegacy(i) {
-  console.log("Convert: ", i, "Player legacy toggles", player.legacy.toggles)
-  
-  console.log(player.legacy.toggles, player.legacy.toggles[i])
   if (player.legacy.toggles[i] == '1'){
     assignOne(reverseLegacyToggles(i));
   } else if (player.legacy.toggles[i] == '1/3'){
@@ -116,7 +111,6 @@ function convertLegacy(i) {
   } else {
     assignAll(reverseLegacyToggles(i));
   }
-  console.log("onvertd: ", i, "Player legacy toggles", player.legacy.toggles)
 }
 
 function assignAll(i) {

@@ -24,7 +24,7 @@ function updateTabDisplay() {
       document.getElementById(TAB_LIST[i] + '-div').style.display = '';
       document.getElementById(TAB_LIST[i] + '-tab-button').className = "navitem navitem-selected";
     } else {
-      console.log(TAB_LIST[i])
+      /* console.log(TAB_LIST[i]) */
       document.getElementById(TAB_LIST[i] + '-div').style.display = 'none';
       document.getElementById(TAB_LIST[i] + '-tab-button').className = "navitem";
     }

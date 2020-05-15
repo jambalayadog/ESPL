@@ -484,6 +484,7 @@ body {
     /*padding: 0px;*/
     height: 60px;
     width: 250px;
+    border-radius: 4px;
 }
 
 .legacyfraction {
@@ -597,7 +598,6 @@ body {
     display: grid;  /* 450px min, max 600px */
     grid-template-rows:
         auto auto;
-    grid-row-gap: 5px;
     justify-content: center;
     padding:5px;
     background-color: var(--page_bg);
@@ -609,8 +609,7 @@ body {
 .missions_meta {
     display: grid;  /* 450px min, max 600px */
     grid-template-columns:
-        minmax(225px, 400px) minmax(225px, 400px);
-    grid-column-gap: 5px;
+        auto auto;
     justify-content: center;
     padding:5px;
     background-color: var(--page_bg);
@@ -623,7 +622,6 @@ body {
         minmax(150px, 33.33%) minmax(150px, 33.33%) minmax(150px, 33.33%);
     grid-template-rows:
         auto auto auto;
-    grid-gap: 5px;
 }
 
 .mission {  
@@ -632,8 +630,21 @@ body {
     background-color: var(--act_bg);
     color: var(--text_secondary);
     padding: 5px;
+    text-align: center;
 }
 
+.mission_button {
+    height: 60px;
+    border: 1px solid; 
+    /*padding: 0px;*/
+    width: 240px;
+    border-radius: 4px;
+}
+
+.mission_stats {
+    display: grid;
+    grid-template-columns: auto auto;
+}
 
 
 /* LORE --------------------------------------------------- 
