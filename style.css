@@ -28,11 +28,12 @@
     --background_common: rgba(0, 0, 0, .50);
     --background_moretransparent: rgba(0, 0, 0, .50);
     --background_title: rgba(255, 255, 255, 0.5);
-    --background_titledark: rgba(128, 128, 128, 0.5);
-    --background_grad1: rgba(000,200,255, .5);
-    --background_grad2: rgba(100,255,0, .5);
-    --background_grad3: rgba(255,255,100, .5);
-    --background_grad4: rgba(255,000,100, .5);
+    --background_titledark: rgba(128, 128, 128, 0.75);
+    --background_grad1: rgba(66,200,245, .75);
+    --background_grad2: rgba(66,245,117, .75);
+    --background_grad3: rgba(245,161,66, .75);
+    --background_grad4: rgba(245,66,105, .75);
+    --border_black: 1px solid black;
 }
 
 html {
@@ -177,9 +178,11 @@ body {
     box-shadow: var(--box_shadow);
     border: 1px solid lightgrey;
     font-weight: bold;
+    font-weight: normal;
     font-size: 14px;
     background-color: var(--act_bg);
     color: var(--text_primary);
+    color: tan;
     padding: 1px;
     margin: auto;
     box-sizing: border-box;
@@ -280,7 +283,7 @@ body {
         30px 20px 15px 40px 25px 30px 20px 15px 60px;
     grid-row-gap: 5px;
     box-shadow: var(--box_shadow);
-    border: 1px solid lightgrey;
+    border: var(--border_black);
     background-color: var(--background_common);
     color: var(--text_primary);
     text-align: center;
@@ -355,7 +358,7 @@ body {
     background-color: rgb(255, 200, 200);
     /*padding: 0px;*/
     height: 60px;
-    width: auto;
+    width: 144px;
 }
 
 .button_title {
@@ -390,7 +393,7 @@ body {
     grid-template-rows:
         17px 20px 25px 25px 17px;
     box-shadow: var(--box_shadow);
-    border: 1px solid lightgrey;
+    border: var(--border_black);
     grid-row-gap: 5px;
     color: var(--act_color);
     padding: 0px;
@@ -492,7 +495,7 @@ body {
     padding: 5px;
     background-color: var(--background_moretransparent);
     box-shadow: var(--box_shadow);
-    border: 1px solid lightgrey;
+    border: var(--border_black);
     color: var(--text_progress);
     width: 100%;
     
@@ -500,7 +503,7 @@ body {
 
 .achievements_title {
     box-shadow: var(--box_shadow);
-    border: 1px solid lightgrey;
+    border: var(--border_black);
     font-weight: bold;
     font-size: 14px;
     padding: 5px;
@@ -517,6 +520,7 @@ body {
     grid-template-columns: auto auto;
     grid-column-gap: 30px;
     width: 100%;
+    color: var(--text_secondary)
 }
 
 .title_text {
@@ -589,9 +593,11 @@ body {
     padding: 0px 0px 5px 0px;
     background-color: var(--background_common);
     box-shadow: var(--box_shadow);
-    border: 1px solid lightgrey;
+    border: var(--border_black);
     font-size: 12px;
+    /*var(--border_black)*/
 }
+
 
 .legacygroup_title {
     font-weight: bold;
@@ -610,8 +616,8 @@ body {
     border: 1px solid; 
     /*padding: 0px;*/
     height: 60px;
-    width: 250px;
-    border-radius: 4px;
+    width: 250px;/*
+    border-radius: 4px;*/
 }
 
 .legacyfraction {
@@ -660,16 +666,22 @@ body {
 .mission_control {
     width: 100%;
     font-size: 12px;
-    border: 1px solid lightgrey;
-    background-color: var(--background_titledark);
+    border: var(---border_black);
+    background-color: var(--background_moretransparent);
     box-sizing: border-box;
     color: var(--text_secondary);
     padding: 5px;
     text-align: center;
     display: grid;
     grid-template-columns: 
-        auto auto;
+        auto auto auto auto;
     margin: auto;
+}
+
+.missioncontrol_text {
+    font-weight: normal;
+    font-size: 14px;
+    color: lightblue;
 }
 
 .mission_abort_button {
@@ -701,8 +713,8 @@ body {
 
 .mission {  
     font-size: 12px;
-    border: 1px solid lightgrey;
-    background-color: var(--act_bg);
+    border: var(--border_black);
+    background-color: var(--background_moretransparent);
     color: var(--text_secondary);
     padding: 5px;
     text-align: center;
@@ -712,8 +724,8 @@ body {
     height: 60px;
     border: 1px solid; 
     /*padding: 0px;*/
-    width: 240px;
-    border-radius: 4px;
+    width: 250px;/*
+    border-radius: 4px;*/
 }
 
 .mission_stats {
@@ -788,6 +800,24 @@ body {
         auto auto;
 }
 
+/* COMMON STYLES
+
+ ██████  ██████  ███    ███ ███    ███  ██████  ███    ██     ███████ ████████ ██    ██ ██      ███████ ███████ 
+██      ██    ██ ████  ████ ████  ████ ██    ██ ████   ██     ██         ██     ██  ██  ██      ██      ██      
+██      ██    ██ ██ ████ ██ ██ ████ ██ ██    ██ ██ ██  ██     ███████    ██      ████   ██      █████   ███████ 
+██      ██    ██ ██  ██  ██ ██  ██  ██ ██    ██ ██  ██ ██          ██    ██       ██    ██      ██           ██ 
+ ██████  ██████  ██      ██ ██      ██  ██████  ██   ████     ███████    ██       ██    ███████ ███████ ███████
+
+*/
+
+
+
+.text_hidden {
+    visibility: hidden;
+}
+
+
+
 
 
 /* TOOLTIPS 
@@ -808,16 +838,18 @@ body {
   
   .tooltip .tooltiptext {
     visibility: hidden;
-    width: 300px;
+    width: 250px;
     background-color: var(--tip_bg);
     color: var(--tip_text);
     border-color: var(--tip_border);
     text-align: left;
-    border-radius: 6px;
+    border-radius: 2px;
     padding: 5px;
+    font-size: 10px;
   
     /* Position the tooltip */
     position: absolute;
+    left: 50px;
     z-index: 1;
   }
   

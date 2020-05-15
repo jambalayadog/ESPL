@@ -1,10 +1,11 @@
 var UIColors = {
   button_inactive: '#666666',
   button_active: '#88DD88',
-  button_useless: '#CCCC44',
-  button_mission: '#00C0F0',
+  button_useless: '#BBBB66',
+  button_mission: '#66AAFF',
   button_inactive_text: '#444444',
-  button_active_text: '#444444'
+  button_active_text: '#444444',
+  button_bought: '#66AAFF'
 }
 
 var achievements = {
@@ -309,7 +310,9 @@ function updateOtherDisplay() {
 
 function updateChallengeDisplay() {
   document.getElementById('total-challenge-completions').innerHTML = format(getTotalChallengeCompletions());
+  document.getElementById('missioncontrol_missionscomplete').innerHTML = format(getTotalChallengeCompletions());
   document.getElementById('current-challenge').innerHTML = getChallengeForDisplay(player.currentChallenge);
+  document.getElementById('missioncontrol_currentmission').innerHTML = getChallengeForDisplay(player.currentChallenge);
   document.getElementById('next-challenge-unlock').innerHTML = nextChallengeUnlock();
   for (let i in CHALLENGE_UNLOCKS) {
     if (isChallengeUnlocked(i)) {

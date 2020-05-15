@@ -25,17 +25,17 @@ function updateDisplay () {
     let btn = document.getElementById('prestige-' + i + '-button');
     if (canPrestigeWithoutGain(i)) {
       el.innerHTML = formatEffect(i) + ' -> ' + formatEffect(i) + '<br/>' + toTime(player.progress[i]) + ' -> ' + toTime(player.progress[i]) + '<br/>no gain';
-      btn.style.backgroundColor = UIColors.button_useless;
+      btn.style.backgroundColor = UIColors.button_useless;   //yellow: active, non-profit
     } else if (canPrestige(i)) {
       let newValue = newValueFromPrestige();
       el.innerHTML = formatEffect(i) + ' -> ' + formatEffect(i, newValue) + '<br/>' + toTime(player.progress[i]) + ' -> ' + toTime(newValue) + '<br/>' + toTime(newValue - player.progress[i]) + ' gain'
-      btn.style.backgroundColor = UIColors.button_active;
+      btn.style.backgroundColor = UIColors.button_active;    //green: active, profitable
     } else if (player.currentChallenge === 'unprestigious') {
       el.innerHTML = 'Disabled in this challenge.';
-      btn.style.backgroundColor = UIColors.button_inactive;
+      btn.style.backgroundColor = UIColors.button_inactive;  //dark grey: disabled
     } else {
-      el.innerHTML = 'Requires ' + toTime(1800) + ' Starfighting.';
-      btn.style.backgroundColor = UIColors.button_inactive;
+      el.innerHTML = 'Requires ' + toTime(1800) + ' Starfighting.';  
+      btn.style.backgroundColor = UIColors.button_inactive;  //dark grey: disabled
     }
   }
   if (player.progress[7] >= 1) {
@@ -66,13 +66,13 @@ function updateDisplay () {
       document.getElementById('up-' + j + '-' + i + '-bought').innerHTML = updateUpgradeBought(j, i) ? ' (bought)' : '';
       let btn = document.getElementById('up-' + j + '-' + i + '-button');
       if (updateUpgradeActive(j, i)) {
-        btn.style.backgroundColor = MainUIColors.button_bought;
+        btn.style.backgroundColor = UIColors.button_bought;
       } else if (updateUpgradeBought(j, i)) {
-        btn.style.backgroundColor = MainUIColors.button_useless;
+        btn.style.backgroundColor = UIColors.button_useless;
       } else if (canBuyUpdateUpgrade(j, i)) {
-        btn.style.backgroundColor = MainUIColors.button_active;
+        btn.style.backgroundColor = UIColors.button_active;
       } else {
-        btn.style.backgroundColor = MainUIColors.button_inactive;
+        btn.style.backgroundColor = UIColors.button_inactive;
       }
     }
   }
