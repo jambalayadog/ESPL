@@ -28,6 +28,7 @@
     --background_common: rgba(0, 0, 0, .50);
     --background_moretransparent: rgba(0, 0, 0, .50);
     --background_title: rgba(255, 255, 255, 0.5);
+    --background_titledark: rgba(128, 128, 128, 0.5);
     --background_grad1: rgba(000,200,255, .5);
     --background_grad2: rgba(100,255,0, .5);
     --background_grad3: rgba(255,255,100, .5);
@@ -54,8 +55,8 @@ body {
 }
 
 .page_container {
-    max-height: 600px;
-    /*overflow-y: scroll;*/
+    max-height: 600px;/*
+    overflow-y: scroll;*/
     /*background-image: url("https://upload.wikimedia.org/wikipedia/en/1/16/Bloodbath_of_B-R5RB.jpg");*/
     /*background-image: url("https://image.shutterstock.com/image-illustration/alien-mothership-deep-space-futuristic-600w-200577308.jpg");*/
     background-image: url("https://now.northropgrumman.com/wp-content/uploads/2018/04/now-stars.jpg");
@@ -80,7 +81,8 @@ body {
     overflow:hidden;
     /*color:#fff;*/
     /*background-color:rgb(73, 73, 73);*/
-    border: 5px solid var(--nav_def_border);
+    /*border: 5px solid var(--nav_def_border);*/
+    border: 5px solid black;
     color: var(--nav_def_fg);
     background-color: var(--nav_def_bg);
     display: flex; 
@@ -113,6 +115,118 @@ body {
     font-weight: bold;
     color:var(--nav_hov_font)!important;
     /*background-color: var(--nav_hov_bg)!important;*/
+}
+
+
+/* LORE --------------------------------------------------- 
+
+██       ██████  ██████  ███████ 
+██      ██    ██ ██   ██ ██      
+██      ██    ██ ██████  █████   
+██      ██    ██ ██   ██ ██      
+███████  ██████  ██   ██ ███████
+
+/* LORE --------------------------------------------------- */
+
+.lore_container {
+    width:100%;
+    max-width:800px;
+    box-sizing: border-box;
+    padding: 0px 5px 0px 5px;
+}
+
+.lore {
+    color: var(--text_secondary);
+    height: 28px;
+    display: flex;
+    overflow-y: scroll;
+    flex-direction: column-reverse;
+    line-height: normal;  
+    scroll-snap-type: y mandatory;
+    background-color: var(--act_bg);
+    box-shadow: var(--box_shadow);
+    border: 1px solid lightgrey;
+}
+
+
+
+
+/* --- BATTLE STATS ---------------------------------------------------
+
+██████   █████  ████████ ████████ ██      ███████     ███████ ████████  █████  ████████ ███████ 
+██   ██ ██   ██    ██       ██    ██      ██          ██         ██    ██   ██    ██    ██      
+██████  ███████    ██       ██    ██      █████       ███████    ██    ███████    ██    ███████ 
+██   ██ ██   ██    ██       ██    ██      ██               ██    ██    ██   ██    ██         ██ 
+██████  ██   ██    ██       ██    ███████ ███████     ███████    ██    ██   ██    ██    ███████
+
+/* --- BATTLE STATS --------------------------------------------------- */
+
+.progressstats_container {
+    width:100%;
+    max-width:800px;
+    display: grid;  /* 450px min, max 600px */
+    grid-template-columns:
+        minmax(90px,160px) minmax(360px,640px);
+    justify-content: center;
+    padding:0px 5px 0px 5px;
+    box-sizing: border-box;
+}
+
+.progressstats_title {
+    width: 100%;
+    box-shadow: var(--box_shadow);
+    border: 1px solid lightgrey;
+    font-weight: bold;
+    font-size: 14px;
+    background-color: var(--act_bg);
+    color: var(--text_primary);
+    padding: 1px;
+    margin: auto;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.progressstats_section {
+    display: grid;
+    box-shadow: var(--box_shadow);
+    border: 1px solid lightgrey;
+    font-size: 12px;
+    background-color: var(--act_bg);
+    color: var(--text_secondary);
+    padding: 5px;
+    grid-template-columns: 
+        auto auto auto;
+    grid-column-gap: 20px;
+}
+
+.battlestat_title {
+    font-size: 12px;
+    color: var(--text_tertiary);
+    text-align: left;
+}
+
+.battlestat_stat {
+    text-align:right;
+    color:lightblue;
+    font-size:12px;
+}
+
+
+.progressstats_stat {
+    display: grid;
+    box-shadow: var(--box_shadow);
+    border: var(--debug_border);
+    font-size: 12px;
+    background-color: var(--act_bg);
+    color: var(--text_secondary);
+    padding:0px;
+    grid-template-columns: 
+        auto auto;
+    text-align: right;
+}
+
+.p_stat_right {
+    text-align: right
 }
 
 
@@ -274,12 +388,12 @@ body {
 .autooption_column {
     display: grid;
     grid-template-rows:
-        15px 20px 25px 25px 15px;
+        17px 20px 25px 25px 17px;
     box-shadow: var(--box_shadow);
     border: 1px solid lightgrey;
     grid-row-gap: 5px;
     color: var(--act_color);
-    padding: 2px;
+    padding: 0px;
     box-sizing: border-box;
     justify-content: center;
     place-content: center;
@@ -308,6 +422,12 @@ body {
     vertical-align: middle;
 }
 
+.autooption_text {
+    margin: auto;
+    font-size: 10px;
+    font-weight: bold;
+}
+
 .auto_input {
     width: 50%;
     text-align: center;
@@ -321,6 +441,14 @@ body {
 
 .debug_border {
     border: var(--debug_border);
+}
+
+.autooption_title {
+    font-weight:bold; 
+    font-size:14px; 
+    color:white;
+    width: 100%;
+
 }
 
 
@@ -337,7 +465,7 @@ body {
 
 
 .achievements_page {
-    width: 100%;
+    width: 795px;
     height: 440px;
     overflow-y: scroll;
     /*display: grid;  /* 450px min, max 600px 
@@ -346,7 +474,7 @@ body {
     /*grid-row-gap: 5px;*/
     justify-content: center;
     font-size: 12px;
-    padding:5px;
+    padding: 5px 0px 5px 5px;
     /*box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12); */
     box-sizing: border-box; 
 }
@@ -423,8 +551,7 @@ body {
     justify-content: center;
     font-size: 12px;
     padding:5px;
-    /*box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12); */
-    /*background-color: var(--page_bg);*/
+    
     box-sizing: border-box;
     height: 440px; 
 }
@@ -506,82 +633,6 @@ body {
 
 
 
-/* --- BATTLE STATS ---------------------------------------------------
-
-██████   █████  ████████ ████████ ██      ███████     ███████ ████████  █████  ████████ ███████ 
-██   ██ ██   ██    ██       ██    ██      ██          ██         ██    ██   ██    ██    ██      
-██████  ███████    ██       ██    ██      █████       ███████    ██    ███████    ██    ███████ 
-██   ██ ██   ██    ██       ██    ██      ██               ██    ██    ██   ██    ██         ██ 
-██████  ██   ██    ██       ██    ███████ ███████     ███████    ██    ██   ██    ██    ███████
-
-/* --- BATTLE STATS --------------------------------------------------- */
-
-.progressstats_container {
-    width:100%;
-    max-width:800px;
-    display: grid;  /* 450px min, max 600px */
-    grid-template-columns:
-        minmax(90px,160px) minmax(360px,640px);
-    justify-content: center;
-    padding:0px 5px 0px 5px;
-    box-sizing: border-box;
-}
-
-.progressstats_title {
-    width: 100%;
-    box-shadow: var(--box_shadow);
-    border: 1px solid lightgrey;
-    font-weight: bold;
-    font-size: 14px;
-    background-color: var(--act_bg);
-    color: var(--text_primary);
-    padding: 19px 0px 19px 0px;
-    margin: auto;
-    box-sizing: border-box;
-    text-align: center;
-}
-
-.progressstats_section {
-    display: grid;
-    box-shadow: var(--box_shadow);
-    border: 1px solid lightgrey;
-    font-size: 12px;
-    background-color: var(--act_bg);
-    color: var(--text_secondary);
-    padding: 5px 5px 5px 5px;
-    grid-template-columns: 
-        auto auto auto;
-}
-
-.battlestat_title {
-    font-size: 12px;
-    color: var(--text_tertiary)
-}
-
-.battlestat_stat {
-    text-align:right;
-    color:lightblue;
-    font-size:12px;
-}
-
-
-.progressstats_stat {
-    display: grid;
-    box-shadow: var(--box_shadow);
-    border: var(--debug_border);
-    font-size: 12px;
-    background-color: var(--act_bg);
-    color: var(--text_secondary);
-    padding:0px;
-    grid-template-columns: 
-        auto auto;
-    text-align: right;
-}
-
-.p_stat_right {
-    text-align: right
-}
-
 /*  CHALLENGES -     -->
 
 ███    ███ ██ ███████ ███████ ██  ██████  ███    ██ ███████ 
@@ -595,26 +646,50 @@ body {
 .missions_container {
     width:100%;
     max-width:800px;
-    display: grid;  /* 450px min, max 600px */
+    /*display: grid;
     grid-template-rows:
-        auto auto;
+        auto auto;*/
     justify-content: center;
     padding:5px;
-    background-color: var(--page_bg);
     box-sizing: border-box;
-    height: 440px;
-    overflow-y: scroll;
+    height: 440px;/*
+    overflow-y: scroll;*/
 }
 
-.missions_meta {
-    display: grid;  /* 450px min, max 600px */
-    grid-template-columns:
-        auto auto;
-    justify-content: center;
-    padding:5px;
-    background-color: var(--page_bg);
+
+.mission_control {
+    width: 100%;
+    font-size: 12px;
+    border: 1px solid lightgrey;
+    background-color: var(--background_titledark);
     box-sizing: border-box;
+    color: var(--text_secondary);
+    padding: 5px;
+    text-align: center;
+    display: grid;
+    grid-template-columns: 
+        auto auto;
+    margin: auto;
 }
+
+.mission_abort_button {
+    width: 150px;
+    min-height: 25px;
+    font-size:12px;
+    border: 2px solid grey;
+    box-sizing: border-box;
+    background-color: lightblue;
+}
+
+.mission_control_element {
+    width: 100%;
+    margin: auto;
+}
+
+.mission_header {
+    padding: 3px 0px 0px 0px;
+}
+
 
 .missions_list {
     display: grid;
@@ -644,39 +719,14 @@ body {
 .mission_stats {
     display: grid;
     grid-template-columns: auto auto;
+    text-align: left;
+    color: var(--text_tertiary);
 }
 
-
-/* LORE --------------------------------------------------- 
-
-██       ██████  ██████  ███████ 
-██      ██    ██ ██   ██ ██      
-██      ██    ██ ██████  █████   
-██      ██    ██ ██   ██ ██      
-███████  ██████  ██   ██ ███████
-
-/* LORE --------------------------------------------------- */
-
-.lore_container {
-    width:100%;
-    max-width:800px;
-    box-sizing: border-box;
-    padding: 0px 5px 0px 5px;
+.mission_number {
+    text-align: right;
+    color: lightblue;
 }
-
-.lore {
-    color: var(--text_secondary);
-    height: 38px;
-    display: flex;
-    overflow-y: scroll;
-    flex-direction: column-reverse;
-    line-height: normal;  
-    scroll-snap-type: y mandatory;
-    background-color: var(--act_bg);
-    box-shadow: var(--box_shadow);
-    border: 1px solid lightgrey;
-}
-
 
 
 

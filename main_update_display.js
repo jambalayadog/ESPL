@@ -80,7 +80,7 @@ function updateDisplay () {
   updateAutoDisplay();
   updateChallengeDisplay();
   // One line of code, it can go here.
-  document.getElementById('total-challenge-completions-milestone-tab').innerHTML = format(getTotalChallengeCompletions());
+  /*document.getElementById('total-challenge-completions-milestone-tab').innerHTML = format(getTotalChallengeCompletions());*/
   // Also one line of code, it can go here too.
   document.getElementById('upgradeless-reward-up-1-0').innerHTML = format(challengeReward('upgradeless'))
   //document.getElementById('progress-milestones').innerHTML = player.milestones;
@@ -90,8 +90,8 @@ function updateDisplay () {
   document.getElementById('enlightened').innerHTML = getTotalEnlightened();
   document.getElementById('last-update-point-gain').innerHTML = format(player.stats.last.updatePointGain);
   document.getElementById('game-speed').innerHTML = format(getGameSpeed(), 4);
-  /*document.getElementById('time-since-last-enlightened').innerHTML = toTime((Date.now() - player.stats.last.enlightened) / 1000);*/
-  /*document.getElementById('time-since-last-prestige').innerHTML = toTime((Date.now() - player.stats.last.prestige) / 1000);*/
+  document.getElementById('time-since-last-enlightened').innerHTML = toTime((Date.now() - player.stats.last.enlightened) / 1000);
+  document.getElementById('time-since-last-prestige').innerHTML = toTime((Date.now() - player.stats.last.prestige) / 1000);
   document.getElementById('time-since-last-update').innerHTML = toTime((Date.now() - player.stats.last.update) / 1000);
   document.getElementById('legacy_to_resonance').innerHTML = player.legacy.toggles[1];
   document.getElementById('legacy_to_resource').innerHTML = player.legacy.toggles[2];

@@ -59,17 +59,17 @@ function challengeReward(x) {
 
 function describeChallengeReward(x) {
   if (x === 'logarithmic') {
-    return getPermaEnlightened() + ' <span class="legacygroup_subtext">(Leadership: ' + format(getEnlightenedSlowFactor()) + 'x slower per Rank)</span>';
+    return '<span class="legacygroup_subtext">(' + format(getEnlightenedSlowFactor()) + 'x slower per rank)</span> ' + getPermaEnlightened() ;
   } else {
     let table = {
-      'inefficient': x => format(x) + 'x multiplier to all production',
-      'ufd': x => '+' + format(x) + ' power handling',
-      'lonely': x => format(x) + 'x skill gain from Piloting',
-      'impatient': x => format(x) + 'x Cool meter gain',
-      'unprestigious': x => toTime(x) + ' extra time when Retrofitting',
-      'slow': x => 'Everything (including Cool and power gain)<br/>is ' + format(x) + 'x faster',
-      'powerless': x => format(x) + 'x power production',
-      'upgradeless': x => format(x) + 'x per 01:00:00 for second endgame upgrade'
+      'inefficient': x => format(x) + 'x',
+      'ufd': x => '+' + format(x) + '',
+      'lonely': x => format(x) + 'x',
+      'impatient': x => format(x) + 'x',
+      'unprestigious': x => toTime(x) + ' extra time',
+      'slow': x => '' + format(x) + 'x',
+      'powerless': x => format(x) + 'x',
+      'upgradeless': x => format(x) + 'x'
     }
     return table[x](challengeReward(x));
   }

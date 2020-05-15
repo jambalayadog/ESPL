@@ -1,3 +1,8 @@
+var formathelp = {
+  micro: '&#x00B5;'
+}
+
+
 function format(x, n) {
   x = new Decimal(x);
   if (n === undefined) {
@@ -36,12 +41,12 @@ function toTime(x, options) {
     if (x < 1e-12) {
       let exponent = Math.floor(Math.log10(x));
       let mantissa = x / Math.pow(10, exponent);
-      return mantissa.toFixed(2) + 'e' + exponent + ' seconds';
+      return mantissa.toFixed(2) + 'e' + exponent + ' s';
     }
     let level = -Math.floor(Math.log10(x) / 3);
     x *= Math.pow(1000, level)
-    let prefixes = [null, 'milli', 'micro', 'nano', 'pico'];
-    return x.toFixed(2) + ' ' + prefixes[level] + 'seconds';
+    let prefixes = [null, 'e-3', 'e-6', 'e-9', 'e-12'];
+    return x.toFixed(2) + '' + prefixes[level] + 's';
   }
   if (x / 3600 >= 1e6) {
     return format(x / 3600) + ' hours';
