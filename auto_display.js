@@ -71,21 +71,18 @@ function updateAutoDisplay() {
         var ele = document.getElementsByClassName("auto_leaderup");
         for (var j = 0; j < ele.length; j++) {
           ele[j].style.display='';
-          console.log("showing leaderup")
         }
       }
       if (AUTO_LIST[i] == 'prestige') {
         var ele = document.getElementsByClassName("auto_retrofit");
         for (var j = 0; j < ele.length; j++) {
           ele[j].style.display='';
-          console.log("showing retrofit")
         }
       }
       if (AUTO_LIST[i] == 'update') {
         var ele = document.getElementsByClassName("auto_spacewar");
         for (var j = 0; j < ele.length; j++) {
           ele[j].style.display='';
-          console.log("showing spacewar")
         }
       }
     } else {
@@ -94,21 +91,18 @@ function updateAutoDisplay() {
         var ele = document.getElementsByClassName("auto_leaderup");
         for (var j = 0; j < ele.length; j++) {
           ele[j].style.display='none';
-          console.log("hiding leaderup")
         }
       }
       if (AUTO_LIST[i] == 'prestige') {
         var ele = document.getElementsByClassName("auto_retrofit");
         for (var j = 0; j < ele.length; j++) {
           ele[j].style.display='none';
-          console.log("hiding retrofit")
         }
       }
       if (AUTO_LIST[i] == 'update') {
         var ele = document.getElementsByClassName("auto_spacewar");
         for (var j = 0; j < ele.length; j++) {
           ele[j].style.display='none';
-          console.log("hiding spacewar")
         }
       }
     }

@@ -84,7 +84,7 @@
           <div class="activity_progress"> </div>
           <div class="activity_prestige_effect"></div>
           <div class="activity_prestige_control">
-            <div><button class="prestige_button" id="update-button" onclick="update()"><span class="button_title">WIN STARFIGHT</span><br/><span class="activity_prestige_info" id="update-gain"></span></button></div>
+            <div><button class="prestige_button" id="update-button" onclick="update()"><span class="button_title">DECLARE PEACE</span><br/><span class="activity_prestige_info" id="update-gain"></span></button></div>
           </div>
         </div>
         <!---- PILOTING ---->
@@ -197,7 +197,7 @@
         
         <!--   AUTO BATTLE -->
         <div class="autooption_column" id="auto-update-span" >   <!--   AUTO BATTLE -->
-          <div class="auto_option"><span class="auto_spacewar" style="display:none"><input class="auto_checkbox" id="auto-update-on" onclick="toggleAutoOn('update')" type="checkbox"></input>AUTO-STARFIGHT</span></div>
+          <div class="auto_option"><span class="auto_spacewar" style="display:none"><input class="auto_checkbox" id="auto-update-on" onclick="toggleAutoOn('update')" type="checkbox"></input>AUTO-DECLARE</span></div>
           <div><span class="auto_spacewar" style="display:none">Value: <input class="auto_input" id="auto-update-value" type="text" onchange="updateAutoValue('update')"></input></span></div>
           <div><span class="auto_spacewar" style="display:none"><button class="auto_button" id="auto-update-setting" onclick="nextAutoSetting('update')"></button></span></div>  
         </div> 
@@ -406,7 +406,9 @@
           <div>Power per experience per second: <span id="power-gain-per-experience">0.01</span></div>
           <div>Legacy Points: <span id="update-points">0</span></div>       
         </div>
-        <div>
+        <div class="mission" id="dilation" style="display: none;">
+            <span id="dilation-text"></span>
+            <button id="dilation-upgrade-0-button" onclick="buyDilationUpgrade(0)"></button>
         </div>
       </div>
       <div class="legacyupgrade_group">
@@ -417,7 +419,7 @@
               <!--<div><button onclick="assignOne(2)">Convert 1 Legacy into Resolve</button></div>
               <div><button onclick="assignThird(2)">Convert 1/3 into Resolve</button></div>
               <div><button onclick="assignAll(2)">Convert all Legacy into Resolve</button></div>-->
-              <span><button onclick="convertLegacy(0)">Convert</button><button id="legacy_to_resolve" onclick="toggleAmount(0)">Toggle</button></span>
+              <span><button class="legacypoints_button" onclick="convertLegacy(0)">Convert LP</button><button class="legacypoints_button" id="legacy_to_resolve" onclick="toggleAmount(0)">Toggle</button></span>
             </div>            
             <div class="activity_effect">
               <div>RESOLVE: <span id="update-experience-span-2">0</span></div>
@@ -436,7 +438,7 @@
               <!--<div><button onclick="assignOne(1)">Convert 1 Legacy into Reputation</button></div>
               <div><button onclick="assignThird(1)">Convert 1/3 into Reputation</button></div>
               <div><button onclick="assignAll(1)">Convert all Legacy into Reputation</button></div>-->
-              <span><button onclick="convertLegacy(1)">Convert</button><button id="legacy_to_resonance" onclick="toggleAmount(1)">Toggle</button></span>
+              <span><button class="legacypoints_button" onclick="convertLegacy(1)">Convert LP</button><button class="legacypoints_button" id="legacy_to_resonance" onclick="toggleAmount(1)">Toggle</button></span>
             </div>
             <div class="activity_effect">
               <div>RESONANCE: <span id="update-experience-span-1">0</span> </div>
@@ -455,7 +457,7 @@
               <!--<div><button onclick="assignOne(0)">Convert 1 Legacy into Resource</button></div>
               <div><button onclick="assignThird(0)">Convert 1/3 into Resource</button></div>
               <div><button onclick="assignAll(0)">Convert all Legacy into Resource</button></div>-->
-              <span><button onclick="convertLegacy(2)">Convert</button><button id="legacy_to_resource" onclick="toggleAmount(2)">Toggle</button></span>
+              <span><button class="legacypoints_button" onclick="convertLegacy(2)">Convert LP</button><button class="legacypoints_button" id="legacy_to_resource" onclick="toggleAmount(2)">Toggle</button></span>
             </div>
             <div class="activity_effect">
               <div>RESOURCE: <span id="update-experience-span-0">0</span></div>
@@ -481,8 +483,6 @@
           <br/><span><span id="milestone-status-3">&#x2718;</span> > 16 Missions complete: Auto Legacy Attribution</span>
           <br/><span><span id="milestone-status-4">&#x2718;</span> > 32 Missions complete: Extra 1% from Skills</span> 
         </div>
-
-
       </div>
     </div>
   </div>
@@ -506,11 +506,7 @@
           <br><span id="next-challenge-unlock">Next challenge unlocks eventually.</span>
           <br><span><button onclick="exitChallenge()">Exit current challenge</button></span>
         </div>
-        <div class="mission" id="dilation" style="display: none;">
-          <span id="dilation-text"></span>
-          <br/>
-          <button id="dilation-upgrade-0-button" onclick="buyDilationUpgrade(0)"></button>
-        </div>
+        
       </div>
       <div class="missions_list">
         <div class="mission" id="logarithmic-td" style="display: none;">

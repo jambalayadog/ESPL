@@ -332,7 +332,7 @@ function updateChallengeDisplay() {
   }
   if (player.dilation > 0) {
     document.getElementById('dilation').style.display = '';
-    document.getElementById('dilation-text').innerHTML = 'You have ' + format(player.dilation, 4) + ' Provenance, ' + format(getDilationPerSecond(), 4) + ' Provenance per second, raising Systems and Weapons Power ^' + format(getDilationEffect(), 4) + '.';
+    document.getElementById('dilation-text').innerHTML = 'Provenance: ' + format(player.dilation, 4) + '<br/>Provenance/sec: ' + format(getDilationPerSecond(), 4) + '<br/>Weapons & Systems Power: ^' + format(getDilationEffect(), 4);
   } else {
     document.getElementById('dilation').style.display = 'none';
   }

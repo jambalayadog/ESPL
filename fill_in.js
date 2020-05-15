@@ -33,7 +33,7 @@ function fillInAutoAssignUpdatePoints() {
 }
 
 function fillInDilationUpgrades() {
-  document.getElementById('dilation-upgrade-0-button').innerHTML = 'Multiply Leadership speed by 1.1. Currently: ' + format(getDilationUpgradeEffect(0)) + 'x, Cost: ' + format(getDilationUpgradeCost(0)) + ' Provenance';
+  document.getElementById('dilation-upgrade-0-button').innerHTML = '<span class="button_title">Acquire Lucid Clarity</span><br/><span class="legacygroup_subtext">Multiply Leadership speed by 1.1.<br/> Currently: ' + format(getDilationUpgradeEffect(0)) + 'x<br/></span>Cost: ' + format(getDilationUpgradeCost(0)) + ' Provenance';
 }
 
 function fillInOptions() {
