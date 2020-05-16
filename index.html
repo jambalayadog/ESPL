@@ -221,8 +221,8 @@
           <div class="auto_option"><span class="auto_retrofit" style="display:none"><input class="auto_checkbox" id="auto-prestige-on" onclick="toggleAutoOn('prestige')" type="checkbox"></input>AUTO-RETROFIT</span></div>
           <div><span class="auto_retrofit autooption_text" style="display:none">VALUE: <input class="auto_input" id="auto-prestige-value" type="text" onchange="updateAutoValue('prestige')"></input></span></div>
           <div><span class="auto_retrofit" style="display:none"><button class="auto_button" id="auto-prestige-setting" onclick="nextAutoSetting('prestige')"></button></span></div>
-          <div><span class="auto_retrofit autooption_text" style="display:none">PRIORITY: <button class="auto_prioritize auto_button" id="auto-prestige-initial" onclick="toggleAutoPrestigeInitial()"></button></span></div>
-          <div><span class="auto_retrofit autooption_text" style="display:none"><input class="auto_checkbox" id="auto-prestige-alternate" onclick="toggleAutoPrestigeAlternate()" type="checkbox"></input>TOGGLE RETROFITS</span></div>
+          <div><span class="auto_retrofit autooption_text" style="display:none">TYPE: <button class="auto_prioritize auto_button" id="auto-prestige-initial" onclick="toggleAutoPrestigeInitial()"></button></span></div>
+          <div><span class="auto_retrofit autooption_text" style="display:none"><input class="auto_checkbox" id="auto-prestige-alternate" onclick="toggleAutoPrestigeAlternate()" type="checkbox"></input>TOGGLE TYPES</span></div>
         </div>
         <!--   AUTO LEADER UP   -->
         <div class="autooption_column" id="auto-enlightened-span"> <!--   AUTO LEADER UP   -->
@@ -371,18 +371,34 @@
     <div class="legacy_page">
       <div class="legacystatus_row">
         <div>
-          <div>Starfights Won: <span id="updates">0</span></div>
-          <div>Additional Skill from Wins: <span id="additional-devs-due-to-updates"></span></div>
-          <div>Power per experience per second: <span id="power-gain-per-experience">0.01</span></div>
-          <div>Legacy Points: <span id="update-points">0</span></div>       
+          <div class="provenance_stats provstats_leftcol">
+            <div class="provenance_stat">
+              <div>Armistices Forced:</div>
+              <div>Additional Skill:</div>
+              <div>Power per XP per second:</div>
+              <div>Legacy Points:</div>
+            </div>
+            <div class="provenance_number">
+              <div><span id="updates">0</span></div>
+              <div><span id="additional-devs-due-to-updates"></span></div>
+              <div><span id="power-gain-per-experience">0.01</span></div>
+              <div><span id="update-points">0</span></div>
+            </div>
+          </div>      
         </div>
         <div>
           <div class="provenance_container" id="dilation" style="display: none;">
             <div class="provenance_stats">
-              <span class="provenance_stat">Provenance:</span><br><span class="provenance_number" id="dilation-text"></span>
-              <span class="provenance_stat">Weapons & Systems Power:</span><br><span class="provenance_number" id="dilation-text2"></span>
+              <div class="provenance_stat">
+                <div>Provenance:</div>
+                <div>Weapons, Systems Power:</div>
+              </div>
+              <div class="provenance_number">
+                <div><span id="dilation-text"></span></div>
+                <div><span id="dilation-text2"></span></div>
+              </div>
             </div>
-            <div class="provenance_stats"><button id="dilation-upgrade-0-button" onclick="buyDilationUpgrade(0)"></button></div>
+            <div class="provenance_stats"><button class="provenance_button" id="dilation-upgrade-0-button" onclick="buyDilationUpgrade(0)"></button></div>
           </div>
         </div>
       </div>

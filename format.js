@@ -8,18 +8,18 @@ function format(x, n) {
   if (n === undefined) {
     n = 2;
   }
-  let es = 0;
+  let es = 0;                                           // get # of exponents, if x is greater than a million 
   while (x.gte(Decimal.pow(10, 1e6))) {
     x = x.log(10);
     es++;
   }
   let result;
   if (x.gte(1e6)) {
-    let e = Math.floor(x.log(10).toNumber());
-    let m = x.div(Decimal.pow(10, e)).toNumber();
-    if (+m.toFixed(n) >= 10) {
+    let e = Math.floor(x.log(10).toNumber());           // round down to get just the e
+    let m = x.div(Decimal.pow(10, e)).toNumber();       // m is the value 
+    if (+m.toFixed(n) >= 10) {                          
       m /= 10;
-      e++;
+      e++;                                              // iterate throug to get the last few e's
     }
     result = m.toFixed(n) + 'e' + e;
   } else if (x.equals(Math.round(x.toNumber()))) {

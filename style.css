@@ -67,9 +67,9 @@ body {
 }
 
 
-/*  NAV BAR --------------------------------------------------------------------- 
+/*  NAV BAR ---------------------------------------------------------------------
 
-███    ██  █████  ██    ██     ██████   █████  ██████  
+███    ██  █████  ██    ██     ██████   █████  ██████ 
 ████   ██ ██   ██ ██    ██     ██   ██ ██   ██ ██   ██ 
 ██ ██  ██ ███████ ██    ██     ██████  ███████ ██████  
 ██  ██ ██ ██   ██  ██  ██      ██   ██ ██   ██ ██   ██ 
@@ -86,7 +86,7 @@ body {
     border: 5px solid black;
     color: var(--nav_def_fg);
     background-color: var(--nav_def_bg);
-    display: flex; 
+    display: flex;
     justify-content: center;
     box-sizing: border-box;
 
@@ -119,12 +119,12 @@ body {
 }
 
 
-/* LORE --------------------------------------------------- 
+/* LORE ---------------------------------------------------
 
 ██       ██████  ██████  ███████ 
 ██      ██    ██ ██   ██ ██      
-██      ██    ██ ██████  █████   
-██      ██    ██ ██   ██ ██      
+██      ██    ██ ██████  █████ 
+██      ██    ██ ██   ██ ██    
 ███████  ██████  ██   ██ ███████
 
 /* LORE --------------------------------------------------- */
@@ -142,7 +142,7 @@ body {
     display: flex;
     overflow-y: scroll;
     flex-direction: column-reverse;
-    line-height: normal;  
+    line-height: normal;
     scroll-snap-type: y mandatory;
     background-color: var(--act_bg);
     box-shadow: var(--box_shadow);
@@ -200,7 +200,7 @@ body {
     background-color: var(--background_moretransparent);
     color: var(--text_secondary);
     padding: 5px;
-    grid-template-columns: 
+    grid-template-columns:
         auto auto auto;
     grid-column-gap: 20px;
 }
@@ -226,7 +226,7 @@ body {
     /*background-color: var(--act_bg);*/
     color: var(--text_secondary);
     padding:0px;
-    grid-template-columns: 
+    grid-template-columns:
         auto auto;
     text-align: right;
 }
@@ -237,17 +237,17 @@ body {
 
 
 
-/*  MAIN --------------------------------------------------------------------- 
+/*  MAIN ---------------------------------------------------------------------
 
 ███    ███  █████  ██ ███    ██     ██████   █████   ██████  ███████ 
 ████  ████ ██   ██ ██ ████   ██     ██   ██ ██   ██ ██       ██      
-██ ████ ██ ███████ ██ ██ ██  ██     ██████  ███████ ██   ███ █████   
-██  ██  ██ ██   ██ ██ ██  ██ ██     ██      ██   ██ ██    ██ ██      
+██ ████ ██ ███████ ██ ██ ██  ██     ██████  ███████ ██   ███ █████ 
+██  ██  ██ ██   ██ ██ ██  ██ ██     ██      ██   ██ ██    ██ ██    
 ██      ██ ██   ██ ██ ██   ████     ██      ██   ██  ██████  ███████
 
   MAIN --------------------------------------------------------------------- */
 
- 
+
 .main_page {
     width:100%;
     max-width:800px;
@@ -258,12 +258,12 @@ body {
     font-size: 12px;
 }
 
-  
+
 .starfight_page {
     width:100%;
     max-width:800px;
     display: grid;  /* 450px min, max 600px */
-    grid-template-columns: 
+    grid-template-columns:
         minmax(90px,160px) minmax(90px,160px) minmax(90px,160px) minmax(90px,160px) minmax(90px,160px);    /*achievements_stats earlygame midmame lategame end_stats endgame */
     box-sizing: border-box;
     font-size: 12px;
@@ -293,13 +293,13 @@ body {
     font-size: 12px;
 }
 
-.activity_title { 
+.activity_title {
     font-weight: bold;
     border: var(--debug_border);
     padding: 6px;
     color: var(--text_title);
     font-size: 16px;
-    
+
 }
 
 .activity_progress {
@@ -307,7 +307,7 @@ body {
     padding: 1px;
     color: var(--text_progress);
     font-weight: bold;
-    font-size: 14px;    
+    font-size: 14px;
 }
 
 .activity_effect {
@@ -358,7 +358,7 @@ body {
 }
 
 .prestige_button {
-    border: 1px solid; 
+    border: 1px solid;
     background-color: rgb(255, 200, 200);
     /*padding: 0px;*/
     height: 60px;
@@ -389,7 +389,7 @@ body {
         minmax(90px,160px) minmax(90px,160px) minmax(90px,160px) minmax(90px,160px) minmax(90px,160px);    /*stats legacy_upgrades*/
     background-color: var(--background_common);
     justify-content: center;
-    box-sizing: border-box; 
+    box-sizing: border-box;
 }
 
 .autooption_column {
@@ -439,7 +439,7 @@ body {
     width: 50%;
     text-align: center;
     vertical-align: middle;
-    
+
 }
 
 .auto_checkbox {
@@ -451,8 +451,8 @@ body {
 }
 
 .autooption_title {
-    font-weight:bold; 
-    font-size:14px; 
+    font-weight:bold;
+    font-size:14px;
     color:white;
     width: 100%;
 
@@ -475,7 +475,7 @@ body {
     width: 795px;
     height: 440px;
     overflow-y: scroll;
-    /*display: grid;  /* 450px min, max 600px 
+    /*display: grid;  /* 450px min, max 600px
     grid-template-rows:
         auto auto auto auto auto;    /*achievements_stats earlygame midmame lategame end_stats endgame */
     /*grid-row-gap: 5px;*/
@@ -483,13 +483,13 @@ body {
     font-size: 12px;
     padding: 5px 0px 5px 5px;
     /*box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12); */
-    box-sizing: border-box; 
+    box-sizing: border-box;
 }
 
 .achievements_row {
-    display: flex;             
-    flex-direction: row;       
-    align-items: stretch;      
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
     height: auto;
     width: 100%;
 }
@@ -502,7 +502,7 @@ body {
     border: var(--border_black);
     color: var(--text_progress);
     width: 100%;
-    
+
 }
 
 .achievements_title {
@@ -530,7 +530,7 @@ body {
 .title_text {
     font-weight: bold;
     color: var(--text_title);
-    
+
 }
 
 .title_support {
@@ -541,68 +541,80 @@ body {
 }
 
 
-/* --- LEGACY --------------------------------------------------- 
+/* --- LEGACY ---------------------------------------------------
 
 ██      ███████  ██████   █████   ██████ ██    ██ 
 ██      ██      ██       ██   ██ ██       ██  ██  
-██      █████   ██   ███ ███████ ██        ████   
-██      ██      ██    ██ ██   ██ ██         ██    
+██      █████   ██   ███ ███████ ██        ████  
+██      ██      ██    ██ ██   ██ ██         ██  
 ███████ ███████  ██████  ██   ██  ██████    ██ 
 
 /* --- LEGACY --------------------------------------------------- */
 
 
 .legacy_page {
-    display: grid;  /* 450px min, max 600px */
+    /*display: grid;  /* 450px min, max 600px 
     grid-template-rows:
         auto auto auto;    /*stats legacy_upgrades*/
     justify-content: center;
     font-size: 12px;
     padding:5px;
-    
+
     box-sizing: border-box;
-    height: 440px; 
+    height: 440px;
 }
 
 .legacystatus_row {
     display: grid;
-    grid-template-columns: 
-        50% 50%;
+    grid-template-columns:
+        auto auto;
     width: 100%;
     font-size: 12px;
     padding: 5px;
     background-color: var(--background_moretransparent);
     box-shadow: var(--box_shadow);
-    border: 1px solid lightgrey;
+    border: var(--border_black);
     color: var(--text_progress);
-    box-sizing: border-box; 
+    box-sizing: border-box;
+    grid-column-gap: 20px;
 }
 
-
+.provstats_leftcol {
+    width: 285px;
+}
 .provenance_container {
     font-size: 12px;
     color: var(--text_secondary);
-    text-align: center;
+    /*text-align: center;*/
+    display: grid;
+    grid-template-columns:
+        auto auto;
+    grid-column-gap: 20px;
+    box-sizing: border-box;
+    /*width: 460px;*/
+ }
+
+ .provenance_stats {
+    /*width: 100%;*/
+    /*margin: auto;*/
     display: grid;
     grid-template-columns: 
         auto auto;
  }
 
- .provenance_stats {
-    width: 100%;
-    margin: auto;
- }
-
  .provenance_stat {
-    display: grid;
-    grid-template-columns: auto auto;
     text-align: left;
     color: var(--text_tertiary);
 }
 
 .provenance_number {
-    text-align: right;
     color: lightblue;
+    text-align: right;
+}
+
+.provenance_button {
+    width: 180px;
+    height: 60px;
 }
 
 
@@ -612,13 +624,14 @@ body {
         minmax(160px, 266px) minmax(160px, 266px) minmax(160px, 266px);
     font-size: 12px;
     color: var(--act_color);
+    
     text-align: center;
 }
 
 .legacygroup_upgrades {
     display: grid;
     grid-template-rows:
-        30px 25px 45px 60px 60px 25px;   /* 450 - status - milestones?   */
+        30px 37px 45px 60px 60px 25px;   /* 450 - status - milestones?   */
     grid-column-gap: 30px;
     padding: 0px 0px 5px 0px;
     background-color: var(--background_common);
@@ -643,7 +656,7 @@ body {
 }
 
 .legacyupgrade_button {
-    border: 1px solid; 
+    border: 1px solid;
     /*padding: 0px;*/
     height: 60px;
     width: 250px;/*
@@ -703,7 +716,7 @@ body {
     padding: 5px;
     text-align: center;
     display: grid;
-    grid-template-columns: 
+    grid-template-columns:
         auto auto auto auto;
     margin: auto;
 }
@@ -741,7 +754,7 @@ body {
         auto auto auto;
 }
 
-.mission {  
+.mission {
     font-size: 12px;
     border: var(--border_black);
     background-color: var(--background_moretransparent);
@@ -752,7 +765,7 @@ body {
 
 .mission_button {
     height: 60px;
-    border: 1px solid; 
+    border: 1px solid;
     /*padding: 0px;*/
     width: 250px;/*
     border-radius: 4px;*/
@@ -773,7 +786,7 @@ body {
 
 
 
-/* --- OPTIONS --------------------------------------------------- 
+/* --- OPTIONS ---------------------------------------------------
 
  ██████  ██████  ████████ ██  ██████  ███    ██ ███████               ██   ██ ██ ██████  ██████  ███████ ███    ██ 
 ██    ██ ██   ██    ██    ██ ██    ██ ████   ██ ██                    ██   ██ ██ ██   ██ ██   ██ ██      ████   ██ 
@@ -788,7 +801,7 @@ body {
     max-width:800px;
     display: grid;  /* 450px min, max 600px */
     grid-template-columns:
-        minmax(90px,160px) minmax(360px,640px);   
+        minmax(90px,160px) minmax(360px,640px);
     grid-column-gap: 5px;
     justify-content: center;
     padding:5px;
@@ -814,7 +827,7 @@ body {
     background-color: var(--act_bg);
     color: var(--text_secondary);
     padding:5px;
-    grid-template-columns: 
+    grid-template-columns:
         auto auto auto auto;
 }
 
@@ -826,7 +839,7 @@ body {
     background-color: var(--act_bg);
     color: var(--text_secondary);
     padding:0px;
-    grid-template-columns: 
+    grid-template-columns:
         auto auto;
 }
 
@@ -850,7 +863,7 @@ body {
 
 
 
-/* TOOLTIPS 
+/* TOOLTIPS
 
 ████████  ██████   ██████  ██          ████████ ██ ██████  ███████ 
    ██    ██    ██ ██    ██ ██             ██    ██ ██   ██ ██      
@@ -865,7 +878,7 @@ body {
     display: inline-block;
     border-bottom: 1px dotted black;
   }
-  
+
   .tooltip .tooltiptext {
     visibility: hidden;
     width: 250px;
@@ -876,14 +889,14 @@ body {
     border-radius: 2px;
     padding: 5px;
     font-size: 10px;
-  
+
     /* Position the tooltip */
     position: absolute;
     left: 250px;
     top: 25px;
     z-index: 1;
   }
-  
+
   .tooltip:hover .tooltiptext {
     visibility: visible;
   }

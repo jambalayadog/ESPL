@@ -54,7 +54,7 @@ let AUTO_SETTINGS = {
     'Leader Rank',
     'time since last Leader Up',
     'time to max out Leadership',
-    'optimal for X-second-long Retrofit'
+    'X-second-long Retrofit'
   ],
   'prestige': [
     'Starfight time',
@@ -85,7 +85,7 @@ function checkForAutoEnlightened() {
     'Leader Rank': x => getTotalEnlightened() < x,
     'time since last Leader Up': x => Date.now() - player.stats.last.enlightened >= x * 1000,
     'time to max out Leadership': x => x >= getEffect(4),
-    'optimal for X-second-long Retrofit': x => shouldEnlightened(x)
+    'X-second-long Retrofit': x => shouldEnlightened(x)
   }
   while (player.progress[7] >= 1 && table[player.auto.enlightened.setting](player.auto.enlightened.value.toNumber())) {
     enlightened();

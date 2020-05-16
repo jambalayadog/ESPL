@@ -16,6 +16,13 @@ function getEffect(i, progressOverride) {
     if (player.currentChallenge === 'lonely') {
       return 1;
     } else {
+      /*console.log("mLog:", maybeLog(baseDevs() + getAdditionalDevsDueToUpdates() + x * getUpdatePowerEffect(2) * challengeReward('lonely') / 300));
+      console.log("base:", baseDevs());
+      console.log("Adds:", getAdditionalDevsDueToUpdates());
+      console.log("x:", x);
+      console.log("UPE:", getUpdatePowerEffect(2));
+      console.log("CR:", challengeReward('lonely') / 300);
+      console.log("multiplied", x * getUpdatePowerEffect(2) * challengeReward('lonely') / 300);*/
       return Math.floor(maybeLog(baseDevs() + getAdditionalDevsDueToUpdates() + x * getUpdatePowerEffect(2) * challengeReward('lonely') / 300));
     }
   } else if (i === 4) {   // Patience
