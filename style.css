@@ -749,7 +749,7 @@ body {
 .missions_list {
     display: grid;
     grid-template-columns:
-        minmax(150px, 33.33%) minmax(150px, 33.33%) minmax(150px, 33.33%);
+        minmax(150px, 264px) minmax(150px, 264px) minmax(150px, 264px);
     grid-template-rows:
         auto auto auto;
 }

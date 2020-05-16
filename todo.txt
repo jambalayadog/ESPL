@@ -54,6 +54,17 @@ eyJwcm9ncmVzcyI6WzQ2NDQ4NjQwLjM0NDEwOTA5LDQ2NDQ4NTgwLjgzNzI2NzkzNSw0NjQ0ODU4MC44
 May 13, 2020, 5:15pm
 
 
+TOILET PAPER ROYALE
+- city
+- zombies are people - they go towards nearest toilet paper seller (by car on foot - need to approximate this locally)
+- - they disappear when they come into contact with a seller.  the player gets money.
+- - you can sell on-hand
+- the player needs tools to: gather toilet paper, interact with other players, establish stations
+- there may be benefit from metagame around some of these topics or other wider topics
+- - interesting mechanics: shit mechanics requires TP, forces buying from other players or interacting with TP
+
+
+
 
 
 // EPIC STARFIGHTER PILOT LEGACY 2
