@@ -308,11 +308,35 @@ function updateOtherDisplay() {
   fillInDilationUpgrades();
 }
 
+function convertToESPL(x) {
+  switch(x) {
+    case 'Logarithmic':
+      return 'Inner Soulo';
+    case 'Inefficient':
+      return 'Passive War';
+    case 'UFD':
+      return 'Hack, Slice, Rig';
+    case 'Lonely':
+      return 'Command Role';  
+    case 'Impatient':
+      return 'Without a Leader';  
+    case 'Unprestigious':
+      return 'Old Farm Equipment';  
+    case 'Slow':
+      return 'Space Shit Creek';  
+    case 'Powerless':
+      return 'Who Am I';  
+    case 'Upgradeless':
+      return 'All for Naught';  
+  }
+  return x;
+}
+
 function updateChallengeDisplay() {
   document.getElementById('total-challenge-completions').innerHTML = format(getTotalChallengeCompletions());
   document.getElementById('missioncontrol_missionscomplete').innerHTML = format(getTotalChallengeCompletions());
-  document.getElementById('current-challenge').innerHTML = getChallengeForDisplay(player.currentChallenge);
-  document.getElementById('missioncontrol_currentmission').innerHTML = getChallengeForDisplay(player.currentChallenge);
+  document.getElementById('current-challenge').innerHTML = convertToESPL(getChallengeForDisplay(player.currentChallenge));
+  document.getElementById('missioncontrol_currentmission').innerHTML = convertToESPL(getChallengeForDisplay(player.currentChallenge));
   document.getElementById('next-challenge-unlock').innerHTML = nextChallengeUnlock();
   for (let i in CHALLENGE_UNLOCKS) {
     if (isChallengeUnlocked(i)) {

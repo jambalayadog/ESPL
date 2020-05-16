@@ -31,7 +31,7 @@ function updateDisplay () {
       el.innerHTML = formatEffect(i) + ' -> ' + formatEffect(i, newValue) + '<br/>' + toTime(player.progress[i]) + ' -> ' + toTime(newValue) + '<br/>' + toTime(newValue - player.progress[i]) + ' gain'
       btn.style.backgroundColor = UIColors.button_active;    //green: active, profitable
     } else if (player.currentChallenge === 'unprestigious') {
-      el.innerHTML = 'Disabled in this challenge.';
+      el.innerHTML = 'Disabled in this mission';
       btn.style.backgroundColor = UIColors.button_inactive;  //dark grey: disabled
     } else {
       el.innerHTML = 'Requires ' + toTime(1800) + ' Starfighting.';  
