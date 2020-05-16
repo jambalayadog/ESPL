@@ -174,7 +174,7 @@ body {
 }
 
 .progressstats_title {
-    width: 100%;
+    /*width: 100%;
     box-shadow: var(--box_shadow);
     border: 1px solid lightgrey;
     font-weight: bold;
@@ -186,15 +186,18 @@ body {
     padding: 1px;
     margin: auto;
     box-sizing: border-box;
-    text-align: center;
+    text-align: center;*/
+    background-image: url(../ESPL/images/GameLogo.png);
+    background-size: 158px 67px;
+    border: var(--border_black);
 }
 
 .progressstats_section {
     display: grid;
     box-shadow: var(--box_shadow);
-    border: 1px solid lightgrey;
+    border: var(--border_black);
     font-size: 12px;
-    background-color: var(--act_bg);
+    background-color: var(--background_moretransparent);
     color: var(--text_secondary);
     padding: 5px;
     grid-template-columns: 
@@ -220,7 +223,7 @@ body {
     box-shadow: var(--box_shadow);
     border: var(--debug_border);
     font-size: 12px;
-    background-color: var(--act_bg);
+    /*background-color: var(--act_bg);*/
     color: var(--text_secondary);
     padding:0px;
     grid-template-columns: 
