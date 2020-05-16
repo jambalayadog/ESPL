@@ -315,8 +315,8 @@ body {
 
 .activity_skill {
     border: var(--debug_border);
-    padding: 1px;
-    font-weight: bold;
+    padding: 1px;/*
+    font-weight: bold;*/
 }
 .activity_fraction {
     border: var(--debug_border);
@@ -336,6 +336,7 @@ body {
     border: var(--debug_border);
     padding: 1px;
     color: var(--text_secondary);
+    /*text-shadow: 1px 1px black;*/
 }
 .activity_prestige_control {
     border: var(--debug_border);
@@ -562,7 +563,8 @@ body {
 
 .legacystatus_row {
     display: grid;
-    grid-template-columns: 50% 50%;
+    grid-template-columns: 
+        50% 50%;
     width: 100%;
     font-size: 12px;
     padding: 5px;
@@ -574,6 +576,31 @@ body {
 }
 
 
+.provenance_container {
+    font-size: 12px;
+    color: var(--text_secondary);
+    text-align: center;
+    display: grid;
+    grid-template-columns: 
+        auto auto;
+ }
+
+ .provenance_stats {
+    width: 100%;
+    margin: auto;
+ }
+
+ .provenance_stat {
+    display: grid;
+    grid-template-columns: auto auto;
+    text-align: left;
+    color: var(--text_tertiary);
+}
+
+.provenance_number {
+    text-align: right;
+    color: lightblue;
+}
 
 
 .legacyupgrade_group {
@@ -839,8 +866,8 @@ body {
   .tooltip .tooltiptext {
     visibility: hidden;
     width: 250px;
-    background-color: var(--tip_bg);
-    color: var(--tip_text);
+    background-color: slategray;
+    color: var(--text_secondary);
     border-color: var(--tip_border);
     text-align: left;
     border-radius: 2px;
@@ -849,7 +876,8 @@ body {
   
     /* Position the tooltip */
     position: absolute;
-    left: 50px;
+    left: 250px;
+    top: 25px;
     z-index: 1;
   }
   

@@ -78,7 +78,7 @@ function describeChallengeReward(x) {
 function describeChallengeCompleted(x) {
   let cc = challengeCompletions(x);
   if (cc === 0) {
-    return 'You have not yet completed this Mission.';
+    return '0';
   } else {
     return format(cc);
   }

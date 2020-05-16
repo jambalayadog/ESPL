@@ -51,22 +51,22 @@ function autoAssignUpdatePoints() {
 
 let AUTO_SETTINGS = {
   'enlightened': [
-    'total times Leader Up',
-    'real seconds since last time Leader Up',
-    'time to max out Cool meter',
+    'Leader Rank',
+    'time since last Leader Up',
+    'time to max out Leadership',
     'optimal for X-second-long Retrofit'
   ],
   'prestige': [
-    'Starfight',
-    '+X time improvement over current',
-    '+X time improvement over better',
-    'real seconds since last Refrofit'
+    'Starfight time',
+    '+X time better than current',
+    '+X time better than highest',
+    'time since last Retrofit'
   ],
   'update': [
-    'Starfight',
+    'Starfight time',
     'Legacy Points',
     'X times last Legacy Points',
-    'real seconds since last Space War'
+    'time since last Armistice'
   ]
 }
 
@@ -82,9 +82,9 @@ function shouldEnlightened(x) {
 
 function checkForAutoEnlightened() {
   let table = {
-    'total times Leader Up': x => getTotalEnlightened() < x,
-    'real seconds since last time Leader Up': x => Date.now() - player.stats.last.enlightened >= x * 1000,
-    'time to max out Cool meter': x => x >= getEffect(4),
+    'Leader Rank': x => getTotalEnlightened() < x,
+    'time since last Leader Up': x => Date.now() - player.stats.last.enlightened >= x * 1000,
+    'time to max out Leadership': x => x >= getEffect(4),
     'optimal for X-second-long Retrofit': x => shouldEnlightened(x)
   }
   while (player.progress[7] >= 1 && table[player.auto.enlightened.setting](player.auto.enlightened.value.toNumber())) {
@@ -107,10 +107,10 @@ function getBetterPrestigeValue() {
 function checkForAutoPrestige() {
   let type = getCurrentAutoPrestigeType();
   let table = {
-    'Starfight': x => player.progress[0] >= x,
-    '+X time improvement over current': x => newValueFromPrestige() - player.progress[type] >= x,
-    '+X time improvement over better': x => newValueFromPrestige() - getBetterPrestigeValue() >= x,
-    'real seconds since last Retrofit': x => Date.now() - player.stats.last.prestige >= x * 1000
+    'Starfight time': x => player.progress[0] >= x,
+    '+X time better than current': x => newValueFromPrestige() - player.progress[type] >= x,
+    '+X time better than highest': x => newValueFromPrestige() - getBetterPrestigeValue() >= x,
+    'time since last Retrofit': x => Date.now() - player.stats.last.prestige >= x * 1000
   }
   if (table[player.auto.prestige.setting](player.auto.prestige.value.toNumber())) {
     prestige(type, true);
@@ -119,10 +119,10 @@ function checkForAutoPrestige() {
 
 function checkForAutoUpdate() {
   let table = {
-    'Starfight': x => player.progress[0] >= x.toNumber(),
+    'Starfight time': x => player.progress[0] >= x.toNumber(),
     'Legacy Points': x => getUpdateGain().gte(x),
     'X times last Legacy Points': x => getUpdateGain().gte(player.stats.last.updatePointGain.times(x)),
-    'real seconds since last Space War': x => Date.now() - player.stats.last.update >= x.toNumber() * 1000
+    'time since last Armistice': x => Date.now() - player.stats.last.update >= x.toNumber() * 1000
   }
   if (table[player.auto.update.setting](player.auto.update.value)) {
     update(true);

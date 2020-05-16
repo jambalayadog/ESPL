@@ -1,7 +1,7 @@
 const LORE_LIST = [
-  '0 Wow, someone just left this abandoned starfighter sitting around.',
+  '0 Wow, someone abandoned this really basic starfighter here... on this desert planet',
   '1 You take it for a spin.  You\'re a noob, but but you\'ll git gud... You\'re in it for the long haul, right?',
-  '2 Feels like you\'re figuring out the controls.  Keep practicing.',
+  '2 Beep Boop.  Reeeee.  Feels like you\'re figuring out the controls.  Keep practicing.',
   '3 You might actually be getting good at flying.  Keep practicing.',
   '4 You are getting more skilled!  Maybe you\'ll be a real Starfighter Pilot some day.',
   '5 Your weapons investments are paying off. You\'re now 20% more weapon proficient.',

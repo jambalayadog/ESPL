@@ -334,7 +334,9 @@ function updateChallengeDisplay() {
   }
   if (player.dilation > 0) {
     document.getElementById('dilation').style.display = '';
-    document.getElementById('dilation-text').innerHTML = 'Provenance: ' + format(player.dilation, 4) + '<br/>Provenance/sec: ' + format(getDilationPerSecond(), 4) + '<br/>Weapons & Systems Power: ^' + format(getDilationEffect(), 4);
+    /* document.getElementById('dilation-text').innerHTML = 'Provenance: ' + format(player.dilation, 4) + '<br/>Provenance/sec: ' + format(getDilationPerSecond(), 4) + '<br/>Weapons & Systems Power: ^' + format(getDilationEffect(), 4); */
+    document.getElementById('dilation-text').innerHTML = format(player.dilation, 4);
+    document.getElementById('dilation-text2').innerHTML = '^' + format(getDilationEffect(), 4);
     document.getElementById('missions_provenance_per_second').innerHTML = format(getDilationPerSecond(), 4);
   } else {
     document.getElementById('dilation').style.display = 'none';

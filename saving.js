@@ -105,13 +105,13 @@ function fixPlayer () {
   }
   if (!('enlightened' in player.auto)) {
     player.auto.enlightened = {
-      setting: 'total times Leader Up',
+      setting: 'Leader Rank',
       value: new Decimal(0),
       displayValue: '0',
       on: false
     };
     player.auto.prestige = {
-      setting: 'Starfight',
+      setting: 'Starfight time',
       value: new Decimal(0),
       displayValue: '0',
       initial: 5,
@@ -119,7 +119,7 @@ function fixPlayer () {
       on: false
     };
     player.auto.update = {
-      setting: 'Starfight',
+      setting: 'Starfight time',
       value: new Decimal(0),
       displayValue: '0',
       on: false
@@ -266,13 +266,13 @@ let initialPlayer = {
       on: false
     },
     enlightened: {
-      setting: 'total times Leader Up',
+      setting: 'Leader Rank',
       value: new Decimal(0),
       displayValue: '0',
       on: false
     },
     prestige: {
-      setting: 'Starfight',
+      setting: 'Starfight time',
       value: new Decimal(0),
       displayValue: '0',
       initial: 5,
@@ -280,7 +280,7 @@ let initialPlayer = {
       on: false
     },
     update: {
-      setting: 'Starfight',
+      setting: 'Starfight time',
       value: new Decimal(0),
       displayValue: '0',
       on: false

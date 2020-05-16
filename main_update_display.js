@@ -39,18 +39,18 @@ function updateDisplay () {
     }
   }
   if (player.progress[7] >= 1) {
-    document.getElementById('enlightened-desc').innerHTML = 'Reset Leadership and make it slower, but stronger.';
+    document.getElementById('enlightened-desc').innerHTML = 'Reset Leadership and make it slower, but stronger<br/><br/>';
     document.getElementById('enlightened-button').style.backgroundColor = UIColors.button_active;
   } else {
-    document.getElementById('enlightened-desc').innerHTML = 'Requires full Leadership';
+    document.getElementById('enlightened-desc').innerHTML = 'Requires 1 Leadership<br/><br/><br/>';
     document.getElementById('enlightened-button').style.backgroundColor = UIColors.button_inactive;
   }
   if (canUpdate()) {
     let gain = getUpdateGain();
-    document.getElementById('update-gain').innerHTML = 'Gain ' + format(gain) + ' Legacy Point' + (gain.eq(1) ? '' : 's') + '.';
+    document.getElementById('update-gain').innerHTML = '+ ' + format(gain) + ' Legacy Points<br/><br/><br/>';
     document.getElementById('update-button').style.backgroundColor = UIColors.button_active;
   } else {
-    document.getElementById('update-gain').innerHTML = 'Requires ' + toTime(getChallengeGoal(player.currentChallenge)) + ' Starfighting.';
+    document.getElementById('update-gain').innerHTML = 'Requires ' + toTime(getChallengeGoal(player.currentChallenge)) + ' Starfight<br/><br/><br/>';
     document.getElementById('update-button').style.backgroundColor = UIColors.button_inactive;
   }
   document.getElementById('update-points').innerHTML = format(player.updatePoints);
