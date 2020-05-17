@@ -34,23 +34,41 @@ function updateDisplay () {
       el.innerHTML = 'Disabled in this mission';
       btn.style.backgroundColor = UIColors.button_inactive;  //dark grey: disabled
     } else {
-      el.innerHTML = 'Requires ' + toTime(1800) + ' Starfight<br/><br/><br/><br/>';  
+      el.innerHTML = 'Requires ' + toTime(1800) + ' Starfight<br/><br/>';  
       btn.style.backgroundColor = UIColors.button_inactive;  //dark grey: disabled
     }
   }
   if (player.progress[7] >= 1) {
     document.getElementById('enlightened-desc').innerHTML = 'Reset Leadership and make it slower, but stronger<br/><br/>';
+    document.getElementById("progress_leader").style.visibility = 'hidden';
     document.getElementById('enlightened-button').style.backgroundColor = UIColors.button_active;
   } else {
-    document.getElementById('enlightened-desc').innerHTML = 'Requires 1 Leadership<br/><br/><br/><br/>';
+    document.getElementById('enlightened-desc').innerHTML = 'Requires 1 Leadership<br/><br/>';
+    document.getElementById("progress_leader").style.visibility = 'visible';
+    document.getElementById("progress_leader").value = player.progress[7];
     document.getElementById('enlightened-button').style.backgroundColor = UIColors.button_inactive;
+  }
+  if (player.progress[0] >= 1800) {
+    document.getElementById("progress_starfight").style.visibility = 'hidden';
+    document.getElementById("progress_starfight2").style.visibility = 'hidden';
+  } else {
+    document.getElementById("progress_starfight").style.visibility = 'visible';
+    document.getElementById("progress_starfight").value = player.progress[0] / 1800;
+    document.getElementById("progress_starfight2").style.visibility = 'visible';
+    document.getElementById("progress_starfight2").value = player.progress[0] / 1800;
+  }
+  if (player.progress[0] >= 18000) {
+    document.getElementById("progress_armistice").style.visibility = 'hidden';
+  } else {
+    document.getElementById("progress_armistice").style.visibility = 'visible';
+    document.getElementById("progress_armistice").value = player.progress[0] / 18000;
   }
   if (canUpdate()) {
     let gain = getUpdateGain();
     document.getElementById('update-gain').innerHTML = '+ ' + format(gain) + ' Legacy Points<br/><br/><br/>';
     document.getElementById('update-button').style.backgroundColor = UIColors.button_active;
   } else {
-    document.getElementById('update-gain').innerHTML = 'Requires ' + toTime(getChallengeGoal(player.currentChallenge)) + ' Starfight<br/><br/><br/><br/>';
+    document.getElementById('update-gain').innerHTML = 'Requires ' + toTime(getChallengeGoal(player.currentChallenge)) + ' Starfight<br/><br/>';
     document.getElementById('update-button').style.backgroundColor = UIColors.button_inactive;
   }
   document.getElementById('update-points').innerHTML = format(player.updatePoints);

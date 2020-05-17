@@ -84,7 +84,7 @@
           <div class="activity_progress"> </div>
           <div class="activity_prestige_effect"></div>
           <div class="activity_prestige_control">
-            <div><button class="prestige_button" id="update-button" onclick="update()"><span class="button_title">FORCE ARMISTICE</span><br/><span class="activity_prestige_info" id="update-gain"></span></button></div>
+            <div><button class="prestige_button" id="update-button" onclick="update()"><span class="button_title">FORCE ARMISTICE</span><br/><span class="activity_prestige_info" id="update-gain"></span><progress id="progress_armistice" value="0"></progress></button></div>
           </div>
         </div>
         <!---- PILOTING ---->
@@ -105,18 +105,18 @@
           </div>
           <div class="activity_prestige_name"> </div>
           <div class="activity_progress tutorial"> 
-            <div class="tutorial_text" style="visibility: visible;">
+            <div class="tutorial_text" id="tutorial_help" style="visibility: visible;">
               <div><span class="text_t1">STARFIGHT</span><br/><br/>
-                <span class="text_highlight">Starfight</span> is how you progress through the game.<br/><br/>Fight for longer to build your <span class="text_highlight">Legacy</span> and become an <span class="text_highlight">Epic Starfighter Pilot</span>.
+                <span class="text_highlight">Starfighting</span> for longer is how you progress through the game.<br/><br/>Fight for longer to build your <span class="text_highlight">Legacy</span> and become an <span class="text_highlight">Epic Starfighter Pilot</span>.
               </div>
               <div><span class="text_t2">PILOTING</span><br/><br/>
-                Invest in <span class="text_highlight">Piloting</span> to build up more <span class="text_highlight">Skill</span>.<br/><br/>Having lots of Skill lets you do more things with your Starfighter.
+                Put time in <span class="text_highlight">Piloting</span> to build up more <span class="text_highlight">Skill</span>.<br/><br/>Having lots of Skill lets you do more things with your Starfighter.
               </div>
               <div><span class="text_t3">SYSTEMS</span><br/><br/>
-                Outfit your Starfighter with advanced <span class="text_highlight">Systems</span> to increase your <span class="text_highlight">Power</span>.<br/><br/>Power makes everything easier.  Invest in your Systems if you're stuck.
+                Outfit your Starfighter with advanced <span class="text_highlight">Systems</span> to increase your <span class="text_highlight">Power</span>.<br/><br/>Your time won't go far with limited Power.
               </div>
               <div><span class="text_t4">WEAPONS</span><br/><br/>
-                Build stronger <span class="text_highlight">Weapons</span> to increase your <span class="text_highlight">Multiplier</span>.<br/><br/>With powerful weapons, you can accomplish more.  Invest in your Weapons when you're stuck.
+                Build stronger <span class="text_highlight">Weapons</span> to increase your <span class="text_highlight">Multiplier</span>.<br/><br/>With powerful weapons, you can outlast your enemies and fight for longer.
               </div>
               <div><span class="text_t5">COOL</span><br/><br/>
                 You'll need <span class="text_highlight">Cool</span> a bit later, but it's how you get your <span class="text_highlight">Boost</span>.<br/><br/>In order to <span class="text_highlight">Force Armistice</span>, you'll have to build up your <span class="text_highlight">Leadership</span>.
@@ -147,7 +147,7 @@
           <div class="unlock_prestige activity_progress" style="visibility: hidden;"><span id="progress-span-6">0:00:00</span></div>
           <div class="unlock_prestige activity_prestige_effect" style="visibility: hidden;">Power:<span class="text_hidden">..</span><span id="effect-span-6"></span></div>
           <div class="activity_prestige_control">
-            <div><button class="prestige_button" id="prestige-6-button" onclick="prestige(6)"><span class="button_title">RETROFIT SYSTEMS</span><br/><span class="activity_prestige_info" id="prestige-6"></span></button></div>
+            <div><button class="prestige_button" id="prestige-6-button" onclick="prestige(6)"><span class="button_title">RETROFIT SYSTEMS</span><br/><span class="activity_prestige_info" id="prestige-6"></span><progress id="progress_starfight" value="0"></progress></button></div>
           </div>
         </div>
         <!---- WEAPONS ---->
@@ -171,7 +171,7 @@
           <div class="unlock_prestige activity_progress" style="visibility: hidden;"><span id="progress-span-5">0:00:00</span></div>
           <div class="unlock_prestige activity_prestige_effect" style="visibility: hidden;">Multiplier:<span class="text_hidden">..</span><span id="effect-span-5"></span></div>
           <div class="activity_prestige_control">
-            <div><button class="prestige_button" id="prestige-5-button" onclick="prestige(5)"><span class="button_title">RETROFIT WEAPONS</span><br/><span class="activity_prestige_info" id="prestige-5"></span></button></div>
+            <div><button class="prestige_button" id="prestige-5-button" onclick="prestige(5)"><span class="button_title">RETROFIT WEAPONS</span><br/><span class="activity_prestige_info" id="prestige-5"></span><progress id="progress_starfight2" value="0"></progress></button></div>
           </div>
         </div>
         <!---- COOL ---->
@@ -194,7 +194,7 @@
           <div class="unlock_prestige activity_progress" style="visibility: hidden;"><span id="progress-span-7">0.0000</span></div>
           <div class="unlock_prestige activity_prestige_effect" style="visibility: hidden;">Boost:<span class="text_hidden">..</span><span id="effect-span-7"></span></div>
           <div class="activity_prestige_control">
-            <div><button class="prestige_button" id="enlightened-button" onclick="enlightened()"><span class="button_title">LEADER UP</span><br/><span class="activity_prestige_info" id="enlightened-desc"></span></button></div>
+            <div><button class="prestige_button" id="enlightened-button" onclick="enlightened()"><span class="button_title">LEADER UP</span><br/><span class="activity_prestige_info" id="enlightened-desc"></span><progress id="progress_leader" value="0"></progress></button></div>
           </div>
         </div>
       </div>
@@ -671,7 +671,7 @@
     </div>
     <div class="progressstats_section">
       <div class="progressstats_stat">
-        <div class="battlestat_title">Last Peace:</div>
+        <div class="battlestat_title">Last Armistice:</div>
         <div><span class="battlestat_stat" id="time-since-last-update"></span> ago</div>
         <div class="battlestat_title">Last Legacy:</div>
         <div class="battlestat_stat" ><span id="last-update-point-gain"></span> pts</div>
