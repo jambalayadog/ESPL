@@ -48,6 +48,7 @@ function giveLore(i) {
 function givePrestigeAchievementsAndLore(i, oldProgress) {
   giveNormalAchievement(2);
   giveLore(7);
+  
   if (player.progress[i] - oldProgress >= 3600) {
     giveNormalAchievement(6);
   }
@@ -95,6 +96,11 @@ function giveUpdateAchievementsAndLore(now, gain, oldChallenge) {
   } else {
     player.achievements.stats.yoDawg = 0;
   }
+}
+
+function checkForSpecificAchievement(x) {
+  console.log("x: ", x, player.achievements.normal.list[x]);
+  return player.achievements.normal.list[x];
 }
 
 function checkForAchievementsAndLore() {

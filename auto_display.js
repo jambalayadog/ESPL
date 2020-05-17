@@ -49,7 +49,7 @@ function updateAutoDisplay() {
   if (updateUpgradeActive(0, 2)) {                                          // check if player has Piloting's first upgrade (auto assign skills)
     var ele = document.getElementsByClassName("activity_fraction");         // show the auto fractions
     for (var i = 0; i < ele.length; i++) {
-      ele[i].style.visibility=''
+      ele[i].style.visibility='';
     }
     document.getElementById('autooptions').style.display = 'grid';          // show the Legacy Auto Options panel
     document.getElementById('auto-dev-span').style.visibility = '';         // show the auto-assign Skills option

@@ -18,7 +18,7 @@
     --box_shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 2px 5px 0 rgba(0,0,0,0.12);
     --debug_border: 0.0px solid grey;
     --text_primary: lightgreen;
-    --text_secondary: lightyellow;
+    --text_secondary: tan;
     --text_progress: lightblue;
     --text_title: white;
     --text_tertiary: lightgrey;
@@ -368,6 +368,9 @@ body {
 .button_title {
     font-weight: bold;
     font-size: 12px;
+}
+
+.unlock_prestige {
 }
 
 /*  AUTO OPTIONS PAGE -----------------------------------------          -->
@@ -879,7 +882,7 @@ body {
     border-bottom: 1px dotted black;
   }
 
-  .tooltip .tooltiptext {
+.tooltip .tooltiptext {
     visibility: hidden;
     width: 250px;
     background-color: slategray;
@@ -895,8 +898,62 @@ body {
     left: 250px;
     top: 25px;
     z-index: 1;
-  }
+}
 
-  .tooltip:hover .tooltiptext {
-    visibility: visible;
-  }
+
+
+.tutorial {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+}
+
+.tutorial .tutorial_text {
+    width: 774px;
+    background-color: rgba(80, 80, 80, 0.33);
+    color: var(--text_secondary);
+    border-color: var(--tip_border);
+    text-align: left;
+    border-radius: 2px;
+    padding: 5px;
+    font-size: 10px;
+
+    /* Position the tooltip */
+    position: absolute;
+    left: -156px;
+    top: -68px;
+    z-index: 1;
+
+    /* tutorial for each column */
+    display: grid;
+    grid-template-columns: 
+        auto auto auto auto auto;
+    grid-column-gap: 20px;
+    font-weight: normal;
+}
+
+.text_highlight {
+    color: orange;
+    font-weight: bold;
+}
+
+.text_t1 {
+    color: rgba(245,66,105);
+    font-weight: bold;
+}
+.text_t2 {
+    color: rgba(245,161,66);
+    font-weight: bold;
+}
+.text_t3 {
+    color: rgb(66,245,117);
+    font-weight: bold;
+}
+.text_t4 {
+    color: rgb(66,245,117);;
+    font-weight: bold;
+}
+.text_t5 {
+    color: rgb(66,200,245);
+    font-weight: bold;
+}

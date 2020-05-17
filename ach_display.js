@@ -36,4 +36,11 @@ function updateAchievementDisplay() {
       document.getElementById('lategame-ach-status-' + i).style.color = achievements.checkboxcolor;
     }
   }
+  if (checkForSpecificAchievement(2)) {                                   // when we Retrofit for the first time, unlock Fleets and Leadership
+    var ele = document.getElementsByClassName("unlock_prestige");         // show the fleet and leadership stats
+    for (var i = 0; i < ele.length; i++) {
+      ele[i].style.visibility = 'visible';
+   }
+  }
+  
 }

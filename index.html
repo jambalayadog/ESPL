@@ -104,7 +104,25 @@
             <div>AUTO-FRACTION: <input class="fraction_input" id="auto-dev-3" type="text" onchange="updateAutoDev(3)"></input></div>
           </div>
           <div class="activity_prestige_name"> </div>
-          <div class="activity_progress"> </div>
+          <div class="activity_progress tutorial"> 
+            <div class="tutorial_text" style="visibility: visible;">
+              <div><span class="text_t1">STARFIGHT</span><br/><br/>
+                <span class="text_highlight">Starfight</span> is how you progress through the game.<br/><br/>Fight for longer to build your <span class="text_highlight">Legacy</span> and become an <span class="text_highlight">Epic Starfighter Pilot</span>.
+              </div>
+              <div><span class="text_t2">PILOTING</span><br/><br/>
+                Invest in <span class="text_highlight">Piloting</span> to build up more <span class="text_highlight">Skill</span>.<br/><br/>Having lots of Skill lets you do more things with your Starfighter.
+              </div>
+              <div><span class="text_t3">SYSTEMS</span><br/><br/>
+                Outfit your Starfighter with advanced <span class="text_highlight">Systems</span> to increase your <span class="text_highlight">Power</span>.<br/><br/>Power makes everything easier.  Invest in your Systems if you're stuck.
+              </div>
+              <div><span class="text_t4">WEAPONS</span><br/><br/>
+                Build stronger <span class="text_highlight">Weapons</span> to increase your <span class="text_highlight">Multiplier</span>.<br/><br/>With powerful weapons, you can accomplish more.  Invest in your Weapons when you're stuck.
+              </div>
+              <div><span class="text_t5">COOL</span><br/><br/>
+                You'll need <span class="text_highlight">Cool</span> a bit later, but it's how you get your <span class="text_highlight">Boost</span>.<br/><br/>In order to <span class="text_highlight">Force Armistice</span>, you'll have to build up your <span class="text_highlight">Leadership</span>.
+              </div>
+            </div>
+          </div>
           <div class="activity_prestige_effect"></div>
           <div class="activity_prestige_control"></div>
           <div class="activity_prestige_info"></div>
@@ -125,9 +143,9 @@
           <div class="activity_fraction">
             <div>AUTO-FRACTION: <input class="fraction_input" id="auto-dev-2" type="text" onchange="updateAutoDev(2)"></input></div>
           </div>
-          <div class="activity_prestige_name bg_systems">FLEET SYSTEMS</div>
-          <div class="activity_progress"><span id="progress-span-6">0:00:00</span></div>
-          <div class="activity_prestige_effect">Power:<span class="text_hidden">..</span><span id="effect-span-6"></span></div>
+          <div class="unlock_prestige activity_prestige_name bg_systems" style="visibility: hidden;">FLEET SYSTEMS</div>
+          <div class="unlock_prestige activity_progress" style="visibility: hidden;"><span id="progress-span-6">0:00:00</span></div>
+          <div class="unlock_prestige activity_prestige_effect" style="visibility: hidden;">Power:<span class="text_hidden">..</span><span id="effect-span-6"></span></div>
           <div class="activity_prestige_control">
             <div><button class="prestige_button" id="prestige-6-button" onclick="prestige(6)"><span class="button_title">RETROFIT SYSTEMS</span><br/><span class="activity_prestige_info" id="prestige-6"></span></button></div>
           </div>
@@ -149,9 +167,9 @@
           <div class="activity_fraction">
             <div>AUTO-FRACTION: <input class="fraction_input" id="auto-dev-1" type="text" onchange="updateAutoDev(1)"></input></div>
           </div>
-          <div class="activity_prestige_name bg_weapons">FLEET WEAPONS</div>
-          <div class="activity_progress"><span id="progress-span-5">0:00:00</span></div>
-          <div class="activity_prestige_effect">Multiplier:<span class="text_hidden">..</span><span id="effect-span-5"></span></div>
+          <div class="unlock_prestige activity_prestige_name bg_weapons" style="visibility: hidden;">FLEET WEAPONS</div>
+          <div class="unlock_prestige activity_progress" style="visibility: hidden;"><span id="progress-span-5">0:00:00</span></div>
+          <div class="unlock_prestige activity_prestige_effect" style="visibility: hidden;">Multiplier:<span class="text_hidden">..</span><span id="effect-span-5"></span></div>
           <div class="activity_prestige_control">
             <div><button class="prestige_button" id="prestige-5-button" onclick="prestige(5)"><span class="button_title">RETROFIT WEAPONS</span><br/><span class="activity_prestige_info" id="prestige-5"></span></button></div>
           </div>
@@ -172,9 +190,9 @@
           <div class="activity_fraction">
             <div>AUTO-FRACTION: <input class="fraction_input" id="auto-dev-4" type="text" onchange="updateAutoDev(4)"></input></div>
           </div>
-          <div class="activity_prestige_name bg_cool">LEADERSHIP</div>
-          <div class="activity_progress"><span id="progress-span-7">0.0000</span></div>
-          <div class="activity_prestige_effect">Boost:<span class="text_hidden">..</span><span id="effect-span-7"></span></div>
+          <div class="unlock_prestige activity_prestige_name bg_cool" style="visibility: hidden;">LEADERSHIP</div>
+          <div class="unlock_prestige activity_progress" style="visibility: hidden;"><span id="progress-span-7">0.0000</span></div>
+          <div class="unlock_prestige activity_prestige_effect" style="visibility: hidden;">Boost:<span class="text_hidden">..</span><span id="effect-span-7"></span></div>
           <div class="activity_prestige_control">
             <div><button class="prestige_button" id="enlightened-button" onclick="enlightened()"><span class="button_title">LEADER UP</span><br/><span class="activity_prestige_info" id="enlightened-desc"></span></button></div>
           </div>
