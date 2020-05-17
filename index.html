@@ -84,7 +84,7 @@
           <div class="activity_progress"> </div>
           <div class="activity_prestige_effect"></div>
           <div class="activity_prestige_control">
-            <div><button class="prestige_button" id="update-button" onclick="update()"><span class="button_title">FORCE ARMISTICE</span><br/><span class="activity_prestige_info" id="update-gain"></span><progress id="progress_armistice" value="0"></progress></button></div>
+            <div><button class="prestige_button" id="update-button" onclick="update()"><span class="button_title">FORCE ARMISTICE</span><br/><span class="activity_prestige_info" id="update-gain"></span><progress class="p1" id="progress_armistice" value="0"></progress></button></div>
           </div>
         </div>
         <!---- PILOTING ---->
@@ -107,24 +107,26 @@
           <div class="activity_progress tutorial"> 
             <div class="tutorial_text" id="tutorial_help" style="visibility: visible;">
               <div><span class="text_t1">STARFIGHT</span><br/><br/>
-                <span class="text_highlight">Starfighting</span> for longer is how you progress through the game.<br/><br/>Fight for longer to build your <span class="text_highlight">Legacy</span> and become an <span class="text_highlight">Epic Starfighter Pilot</span>.
+                You will need <span class="text_t2">Piloting</span>, <span class="text_t3">Systems</span>, <span class="text_t4">Weapons</span>, and <span class="text_t5">Cool</span> to in order to <span class="text_t1">Starfight</span>.<br/><br/>Starfight unlocks <span class="text_t6">Missions</span> and generates <span class="text_t6">Legacy</span> to become an <span class="text_t6">Epic Starfighter Pilot</span>.
               </div>
               <div><span class="text_t2">PILOTING</span><br/><br/>
-                Put time in <span class="text_highlight">Piloting</span> to build up more <span class="text_highlight">Skill</span>.<br/><br/>Having lots of Skill lets you do more things with your Starfighter.
+                Put time in <span class="text_t2">Piloting</span> to build up more <span class="text_t2">Skill</span>.<br/><br/>Having lots of Skill lets you do more things with your Starfighter.
               </div>
               <div><span class="text_t3">SYSTEMS</span><br/><br/>
-                Outfit your Starfighter with advanced <span class="text_highlight">Systems</span> to increase your <span class="text_highlight">Power</span>.<br/><br/>Your time won't go far with limited Power.
+                Outfit your Starfighter with advanced <span class="text_t3">Systems</span> to increase your <span class="text_t3">Power</span>.<br/><br/>You won't get far with limited Power, so work on improving your systems.
               </div>
               <div><span class="text_t4">WEAPONS</span><br/><br/>
-                Build stronger <span class="text_highlight">Weapons</span> to increase your <span class="text_highlight">Multiplier</span>.<br/><br/>With powerful weapons, you can outlast your enemies and fight for longer.
+                Build stronger <span class="text_t4">Weapons</span> to increase your <span class="text_t4">Multiplier</span> to everything.<br/><br/>Multiplier allows you to outlast your enemies and fight longer fights.  Now fight.
               </div>
               <div><span class="text_t5">COOL</span><br/><br/>
-                You'll need <span class="text_highlight">Cool</span> a bit later, but it's how you get your <span class="text_highlight">Boost</span>.<br/><br/>In order to <span class="text_highlight">Force Armistice</span>, you'll have to build up your <span class="text_highlight">Leadership</span>.
+                You'll need <span class="text_t5">Cool</span> a bit later, but it's how you get your <span class="text_t5">Boost</span>.<br/><br/>In order to <span class="text_t5">Force Armistice</span>, you'll have to build up your <span class="text_t5">Leadership</span>.
               </div>
             </div>
           </div>
           <div class="activity_prestige_effect"></div>
-          <div class="activity_prestige_control"></div>
+          <div class="activity_prestige_control">
+            <div><br/><br/><span style="font-size:2px"><br/></span><span style="color:tan">Next Recruit:</span><br/><progress class="p2" id="progress_nextdev" value="0"></progress></div>
+          </div>
           <div class="activity_prestige_info"></div>
         </div>
         <!---- SYSTEMS ---->
@@ -147,7 +149,7 @@
           <div class="unlock_prestige activity_progress" style="visibility: hidden;"><span id="progress-span-6">0:00:00</span></div>
           <div class="unlock_prestige activity_prestige_effect" style="visibility: hidden;">Power:<span class="text_hidden">..</span><span id="effect-span-6"></span></div>
           <div class="activity_prestige_control">
-            <div><button class="prestige_button" id="prestige-6-button" onclick="prestige(6)"><span class="button_title">RETROFIT SYSTEMS</span><br/><span class="activity_prestige_info" id="prestige-6"></span><progress id="progress_starfight" value="0"></progress></button></div>
+            <div><button class="prestige_button" id="prestige-6-button" onclick="prestige(6)"><span class="button_title">RETROFIT SYSTEMS</span><br/><span class="activity_prestige_info" id="prestige-6"></span><progress class="p1" id="progress_starfight" value="0"></progress></button></div>
           </div>
         </div>
         <!---- WEAPONS ---->
@@ -171,7 +173,7 @@
           <div class="unlock_prestige activity_progress" style="visibility: hidden;"><span id="progress-span-5">0:00:00</span></div>
           <div class="unlock_prestige activity_prestige_effect" style="visibility: hidden;">Multiplier:<span class="text_hidden">..</span><span id="effect-span-5"></span></div>
           <div class="activity_prestige_control">
-            <div><button class="prestige_button" id="prestige-5-button" onclick="prestige(5)"><span class="button_title">RETROFIT WEAPONS</span><br/><span class="activity_prestige_info" id="prestige-5"></span><progress id="progress_starfight2" value="0"></progress></button></div>
+            <div><button class="prestige_button" id="prestige-5-button" onclick="prestige(5)"><span class="button_title">RETROFIT WEAPONS</span><br/><span class="activity_prestige_info" id="prestige-5"></span><progress class="p1" id="progress_starfight2" value="0"></progress></button></div>
           </div>
         </div>
         <!---- COOL ---->
@@ -194,7 +196,7 @@
           <div class="unlock_prestige activity_progress" style="visibility: hidden;"><span id="progress-span-7">0.0000</span></div>
           <div class="unlock_prestige activity_prestige_effect" style="visibility: hidden;">Boost:<span class="text_hidden">..</span><span id="effect-span-7"></span></div>
           <div class="activity_prestige_control">
-            <div><button class="prestige_button" id="enlightened-button" onclick="enlightened()"><span class="button_title">LEADER UP</span><br/><span class="activity_prestige_info" id="enlightened-desc"></span><progress id="progress_leader" value="0"></progress></button></div>
+            <div><button class="prestige_button" id="enlightened-button" onclick="enlightened()"><span class="button_title">LEADER UP</span><br/><span class="activity_prestige_info" id="enlightened-desc"></span><progress class="p5" id="progress_leader" value="0"></progress></button></div>
           </div>
         </div>
       </div>
@@ -435,9 +437,9 @@
               <div>RESOLVE POWER: <span id="update-power-span-2">0</span></div>
               <div>Piloting Skill Multiplier: <span id="update-effect-span-2">1</span>x</div>
             </div>
-            <div><button class="legacyupgrade_button" id="up-0-2-button" onclick="buyUpdateUpgrade(0, 2)"><span class="button_title">UNLOCK AUTO SKILL ALLOCATION</span><br/><span class="legacygroup_subtext">And start with 10 Skill<span class="text_hidden"><br/>.......</span></span><br/>Cost: <span id="up-0-2-cost"></span> Resolve<span id="up-0-2-bought"></span></button></div>
+            <div><button class="legacyupgrade_button" id="up-0-2-button" onclick="buyUpdateUpgrade(0, 2)"><span class="button_title">UNLOCK AUTO SKILL ALLOCATION</span><br/><span class="legacygroup_subtext">And start with 30 Skill<span class="text_hidden"><br/>.......</span></span><br/>Cost: <span id="up-0-2-cost"></span> Resolve<span id="up-0-2-bought"></span></button></div>
             <div><button class="legacyupgrade_button" id="up-1-2-button" onclick="buyUpdateUpgrade(1, 2)"><span class="button_title">THE LAST STARFIGHTER</span><br/><span class="legacygroup_subtext">All of your Skills contribute extra to Starfighting<span class="text_hidden"><br/>.......</span></span><br/>Cost: <span id="up-1-2-cost"></span> Resolve<span id="up-1-2-bought"></span></button></div>
-            <div class="legacyfraction" id="auto-assign-update-points-row">Auto Legacy Fraction: <input class="fraction_input" id="auto-assign-update-points-2" type="text" onchange="updateAutoAssignUpdatePoints(2)"></input></div>
+            <div class="legacyfraction" id="auto-assign-update-points-row">AUTO-FRACTION: <input class="fraction_input" id="auto-assign-update-points-2" type="text" onchange="updateAutoAssignUpdatePoints(2)"></input></div>
           </div>
         </div>
         <div class="legacyupgrade_upgrade">
@@ -456,7 +458,7 @@
             </div>
             <div><button class="legacyupgrade_button" id="up-0-1-button" onclick="buyUpdateUpgrade(0, 1)"><span class="button_title">COOL AFFECTS LEADERSHIP MORE</span><br/><span class="legacygroup_subtext">2.00x per 00:30:00 to 2.50x per 00:30:00<br/>00:01:00 softcap to 00:00:10 softcap</span><br/>Cost: <span id="up-0-1-cost"></span> Reputation<span id="up-0-1-bought"></span></button></div>
             <div><button class="legacyupgrade_button" id="up-1-1-button" onclick="buyUpdateUpgrade(1, 1)"><span class="button_title">SUPER DUPER LEADER</span><br/><span class="legacygroup_subtext">Leadership now increases past 1<span class="text_hidden"><br/>(but with reduced effect)</span></span><br/>Cost: <span id="up-1-1-cost"></span> Reputation<span id="up-1-1-bought"></span></button></div>
-            <div class="legacyfraction" id="auto-assign-update-points-row">Auto Legacy Fraction: <input class="fraction_input" id="auto-assign-update-points-1" type="text" onchange="updateAutoAssignUpdatePoints(1)"></input></div>
+            <div class="legacyfraction" id="auto-assign-update-points-row">AUTO-FRACTION: <input class="fraction_input" id="auto-assign-update-points-1" type="text" onchange="updateAutoAssignUpdatePoints(1)"></input></div>
           </div>
         </div>
         <div class="legacyupgrade_upgrade">
@@ -475,7 +477,7 @@
             </div>
             <div><button class="legacyupgrade_button" id="up-0-0-button" onclick="buyUpdateUpgrade(0, 0)"><span class="button_title">READY FOR THE LONG HAUL</span><br/><span class="legacygroup_subtext">Starfights get easier after 4:30:00<span class="text_hidden"><br/>.......</span></span><br/>Cost: <span id="up-0-0-cost"></span> Resource<span id="up-0-0-bought"></span></button></div>
             <div><button class="legacyupgrade_button" id="up-1-0-button" onclick="buyUpdateUpgrade(1, 0)"><span class="button_title">GAIN MORE LEGACY POINTS</span><br/><span class="legacygroup_subtext">10x multiplier<br/>2.00x per 01:00:00 to <span id="upgradeless-reward-up-1-0"></span>x per 01:00:00</span><br/>Cost: <span id="up-1-0-cost"></span> Resource<span id="up-1-0-bought"></span></button></div>
-            <div class="legacyfraction" id="auto-assign-update-points-row">Legacy Fraction: <input class="fraction_input" id="auto-assign-update-points-0" type="text" onchange="updateAutoAssignUpdatePoints(0)"></input></div>
+            <div class="legacyfraction" id="auto-assign-update-points-row">AUTO-FRACTION: <input class="fraction_input" id="auto-assign-update-points-0" type="text" onchange="updateAutoAssignUpdatePoints(0)"></input></div>
           </div>
         </div>
       </div>

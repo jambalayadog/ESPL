@@ -23,6 +23,8 @@ function getEffect(i, progressOverride) {
       console.log("UPE:", getUpdatePowerEffect(2));
       console.log("CR:", challengeReward('lonely') / 300);
       console.log("multiplied", x * getUpdatePowerEffect(2) * challengeReward('lonely') / 300);*/
+      //console.log(Math.floor(maybeLog(baseDevs() + getAdditionalDevsDueToUpdates() + x * getUpdatePowerEffect(2) * challengeReward('lonely') / 300)));
+      findTimeToNextSkillPoint(x);
       return Math.floor(maybeLog(baseDevs() + getAdditionalDevsDueToUpdates() + x * getUpdatePowerEffect(2) * challengeReward('lonely') / 300));
     }
   } else if (i === 4) {   // Patience
@@ -30,6 +32,21 @@ function getEffect(i, progressOverride) {
   } else if (i === 7) {
     return getPatienceMeterEffect(x, getTotalEnlightened());
   }
+}
+
+function findTimeToNextSkillPoint(x) {
+  let a = player.progress[3];
+  if (player.currentChallenge === 'lonely') {
+    return 0;
+  } else {
+    let j = Math.floor(maybeLog(baseDevs() + getAdditionalDevsDueToUpdates() + x * getUpdatePowerEffect(2) * challengeReward('lonely') / 300));
+    let k = maybeLog(baseDevs() + getAdditionalDevsDueToUpdates() + x * getUpdatePowerEffect(2) * challengeReward('lonely') / 300);
+    console.log("j:", j);
+    console.log("k:", k);
+    console.log("k-j:", k-j);
+    document.getElementById("progress_nextdev").value = k-j;
+  }
+
 }
 
 function formatEffect(i, progressOverride) {

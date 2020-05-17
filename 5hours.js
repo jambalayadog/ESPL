@@ -174,9 +174,9 @@ function tick() {
 
 function baseDevs() {
   if (updateUpgradeActive(0, 2)) {
-    return 20;
+    return 30;
   } else {
-    return 20;
+    return 15;
   }
 }
 

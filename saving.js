@@ -262,7 +262,7 @@ let initialPlayer = {
   upgrades: [[false, false, false], [false, false, false]],
   auto: {
     dev: {
-      settings: [0, 0, 0, 0, 0],
+      settings: [0.2, 0.2, 0.2, 0.2, 0.2],
       on: false
     },
     enlightened: {
@@ -286,7 +286,7 @@ let initialPlayer = {
       on: false
     },
     assignUpdatePoints: {
-      settings: [0, 0, 0],
+      settings: [0.33, 0.33, 0.33],
       on: false
     }
   },
