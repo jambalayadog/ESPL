@@ -13,6 +13,41 @@ function updateAutoAssignUpdatePoints(i) {
 function nextAutoSetting(x) {
   player.auto[x].setting = AUTO_SETTINGS[x][(AUTO_SETTINGS[x].indexOf(player.auto[x].setting) + 1) % AUTO_SETTINGS[x].length];
   document.getElementById('auto-' + x + '-setting').innerHTML = player.auto[x].setting;
+  let y = AUTO_SETTINGS[x].indexOf(player.auto[x].setting) +1;
+  let z = AUTO_SETTINGS[x].length;
+  if (x == 'enlightened') {
+    for (i = 1; i < z+1; i++) {
+      console.log("i: ", i)
+      if (i == y) {
+        document.getElementById('autoleadertoggle_' + i).classList.add('toggle_active')
+      } else {
+        document.getElementById('autoleadertoggle_' + i).classList.remove('toggle_active')
+      }
+    }
+  }
+  if (x == 'prestige') {
+    for (i = 1; i < z+1; i++) {
+      console.log("i: ", i)
+      if (i == y) {
+        document.getElementById('autoretrofittoggle_' + i).classList.add('toggle_active')
+      } else {
+        document.getElementById('autoretrofittoggle_' + i).classList.remove('toggle_active')
+      }
+    }
+  }
+  if (x == 'update') {
+    for (i = 1; i < z+1; i++) {
+      console.log("i: ", i)
+      if (i == y) {
+        document.getElementById('autovictorytoggle_' + i).classList.add('toggle_active')
+      } else {
+        document.getElementById('autovictorytoggle_' + i).classList.remove('toggle_active')
+      }
+    }
+  }
+  console.log("index: ", AUTO_SETTINGS[x].indexOf(player.auto[x].setting) +1);
+  console.log("setting: ", player.auto[x].setting);
+ 
 }
 
 function parseAutoValue(x) {
@@ -38,6 +73,9 @@ function updateAutoValue(x) {
 function toggleAutoPrestigeInitial() {
   player.auto.prestige.initial = 5 + player.auto.prestige.initial % 2;
   document.getElementById('auto-prestige-initial').innerHTML = ['Weapons', 'Systems'][player.auto.prestige.initial - 5];
+  document.getElementById('retrotypetoggle_1').classList.toggle('toggle_active');
+  document.getElementById('retrotypetoggle_2').classList.toggle('toggle_active');
+  
 }
 
 function toggleAutoPrestigeAlternate() {

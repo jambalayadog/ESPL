@@ -42,7 +42,7 @@
     <button class="navitem" id="update-tab-button" onclick="setTab('update')" style="display: none;">LEGACY</button>
     <button class="navitem" id="challenges-tab-button" onclick="setTab('challenges')" style="display: none;">MISSIONS</button> 
     <!--<button class="navitem" id="lore-tab-button" onclick="setTab('lore')">STORY GOALS</button> -->
-    <button class="navitem" id="completion-milestones-tab-button" onclick="setTab('completion-milestones')" style="display: none;">CONTACTS<br/>(market)</button>
+    <button class="navitem" id="completion-milestones-tab-button" onclick="setTab('completion-milestones')" style="display: none;">HELP</button>
   </div>
   <div class="lore_container" >
     <div class="lore" id="lore_goal">
@@ -227,7 +227,13 @@
         <div class="autooption_column" id="auto-update-span" >   <!--   AUTO BATTLE -->
           <div class="auto_option"><span class="auto_spacewar" style="display:none"><input class="auto_checkbox" id="auto-update-on" onclick="toggleAutoOn('update')" type="checkbox"></input>AUTO-ARMISTICE</span></div>
           <div><span class="auto_spacewar autooption_text" style="display:none">VALUE: <input class="auto_input" id="auto-update-value" type="text" onchange="updateAutoValue('update')"></input></span></div>
-          <div><span class="auto_spacewar" style="display:none"><button class="auto_button" id="auto-update-setting" onclick="nextAutoSetting('update')"></button></span></div>  
+          <div class="togglebtn"><span class="auto_spacewar" style="display:none">
+            <button class="auto_button" id="auto-update-setting" onclick="nextAutoSetting('update')"></button></span>
+            <span class="toggle_1 toggle_active" id="autovictorytoggle_1">.</span>
+            <span class="toggle_2" id="autovictorytoggle_2">.</span>
+            <span class="toggle_3" id="autovictorytoggle_3">.</span>
+            <span class="toggle_4" id="autovictorytoggle_4">.</span>
+          </div>  
         </div> 
         <!--   AUTO SKILL -->
         <div class="autooption_column" id="auto-dev-span">  <!--   AUTO SKILL -->
@@ -248,15 +254,31 @@
         <div class="autooption_column" id="auto-prestige-span">  <!--   AUTO RETROFIT   -->
           <div class="auto_option"><span class="auto_retrofit" style="display:none"><input class="auto_checkbox" id="auto-prestige-on" onclick="toggleAutoOn('prestige')" type="checkbox"></input>AUTO-RETROFIT</span></div>
           <div><span class="auto_retrofit autooption_text" style="display:none">VALUE: <input class="auto_input" id="auto-prestige-value" type="text" onchange="updateAutoValue('prestige')"></input></span></div>
-          <div><span class="auto_retrofit" style="display:none"><button class="auto_button" id="auto-prestige-setting" onclick="nextAutoSetting('prestige')"></button></span></div>
-          <div><span class="auto_retrofit autooption_text" style="display:none">TYPE: <button class="auto_prioritize auto_button" id="auto-prestige-initial" onclick="toggleAutoPrestigeInitial()"></button></span></div>
+          <div class="togglebtn"><span class="auto_retrofit" style="display:none">
+            <button class="auto_button" id="auto-prestige-setting" onclick="nextAutoSetting('prestige')"></button></span>
+            <span class="toggle_1 toggle_active" id="autoretrofittoggle_1">.</span>
+            <span class="toggle_2" id="autoretrofittoggle_2">.</span>
+            <span class="toggle_3" id="autoretrofittoggle_3">.</span>
+            <span class="toggle_4" id="autoretrofittoggle_4">.</span>
+          </div>
+          <div class="togglebtn"><span class="auto_retrofit autooption_text" style="display:none">TYPE: 
+            <button class="auto_prioritize auto_button" id="auto-prestige-initial" onclick="toggleAutoPrestigeInitial()"></button></span>
+            <span class="toggle_1 toggle_active" id="retrotypetoggle_1">.</span>
+            <span class="toggle_2" id="retrotypetoggle_2">.</span>
+          </div>
           <div><span class="auto_retrofit autooption_text" style="display:none"><input class="auto_checkbox" id="auto-prestige-alternate" onclick="toggleAutoPrestigeAlternate()" type="checkbox"></input>TOGGLE TYPES</span></div>
         </div>
         <!--   AUTO LEADER UP   -->
         <div class="autooption_column" id="auto-enlightened-span"> <!--   AUTO LEADER UP   -->
           <div class="auto_option"><span class="auto_leaderup" style="display:none"><input class="auto_checkbox" id="auto-enlightened-on" onclick="toggleAutoOn('enlightened')" type="checkbox"></input>AUTO LEADER UP</span></div>
           <div><span class="auto_leaderup autooption_text" style="display:none">VALUE: <input class="auto_input" id="auto-enlightened-value" type="text" onchange="updateAutoValue('enlightened')"></input></span></div>
-          <div><span class="auto_leaderup" style="display:none"><button class="auto_button" id="auto-enlightened-setting" onclick="nextAutoSetting('enlightened')"></button></span></div>
+          <div class="togglebtn"><span class="auto_leaderup" style="display:none">
+            <button class="auto_button" id="auto-enlightened-setting" onclick="nextAutoSetting('enlightened')"></button></span>
+            <span class="toggle_1 toggle_active" id="autoleadertoggle_1">.</span>
+            <span class="toggle_2" id="autoleadertoggle_2">.</span>
+            <span class="toggle_3" id="autoleadertoggle_3">.</span>
+            <span class="toggle_4" id="autoleadertoggle_4">.</span>
+          </div>
         </div>
       </div>
     </div>
@@ -469,8 +491,13 @@
           <div class="legacygroup_upgrades">
             <div class="activity_title bg_systems">RESOLVE</div>
             <div class="legacyconversion">
-              <div><button class="legacypoints_button" onclick="convertLegacy(0)">Convert LP</button></div>
-              <div><button class="legacypoints_button" id="legacy_to_resolve" onclick="toggleAmount(0)">Toggle</button></div>
+              <div><button class="legacypoints_button" onclick="convertLegacy(0)">Convert LP to Resolve</button></div>
+              <div class="togglebtn">
+                <button class="legacypoints_button" id="legacy_to_resolve" onclick="toggleAmount(0)">Toggle</button>
+                <span class="toggle_1 toggle_active" id="toggle0_1">.</span>
+                <span class="toggle_2" id="toggle0_2">.</span>
+                <span class="toggle_3" id="toggle0_3">.</span>
+              </div>
             </div>
             <div class="legacygroup_stats">
               <div class="provenance_stat">
@@ -493,8 +520,13 @@
           <div class="legacygroup_upgrades">
             <div class="activity_title bg_piloting">RESONANCE</div>   <!-- REPUTE RESORT RESONANCE RENOWN REASON -->
             <div class="legacyconversion">
-              <div><button class="legacypoints_button" onclick="convertLegacy(1)">Convert LP</button></div>
-              <div><button class="legacypoints_button" id="legacy_to_resonance" onclick="toggleAmount(1)">Toggle</button></div>
+              <div><button class="legacypoints_button" onclick="convertLegacy(1)">Convert LP to Resonance</button></div>
+              <div class="togglebtn">
+                <button class="legacypoints_button" id="legacy_to_resonance" onclick="toggleAmount(1)">Toggle</button>
+                <span class="toggle_1 toggle_active" id="toggle1_1">.</span>
+                <span class="toggle_2" id="toggle1_2">.</span>
+                <span class="toggle_3" id="toggle1_3">.</span>
+              </div>
             </div>
             <div class="legacygroup_stats">
               <div class="provenance_stat">
@@ -517,8 +549,13 @@
           <div class="legacygroup_upgrades">
             <div class="activity_title bg_starfight">RESOURCE</div>
             <div class="legacyconversion">
-              <div><button class="legacypoints_button" onclick="convertLegacy(2)">Convert LP</button></div>
-              <div><button class="legacypoints_button" id="legacy_to_resource" onclick="toggleAmount(2)">Toggle</button></div>
+              <div><button class="legacypoints_button" onclick="convertLegacy(2)">Convert LP to Resourece</button></div>
+              <div class="togglebtn">
+                <button class="legacypoints_button" id="legacy_to_resource" onclick="toggleAmount(2)">Toggle</button>
+                <span class="toggle_1 toggle_active" id="toggle2_1">.</span>
+                <span class="toggle_2" id="toggle2_2">.</span>
+                <span class="toggle_3" id="toggle2_3">.</span>
+              </div>
             </div>
             <div class="legacygroup_stats">
               <div class="provenance_stat">
@@ -676,27 +713,19 @@
     </div>
   </div>
 
-<!--- MILESTONES ---------------------------------------------------------
+<!--- HELP ---------------------------------------------------------
 
-.___  ___.  __   __       _______     _______.___________.  ______   .__   __.  _______ 
-|   \/   | |  | |  |     |   ____|   /       |           | /  __  \  |  \ |  | |   ____|
-|  \  /  | |  | |  |     |  |__     |   (----`---|  |----`|  |  |  | |   \|  | |  |__   
-|  |\/|  | |  | |  |     |   __|     \   \       |  |     |  |  |  | |  . `  | |   __|  
-|  |  |  | |  | |  `----.|  |____.----)   |      |  |     |  `--'  | |  |\   | |  |____ 
-|__|  |__| |__| |_______||_______|_______/       |__|      \______/  |__| \__| |_______|
-                                                                                        
-  ______   ______   .___  ___. .______    __       _______ .___________. __    ______   .__   __.      _______.
- /      | /  __  \  |   \/   | |   _  \  |  |     |   ____||           ||  |  /  __  \  |  \ |  |     /       |
-|  ,----'|  |  |  | |  \  /  | |  |_)  | |  |     |  |__   `---|  |----`|  | |  |  |  | |   \|  |    |   (----`
-|  |     |  |  |  | |  |\/|  | |   ___/  |  |     |   __|      |  |     |  | |  |  |  | |  . `  |     \   \    
-|  `----.|  `--'  | |  |  |  | |  |      |  `----.|  |____     |  |     |  | |  `--'  | |  |\   | .----)   |   
- \______| \______/  |__|  |__| | _|      |_______||_______|    |__|     |__|  \______/  |__| \__| |_______/    
+██   ██ ███████ ██      ██████  
+██   ██ ██      ██      ██   ██ 
+███████ █████   ██      ██████  
+██   ██ ██      ██      ██      
+██   ██ ███████ ███████ ██     
                                                                                                                
-- MILESTONES --------------------------------------------------------- -->
+- HELP --------------------------------------------------------- -->
 
 
   <div id="completion-milestones-div" style="display: none;">
-    
+    help
     <hr/>
   </div>
 
