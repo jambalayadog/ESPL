@@ -507,8 +507,8 @@ body {
     border: var(--border_black);
     color: var(--text_progress);
     width: 100%;
-
 }
+
 
 .achievements_title {
     box-shadow: var(--box_shadow);
@@ -575,7 +575,6 @@ body {
         auto auto;
     width: 100%;
     font-size: 12px;
-    padding: 5px;
     background-color: var(--background_moretransparent);
     box-shadow: var(--box_shadow);
     border: var(--border_black);
@@ -685,6 +684,41 @@ body {
     box-sizing: border-box;
     background-color: lightblue;
 }
+
+
+.legacyachievements_group {
+    font-size: 12px;
+    padding: 5px;
+    background-color: var(--background_moretransparent);
+    box-shadow: var(--box_shadow);
+    border: var(--border_black);
+    color: var(--text_progress);
+}
+
+.legacyachievements_grouprow {
+    display: inline-block;
+    /*grid-template-columns: 
+        155px 150px;*/
+    vertical-align: middle;
+    width:100%;
+    line-height: normal;
+    margin: auto;
+}
+
+.legacyachievements_title {
+    box-shadow: var(--box_shadow);
+    border: var(--border_black);
+    font-weight: bold;
+    font-size: 14px;
+    padding: 5px;
+    background-color: var(--act_bg);
+    color: var(--text_primary);
+    width: 10%;
+    box-sizing: border-box;
+    /*transform: rotate(90deg);*/
+    writing-mode: vertical-rl;
+}
+
 
 
 
@@ -903,7 +937,15 @@ body {
     z-index: 1;
 }
 
+/*
 
+████████ ██    ██ ████████  ██████  ██████  ██  █████  ██      
+   ██    ██    ██    ██    ██    ██ ██   ██ ██ ██   ██ ██      
+   ██    ██    ██    ██    ██    ██ ██████  ██ ███████ ██      
+   ██    ██    ██    ██    ██    ██ ██   ██ ██ ██   ██ ██      
+   ██     ██████     ██     ██████  ██   ██ ██ ██   ██ ███████ 
+
+*/
 
 .tutorial {
     position: relative;
@@ -932,6 +974,31 @@ body {
     grid-template-columns: 
         auto auto auto auto auto;
     grid-column-gap: 20px;
+    font-weight: normal;
+}
+
+
+.tutorial .tutorial2_text {
+    width: 300px;
+    background-color: rgba(80, 80, 80, 0.33);
+    color: var(--text_secondary);
+    border-color: var(--tip_border);
+    text-align: left;
+    border-radius: 2px;
+    padding: 5px;
+    font-size: 10px;
+
+    /* Position the tooltip */
+    position: absolute;
+    left: -156px;
+    top: -68px;
+    z-index: 1;
+
+    /* tutorial for each column */
+    display: grid;
+    grid-template-columns: 
+        145px 140px;
+    grid-column-gap: 10px;
     font-weight: normal;
 }
 
@@ -966,6 +1033,21 @@ body {
     font-weight: bold;
     font-style: italic;
 }
+
+
+
+
+
+/* 
+
+██████  ██████   ██████   ██████  ██████  ███████ ███████ ███████     ██████   █████  ██████  
+██   ██ ██   ██ ██    ██ ██       ██   ██ ██      ██      ██          ██   ██ ██   ██ ██   ██ 
+██████  ██████  ██    ██ ██   ███ ██████  █████   ███████ ███████     ██████  ███████ ██████  
+██      ██   ██ ██    ██ ██    ██ ██   ██ ██           ██      ██     ██   ██ ██   ██ ██   ██ 
+██      ██   ██  ██████   ██████  ██   ██ ███████ ███████ ███████     ██████  ██   ██ ██   ██ 
+
+*/
+
 
 
 

@@ -66,7 +66,7 @@ let AUTO_SETTINGS = {
     'Starfight time',
     'Legacy Points',
     'X times last Legacy Points',
-    'time since last Armistice'
+    'time since last Victory'
   ]
 }
 
@@ -122,7 +122,7 @@ function checkForAutoUpdate() {
     'Starfight time': x => player.progress[0] >= x.toNumber(),
     'Legacy Points': x => getUpdateGain().gte(x),
     'X times last Legacy Points': x => getUpdateGain().gte(player.stats.last.updatePointGain.times(x)),
-    'time since last Armistice': x => Date.now() - player.stats.last.update >= x.toNumber() * 1000
+    'time since last Victory': x => Date.now() - player.stats.last.update >= x.toNumber() * 1000
   }
   if (table[player.auto.update.setting](player.auto.update.value)) {
     update(true);

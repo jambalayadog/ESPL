@@ -99,7 +99,6 @@ function giveUpdateAchievementsAndLore(now, gain, oldChallenge) {
 }
 
 function checkForSpecificAchievement(x) {
-  console.log("x: ", x, player.achievements.normal.list[x]);
   return player.achievements.normal.list[x];
 }
 

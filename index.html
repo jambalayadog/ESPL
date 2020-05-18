@@ -1,4 +1,4 @@
-<html>
+<html lang="en" xml:lang="en">
 <head>
   <title>Epic Starfighter Pilot Legacy</title>  <!-- Just Another Battle in Space -->
   <script src="break_eternity.js"></script>
@@ -84,7 +84,7 @@
           <div class="activity_progress"> </div>
           <div class="activity_prestige_effect"></div>
           <div class="activity_prestige_control">
-            <div><button class="prestige_button" id="update-button" onclick="update()"><span class="button_title">FORCE ARMISTICE</span><br/><span class="activity_prestige_info" id="update-gain"></span><progress class="p1" id="progress_armistice" value="0"></progress></button></div>
+            <div><button class="prestige_button" id="update-button" onclick="update()"><span class="button_title">DEFEAT ENEMIES</span><br/><span class="activity_prestige_info" id="update-gain"></span><progress class="p1" id="progress_armistice" value="0"></progress></button></div>
           </div>
         </div>
         <!---- PILOTING ---->
@@ -119,7 +119,15 @@
                 Build stronger <span class="text_t4">Weapons</span> to increase your <span class="text_t4">Multiplier</span> to everything.<br/><br/>Multiplier allows you to outlast your enemies and fight longer fights.  Now fight.
               </div>
               <div><span class="text_t5">COOL</span><br/><br/>
-                You'll need <span class="text_t5">Cool</span> a bit later, but it's how you get your <span class="text_t5">Boost</span>.<br/><br/>In order to <span class="text_t5">Force Armistice</span>, you'll have to build up your <span class="text_t5">Leadership</span>.
+                You'll need <span class="text_t5">Cool</span> a bit later, but it's how you get your <span class="text_t5">Boost</span>.<br/><br/>In order to <span class="text_t5">Defeat Enemies</span>, you'll have to build up your <span class="text_t5">Leadership</span>.
+              </div>
+            </div>
+            <div class="tutorial2_text" id="tutorial2_help" style="visibility: hidden;">
+              <div><span class="text_t1">DEFEAT ENEMIES</span><br/><br/>
+                In order to <span class="text_t1">Defeat Enemies</span>: <br/>- Min/max your <span class="text_t2">Skills</span><br/>- <span class="text_t3">Retrofit</span> your ships<br/>- Become a true <span class="text_t5">Leader</span><br/><br/>Only then, can you begin your <span class="text_t6">Legacy</span> and unlock <span class="text_t6">Missions</span>.
+              </div>
+              <div><span class="text_t3">FLEETS</span> and <span class="text_t5">LEADERSHIP</span><br/><br/>
+                You used your old parts to build a <span class="text_t3">Fleet</span>!  <span class="text_t3">Retrofit</span> to update your <span class="text_t3">Weapons</span> and <span class="text_t3">Systems</span>.<br/><br/>You'll find that you need strong <span class="text_t5">Leadership</span> to command well.<br/><br/>
               </div>
             </div>
           </div>
@@ -389,12 +397,14 @@
 
   <div id="update-div" style="display: none;">
     <div class="legacy_page">
+      <!-- LEGACY OVERVIEW -->
       <div class="legacystatus_row">
+        <!-- LEGACY STATS & LEGACY POINTS -->
         <div>
           <div class="provenance_stats provstats_leftcol">
             <div class="provenance_stat">
-              <div>Armistices Forced:</div>
-              <div>Additional Skill:</div>
+              <div>Enemies Defeated:</div>
+              <div>First Mate Skill:</div>
               <div>Power per XP per second:</div>
               <div>Legacy Points:</div>
             </div>
@@ -406,22 +416,32 @@
             </div>
           </div>      
         </div>
-        <div>
-          <div class="provenance_container" id="dilation" style="display: none;">
-            <div class="provenance_stats">
-              <div class="provenance_stat">
-                <div>Provenance:</div>
-                <div>Weapons, Systems Power:</div>
-              </div>
-              <div class="provenance_number">
-                <div><span id="dilation-text"></span></div>
-                <div><span id="dilation-text2"></span></div>
-              </div>
+        <!-- LEGACY UPGRADES -->
+        <div class="achievements_row">  
+          <div class="legacyachievements_title" style="background-color: initial; background-color: var(--background_titledark);">
+            <div class="title_support">LEGACY</div>
+            <div class="title_support">UPGRADES</div>
+          </div>
+          <div class="legacyachievements_group">
+            <div class="legacyachievements_grouprow">
+              <span><span id="milestone-status-0">&#x2718;</span> Auto Leadership Matrix</span><span class="text_hidden">.......</span><span>2+ Missions complete</span>
             </div>
-            <div class="provenance_stats"><button class="provenance_button" id="dilation-upgrade-0-button" onclick="buyDilationUpgrade(0)"></button></div>
+            <div class="legacyachievements_grouprow">
+              <span><span id="milestone-status-1">&#x2718;</span> Auto Retrofit Scheduling</span><span class="text_hidden">f1lll</span><span>4+ Missions complete</span>
+            </div>
+            <div class="legacyachievements_grouprow">
+              <span><span id="milestone-status-2">&#x2718;</span> Auto Starfight Planning</span><span class="text_hidden">.ll1l_</span><span>8+ Missions complete</span>
+            </div>
+            <div class="legacyachievements_grouprow">
+              <span><span id="milestone-status-3">&#x2718;</span> Auto Legacy Attribution</span><span class="text_hidden"> llfll</span><span>16+ Missions complete</span>
+            </div>
+            <div class="legacyachievements_grouprow">
+              <span><span id="milestone-status-4">&#x2718;</span> Extra 1% from Skills</span><span class="text_hidden">..........</span><span>32+ Missions complete</span>
+            </div> 
           </div>
         </div>
       </div>
+      <!-- Legacy Upgrades -->
       <div class="legacyupgrade_group">
         <div class="legacyupgrade_upgrade">
           <div class="legacygroup_upgrades">
@@ -481,19 +501,19 @@
           </div>
         </div>
       </div>
-      <div class="achievements_row">  <!-- LEGACY MILESTONES -->
-        <div class="achievements_title" style="background-color: initial; background-color: var(--background_titledark);">
-          <div class="title_support">LEGACY</div>
-          <div class="title_support">UPGRADES</div>
+      <!-- PROVENANCE -->
+      <div class="provenance_container" id="dilation" style="display: none;">
+        <div class="provenance_stats">
+          <div class="provenance_stat">
+            <div>Provenance:</div>
+            <div>Weapons, Systems Power:</div>
+          </div>
+          <div class="provenance_number">
+            <div><span id="dilation-text"></span></div>
+            <div><span id="dilation-text2"></span></div>
+          </div>
         </div>
-        <div class="achievements_grouping">
-          <!--<span>You have <span id="total-challenge-completions-milestone-tab"></span> total challenge completions.</span>
-          <br/>--><span><span id="milestone-status-0">&#x2718;</span> > 2 Missions complete:  Auto Leadership Matrix</span>
-          <br/><span><span id="milestone-status-1">&#x2718;</span> > 4 Missions complete:  Auto Retrofit Scheduling</span>
-          <br/><span><span id="milestone-status-2">&#x2718;</span> > 8 Missions complete:  Auto Starfight Planning</span>
-          <br/><span><span id="milestone-status-3">&#x2718;</span> > 16 Missions complete: Auto Legacy Attribution</span>
-          <br/><span><span id="milestone-status-4">&#x2718;</span> > 32 Missions complete: Extra 1% from Skills</span> 
-        </div>
+        <div class="provenance_stats"><button class="provenance_button" id="dilation-upgrade-0-button" onclick="buyDilationUpgrade(0)"></button></div>
       </div>
     </div>
   </div>
@@ -673,7 +693,7 @@
     </div>
     <div class="progressstats_section">
       <div class="progressstats_stat">
-        <div class="battlestat_title">Last Armistice:</div>
+        <div class="battlestat_title">Last Victory:</div>
         <div><span class="battlestat_stat" id="time-since-last-update"></span> ago</div>
         <div class="battlestat_title">Last Legacy:</div>
         <div class="battlestat_stat" ><span id="last-update-point-gain"></span> pts</div>
