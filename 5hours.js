@@ -181,7 +181,6 @@ function baseDevs() {
 }
 
 function getAdditionalDevsDueToUpdates() {
-  console.log(Math.max(0, Math.round(1 + (Math.log2(player.updates * 100)))))
   return Math.max(0, Math.round(1 + (Math.log2(player.updates * 100))));
 }
 
