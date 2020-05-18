@@ -400,24 +400,46 @@
       <!-- LEGACY OVERVIEW -->
       <div class="legacystatus_row">
         <!-- LEGACY STATS & LEGACY POINTS -->
-        <div>
-          <div class="provenance_stats provstats_leftcol">
+        <div class="legacysummary">
+          <div class="legacystatus_stats">
             <div class="provenance_stat">
               <div>Enemies Defeated:</div>
               <div>First Mate Skill:</div>
               <div>Power per XP per second:</div>
-              <div>Legacy Points:</div>
             </div>
             <div class="provenance_number">
               <div><span id="updates">0</span></div>
               <div><span id="additional-devs-due-to-updates"></span></div>
               <div><span id="power-gain-per-experience">0.01</span></div>
+            </div>
+          </div>  
+          <div class="legacypoints_grid margin_auto">
+            <div class="legacypoints_stat">
+              <div>LEGACY POINTS:</div>
+            </div>
+            <div class="legacypoints_number">
               <div><span id="update-points">0</span></div>
             </div>
-          </div>      
+          </div>    
+        </div>
+        <!-- PROVENANCE -->
+        <div class="provenancestatus_stats" id="dilation" style="display: none;">
+          <div class="provenance_stats">
+            <div class="provenance_stat">
+              <div>Provenance:</div>
+              <div>Weapons, Systems Power:</div>
+            </div>
+            <div class="provenance_number">
+              <div><span id="dilation-text"></span></div>
+              <div><span id="dilation-text2"></span></div>
+            </div>
+          </div>
+          <div class="margin_auto">
+            <div class="provenance_stats"><button class="provenance_button" id="dilation-upgrade-0-button" onclick="buyDilationUpgrade(0)"></button></div>
+          </div>
         </div>
         <!-- LEGACY UPGRADES -->
-        <div class="achievements_row">  
+        <div class="legacyachievements_row">  
           <div class="legacyachievements_title" style="background-color: initial; background-color: var(--background_titledark);">
             <div class="title_support">LEGACY</div>
             <div class="title_support">UPGRADES</div>
@@ -446,17 +468,22 @@
         <div class="legacyupgrade_upgrade">
           <div class="legacygroup_upgrades">
             <div class="activity_title bg_systems">RESOLVE</div>
-            <div>
-              <!--<div><button onclick="assignOne(2)">Convert 1 Legacy into Resolve</button></div>
-              <div><button onclick="assignThird(2)">Convert 1/3 into Resolve</button></div>
-              <div><button onclick="assignAll(2)">Convert all Legacy into Resolve</button></div>-->
-              <span><button class="legacypoints_button" onclick="convertLegacy(0)">Convert LP</button><button class="legacypoints_button" id="legacy_to_resolve" onclick="toggleAmount(0)">Toggle</button></span>
-            </div>            
-            <div class="activity_effect">
-              <div>RESOLVE: <span id="update-experience-span-2">0</span></div>
-              <div>RESOLVE POWER: <span id="update-power-span-2">0</span></div>
-              <div>Piloting Skill Multiplier: <span id="update-effect-span-2">1</span>x</div>
+            <div class="legacyconversion">
+              <div><button class="legacypoints_button" onclick="convertLegacy(0)">Convert LP</button></div>
+              <div><button class="legacypoints_button" id="legacy_to_resolve" onclick="toggleAmount(0)">Toggle</button></div>
             </div>
+            <div class="legacygroup_stats">
+              <div class="provenance_stat">
+                <div>Resolve:</div>
+                <div>Resolve Power:</div>
+                <div>Piloting Multiplier:</div>
+              </div>
+              <div class="provenance_number">
+                <div><span id="update-experience-span-2">0</span></div>
+                <div><span id="update-power-span-2">0</span></div>
+                <div><span id="update-effect-span-2">1</span>x</div>
+              </div>
+            </div>            
             <div><button class="legacyupgrade_button" id="up-0-2-button" onclick="buyUpdateUpgrade(0, 2)"><span class="button_title">UNLOCK AUTO SKILL ALLOCATION</span><br/><span class="legacygroup_subtext">And start with 30 Skill<span class="text_hidden"><br/>.......</span></span><br/>Cost: <span id="up-0-2-cost"></span> Resolve<span id="up-0-2-bought"></span></button></div>
             <div><button class="legacyupgrade_button" id="up-1-2-button" onclick="buyUpdateUpgrade(1, 2)"><span class="button_title">THE LAST STARFIGHTER</span><br/><span class="legacygroup_subtext">All of your Skills contribute extra to Starfighting<span class="text_hidden"><br/>.......</span></span><br/>Cost: <span id="up-1-2-cost"></span> Resolve<span id="up-1-2-bought"></span></button></div>
             <div class="legacyfraction" id="auto-assign-update-points-row">AUTO-FRACTION: <input class="fraction_input" id="auto-assign-update-points-2" type="text" onchange="updateAutoAssignUpdatePoints(2)"></input></div>
@@ -465,16 +492,21 @@
         <div class="legacyupgrade_upgrade">
           <div class="legacygroup_upgrades">
             <div class="activity_title bg_piloting">RESONANCE</div>   <!-- REPUTE RESORT RESONANCE RENOWN REASON -->
-            <div>
-              <!--<div><button onclick="assignOne(1)">Convert 1 Legacy into Reputation</button></div>
-              <div><button onclick="assignThird(1)">Convert 1/3 into Reputation</button></div>
-              <div><button onclick="assignAll(1)">Convert all Legacy into Reputation</button></div>-->
-              <span><button class="legacypoints_button" onclick="convertLegacy(1)">Convert LP</button><button class="legacypoints_button" id="legacy_to_resonance" onclick="toggleAmount(1)">Toggle</button></span>
+            <div class="legacyconversion">
+              <div><button class="legacypoints_button" onclick="convertLegacy(1)">Convert LP</button></div>
+              <div><button class="legacypoints_button" id="legacy_to_resonance" onclick="toggleAmount(1)">Toggle</button></div>
             </div>
-            <div class="activity_effect">
-              <div>RESONANCE: <span id="update-experience-span-1">0</span> </div>
-              <div>RESONANCE POWER: <span id="update-power-span-1">0</span></div>
-              <div>Cool Multiplier: <span id="update-effect-span-1">1</span>x</div>
+            <div class="legacygroup_stats">
+              <div class="provenance_stat">
+                <div>Resonance:</div>
+                <div>Resonance Power:</div>
+                <div>Leadership Multiplier:</div>
+              </div>
+              <div class="provenance_number">
+                <div><span id="update-experience-span-1">0</span></div>
+                <div><span id="update-power-span-1">0</span></div>
+                <div><span id="update-effect-span-1">1</span>x</div>
+              </div>
             </div>
             <div><button class="legacyupgrade_button" id="up-0-1-button" onclick="buyUpdateUpgrade(0, 1)"><span class="button_title">COOL AFFECTS LEADERSHIP MORE</span><br/><span class="legacygroup_subtext">2.00x per 00:30:00 to 2.50x per 00:30:00<br/>00:01:00 softcap to 00:00:10 softcap</span><br/>Cost: <span id="up-0-1-cost"></span> Reputation<span id="up-0-1-bought"></span></button></div>
             <div><button class="legacyupgrade_button" id="up-1-1-button" onclick="buyUpdateUpgrade(1, 1)"><span class="button_title">SUPER DUPER LEADER</span><br/><span class="legacygroup_subtext">Leadership now increases past 1<span class="text_hidden"><br/>(but with reduced effect)</span></span><br/>Cost: <span id="up-1-1-cost"></span> Reputation<span id="up-1-1-bought"></span></button></div>
@@ -484,36 +516,27 @@
         <div class="legacyupgrade_upgrade">
           <div class="legacygroup_upgrades">
             <div class="activity_title bg_starfight">RESOURCE</div>
-            <div>
-              <!--<div><button onclick="assignOne(0)">Convert 1 Legacy into Resource</button></div>
-              <div><button onclick="assignThird(0)">Convert 1/3 into Resource</button></div>
-              <div><button onclick="assignAll(0)">Convert all Legacy into Resource</button></div>-->
-              <span><button class="legacypoints_button" onclick="convertLegacy(2)">Convert LP</button><button class="legacypoints_button" id="legacy_to_resource" onclick="toggleAmount(2)">Toggle</button></span>
+            <div class="legacyconversion">
+              <div><button class="legacypoints_button" onclick="convertLegacy(2)">Convert LP</button></div>
+              <div><button class="legacypoints_button" id="legacy_to_resource" onclick="toggleAmount(2)">Toggle</button></div>
             </div>
-            <div class="activity_effect">
-              <div>RESOURCE: <span id="update-experience-span-0">0</span></div>
-              <div>RESOURCE POWER: <span id="update-power-span-0">0</span></div>
-              <div><span id="update-effect-span-0">1</span>x TO ALL</div>
+            <div class="legacygroup_stats">
+              <div class="provenance_stat">
+                <div>Resource:</div>
+                <div>Resource Power:</div>
+                <div>Starfight Multiplier:</div>
+              </div>
+              <div class="provenance_number">
+                <div><span id="update-experience-span-0">0</span></div>
+                <div><span id="update-power-span-0">0</span></div>
+                <div><span id="update-effect-span-0">1</span>x TO ALL</div>
+              </div>
             </div>
             <div><button class="legacyupgrade_button" id="up-0-0-button" onclick="buyUpdateUpgrade(0, 0)"><span class="button_title">READY FOR THE LONG HAUL</span><br/><span class="legacygroup_subtext">Starfights get easier after 4:30:00<span class="text_hidden"><br/>.......</span></span><br/>Cost: <span id="up-0-0-cost"></span> Resource<span id="up-0-0-bought"></span></button></div>
             <div><button class="legacyupgrade_button" id="up-1-0-button" onclick="buyUpdateUpgrade(1, 0)"><span class="button_title">GAIN MORE LEGACY POINTS</span><br/><span class="legacygroup_subtext">10x multiplier<br/>2.00x per 01:00:00 to <span id="upgradeless-reward-up-1-0"></span>x per 01:00:00</span><br/>Cost: <span id="up-1-0-cost"></span> Resource<span id="up-1-0-bought"></span></button></div>
             <div class="legacyfraction" id="auto-assign-update-points-row">AUTO-FRACTION: <input class="fraction_input" id="auto-assign-update-points-0" type="text" onchange="updateAutoAssignUpdatePoints(0)"></input></div>
           </div>
         </div>
-      </div>
-      <!-- PROVENANCE -->
-      <div class="provenance_container" id="dilation" style="display: none;">
-        <div class="provenance_stats">
-          <div class="provenance_stat">
-            <div>Provenance:</div>
-            <div>Weapons, Systems Power:</div>
-          </div>
-          <div class="provenance_number">
-            <div><span id="dilation-text"></span></div>
-            <div><span id="dilation-text2"></span></div>
-          </div>
-        </div>
-        <div class="provenance_stats"><button class="provenance_button" id="dilation-upgrade-0-button" onclick="buyDilationUpgrade(0)"></button></div>
       </div>
     </div>
   </div>

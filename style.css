@@ -572,15 +572,83 @@ body {
 .legacystatus_row {
     display: grid;
     grid-template-columns:
-        auto auto;
+        220px 230px 340px;
     width: 100%;
     font-size: 12px;
+    color: var(--text_progress);
+}
+
+.legacysummary {
+    display: grid;
+    grid-template-rows: 
+        auto auto;
+    width: 100%;
     background-color: var(--background_moretransparent);
     box-shadow: var(--box_shadow);
     border: var(--border_black);
-    color: var(--text_progress);
+    box-sizing: border-box;  
+}
+
+.legacystatus_stats {
+    display: grid;
+    grid-template-columns: 
+        auto auto;
+    padding: 5px;   
+}
+
+.legacypoints_grid {
+    display: grid;
+    grid-template-columns: 
+        auto auto;
+    width: 207px;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 5px;
+}
+
+.legacypoints_stat {
+    text-align: left;
+}
+
+.legacypoints_number {
+    text-align: right;
+}
+
+.provenancestatus_stats {
+    display: grid;
+    grid-template-rows: 
+        auto auto;
+    width: 100%;
+    background-color: var(--background_moretransparent);
+    box-shadow: var(--box_shadow);
+    border: var(--border_black);
     box-sizing: border-box;
-    grid-column-gap: 20px;
+}
+
+.legacyachievements_row {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    height: auto;
+    width: 100%;
+    background-color: var(--background_moretransparent);
+    box-shadow: var(--box_shadow);
+    border: var(--border_black);
+    box-sizing: border-box;
+}
+
+.provenance_stats {
+    /*width: 100%;*/
+    /*margin: auto;*/
+    display: grid;
+    grid-template-columns: 
+        auto auto;
+    padding: 5px;
+}
+
+.provenance_stat {
+    text-align: left;
+    color: var(--text_tertiary);
 }
 
 .provstats_leftcol {
@@ -598,18 +666,7 @@ body {
     /*width: 460px;*/
  }
 
- .provenance_stats {
-    /*width: 100%;*/
-    /*margin: auto;*/
-    display: grid;
-    grid-template-columns: 
-        auto auto;
- }
 
- .provenance_stat {
-    text-align: left;
-    color: var(--text_tertiary);
-}
 
 .provenance_number {
     color: lightblue;
@@ -620,7 +677,6 @@ body {
     width: 180px;
     height: 60px;
 }
-
 
 .legacyupgrade_group {
     display: grid;
@@ -635,7 +691,7 @@ body {
 .legacygroup_upgrades {
     display: grid;
     grid-template-rows:
-        30px 37px 45px 60px 60px 25px;   /* 450 - status - milestones?   */
+        auto auto auto auto auto auto;
     grid-column-gap: 30px;
     padding: 0px 0px 5px 0px;
     background-color: var(--background_common);
@@ -658,6 +714,27 @@ body {
 .legacygroup_subtext {
     font-size: 10px;
 }
+
+
+.legacyconversion {
+    display: grid;
+    grid-template-columns: 
+        auto auto;
+    border: var(--debug_border);
+    padding: 5px;
+    color: var(--text_secondary);
+
+}
+
+.legacygroup_stats {
+    display: grid;
+    grid-template-columns: 
+        auto auto;
+    border: var(--debug_border);
+    padding: 5px;
+    color: var(--text_secondary);
+}
+
 
 .legacyupgrade_button {
     border: 1px solid;
@@ -713,7 +790,7 @@ body {
     padding: 5px;
     background-color: var(--act_bg);
     color: var(--text_primary);
-    width: 10%;
+    /*width: 10%;*/
     box-sizing: border-box;
     /*transform: rotate(90deg);*/
     writing-mode: vertical-rl;
@@ -897,6 +974,10 @@ body {
 
 .text_hidden {
     visibility: hidden;
+}
+
+.margin_auto {
+    margin: auto;
 }
 
 
