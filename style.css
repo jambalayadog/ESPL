@@ -56,8 +56,9 @@ body {
 }
 
 .page_container {
-    max-height: 600px;/*
-    overflow-y: scroll;*/
+    height: 600px;
+    max-height: 600px;
+    overflow-y: scroll;
     /*background-image: url("https://upload.wikimedia.org/wikipedia/en/1/16/Bloodbath_of_B-R5RB.jpg");*/
     /*background-image: url("https://image.shutterstock.com/image-illustration/alien-mothership-deep-space-futuristic-600w-200577308.jpg");*/
     background-image: url("https://now.northropgrumman.com/wp-content/uploads/2018/04/now-stars.jpg");
@@ -421,9 +422,15 @@ body {
     width: 140px;
     min-height: 25px;
     font-size:10px;
-    border: 2px solid grey;
+    border: 1px inset  tan;
     box-sizing: border-box;
-    background-color: lightblue;
+    /*background-color: lightblue;*/
+    background-color: rgb(50, 50, 50, .5);
+    color: tan;
+}
+
+.auto_button:hover {
+    background-color: rgb(50, 50, 50, .75);
 }
 
 
@@ -444,7 +451,9 @@ body {
     text-align: center;
     vertical-align: middle;
     font-size: 12px;
-
+    background-color: tan;
+    color: black;
+    border: none
 }
 
 .auto_checkbox {

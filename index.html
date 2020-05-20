@@ -726,6 +726,16 @@
 
   <div id="completion-milestones-div" style="display: none;">
     help
+
+    <div>
+      <span><input class="debugspeedup" id="debug_speedup" type="text" onchange="updateDebugSpeed()"></input>
+      <button onclick="saveGame()">Save</button>
+      <button onclick="exportGame()">Export</button>
+      <button onclick="loadGamePrompt()">Load</button>
+      <button onclick="resetGameWithConfirmation()">RESET</button></span>
+      <br/>
+      <span style="display: none;">Exported save (also copied to clipboard): <input id="export-output"></input></span>
+    </div>
     <hr/>
   </div>
 
@@ -783,15 +793,7 @@
     </div>
     
   </div>
-  <div>
-    <span><input class="debugspeedup" id="debug_speedup" type="text" onchange="updateDebugSpeed()"></input>
-    <button onclick="saveGame()">Save</button>
-    <button onclick="exportGame()">Export</button>
-    <button onclick="loadGamePrompt()">Load</button>
-    <button onclick="resetGameWithConfirmation()">RESET</button></span>
-    <br/>
-    <span style="display: none;">Exported save (also copied to clipboard): <input id="export-output"></input></span>
-  </div>
+  
 
 
   <!--- OPTIONS --------------------------------------------------------- 
