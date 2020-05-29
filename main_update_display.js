@@ -24,11 +24,11 @@ function updateDisplay () {
     let el = document.getElementById('prestige-' + i);
     let btn = document.getElementById('prestige-' + i + '-button');
     if (canPrestigeWithoutGain(i)) {
-      el.innerHTML = formatEffect(i) + ' -> ' + formatEffect(i) + '<br/>' + toTime(player.progress[i]) + ' -> ' + toTime(player.progress[i]) + '<br/>no advances<br/><br/>';
+      el.innerHTML = formatEffect(i) + ' -> ' + formatEffect(i) + '<br/>' + toTime(player.progress[i]) + ' -> ' + toTime(player.progress[i]) + '<br/>no improvement<br/><br/>';
       btn.style.backgroundColor = UIColors.button_useless;   //yellow: active, non-profit
     } else if (canPrestige(i)) {
       let newValue = newValueFromPrestige();
-      el.innerHTML = formatEffect(i) + ' -> ' + formatEffect(i, newValue) + '<br/>' + toTime(player.progress[i]) + ' -> ' + toTime(newValue) + '<br/>' + toTime(newValue - player.progress[i]) + ' Increase<br/><br/>'
+      el.innerHTML = formatEffect(i) + ' -> ' + formatEffect(i, newValue) + '<br/>' + toTime(player.progress[i]) + ' -> ' + toTime(newValue) + '<br/>' + toTime(newValue - player.progress[i]) + ' better<br/><br/>'
       btn.style.backgroundColor = UIColors.button_active;    //green: active, profitable
     } else if (player.currentChallenge === 'unprestigious') {
       el.innerHTML = 'Disabled in this mission';
@@ -39,7 +39,7 @@ function updateDisplay () {
     }
   }
   if (player.progress[7] >= 1) {
-    document.getElementById('enlightened-desc').innerHTML = 'Reset Leadership and make it slower, but stronger<br/><br/>';
+    document.getElementById('enlightened-desc').innerHTML = 'Reset Leadership and make it slower but stronger<br/><br/>';
     document.getElementById("progress_leader").style.visibility = 'hidden';
     document.getElementById('enlightened-button').style.backgroundColor = UIColors.button_active;
   } else {
@@ -65,7 +65,7 @@ function updateDisplay () {
   }
   if (canUpdate()) {
     let gain = getUpdateGain();
-    document.getElementById('update-gain').innerHTML = '+ ' + format(gain) + ' Legacy Points<br/><br/><br/>';
+    document.getElementById('update-gain').innerHTML = '+' + format(gain) + ' Legacy Points<br/><br/><br/>';
     document.getElementById('update-button').style.backgroundColor = UIColors.button_active;
   } else {
     document.getElementById('update-gain').innerHTML = 'Requires ' + toTime(getChallengeGoal(player.currentChallenge)) + ' Starfight<br/><br/>';

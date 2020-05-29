@@ -27,7 +27,8 @@ function format(x, n) {
   } else {
     result = x.toFixed(n);
   }
-  return 'e'.repeat(es) + result;
+  return ''.repeat(es) + result;
+  //return 'e'.repeat(es) + result;
 }
 
 function toTime(x, options) {
@@ -48,8 +49,23 @@ function toTime(x, options) {
     let prefixes = [null, 'e-3', 'e-6', 'e-9', 'e-12'];
     return x.toFixed(2) + '' + prefixes[level] + 's';
   }
-  if (x / 3600 >= 1e6) {
-    return format(x / 3600) + ' hours';
+  if (x / 3600 >= 1e7) {
+    x = x / 31536000;
+    let exponent = Math.floor(Math.log10(x));
+    let mantissa = x / Math.pow(10, exponent);
+    return mantissa.toFixed(2) + 'e' + exponent + ' yrs';
+  }
+  if (x / 3600 >= 1e5) {
+    x = x / 86400;
+    let exponent = Math.floor(Math.log10(x));
+    let mantissa = x / Math.pow(10, exponent);
+    return mantissa.toFixed(2) + 'e' + exponent + ' days';
+  }
+  if (x / 3600 >= 1e4) {
+    x = x / 3600;
+    let exponent = Math.floor(Math.log10(x));
+    let mantissa = x / Math.pow(10, exponent);
+    return mantissa.toFixed(2) + 'e' + exponent + ' hrs';
   }
   return [x / 3600, x / 60 % 60, Math.floor(x % 60)].map((i) => Math.floor(i).toString().padStart(2, '0')).join(':');
 }

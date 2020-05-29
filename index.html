@@ -42,7 +42,7 @@
     <button class="navitem" id="update-tab-button" onclick="setTab('update')" style="display: none;">LEGACY</button>
     <button class="navitem" id="challenges-tab-button" onclick="setTab('challenges')" style="display: none;">MISSIONS</button> 
     <!--<button class="navitem" id="lore-tab-button" onclick="setTab('lore')">STORY GOALS</button> -->
-    <button class="navitem" id="completion-milestones-tab-button" onclick="setTab('completion-milestones')" style="display: none;">HELP</button>
+    <button class="navitem" id="completion-milestones-tab-button" onclick="setTab('completion-milestones')">HELP</button>
   </div>
   <div class="lore_container" >
     <div class="lore" id="lore_goal">
@@ -84,7 +84,7 @@
           <div class="activity_progress"> </div>
           <div class="activity_prestige_effect"></div>
           <div class="activity_prestige_control">
-            <div><button class="prestige_button" id="update-button" onclick="update()"><span class="button_title">DEFEAT ENEMIES</span><br/><span class="activity_prestige_info" id="update-gain"></span><progress class="p1" id="progress_armistice" value="0"></progress></button></div>
+            <div><button class="prestige_button" id="update-button" onclick="update()"><span class="button_title">CLAIM VICTORY</span><br/><span class="activity_prestige_info" id="update-gain"></span><progress class="p1" id="progress_armistice" value="0"></progress></button></div>
           </div>
         </div>
         <!---- PILOTING ---->
@@ -367,8 +367,8 @@
           <span id="normal-ach-status-19">&#x2610;</span><span> Get 12 challenge completions. </span>
           <br/><span id="normal-ach-status-20">&#x2610;</span><span> Get 20 challenge completions. </span>
           <br/><span id="normal-ach-status-21">&#x2610;</span><span> Update without ever having any skills assigned. </span>
-          <br/><span id="normal-ach-status-22">&#x2610;</span><span> Start production of dilation. </span>
-          <br/><span id="normal-ach-status-23">&#x2610;</span><span> Get 33.3333 dilation. </span>
+          <br/><span id="normal-ach-status-22">&#x2610;</span><span> Start production of Provenance. </span>
+          <br/><span id="normal-ach-status-23">&#x2610;</span><span> Get 33.3333 Pre-Eminence. </span>
           <br/><span id="normal-ach-status-24">&#x2610;</span><span> Leader Up x 40. </span>
           <br/><span id="normal-ach-status-25">&#x2610;</span><span> Get a billion Skill. </span>
           <br/><span id="normal-ach-status-26">&#x2610;</span><span> Get at least 1.80e308 Legacy Points in one Space War. </span>
@@ -445,7 +445,7 @@
           </div>    
         </div>
         <!-- PROVENANCE -->
-        <div class="provenancestatus_stats" id="dilation" style="display: none;">
+        <div class="provenancestatus_stats" id="dilation" style="visibility: hidden;">
           <div class="provenance_stats">
             <div class="provenance_stat">
               <div>Provenance:</div>
@@ -511,8 +511,8 @@
                 <div><span id="update-effect-span-2">1</span>x</div>
               </div>
             </div>            
-            <div><button class="legacyupgrade_button" id="up-0-2-button" onclick="buyUpdateUpgrade(0, 2)"><span class="button_title">UNLOCK AUTO SKILL ALLOCATION</span><br/><span class="legacygroup_subtext">And start with 30 Skill<span class="text_hidden"><br/>.......</span></span><br/>Cost: <span id="up-0-2-cost"></span> Resolve<span id="up-0-2-bought"></span></button></div>
-            <div><button class="legacyupgrade_button" id="up-1-2-button" onclick="buyUpdateUpgrade(1, 2)"><span class="button_title">THE LAST STARFIGHTER</span><br/><span class="legacygroup_subtext">All of your Skills contribute extra to Starfighting<span class="text_hidden"><br/>.......</span></span><br/>Cost: <span id="up-1-2-cost"></span> Resolve<span id="up-1-2-bought"></span></button></div>
+            <div><button class="legacyupgrade_button" id="up-0-2-button" onclick="buyUpdateUpgrade(0, 2)"><span class="button_title">UNLOCK AUTO SKILL ALLOCATION</span><br/><span class="legacygroup_subtext">Start with 30 Skill<span class="text_hidden"><br/>.......</span></span><br/>Cost: <span id="up-0-2-cost"></span> Resolve<span id="up-0-2-bought"></span></button></div>
+            <div><button class="legacyupgrade_button" id="up-1-2-button" onclick="buyUpdateUpgrade(1, 2)"><span class="button_title">THE LAST STARFIGHTER</span><br/><span class="legacygroup_subtext">All Skills contribute extra to Starfighting<span class="text_hidden"><br/>.......</span></span><br/>Cost: <span id="up-1-2-cost"></span> Resolve<span id="up-1-2-bought"></span></button></div>
             <div class="legacyfraction" id="auto-assign-update-points-row">AUTO-FRACTION: <input class="fraction_input" id="auto-assign-update-points-2" type="text" onchange="updateAutoAssignUpdatePoints(2)"></input></div>
           </div>
         </div>
@@ -540,7 +540,7 @@
                 <div><span id="update-effect-span-1">1</span>x</div>
               </div>
             </div>
-            <div><button class="legacyupgrade_button" id="up-0-1-button" onclick="buyUpdateUpgrade(0, 1)"><span class="button_title">COOL AFFECTS LEADERSHIP MORE</span><br/><span class="legacygroup_subtext">2.00x per 00:30:00 to 2.50x per 00:30:00<br/>00:01:00 softcap to 00:00:10 softcap</span><br/>Cost: <span id="up-0-1-cost"></span> Reputation<span id="up-0-1-bought"></span></button></div>
+            <div><button class="legacyupgrade_button" id="up-0-1-button" onclick="buyUpdateUpgrade(0, 1)"><span class="button_title">COOL AFFECTS LEADERSHIP MORE</span><br/><span class="legacygroup_subtext">Leader Up is available faster<br/></span><br/>Cost: <span id="up-0-1-cost"></span> Reputation<span id="up-0-1-bought"></span></button></div>
             <div><button class="legacyupgrade_button" id="up-1-1-button" onclick="buyUpdateUpgrade(1, 1)"><span class="button_title">SUPER DUPER LEADER</span><br/><span class="legacygroup_subtext">Leadership now increases past 1<span class="text_hidden"><br/>(but with reduced effect)</span></span><br/>Cost: <span id="up-1-1-cost"></span> Reputation<span id="up-1-1-bought"></span></button></div>
             <div class="legacyfraction" id="auto-assign-update-points-row">AUTO-FRACTION: <input class="fraction_input" id="auto-assign-update-points-1" type="text" onchange="updateAutoAssignUpdatePoints(1)"></input></div>
           </div>
@@ -570,7 +570,7 @@
               </div>
             </div>
             <div><button class="legacyupgrade_button" id="up-0-0-button" onclick="buyUpdateUpgrade(0, 0)"><span class="button_title">READY FOR THE LONG HAUL</span><br/><span class="legacygroup_subtext">Starfights get easier after 4:30:00<span class="text_hidden"><br/>.......</span></span><br/>Cost: <span id="up-0-0-cost"></span> Resource<span id="up-0-0-bought"></span></button></div>
-            <div><button class="legacyupgrade_button" id="up-1-0-button" onclick="buyUpdateUpgrade(1, 0)"><span class="button_title">GAIN MORE LEGACY POINTS</span><br/><span class="legacygroup_subtext">10x multiplier<br/>2.00x per 01:00:00 to <span id="upgradeless-reward-up-1-0"></span>x per 01:00:00</span><br/>Cost: <span id="up-1-0-cost"></span> Resource<span id="up-1-0-bought"></span></button></div>
+            <div><button class="legacyupgrade_button" id="up-1-0-button" onclick="buyUpdateUpgrade(1, 0)"><span class="button_title">GAIN MORE LEGACY POINTS</span><br/><span class="legacygroup_subtext">10x Legacy Points<br/>+<span id="upgradeless-reward-up-1-0"></span>x per Hour</span><br/>Cost: <span id="up-1-0-cost"></span> Resource<span id="up-1-0-bought"></span></button></div>
             <div class="legacyfraction" id="auto-assign-update-points-row">AUTO-FRACTION: <input class="fraction_input" id="auto-assign-update-points-0" type="text" onchange="updateAutoAssignUpdatePoints(0)"></input></div>
           </div>
         </div>

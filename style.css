@@ -25,8 +25,9 @@
     --tip_bg: lightgrey;
     --tip_text: black;
     --tip_border: darkgrey;
-    --background_common: rgba(0, 0, 0, .50);
+    --background_common: rgba(10, 10, 20, .80);
     --background_moretransparent: rgba(0, 0, 0, .50);
+    /*--background_moretransparent: rgba(0, 0, 0, .50);*/
     --background_title: rgba(255, 255, 255, 0.5);
     --background_titledark: rgba(128, 128, 128, 0.75);
     --background_grad1: rgba(66,200,245, .75);
@@ -34,6 +35,10 @@
     --background_grad3: rgba(245,161,66, .75);
     --background_grad4: rgba(245,66,105, .75);
     --border_black: 1px solid black;
+    --button_bg: rgba(50,50,50,.50);
+    --button_bg_hover: rgba(50,50,50,.75);
+    --button_color: tan;
+    --button_border: 2px inset tan;
 }
 
 html {
@@ -147,7 +152,7 @@ body {
     scroll-snap-type: y mandatory;
     background-color: var(--act_bg);
     box-shadow: var(--box_shadow);
-    border: 1px solid lightgrey;
+    border: 1px solid slategray;
 }
 
 
@@ -198,7 +203,7 @@ body {
     box-shadow: var(--box_shadow);
     border: var(--border_black);
     font-size: 12px;
-    background-color: var(--background_moretransparent);
+    background-color: var(--background_common);
     color: var(--text_secondary);
     padding: 5px;
     grid-template-columns:
@@ -422,11 +427,13 @@ body {
     width: 140px;
     min-height: 25px;
     font-size:10px;
-    border: 1px inset  tan;
     box-sizing: border-box;
-    /*background-color: lightblue;*/
+    /*background-color: lightblue;
     background-color: rgb(50, 50, 50, .5);
-    color: tan;
+    color: tan;*/
+    border: var(--button_border);
+    background-color: var(--button_bg);
+    color: var(--button_color);
 }
 
 .auto_button:hover {
@@ -511,7 +518,7 @@ body {
 .achievements_grouping {
     font-size: 12px;
     padding: 5px;
-    background-color: var(--background_moretransparent);
+    background-color: var(--background_common);
     box-shadow: var(--box_shadow);
     border: var(--border_black);
     color: var(--text_progress);
@@ -592,7 +599,7 @@ body {
     grid-template-rows: 
         auto auto;
     width: 100%;
-    background-color: var(--background_moretransparent);
+    background-color: var(--background_common);
     box-shadow: var(--box_shadow);
     border: var(--border_black);
     box-sizing: border-box;  
@@ -628,7 +635,7 @@ body {
     grid-template-rows: 
         auto auto;
     width: 100%;
-    background-color: var(--background_moretransparent);
+    background-color: var(--background_common);
     box-shadow: var(--box_shadow);
     border: var(--border_black);
     box-sizing: border-box;
@@ -640,7 +647,7 @@ body {
     align-items: stretch;
     height: auto;
     width: 100%;
-    background-color: var(--background_moretransparent);
+    background-color: var(--background_common);
     box-shadow: var(--box_shadow);
     border: var(--border_black);
     box-sizing: border-box;
@@ -767,16 +774,16 @@ body {
     min-width: 80px;
     min-height: 25px;
     font-size:10px;
-    border: 2px solid grey;
-    box-sizing: border-box;
-    background-color: lightblue;
+    border: var(--button_border);
+    background-color: var(--button_bg);
+    color: var(--button_color);
 }
 
 
 .legacyachievements_group {
     font-size: 12px;
     padding: 5px;
-    background-color: var(--background_moretransparent);
+    background-color: var(--background_common);
     box-shadow: var(--box_shadow);
     border: var(--border_black);
     color: var(--text_progress);
@@ -837,7 +844,7 @@ body {
     width: 100%;
     font-size: 12px;
     border: var(---border_black);
-    background-color: var(--background_moretransparent);
+    background-color: var(--background_common);
     box-sizing: border-box;
     color: var(--text_secondary);
     padding: 5px;
@@ -857,10 +864,15 @@ body {
 .mission_abort_button {
     width: 150px;
     min-height: 25px;
-    font-size:12px;
-    border: 2px solid grey;
+    font-size:12px;    
     box-sizing: border-box;
-    background-color: lightblue;
+    border: var(--button_border);
+    background-color: var(--button_bg);
+    color: var(--button_color);
+}
+
+.mission_abort_button:hover {
+    background-color: var(--button_bg_hover);
 }
 
 .mission_control_element {
@@ -884,7 +896,7 @@ body {
 .mission {
     font-size: 12px;
     border: var(--border_black);
-    background-color: var(--background_moretransparent);
+    background-color: var(--background_common);
     color: var(--text_secondary);
     padding: 5px;
     text-align: center;

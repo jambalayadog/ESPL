@@ -9,10 +9,10 @@ function updateTabButtonDisplay () {
   }
   if (player.stats.recordDevelopment[''] >= 86400) {
     document.getElementById('challenges-tab-button').style.display = '';
-    document.getElementById('completion-milestones-tab-button').style.display = '';
+    //document.getElementById('completion-milestones-tab-button').style.display = '';
   } else {
     document.getElementById('challenges-tab-button').style.display = 'none';
-    document.getElementById('completion-milestones-tab-button').style.display = 'none';
+    //document.getElementById('completion-milestones-tab-button').style.display = 'none';
   }
 }
 
