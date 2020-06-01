@@ -354,7 +354,7 @@ let initialPlayer = {
     toggles: ['1', '1', '1']
   },
   skill: {
-    toggles: ['1', '1', '1']
+    toggles: ['20%', '100%']
   },
   lore: [],
   dilation: 0,

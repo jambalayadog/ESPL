@@ -24,10 +24,10 @@ function getEffect(i, progressOverride) {
   } else if (i === 7) {
     return getPatienceMeterEffect(x, getTotalEnlightened());
   }
+  
 }
 
 function findTimeToNextSkillPoint(x) {
-  let a = player.progress[3];
   if (player.currentChallenge === 'lonely') {
     return 0;
   } else {
@@ -35,8 +35,22 @@ function findTimeToNextSkillPoint(x) {
     let k = maybeLog(baseDevs() + getAdditionalDevsDueToUpdates() + x * getUpdatePowerEffect(2) * challengeReward('lonely') / 300);
     document.getElementById("progress_nextdev").value = k-j;
   }
-
 }
+
+function findTimeToNextRetrofits(i) {
+  // get starfight, get progress from 5 and 6
+  let currentprogress = player.progress[0];
+  console.log("Starfight: ", currentprogress);
+  let cachedprogress = player.progress[i];
+  console.log("Progress: ", cachedprogress, "i: ", i);
+  let progress = currentprogress / cachedprogress;
+  return progress
+  /*console.log("currentProgress:", currentProgress);*/
+  /*document.getElementById("progress5_nextretrofit").value = k-j;
+  document.getElementById("progress6_nextretrofit").value = k-j;*/
+}
+
+
 
 function formatEffect(i, progressOverride) {
   let effect = getEffect(i, progressOverride);

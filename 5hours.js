@@ -281,7 +281,6 @@ function toggleSkillAssignAmount(i) {
 
 function addToggle(i) {
   var toggleAmount = player.skill.toggles[i];
-  console.log("--toggle amount: ", toggleAmount);
   if (toggleAmount =="20%") { 
     var amountToToggle = Math.floor(0.2 * getTotalDevs());
     tryToChangeDevs(i, amountToToggle);
@@ -293,7 +292,6 @@ function addToggle(i) {
 
 function subToggle(i) {
   var toggleAmount = player.skill.toggles[i];
-  console.log("--toggle amount: ", toggleAmount);
   if (toggleAmount =="20%") { 
     var amountToToggle = Math.ceil(-0.2 * getTotalDevs());
     tryToChangeDevs(i, amountToToggle);
@@ -304,14 +302,6 @@ function subToggle(i) {
 }
 
 function tryToChangeDevs(i, change) {
-  console.log("assigned skill: ", player.devs.reduce((a, b) => a + b));
-  let newProjectedAmount = player.devs.reduce((a, b) => a + b) + change;
-  console.log("i: ", i);
-  console.log("Total Skill: ", getTotalDevs());
-  console.log("old skill: ", player.devs[i]);
-  console.log("Change: ", change)
-  console.log("New Projected Skill: ", player.devs[i] + change);
-  console.log("available skill: ", getUnassignedDevs());
   if (change > getUnassignedDevs() ) {
     change = getUnassignedDevs()
     setDevs(i, player.devs[i] + change);
@@ -320,7 +310,6 @@ function tryToChangeDevs(i, change) {
   } else {
     setDevs(i, player.devs[i] + change);
   }
-  console.log("Final skill: ", player.devs[i])
 }
 
 function addDev(i) {                // I is which category 3 = piloting, 0 = starfight, 4 = cool

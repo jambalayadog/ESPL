@@ -23,17 +23,24 @@ function updateDisplay () {
   for (let i = 5; i <= 6; i++) {
     let el = document.getElementById('prestige-' + i);
     let btn = document.getElementById('prestige-' + i + '-button');
+    let progid = 'progress' + i + '_nextretrofit';
+    let progele = document.getElementById(progid);
     if (canPrestigeWithoutGain(i)) {
-      el.innerHTML = formatEffect(i) + ' -> ' + formatEffect(i) + '<br/>' + toTime(player.progress[i]) + ' -> ' + toTime(player.progress[i]) + '<br/>no improvement<br/><br/>';
+      el.innerHTML = formatEffect(i) + ' -> ' + formatEffect(i) + '<br/>' + toTime(player.progress[i]) + ' -> ' + toTime(player.progress[i]) + '';
+      progele.style.display = '';
+      progele.value = findTimeToNextRetrofits(i);
       btn.style.backgroundColor = UIColors.button_useless;   //yellow: active, non-profit
     } else if (canPrestige(i)) {
+      progele.style.display = 'none';
       let newValue = newValueFromPrestige();
-      el.innerHTML = formatEffect(i) + ' -> ' + formatEffect(i, newValue) + '<br/>' + toTime(player.progress[i]) + ' -> ' + toTime(newValue) + '<br/>' + toTime(newValue - player.progress[i]) + ' better<br/><br/>'
+      el.innerHTML = formatEffect(i) + ' -> ' + formatEffect(i, newValue) + '<br/>' + toTime(player.progress[i]) + ' -> ' + toTime(newValue) + '<br/><b>' + toTime(newValue - player.progress[i]) + ' better</b><br/>'
       btn.style.backgroundColor = UIColors.button_active;    //green: active, profitable
     } else if (player.currentChallenge === 'unprestigious') {
+      progele.style.display = 'none';
       el.innerHTML = 'Disabled in this mission';
       btn.style.backgroundColor = UIColors.button_inactive;  //dark grey: disabled
     } else {
+      progele.style.display = 'none';
       el.innerHTML = 'Requires ' + toTime(1800) + ' Starfight<br/><br/>';  
       btn.style.backgroundColor = UIColors.button_inactive;  //dark grey: disabled
     }
