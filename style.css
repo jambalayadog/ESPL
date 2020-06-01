@@ -55,15 +55,15 @@ body {
     max-width: 800px;
     margin: auto;
     font-size: 12px;
-    overflow-x: hidden;
-    overflow-y: scroll;
+    /*overflow-x: hidden;*/
+    /*overflow-y: scroll;*/
 
 }
 
 .page_container {
     height: 600px;
     max-height: 600px;
-    overflow-y: scroll;
+    /*overflow-y: scroll;*/
     /*background-image: url("https://upload.wikimedia.org/wikipedia/en/1/16/Bloodbath_of_B-R5RB.jpg");*/
     /*background-image: url("https://image.shutterstock.com/image-illustration/alien-mothership-deep-space-futuristic-600w-200577308.jpg");*/
     background-image: url("https://now.northropgrumman.com/wp-content/uploads/2018/04/now-stars.jpg");
@@ -153,6 +153,7 @@ body {
     background-color: var(--act_bg);
     box-shadow: var(--box_shadow);
     border: 1px solid slategray;
+    scroll-behavior: smooth;
 }
 
 
@@ -379,6 +380,38 @@ body {
 
 .unlock_prestige {
 }
+
+
+.skilltoggle_button {
+    min-height: 25px;
+    width: 50px;
+    font-size:10px;
+    box-sizing: border-box;
+    border: var(--button_border);
+    background-color: var(--button_bg);
+    color: var(--button_color);
+}
+
+.skillassign_button {
+    min-height: 25px;
+    font-size:10px;
+    box-sizing: border-box;
+    border: var(--button_border);
+    background-color: var(--button_bg);
+    color: var(--button_color);
+}
+
+.skillassign_button:hover, .skilltoggle_button:hover {
+    background-color: rgb(50, 50, 50, .75);
+}
+
+
+
+
+
+
+
+
 
 /*  AUTO OPTIONS PAGE -----------------------------------------          -->
 
@@ -843,7 +876,7 @@ body {
 .mission_control {
     width: 100%;
     font-size: 12px;
-    border: var(---border_black);
+    border: var(--border_black);
     background-color: var(--background_common);
     box-sizing: border-box;
     color: var(--text_secondary);
@@ -921,6 +954,65 @@ body {
     text-align: right;
     color: lightblue;
 }
+
+
+/* ---- GUIDANCE ---------------------------------------------
+
+ ██████  ██    ██ ██ ██████   █████  ███    ██  ██████ ███████ 
+██       ██    ██ ██ ██   ██ ██   ██ ████   ██ ██      ██      
+██   ███ ██    ██ ██ ██   ██ ███████ ██ ██  ██ ██      █████   
+██    ██ ██    ██ ██ ██   ██ ██   ██ ██  ██ ██ ██      ██      
+ ██████   ██████  ██ ██████  ██   ██ ██   ████  ██████ ███████
+
+---------------------------------------------------------------*/
+
+
+.guidance_container{
+    width:100%;
+    max-width:800px;
+    display: grid;
+    grid-template-rows:
+        auto auto auto auto auto auto;
+    justify-content: center;
+    padding: 5px 0px 5px 0px;
+    box-sizing: border-box;
+    height: 435px;
+}
+      
+.guidance_guide{
+    width: 100%;
+    font-size: 12px;
+    border: var(--border_black);
+    background-color: var(--background_common);
+    box-sizing: border-box;
+    color: var(--text_secondary);
+    padding: 5px;
+    text-align: center;
+    display: grid;
+    grid-template-columns:
+        auto auto auto;
+    margin: auto;
+    grid-column-gap: 10px;
+    height: 71px;
+}
+
+.guidance_portrait{
+
+}
+
+.guidance_summary{
+
+}
+
+.guidance_content{
+    text-align: left;
+}
+
+
+
+
+
+
 
 
 
@@ -1013,7 +1105,7 @@ body {
     color: darkslategray;
     /* Position the tooltip */
     position: absolute;
-    left: 70px;
+    left: 50%;
     top: -20px;
     z-index: 1;
     
@@ -1024,7 +1116,7 @@ body {
     color: darkslategray;
     /* Position the tooltip */
     position: absolute;
-    left: 75px;
+    left: calc(50% + 5px);
     top: -20px;
     z-index: 1;
     
@@ -1035,7 +1127,7 @@ body {
     color: darkslategray;
     /* Position the tooltip */
     position: absolute;
-    left: 80px;
+    left: calc(50% + 10px);
     top: -20px;
     z-index: 1;
     
@@ -1046,7 +1138,7 @@ body {
     color: darkslategray;
     /* Position the tooltip */
     position: absolute;
-    left: 85px;
+    left: calc(50% + 15px);
     top: -20px;
     z-index: 1;
     pointer-events:none;

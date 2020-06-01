@@ -42,7 +42,7 @@
     <button class="navitem" id="update-tab-button" onclick="setTab('update')" style="display: none;">LEGACY</button>
     <button class="navitem" id="challenges-tab-button" onclick="setTab('challenges')" style="display: none;">MISSIONS</button> 
     <!--<button class="navitem" id="lore-tab-button" onclick="setTab('lore')">STORY GOALS</button> -->
-    <button class="navitem" id="completion-milestones-tab-button" onclick="setTab('completion-milestones')">HELP</button>
+    <button class="navitem" id="completion-milestones-tab-button" onclick="setTab('completion-milestones')">GUIDANCE</button>
   </div>
   <div class="lore_container" >
     <div class="lore" id="lore_goal">
@@ -75,7 +75,16 @@
           </div>
           <div class="activity_skill">
             <div>Skill: <span class="text_hidden">...</span><span id="devs-0"></span></div>
-            <div><button onclick="addDev(0)">+</button><button onclick="subtractDev(0)">-</button><button onclick="maxDev(0)">M</button><button onclick="zeroDev(0)">0</button></div>
+            <div>
+              <button class="skillassign_button" onclick="addToggle(0)">+</button>
+              <div class="togglebtn">
+                <button class="skilltoggle_button" id="skilltoassign_starfight" onclick="toggleSkillAssignAmount(0)">Toggle</button>
+                <span class="toggle_1 toggle_active" id="toggleskill0_1">.</span>
+                <span class="toggle_2" id="toggleskill0_2">.</span>
+                <span class="toggle_3" id="toggleskill0_3">.</span>
+              </div>
+              <button class="skillassign_button" onclick="subToggle(0)">-</button>
+            </div>
           </div>
           <div class="activity_fraction">
             <div>AUTO-FRACTION: <input class="fraction_input" id="auto-dev-0" type="text" onchange="updateAutoDev(0)"></input></div>
@@ -98,7 +107,16 @@
           </div>
           <div class="activity_skill">
             <div>Skill: <span class="text_hidden">...</span><span id="devs-3"></span></div>
-            <div><button onclick="addDev(3)">+</button><button onclick="subtractDev(3)">-</button><button onclick="maxDev(3)">M</button><button onclick="zeroDev(3)">0</button></div>
+            <div>
+              <button class="skillassign_button" onclick="addToggle(3)">+</button>
+              <div class="togglebtn">
+                <button class="skilltoggle_button" id="skilltoassign_piloting" onclick="toggleSkillAssignAmount(3)">Toggle</button>
+                <span class="toggle_1 toggle_active" id="toggleskill3_1">.</span>
+                <span class="toggle_2" id="toggleskill3_2">.</span>
+                <span class="toggle_3" id="toggleskill3_3">.</span>
+              </div>
+              <button class="skillassign_button" onclick="subToggle(3)">-</button>
+            </div>
           </div>
           <div class="activity_fraction">
             <div>AUTO-FRACTION: <input class="fraction_input" id="auto-dev-3" type="text" onchange="updateAutoDev(3)"></input></div>
@@ -107,19 +125,20 @@
           <div class="activity_progress tutorial"> 
             <div class="tutorial_text" id="tutorial_help" style="visibility: visible;">
               <div><span class="text_t1">STARFIGHT</span><br/><br/>
-                You will need <span class="text_t2">Piloting</span>, <span class="text_t3">Systems</span>, <span class="text_t4">Weapons</span>, and <span class="text_t5">Cool</span> to in order to <span class="text_t1">Starfight</span>.<br/><br/>Starfight unlocks <span class="text_t6">Missions</span> and generates <span class="text_t6">Legacy</span> to become an <span class="text_t6">Epic Starfighter Pilot</span>.
+                You will need <span class="text_t2">Piloting</span>, <span class="text_t3">Systems</span>, <span class="text_t4">Weapons</span>, and <span class="text_t5">Cool</span> to in order to <span class="text_t1">Starfight</span>.<br/><br/>Starfight generates <span class="text_t6">Legacy</span> and eventually unlocks <span class="text_t6">Missions</span>.
+                <!--You will need <span class="text_t2">Piloting</span>, <span class="text_t3">Systems</span>, <span class="text_t4">Weapons</span>, and <span class="text_t5">Cool</span> to in order to <span class="text_t1">Starfight</span>.<br/><br/>Starfight unlocks <span class="text_t6">Missions</span> and generates <span class="text_t6">Legacy</span> to become an <span class="text_t6">Epic Starfighter Pilot</span>.-->
               </div>
               <div><span class="text_t2">PILOTING</span><br/><br/>
-                Put time in <span class="text_t2">Piloting</span> to build up more <span class="text_t2">Skill</span>.<br/><br/>Having lots of Skill lets you do more things with your Starfighter.
+                Invest in <span class="text_t2">Piloting</span> to develop more <span class="text_t2">Skill</span>.  <br/><br/>Skill can be assigned to improve you and your Starfighter.
               </div>
               <div><span class="text_t3">SYSTEMS</span><br/><br/>
-                Outfit your Starfighter with advanced <span class="text_t3">Systems</span> to increase your <span class="text_t3">Power</span>.<br/><br/>You won't get far with limited Power, so work on improving your systems.
+                Upgrade your Starfighter with better <span class="text_t3">Systems</span> to increase your <span class="text_t3">Handling</span>.<br/><br/>You won't get far without it.
               </div>
               <div><span class="text_t4">WEAPONS</span><br/><br/>
-                Build stronger <span class="text_t4">Weapons</span> to increase your <span class="text_t4">Multiplier</span> to everything.<br/><br/>Multiplier allows you to outlast your enemies and fight longer fights.  Now fight.
+                Build stronger <span class="text_t4">Weapons</span> to increase your <span class="text_t4">Power</span>.<br/><br/>Power helps you destroy your enemies and fight longer.
               </div>
               <div><span class="text_t5">COOL</span><br/><br/>
-                You'll need <span class="text_t5">Cool</span> a bit later, but it's how you get your <span class="text_t5">Boost</span>.<br/><br/>In order to <span class="text_t5">Defeat Enemies</span>, you'll have to build up your <span class="text_t5">Leadership</span>.
+                You'll need <span class="text_t5">Cool</span> in a bit, but it's how you generate <span class="text_t5">Boost</span>.<br/><br/>In order to <span class="text_t5">Claim Victory</span>, you'll have to build your <span class="text_t5">Leadership</span>.
               </div>
             </div>
             <div class="tutorial2_text" id="tutorial2_help" style="visibility: hidden;">
@@ -133,7 +152,7 @@
           </div>
           <div class="activity_prestige_effect"></div>
           <div class="activity_prestige_control">
-            <div><br/><br/><span style="font-size:2px"><br/></span><span style="color:tan">Next Recruit:</span><br/><progress class="p2" id="progress_nextdev" value="0"></progress></div>
+            <div><br/><br/><span style="font-size:2px"><br/></span><span style="color:tan">Next Skill Point:</span><br/><progress class="p2" id="progress_nextdev" value="0"></progress></div>
           </div>
           <div class="activity_prestige_info"></div>
         </div>
@@ -144,11 +163,20 @@
             <div><span id="progress-span-2">0:00:00</span></div>
           </div>
           <div class="activity_effect">
-            <div>Power: <span class="text_hidden">..</span><span id="effect-span-2"></span></div>
+            <div>Handling: <span class="text_hidden">..</span><span id="effect-span-2"></span></div>
           </div>
           <div class="activity_skill">
             <div>Skill: <span class="text_hidden">...</span><span id="devs-2"></span></div>
-            <div><button onclick="addDev(2)">+</button><button onclick="subtractDev(2)">-</button><button onclick="maxDev(2)">M</button><button onclick="zeroDev(2)">0</button></div>
+            <div>
+              <button class="skillassign_button" onclick="addToggle(2)">+</button>
+              <div class="togglebtn">
+                <button class="skilltoggle_button" id="skilltoassign_systems" onclick="toggleSkillAssignAmount(2)">Toggle</button>
+                <span class="toggle_1 toggle_active" id="toggleskill2_1">.</span>
+                <span class="toggle_2" id="toggleskill2_2">.</span>
+                <span class="toggle_3" id="toggleskill2_3">.</span>
+              </div>
+              <button class="skillassign_button" onclick="subToggle(2)">-</button>
+            </div>
           </div>
           <div class="activity_fraction">
             <div>AUTO-FRACTION: <input class="fraction_input" id="auto-dev-2" type="text" onchange="updateAutoDev(2)"></input></div>
@@ -167,12 +195,20 @@
             <div><span id="progress-span-1">0:00:00</span></div>
           </div>
           <div class="activity_effect">
-            <div>Multiplier: <span class="text_hidden">..</span><span id="effect-span-1"></span></div>
+            <div>Power: <span class="text_hidden">..</span><span id="effect-span-1"></span></div>
           </div>
           <div class="activity_skill">
             <div>Skill: <span class="text_hidden">...</span></span><span id="devs-1"></span></div>
-            <!--<div><button onclick="addDev(1)">+</button><button onclick="subtractDev(1)">-</button><button onclick="maxDev(1)">M</button><button onclick="zeroDev(1)">0</button></div>-->
-            <div><button onclick="addDev(1)">+</button><button onclick="subtractDev(1)">-</button><button onclick="maxDev(1)">M</button><button onclick="zeroDev(1)">0</button></div>
+            <div>
+              <button class="skillassign_button" onclick="addToggle(1)">+</button>
+              <div class="togglebtn">
+                <button class="skilltoggle_button" id="skilltoassign_weapons" onclick="toggleSkillAssignAmount(1)">Toggle</button>
+                <span class="toggle_1 toggle_active" id="toggleskill1_1">.</span>
+                <span class="toggle_2" id="toggleskill1_2">.</span>
+                <span class="toggle_3" id="toggleskill1_3">.</span>
+              </div>
+              <button class="skillassign_button" onclick="subToggle(1)">-</button>
+            </div>
           </div>
           <div class="activity_fraction">
             <div>AUTO-FRACTION: <input class="fraction_input" id="auto-dev-1" type="text" onchange="updateAutoDev(1)"></input></div>
@@ -195,7 +231,16 @@
           </div>
           <div class="activity_skill">
             <div>Skill: <span class="text_hidden">...</span></span><span id="devs-4"></span></div>
-            <div><button onclick="addDev(4)">+</button><button onclick="subtractDev(4)">-</button><button onclick="maxDev(4)">M</button><button onclick="zeroDev(4)">0</button></div>
+            <div>
+              <button class="skillassign_button" onclick="addToggle(4)">+</button>
+              <div class="togglebtn">
+                <button class="skilltoggle_button" id="skilltoassign_cool" onclick="toggleSkillAssignAmount(4)">Toggle</button>
+                <span class="toggle_1 toggle_active" id="toggleskill4_1">.</span>
+                <span class="toggle_2" id="toggleskill4_2">.</span>
+                <span class="toggle_3" id="toggleskill4_3">.</span>
+              </div>
+              <button class="skillassign_button" onclick="subToggle(4)">-</button>
+            </div>
           </div>
           <div class="activity_fraction">
             <div>AUTO-FRACTION: <input class="fraction_input" id="auto-dev-4" type="text" onchange="updateAutoDev(4)"></input></div>
@@ -725,8 +770,6 @@
 
 
   <div id="completion-milestones-div" style="display: none;">
-    help
-
     <div>
       <span><input class="debugspeedup" id="debug_speedup" type="text" onchange="updateDebugSpeed()"></input>
       <button onclick="saveGame()">Save</button>
@@ -736,7 +779,93 @@
       <br/>
       <span style="display: none;">Exported save (also copied to clipboard): <input id="export-output"></input></span>
     </div>
-    <hr/>
+    <div class="guidance_container">
+      <div class="guidance_guide">
+        <div class="guidance_portrait">
+          Img of Astromech
+        </div>
+        <div class="guidance_summary">
+          <div>B4</div>
+          <div>Astromech Borg</div>
+        </div>
+        <div class="guidance_content">
+          <div>Getting in a ship and flying it is one thing, but you'll need patience to git epic.</div>
+          <div>Put time in Piloting to increase total skill and invest in Systems and Weapons to master your starfighting.</div>
+          <div>Once you've got a hang of things, start Starfighting, and work towards your first retrofit.</div>
+        </div>
+      </div>
+      <div class="guidance_guide">
+        <div class="guidance_portrait">
+          Img of Astromech
+        </div>
+        <div class="guidance_summary">
+          <div>B4</div>
+          <div>Astromech Borg</div>
+        </div>
+        <div class="guidance_content">
+          <div>Getting in a ship and flying it is one thing, but you'll need patience to git epic.</div>
+          <div>Put time in Piloting to increase total skill and invest in Systems and Weapons to master your starfighting.</div>
+          <div>Once you've got a hang of things, start Starfighting, and work towards your first retrofit.</div>
+        </div>
+      </div>
+      <div class="guidance_guide">
+        <div class="guidance_portrait">
+          Img of Astromech
+        </div>
+        <div class="guidance_summary">
+          <div>B4</div>
+          <div>Astromech Borg</div>
+        </div>
+        <div class="guidance_content">
+          <div>Getting in a ship and flying it is one thing, but you'll need patience to git epic.</div>
+          <div>Put time in Piloting to increase total skill and invest in Systems and Weapons to master your starfighting.</div>
+          <div>Once you've got a hang of things, start Starfighting, and work towards your first retrofit.</div>
+        </div>
+      </div>
+      <div class="guidance_guide">
+        <div class="guidance_portrait">
+          Img of Astromech
+        </div>
+        <div class="guidance_summary">
+          <div>B4</div>
+          <div>Astromech Borg</div>
+        </div>
+        <div class="guidance_content">
+          <div>Getting in a ship and flying it is one thing, but you'll need patience to git epic.</div>
+          <div>Put time in Piloting to increase total skill and invest in Systems and Weapons to master your starfighting.</div>
+          <div>Once you've got a hang of things, start Starfighting, and work towards your first retrofit.</div>
+        </div>
+      </div>
+      <div class="guidance_guide">
+        <div class="guidance_portrait">
+          Img of Astromech
+        </div>
+        <div class="guidance_summary">
+          <div>B4</div>
+          <div>Astromech Borg</div>
+        </div>
+        <div class="guidance_content">
+          <div>Getting in a ship and flying it is one thing, but you'll need patience to git epic.</div>
+          <div>Put time in Piloting to increase total skill and invest in Systems and Weapons to master your starfighting.</div>
+          <div>Once you've got a hang of things, start Starfighting, and work towards your first retrofit.</div>
+        </div>
+      </div>
+      <div class="guidance_guide">
+        <div class="guidance_portrait">
+          Img of Astromech
+        </div>
+        <div class="guidance_summary">
+          <div>B4</div>
+          <div>Astromech Borg</div>
+        </div>
+        <div class="guidance_content">
+          <div>Getting in a ship and flying it is one thing, but you'll need patience to git epic.</div>
+          <div>Put time in Piloting to increase total skill and invest in Systems and Weapons to master your starfighting.</div>
+          <div>Once you've got a hang of things, start Starfighting, and work towards your first retrofit.</div>
+        </div>
+      </div>
+      
+    </div>
   </div>
 
 <!--- OTHER INFORMATION ---------------------------------------------------------

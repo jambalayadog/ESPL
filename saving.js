@@ -191,6 +191,11 @@ function fixPlayer () {
       toggles: ['1', '1', '1']
     }
   }
+  if (!('toggles' in player.skill)) {
+    player.skill = {
+      toggles: ['1', '1', '1']
+    }
+  }
 }
 
 function convertSaveToDecimal () {
@@ -346,6 +351,9 @@ let initialPlayer = {
     }
   },
   legacy: {
+    toggles: ['1', '1', '1']
+  },
+  skill: {
     toggles: ['1', '1', '1']
   },
   lore: [],

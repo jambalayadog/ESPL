@@ -21,6 +21,9 @@ var debug = {
   speedmultiplier: 1.0
 }
 
+
+let SKILLTOGGLE_AMOUNTS = ['1', '20%', '100%']
+
 function updateDebugSpeed() {
   var x = document.getElementById("debug_speedup").value;
   debug.speedmultiplier = x;
@@ -263,16 +266,77 @@ var changeDevsInterval = 100
 var changeDev = null
 
 
+function toggleSkillAssignAmount(i) {
+  if (player.skill.toggles[i] == '1') {
+    player.skill.toggles[i] = '20%';
+    document.getElementById('toggleskill' + i + '_1').classList.remove('toggle_active');
+    document.getElementById('toggleskill' + i + '_2').classList.add('toggle_active');
+    document.getElementById('toggleskill' + i + '_3').classList.remove('toggle_active');
+  } else if (player.skill.toggles[i] == '20%') {
+    player.skill.toggles[i] = '100%';
+    document.getElementById('toggleskill' + i + '_1').classList.remove('toggle_active');
+    document.getElementById('toggleskill' + i + '_2').classList.remove('toggle_active');
+    document.getElementById('toggleskill' + i + '_3').classList.add('toggle_active');
+  } else {
+    player.skill.toggles[i] = "1";
+    document.getElementById('toggleskill' + i + '_1').classList.add('toggle_active');
+    document.getElementById('toggleskill' + i + '_2').classList.remove('toggle_active');
+    document.getElementById('toggleskill' + i + '_3').classList.remove('toggle_active');
+  }
+  console.log("i: ", i, "player.skill.toggles[i]:", player.skill.toggles[i]);
+}
 
-
-function tryToChangeDevs(i, change) {
-  /*console.log("changing devs")*/
-  if (player.devs.reduce((a, b) => a + b) + change <= getTotalDevs() && player.devs[i] + change >= 0) {
-    setDevs(i, player.devs[i] + change);
+function addToggle(i) {
+  var toggleAmount = player.skill.toggles[i];
+  console.log("--toggle amount: ", toggleAmount);
+  if (toggleAmount == '1') {
+    console.log("toggleAmount = 1");
+    tryToChangeDevs(i, 1);
+  } else if (toggleAmount =="20%") { 
+    var amountToToggle = Math.floor(0.2 * getTotalDevs());
+    tryToChangeDevs(i, amountToToggle);
+  } else { 
+    var amountToToggle = getTotalDevs();
+    tryToChangeDevs(i, amountToToggle);
   }
 }
 
-function addDev(i) {
+function subToggle(i) {
+  var toggleAmount = player.skill.toggles[i];
+  console.log("--toggle amount: ", toggleAmount);
+  if (toggleAmount == '1') {
+    console.log("toggleAmount = 1");
+    tryToChangeDevs(i, -1);
+  } else if (toggleAmount =="20%") { 
+    var amountToToggle = Math.ceil(-0.2 * getTotalDevs());
+    tryToChangeDevs(i, amountToToggle);
+  } else { 
+    var amountToToggle = -getTotalDevs();
+    tryToChangeDevs(i, amountToToggle);
+  }
+}
+
+function tryToChangeDevs(i, change) {
+  console.log("assigned skill: ", player.devs.reduce((a, b) => a + b));
+  let newProjectedAmount = player.devs.reduce((a, b) => a + b) + change;
+  console.log("i: ", i);
+  console.log("Total Skill: ", getTotalDevs());
+  console.log("old skill: ", player.devs[i]);
+  console.log("Change: ", change)
+  console.log("New Projected Skill: ", player.devs[i] + change);
+  console.log("available skill: ", getUnassignedDevs());
+  if (change > getUnassignedDevs() ) {
+    change = getUnassignedDevs()
+    setDevs(i, player.devs[i] + change);
+  } else if (player.devs[i] + change < 0) {
+    setDevs(i, 0);
+  } else {
+    setDevs(i, player.devs[i] + change);
+  }
+  console.log("Final skill: ", player.devs[i])
+}
+
+function addDev(i) {                // I is which category 3 = piloting, 0 = starfight, 4 = cool
   tryToChangeDevs(i, 1)
 }
 

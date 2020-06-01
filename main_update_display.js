@@ -114,6 +114,11 @@ function updateDisplay () {
   document.getElementById('legacy_to_resonance').innerHTML = player.legacy.toggles[1];
   document.getElementById('legacy_to_resource').innerHTML = player.legacy.toggles[2];
   document.getElementById('legacy_to_resolve').innerHTML = player.legacy.toggles[0];
+  document.getElementById('skilltoassign_piloting').innerHTML = player.skill.toggles[3];
+  document.getElementById('skilltoassign_starfight').innerHTML = player.skill.toggles[0];
+  document.getElementById('skilltoassign_systems').innerHTML = player.skill.toggles[2];
+  document.getElementById('skilltoassign_weapons').innerHTML = player.skill.toggles[1];
+  document.getElementById('skilltoassign_cool').innerHTML = player.skill.toggles[4];
   if (player.options.hardMode) {
     document.getElementById('hard-mode-span').innerHTML = 'Hard mode: on';
   } else {

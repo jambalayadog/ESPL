@@ -1,5 +1,5 @@
 let EXPERIENCE_TYPES = ['endgame', 'patience', 'eadstart'];
-let TOGGLE_AMOUNTS = ['1', '1/3', 'All']
+let TOGGLE_AMOUNTS = ['1', '33%', '100%']
 
 function updateCore(now, gain, oldChallenge) {
   for (let i = 0; i <= 7; i++) {
@@ -85,13 +85,13 @@ function getPowerGainPerExperience() {
 
 function toggleAmount(i) {
   if (player.legacy.toggles[i] == '1') {
-    player.legacy.toggles[i] = '1/3';
+    player.legacy.toggles[i] = '33%';
     console.log('toggle' + i + '1')
     document.getElementById('toggle' + i + '_1').classList.remove('toggle_active')
     document.getElementById('toggle' + i + '_2').classList.add('toggle_active')
     document.getElementById('toggle' + i + '_3').classList.remove('toggle_active')
-  } else if (player.legacy.toggles[i] == '1/3') {
-    player.legacy.toggles[i] = 'All';
+  } else if (player.legacy.toggles[i] == '33%') {
+    player.legacy.toggles[i] = '100%';
     document.getElementById('toggle' + i + '_1').classList.remove('toggle_active')
     document.getElementById('toggle' + i + '_2').classList.remove('toggle_active')
     document.getElementById('toggle' + i + '_3').classList.add('toggle_active')
