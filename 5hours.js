@@ -22,7 +22,7 @@ var debug = {
 }
 
 
-let SKILLTOGGLE_AMOUNTS = ['1', '20%', '100%']
+let SKILLTOGGLE_AMOUNTS = ['20%', '100%']
 
 function updateDebugSpeed() {
   var x = document.getElementById("debug_speedup").value;
@@ -267,21 +267,14 @@ var changeDev = null
 
 
 function toggleSkillAssignAmount(i) {
-  if (player.skill.toggles[i] == '1') {
-    player.skill.toggles[i] = '20%';
-    document.getElementById('toggleskill' + i + '_1').classList.remove('toggle_active');
-    document.getElementById('toggleskill' + i + '_2').classList.add('toggle_active');
-    document.getElementById('toggleskill' + i + '_3').classList.remove('toggle_active');
-  } else if (player.skill.toggles[i] == '20%') {
+  if (player.skill.toggles[i] == '20%') {
     player.skill.toggles[i] = '100%';
     document.getElementById('toggleskill' + i + '_1').classList.remove('toggle_active');
-    document.getElementById('toggleskill' + i + '_2').classList.remove('toggle_active');
-    document.getElementById('toggleskill' + i + '_3').classList.add('toggle_active');
+    document.getElementById('toggleskill' + i + '_2').classList.add('toggle_active');
   } else {
-    player.skill.toggles[i] = "1";
+    player.skill.toggles[i] = "20%";
     document.getElementById('toggleskill' + i + '_1').classList.add('toggle_active');
     document.getElementById('toggleskill' + i + '_2').classList.remove('toggle_active');
-    document.getElementById('toggleskill' + i + '_3').classList.remove('toggle_active');
   }
   console.log("i: ", i, "player.skill.toggles[i]:", player.skill.toggles[i]);
 }
@@ -289,10 +282,7 @@ function toggleSkillAssignAmount(i) {
 function addToggle(i) {
   var toggleAmount = player.skill.toggles[i];
   console.log("--toggle amount: ", toggleAmount);
-  if (toggleAmount == '1') {
-    console.log("toggleAmount = 1");
-    tryToChangeDevs(i, 1);
-  } else if (toggleAmount =="20%") { 
+  if (toggleAmount =="20%") { 
     var amountToToggle = Math.floor(0.2 * getTotalDevs());
     tryToChangeDevs(i, amountToToggle);
   } else { 
@@ -304,10 +294,7 @@ function addToggle(i) {
 function subToggle(i) {
   var toggleAmount = player.skill.toggles[i];
   console.log("--toggle amount: ", toggleAmount);
-  if (toggleAmount == '1') {
-    console.log("toggleAmount = 1");
-    tryToChangeDevs(i, -1);
-  } else if (toggleAmount =="20%") { 
+  if (toggleAmount =="20%") { 
     var amountToToggle = Math.ceil(-0.2 * getTotalDevs());
     tryToChangeDevs(i, amountToToggle);
   } else { 
