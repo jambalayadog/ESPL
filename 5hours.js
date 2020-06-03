@@ -276,7 +276,6 @@ function toggleSkillAssignAmount(i) {
     document.getElementById('toggleskill' + i + '_1').classList.add('toggle_active');
     document.getElementById('toggleskill' + i + '_2').classList.remove('toggle_active');
   }
-  console.log("i: ", i, "player.skill.toggles[i]:", player.skill.toggles[i]);
 }
 
 function addToggle(i) {

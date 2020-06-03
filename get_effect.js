@@ -40,14 +40,9 @@ function findTimeToNextSkillPoint(x) {
 function findTimeToNextRetrofits(i) {
   // get starfight, get progress from 5 and 6
   let currentprogress = player.progress[0];
-  console.log("Starfight: ", currentprogress);
   let cachedprogress = player.progress[i];
-  console.log("Progress: ", cachedprogress, "i: ", i);
   let progress = currentprogress / cachedprogress;
   return progress
-  /*console.log("currentProgress:", currentProgress);*/
-  /*document.getElementById("progress5_nextretrofit").value = k-j;
-  document.getElementById("progress6_nextretrofit").value = k-j;*/
 }
 
 

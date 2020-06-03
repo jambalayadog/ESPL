@@ -140,8 +140,8 @@
               </div>
             </div>
             <div class="tutorial2_text" id="tutorial2_help" style="visibility: hidden;">
-              <div><span class="text_t1">DEFEAT ENEMIES</span><br/><br/>
-                In order to <span class="text_t1">Defeat Enemies</span>: <br/>- Min/max your <span class="text_t2">Skills</span><br/>- <span class="text_t3">Retrofit</span> your ships<br/>- Become a true <span class="text_t5">Leader</span><br/><br/>Only then, can you begin your <span class="text_t6">Legacy</span> and unlock <span class="text_t6">Missions</span>.
+              <div><span class="text_t1">CLAIM VICTORY</span><br/><br/>
+                In order to <span class="text_t1">Claim Victory</span>: <br/>- Min/max your <span class="text_t2">Skills</span><br/>- <span class="text_t3">Retrofit</span> your ships<br/>- Become a true <span class="text_t5">Leader</span><br/><br/>Claim victories to earn <span class="text_t6">Legacy</span> and unlock <span class="text_t6">Missions</span>.
               </div>
               <div><span class="text_t3">FLEETS</span> and <span class="text_t5">LEADERSHIP</span><br/><br/>
                 You used your old parts to build a <span class="text_t3">Fleet</span>!  <span class="text_t3">Retrofit</span> to update your <span class="text_t3">Weapons</span> and <span class="text_t3">Systems</span>.<br/><br/>You'll find that you need strong <span class="text_t5">Leadership</span> to command well.<br/><br/>
@@ -463,18 +463,6 @@
       <div class="legacystatus_row">
         <!-- LEGACY STATS & LEGACY POINTS -->
         <div class="legacysummary">
-          <div class="legacystatus_stats">
-            <div class="provenance_stat">
-              <div>Enemies Defeated:</div>
-              <div>Co-Pilot Skill:</div>
-              <div>Power per XP per second:</div>
-            </div>
-            <div class="provenance_number">
-              <div><span id="updates">0</span></div>
-              <div><span id="additional-devs-due-to-updates"></span></div>
-              <div><span id="power-gain-per-experience">0.01</span></div>
-            </div>
-          </div>  
           <div class="legacypoints_grid margin_auto">
             <div class="legacypoints_stat">
               <div>LEGACY POINTS:</div>
@@ -482,23 +470,20 @@
             <div class="legacypoints_number">
               <div><span id="update-points">0</span></div>
             </div>
-          </div>    
-        </div>
-        <!-- PROVENANCE -->
-        <div class="provenancestatus_stats" id="dilation" style="visibility: hidden;">
-          <div class="provenance_stats">
+          </div>
+          <div class="legacystatus_stats">
             <div class="provenance_stat">
-              <div>Provenance:</div>
-              <div>Weapons, Systems Power:</div>
+              <div>Claimed Victories:</div>
+              <div>Co-Pilot Skill (from victories):</div>
+              <div>Power per XP per Sec:</div>
             </div>
             <div class="provenance_number">
-              <div><span id="dilation-text"></span></div>
-              <div><span id="dilation-text2"></span></div>
+              <div><span id="updates">0</span></div>
+              <div><span id="additional-devs-due-to-updates"></span></div>
+              <div><span id="power-gain-per-experience">0.01</span></div>
             </div>
-          </div>
-          <div class="margin_auto">
-            <div class="provenance_stats"><button class="provenance_button" id="dilation-upgrade-0-button" onclick="buyDilationUpgrade(0)"></button></div>
-          </div>
+          </div>  
+              
         </div>
         <!-- LEGACY UPGRADES -->
         <div class="legacyachievements_row">  
@@ -524,6 +509,23 @@
             </div> 
           </div>
         </div>
+        <!-- PROVENANCE -->
+        <div class="provenancestatus_stats" id="dilation" style="visibility: hidden;">
+          <div class="provenance_stats">
+            <div class="provenance_stat">
+              <div>Provenance:</div>
+              <div>Weapons, Systems Power:</div>
+            </div>
+            <div class="provenance_number">
+              <div><span id="dilation-text"></span></div>
+              <div><span id="dilation-text2"></span></div>
+            </div>
+          </div>
+          <div class="margin_auto">
+            <div class="provenance_stats"><button class="provenance_button" id="dilation-upgrade-0-button" onclick="buyDilationUpgrade(0)"></button></div>
+          </div>
+        </div>
+        
       </div>
       <!-- Legacy Upgrades -->
       <div class="legacyupgrade_group">
@@ -533,7 +535,7 @@
             <div class="legacyconversion">
               <div><button class="legacypoints_button" onclick="convertLegacy(0)">Convert LP to Resolve</button></div>
               <div class="togglebtn">
-                <button class="legacypoints_button" id="legacy_to_resolve" onclick="toggleAmount(0)">Toggle</button>
+                <button class="legacypoints_toggle" id="legacy_to_resolve" onclick="toggleAmount(0)">Toggle</button>
                 <span class="toggle_1 toggle_active" id="toggle0_1">.</span>
                 <span class="toggle_2" id="toggle0_2">.</span>
                 <span class="toggle_3" id="toggle0_3">.</span>
@@ -562,7 +564,7 @@
             <div class="legacyconversion">
               <div><button class="legacypoints_button" onclick="convertLegacy(1)">Convert LP to Resonance</button></div>
               <div class="togglebtn">
-                <button class="legacypoints_button" id="legacy_to_resonance" onclick="toggleAmount(1)">Toggle</button>
+                <button class="legacypoints_toggle" id="legacy_to_resonance" onclick="toggleAmount(1)">Toggle</button>
                 <span class="toggle_1 toggle_active" id="toggle1_1">.</span>
                 <span class="toggle_2" id="toggle1_2">.</span>
                 <span class="toggle_3" id="toggle1_3">.</span>
@@ -589,9 +591,9 @@
           <div class="legacygroup_upgrades">
             <div class="activity_title bg_starfight">RESOURCE</div>
             <div class="legacyconversion">
-              <div><button class="legacypoints_button" onclick="convertLegacy(2)">Convert LP to Resourece</button></div>
+              <div><button class="legacypoints_button" onclick="convertLegacy(2)">Convert LP to Resource</button></div>
               <div class="togglebtn">
-                <button class="legacypoints_button" id="legacy_to_resource" onclick="toggleAmount(2)">Toggle</button>
+                <button class="legacypoints_toggle" id="legacy_to_resource" onclick="toggleAmount(2)">Toggle</button>
                 <span class="toggle_1 toggle_active" id="toggle2_1">.</span>
                 <span class="toggle_2" id="toggle2_2">.</span>
                 <span class="toggle_3" id="toggle2_3">.</span>

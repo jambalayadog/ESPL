@@ -20,7 +20,8 @@
     --text_primary: lightgreen;
     --text_secondary: tan;
     --text_progress: lightblue;
-    --text_title: white;
+    /*--text_title: white;*/
+    --text_title: mintcream;
     --text_tertiary: lightgrey;
     --tip_bg: lightgrey;
     --tip_text: black;
@@ -30,21 +31,28 @@
     /*--background_moretransparent: rgba(0, 0, 0, .50);*/
     --background_title: rgba(255, 255, 255, 0.5);
     --background_titledark: rgba(128, 128, 128, 0.75);
-    --background_grad1: rgba(66,200,245, .75);
+    /*--background_grad1: rgba(66,200,245, .75);
     --background_grad2: rgba(66,245,117, .75);
     --background_grad3: rgba(245,161,66, .75);
-    --background_grad4: rgba(245,66,105, .75);
+    --background_grad4: rgba(245,66,105, .75);*/
+    --background_grad1: dodgerblue;
+    --background_grad2: green;
+    --background_grad3: darkgoldenrod;
+    --background_grad4: darkred;  
     --border_black: 1px solid black;
     --button_bg: rgba(50,50,50,.50);
     --button_bg_hover: rgba(50,50,50,.75);
     --button_color: tan;
     --button_border: 2px inset tan;
+    --text_battlestat: cadetblue;
 }
 
 html {
     width: 100%;
     height: 100%;
-    background-color: black;}
+    background-color: black;
+    color: lightcoral
+}
 
 body {
     width: 100%;
@@ -195,7 +203,7 @@ body {
     box-sizing: border-box;
     text-align: center;*/
     background-image: url(../ESPL/images/GameLogo.png);
-    background-size: 158px 67px;
+    background-size: 158px 78px;
     border: var(--border_black);
 }
 
@@ -214,8 +222,9 @@ body {
 
 .battlestat_title {
     font-size: 12px;
-    color: var(--text_tertiary);
+    color: var(--text_battlestat);
     text-align: left;
+    line-height: 17px;
 }
 
 .battlestat_stat {
@@ -258,7 +267,7 @@ body {
 .main_page {
     width:100%;
     max-width:800px;
-    height: 440px;
+    height: 445px;
     overflow-y: hidden;
     padding:5px;
     box-sizing: border-box;
@@ -527,7 +536,7 @@ body {
 
 .achievements_page {
     width: 795px;
-    height: 440px;
+    height: 445px;
     overflow-y: scroll;
     /*display: grid;  /* 450px min, max 600px
     grid-template-rows:
@@ -615,7 +624,7 @@ body {
     padding:5px;
 
     box-sizing: border-box;
-    height: 440px;
+    height: 445px;
 }
 
 .legacystatus_row {
@@ -657,6 +666,7 @@ body {
 
 .legacypoints_stat {
     text-align: left;
+    color:whitesmoke;
 }
 
 .legacypoints_number {
@@ -679,7 +689,7 @@ body {
     flex-direction: row;
     align-items: stretch;
     height: auto;
-    width: 100%;
+    width: 350px;
     background-color: var(--background_common);
     box-shadow: var(--box_shadow);
     border: var(--border_black);
@@ -697,7 +707,8 @@ body {
 
 .provenance_stat {
     text-align: left;
-    color: var(--text_tertiary);
+    color: var(--text_secondary);
+    line-height: 17px;
 }
 
 .provstats_leftcol {
@@ -720,6 +731,7 @@ body {
 .provenance_number {
     color: lightblue;
     text-align: right;
+    line-height: 17px;
 }
 
 .provenance_button {
@@ -769,10 +781,36 @@ body {
     display: grid;
     grid-template-columns: 
         auto auto;
+    grid-column-gap: 5px;
     border: var(--debug_border);
     padding: 5px;
     color: var(--text_secondary);
+    justify-content: center;
 
+}
+
+.legacypoints_button {
+    width: auto;
+    justify-content: center;
+    min-width: 80px;
+    min-height: 25px;
+    font-size:10px;
+    border: var(--button_border);
+    background-color: var(--button_bg);
+    color: var(--button_color);
+}
+
+.legacypoints_toggle {
+    width: 60px;
+    min-height: 25px;
+    font-size:10px;
+    border: var(--button_border);
+    background-color: var(--button_bg);
+    color: var(--button_color);
+}
+
+.legacypoints_button:hover, .legacypoints_toggle:hover {
+    background-color: var(--button_bg_hover);
 }
 
 .legacygroup_stats {
@@ -780,7 +818,7 @@ body {
     grid-template-columns: 
         auto auto;
     border: var(--debug_border);
-    padding: 5px;
+    padding: 20px;
     color: var(--text_secondary);
 }
 
@@ -802,15 +840,7 @@ body {
     font-weight: bold;
 }
 
-.legacypoints_button {
-    width: auto;
-    min-width: 80px;
-    min-height: 25px;
-    font-size:10px;
-    border: var(--button_border);
-    background-color: var(--button_bg);
-    color: var(--button_color);
-}
+
 
 
 .legacyachievements_group {
@@ -976,7 +1006,7 @@ body {
     justify-content: center;
     padding: 5px 0px 5px 0px;
     box-sizing: border-box;
-    height: 435px;
+    height: 445px;
 }
       
 .guidance_guide{

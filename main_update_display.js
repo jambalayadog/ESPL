@@ -46,7 +46,7 @@ function updateDisplay () {
     }
   }
   if (player.progress[7] >= 1) {
-    document.getElementById('enlightened-desc').innerHTML = 'Reset Leadership and make it slower but stronger<br/><br/>';
+    document.getElementById('enlightened-desc').innerHTML = '<br/>Reset Leadership and make it slower but stronger<br/><br/>';
     document.getElementById("progress_leader").style.visibility = 'hidden';
     document.getElementById('enlightened-button').style.backgroundColor = UIColors.button_active;
   } else {
@@ -72,7 +72,7 @@ function updateDisplay () {
   }
   if (canUpdate()) {
     let gain = getUpdateGain();
-    document.getElementById('update-gain').innerHTML = '+' + format(gain) + ' Legacy Points<br/><br/><br/>';
+    document.getElementById('update-gain').innerHTML = '<br/><br/>+' + format(gain) + ' Legacy Points<br/><br/><br/>';
     document.getElementById('update-button').style.backgroundColor = UIColors.button_active;
   } else {
     document.getElementById('update-gain').innerHTML = 'Requires ' + toTime(getChallengeGoal(player.currentChallenge)) + ' Starfight<br/><br/>';
