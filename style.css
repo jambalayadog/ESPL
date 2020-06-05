@@ -41,10 +41,16 @@
     --background_grad4: darkred;  
     --border_black: 1px solid black;
     --button_bg: rgba(50,50,50,.50);
-    --button_bg_hover: rgba(50,50,50,.75);
+    --button_bg_hover: rgba(100,100,100,.75);
     --button_color: tan;
-    --button_border: 2px inset tan;
+    --button_border: 1px inset tan;
     --text_battlestat: cadetblue;
+    --text_boldeffect: skyblue;
+    --text_boldnumber: goldenrod;
+    --input_color: lightgrey;
+    --input_bg: rgba( 250, 250, 250, .2);
+    --input_bghover: rgba( 250, 250, 250, .1);
+    --input_border: 1px solid black;
 }
 
 html {
@@ -229,7 +235,7 @@ body {
 
 .battlestat_stat {
     text-align:right;
-    color:lightblue;
+    color: var(--text_battlestat);
     font-size:12px;
 }
 
@@ -321,7 +327,8 @@ body {
 .activity_progress {
     border: var(--debug_border);
     padding: 1px;
-    color: var(--text_progress);
+    /*color: var(--text_battlestat);*/
+    color: var(--text_boldeffect);
     font-weight: bold;
     font-size: 14px;
 }
@@ -332,11 +339,27 @@ body {
     color: var(--text_secondary);
 }
 
+.starfight_effect {
+    font-size: 10px;
+    color: var(--text_battlestat);
+}
+
 .activity_skill {
     border: var(--debug_border);
     padding: 1px;/*
     font-weight: bold;*/
+    color: var(--text_secondary);
 }
+.starfight_skill {
+    font-size: 10px;
+    font-weight: normal;
+    color: var(--text_battlestat);
+}
+
+#progress_nextdev {
+    padding: 0px 5px 0px 5px;
+}
+
 .activity_fraction {
     border: var(--debug_border);
     padding: 1px;
@@ -372,6 +395,14 @@ body {
     width: 40px;
     font-size:12px;
     text-align: center;
+    vertical-align: middle;
+    background-color: var(--input_bg);
+    color: var(--input_color);
+    border: var(--input_border);
+}
+
+.fraction_input:hover {
+    background-color: var(--input_bghover);
 }
 
 .prestige_button {
@@ -411,7 +442,7 @@ body {
 }
 
 .skillassign_button:hover, .skilltoggle_button:hover {
-    background-color: rgb(50, 50, 50, .75);
+    background-color: var(--button_bg_hover);
 }
 
 
@@ -479,7 +510,7 @@ body {
 }
 
 .auto_button:hover {
-    background-color: rgb(50, 50, 50, .75);
+    background-color: var(--button_bg_hover);
 }
 
 
@@ -487,6 +518,14 @@ body {
     display: inline;
     width: 50%!important;
     vertical-align: middle;
+}
+
+.autooption_option {
+    margin: auto;
+    font-size: 10px;
+    color: var(--text_boldeffect);
+    font-weight: bold;
+    
 }
 
 .autooption_text {
@@ -500,9 +539,9 @@ body {
     text-align: center;
     vertical-align: middle;
     font-size: 12px;
-    background-color: tan;
-    color: black;
-    border: none
+    background-color: var(--input_bg);
+    color: var(--input_color);
+    border: var(--input_border);
 }
 
 .auto_checkbox {
@@ -516,7 +555,7 @@ body {
 .autooption_title {
     font-weight:bold;
     font-size:14px;
-    color:white;
+    color:var(--text_boldeffect);
     width: 100%;
 
 }
@@ -587,7 +626,27 @@ body {
     grid-template-columns: auto auto;
     grid-column-gap: 30px;
     width: 100%;
-    color: var(--text_secondary)
+    color: var(--text_secondary);
+}
+
+.objectivegroup_stats {
+    display: grid;
+    grid-template-columns: 
+        auto auto;
+    border: var(--debug_border);
+    padding: 5px;
+    color: var(--text_secondary);
+    width: 250px;
+}
+
+.objectivegroup_grid {
+    display: grid;
+    grid-template-columns: 
+        auto auto;
+    width: 250px;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 5px;
 }
 
 .title_text {
@@ -630,7 +689,7 @@ body {
 .legacystatus_row {
     display: grid;
     grid-template-columns:
-        220px 230px 340px;
+        220px 220px 339px;
     width: 100%;
     font-size: 12px;
     color: var(--text_progress);
@@ -666,11 +725,14 @@ body {
 
 .legacypoints_stat {
     text-align: left;
-    color:whitesmoke;
+    color: var(--text_boldeffect);
+    font-weight: bold;
 }
 
 .legacypoints_number {
     text-align: right;
+    color: var(--text_boldnumber);
+    font-weight: bold;
 }
 
 .provenancestatus_stats {
@@ -707,7 +769,13 @@ body {
 
 .provenance_stat {
     text-align: left;
+    color: var(--text_battlestat);
+    line-height: 17px;
+}
+
+.provenance_number {
     color: var(--text_secondary);
+    text-align: right;
     line-height: 17px;
 }
 
@@ -728,11 +796,7 @@ body {
 
 
 
-.provenance_number {
-    color: lightblue;
-    text-align: right;
-    line-height: 17px;
-}
+
 
 .provenance_button {
     width: 180px;
@@ -846,9 +910,6 @@ body {
 .legacyachievements_group {
     font-size: 12px;
     padding: 5px;
-    background-color: var(--background_common);
-    box-shadow: var(--box_shadow);
-    border: var(--border_black);
     color: var(--text_progress);
 }
 
@@ -1120,6 +1181,10 @@ body {
     visibility: hidden;
 }
 
+.text_bold {
+    font-weight: bold;
+}
+
 .margin_auto {
     margin: auto;
 }
@@ -1132,7 +1197,7 @@ body {
 }
 
 .toggle_1 {
-    color: darkslategray;
+    color: slategrey;
     /* Position the tooltip */
     position: absolute;
     left: 50%;
@@ -1143,7 +1208,7 @@ body {
 }
 
 .toggle_2 {
-    color: darkslategray;
+    color: slategrey;
     /* Position the tooltip */
     position: absolute;
     left: calc(50% + 5px);
@@ -1154,7 +1219,7 @@ body {
 }
 
 .toggle_3 {
-    color: darkslategray;
+    color: slategrey;
     /* Position the tooltip */
     position: absolute;
     left: calc(50% + 10px);
@@ -1165,7 +1230,7 @@ body {
 }
 
 .toggle_4 {
-    color: darkslategray;
+    color: slategrey;
     /* Position the tooltip */
     position: absolute;
     left: calc(50% + 15px);
@@ -1179,8 +1244,12 @@ body {
 }
 
 
-button {
+button, input {
     outline:none;
+}
+
+.smalltext {
+    font-size: 10px;
 }
 
 
@@ -1361,17 +1430,29 @@ progress::-webkit-progress-value {
 }
 
 .p1::-webkit-progress-value {
-    background: rgba(245,66,105); 
+    /*background: rgba(245,66,105);*/
+    background: var(--background_grad4);
 }
 .p2::-webkit-progress-value {
-    background: rgba(245,161,66);
+    /*background: rgba(245,161,66);*/
+    background: var(--background_grad3);
 }
 .p3::-webkit-progress-value {
-    background:rgb(66,245,117);
+    /*background:rgb(66,245,117);*/
+    background: var(--background_grad2);
 }
 .p4::-webkit-progress-value {
-    background:rgb(66,245,117);
+    /*background:rgb(66,245,117);*/
+    background: var(--background_grad2);
 }
 .p5::-webkit-progress-value {
-    background:rgb(66,200,245);
+    /*background:rgb(66,200,245);*/
+    background: var(--background_grad1);
 }
+
+/*
+    --background_grad1: dodgerblue;
+    --background_grad2: green;
+    --background_grad3: darkgoldenrod;
+    --background_grad4: darkred;  
+*/

@@ -27,20 +27,21 @@ function updateDisplay () {
     let progele = document.getElementById(progid);
     if (canPrestigeWithoutGain(i)) {
       el.innerHTML = formatEffect(i) + ' -> ' + formatEffect(i) + '<br/>' + toTime(player.progress[i]) + ' -> ' + toTime(player.progress[i]) + '';
-      progele.style.display = '';
+      /*progele.style.display = '';*/
+      progele.style.visibility = 'visible';
       progele.value = findTimeToNextRetrofits(i);
       btn.style.backgroundColor = UIColors.button_useless;   //yellow: active, non-profit
     } else if (canPrestige(i)) {
-      progele.style.display = 'none';
+      progele.style.visibility = 'hidden';
       let newValue = newValueFromPrestige();
-      el.innerHTML = formatEffect(i) + ' -> ' + formatEffect(i, newValue) + '<br/>' + toTime(player.progress[i]) + ' -> ' + toTime(newValue) + '<br/><b>' + toTime(newValue - player.progress[i]) + ' better</b><br/>'
+      el.innerHTML = formatEffect(i) + ' -> ' + formatEffect(i, newValue) + '<br/>' + toTime(player.progress[i]) + ' -> ' + toTime(newValue) + '<br/>' + toTime(newValue - player.progress[i]) + ' better<br/>'
       btn.style.backgroundColor = UIColors.button_active;    //green: active, profitable
     } else if (player.currentChallenge === 'unprestigious') {
-      progele.style.display = 'none';
+      progele.style.visibility = 'hidden';
       el.innerHTML = 'Disabled in this mission';
       btn.style.backgroundColor = UIColors.button_inactive;  //dark grey: disabled
     } else {
-      progele.style.display = 'none';
+      progele.style.visibility = 'hidden';
       el.innerHTML = 'Requires ' + toTime(1800) + ' Starfight<br/><br/>';  
       btn.style.backgroundColor = UIColors.button_inactive;  //dark grey: disabled
     }
