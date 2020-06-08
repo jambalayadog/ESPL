@@ -118,7 +118,7 @@ function checkForAchievementsAndLore() {
   if (loreFarthest >= 180) {
     giveLore(3);
   }
-  if (getTotalDevs() > 1) {
+  if (getTotalDevs() > 15) {
     giveLore(4);
   }
   if (devs.every(i => i !== 0)) {

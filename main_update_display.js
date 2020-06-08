@@ -42,7 +42,7 @@ function updateDisplay () {
       btn.style.backgroundColor = UIColors.button_inactive;  //dark grey: disabled
     } else {
       progele.style.visibility = 'hidden';
-      el.innerHTML = 'Requires ' + toTime(1800) + ' Starfight<br/><br/>';  
+      el.innerHTML = 'Requires ' + toTime(1800) + ' Starfight<br/><br/><br/>';  
       btn.style.backgroundColor = UIColors.button_inactive;  //dark grey: disabled
     }
   }

@@ -602,7 +602,7 @@ body {
     background-color: var(--background_common);
     box-shadow: var(--box_shadow);
     border: var(--border_black);
-    color: var(--text_progress);
+    color: var(--text_battlestat);
     width: 100%;
 }
 
@@ -1266,7 +1266,7 @@ button, input {
 .tooltip {
     position: relative;
     display: inline-block;
-    border-bottom: 1px dotted black;
+    /*border-bottom: 1px dotted black;*/
   }
 
 .tooltip .tooltiptext {
@@ -1300,7 +1300,7 @@ button, input {
 .tutorial {
     position: relative;
     display: inline-block;
-    border-bottom: 1px dotted black;
+    /*border-bottom: 1px dotted black;*/
 }
 
 .tutorial .tutorial_text {

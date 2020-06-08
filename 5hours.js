@@ -179,7 +179,7 @@ function baseDevs() {
   if (updateUpgradeActive(0, 2)) {
     return 30;
   } else {
-    return 15;
+    return 10;
   }
 }
 
@@ -267,6 +267,7 @@ var changeDev = null
 
 
 function toggleSkillAssignAmount(i) {
+  console.log("i: ", i, "player.skill.toggles[i]:", player.skill.toggles[i])
   if (player.skill.toggles[i] == '20%') {
     player.skill.toggles[i] = '100%';
     document.getElementById('toggleskill' + i + '_1').classList.remove('toggle_active');
@@ -276,6 +277,7 @@ function toggleSkillAssignAmount(i) {
     document.getElementById('toggleskill' + i + '_1').classList.add('toggle_active');
     document.getElementById('toggleskill' + i + '_2').classList.remove('toggle_active');
   }
+  console.log("new: ", player.skill.toggles[i])
 }
 
 function addToggle(i) {

@@ -193,7 +193,7 @@ function fixPlayer () {
   }
   if (!('toggles' in player.skill)) {
     player.skill = {
-      toggles: ['1', '1', '1']
+      toggles: ['20%', '20%', '20%', '20%', '20%']
     }
   }
 }
@@ -354,7 +354,7 @@ let initialPlayer = {
     toggles: ['1', '1', '1']
   },
   skill: {
-    toggles: ['20%', '100%']
+    toggles: ['20%', '20%', '20%', '20%', '20%']
   },
   lore: [],
   dilation: 0,
