@@ -36,9 +36,10 @@
     --background_grad3: rgba(245,161,66, .75);
     --background_grad4: rgba(245,66,105, .75);*/
     --background_grad1: dodgerblue;
-    --background_grad2: green;
-    --background_grad3: darkgoldenrod;
-    --background_grad4: darkred;  
+    --background_grad2: forestgreen;
+    --background_grad3: chocolate;
+    --background_border3: ;
+    --background_grad4: firebrick;  
     --border_black: 1px solid black;
     --button_bg: rgba(50,50,50,.50);
     --button_bg_hover: rgba(100,100,100,.75);
@@ -51,6 +52,12 @@
     --input_bg: rgba( 250, 250, 250, .2);
     --input_bghover: rgba( 250, 250, 250, .1);
     --input_border: 1px solid black;
+    --tut_starfight:firebrick ;
+    --tut_piloting:chocolate;
+    --tut_systems:forestgreen;
+    --tut_weapons:forestgreen;
+    --tut_cool:dodgerblue;
+    --tut_features:gold;
 }
 
 html {
@@ -291,8 +298,11 @@ body {
     font-size: 12px;
 }
 
-.bg_starfight {background-color: var(--background_grad4)}
-.bg_piloting {background-color: var(--background_grad3);}
+.bg_starfight {background-color: var(--background_grad4);}
+.bg_piloting {
+    background-color: var(--background_grad3);
+    border: 1px solid var(--background_border3);
+}
 .bg_systems {background-color: var(--background_grad2);}
 .bg_weapons {background-color: var(--background_grad2);}
 .bg_cool {background-color: var(--background_grad1);}
@@ -1358,28 +1368,28 @@ button, input {
 }
 
 .text_t1 {
-    color: rgba(245,66,105);
+    color: var(--tut_starfight);
     font-weight: bold;
 }
 .text_t2 {
-    color: rgba(245,161,66);
+    color: var(--tut_piloting);
     font-weight: bold;
 }
 .text_t3 {
-    color: rgb(66,245,117);
+    color: var(--tut_systems);
     font-weight: bold;
 }
 .text_t4 {
-    color: rgb(66,245,117);;
+    color: var(--tut_weapons);
     font-weight: bold;
 }
 .text_t5 {
-    color: rgb(66,200,245);
+    color: var(--tut_cool);
     font-weight: bold;
 }
 
 .text_t6 {
-    color: rgb(255, 230, 0);
+    color: var(--tut_features);
     font-weight: bold;
     font-style: italic;
 }
