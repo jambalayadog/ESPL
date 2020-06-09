@@ -12,6 +12,9 @@ function updateDisplay () {
   document.getElementById("current-fight-time").innerHTML = toTime(player.progress[0]);
   for (let i = 0; i <= 6; i++) {
     document.getElementById("progress-span-" + i).innerHTML = toTime(player.progress[i]);
+    if (i == 2 || i == 1)  {
+      document.getElementById("progress_" + i).value = getProgressToNextHundredth(i);
+    }
   }
   document.getElementById("progress-span-7").innerHTML = format(player.progress[7], 4);
   for (let i = 1; i <= 7; i++) {

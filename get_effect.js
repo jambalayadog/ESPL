@@ -37,6 +37,28 @@ function findTimeToNextSkillPoint(x) {
   }
 }
 
+function getProgressToNextHundredth(i) {
+  let currentprogress = getEffect(i) - (Math.floor(getEffect(i) * 100) / 100);
+  let roundedcurrent = Math.ceil(currentprogress * 10000) / 10000
+  let nextprogress = 0.01;
+  let roundednext = Math.round((nextprogress + Number.EPSILON) * 100) / 100;
+  let progress = roundedcurrent / roundednext + 0.5;
+  console.log(progress)
+  if (player.progress[i] == 0) {
+    return 0;
+  } else if (player.progress[i] <= 12) {
+    return progress -= 0.5;
+  }
+  if ( progress > 1) {
+    progress -= 1;
+  }
+  
+  return progress;
+}
+
+
+
+
 function findTimeToNextRetrofits(i) {
   // get starfight, get progress from 5 and 6
   let currentprogress = player.progress[0];
@@ -44,8 +66,6 @@ function findTimeToNextRetrofits(i) {
   let progress = currentprogress / cachedprogress;
   return progress
 }
-
-
 
 function formatEffect(i, progressOverride) {
   let effect = getEffect(i, progressOverride);
