@@ -343,10 +343,26 @@ body {
     font-size: 14px;
 }
 
+.aspect_effect {
+    color: tan;
+    font-weight: bold;
+}
+
+.cool_effect {
+    color: var(--text_boldeffect);
+    font-weight: bold;
+}
+
 .activity_effect {
     border: var(--debug_border);
-    padding: 1px;
     color: var(--text_secondary);
+    padding: 5px;
+}
+
+.coolactivity_effect {
+    border: var(--debug_border);
+    color: var(--text_secondary);
+    padding: 2px;
 }
 
 .starfight_effect {
@@ -1326,7 +1342,7 @@ button, input {
     /* Position the tooltip */
     position: absolute;
     left: -156px;
-    top: -68px;
+    top: -66px;
     z-index: 1;
 
     /* tutorial for each column */
@@ -1351,7 +1367,7 @@ button, input {
     /* Position the tooltip */
     position: absolute;
     left: -156px;
-    top: -68px;
+    top: -66px;
     z-index: 1;
 
     /* tutorial for each column */
@@ -1418,11 +1434,12 @@ progress {
     /* disable defaults */
     -webkit-appearance: none;
     border: none;
+
 }
 
 /*Styling the background of the progress bar */
 progress::-webkit-progress-bar {
-    background: white;
+    background: lightgrey;
     border-color: grey;
     border-style: solid;
     border-width: 1px;

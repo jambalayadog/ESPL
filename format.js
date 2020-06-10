@@ -69,3 +69,8 @@ function toTime(x, options) {
   }
   return [x / 3600, x / 60 % 60, Math.floor(x % 60)].map((i) => Math.floor(i).toString().padStart(2, '0')).join(':');
 }
+
+function toPercent(i) {
+  percent = i * 100;
+  return percent.toFixed(2) + '%'
+}

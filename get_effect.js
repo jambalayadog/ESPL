@@ -38,20 +38,35 @@ function findTimeToNextSkillPoint(x) {
 }
 
 function getProgressToNextHundredth(i) {
-  let currentprogress = getEffect(i) - (Math.floor(getEffect(i) * 100) / 100);
-  let roundedcurrent = Math.ceil(currentprogress * 10000) / 10000
-  let nextprogress = 0.01;
-  let roundednext = Math.round((nextprogress + Number.EPSILON) * 100) / 100;
-  let progress = roundedcurrent / roundednext + 0.5;
-  console.log(progress)
-  if (player.progress[i] == 0) {
+  
+  if (typeof lastUpdate == 'undefined') {
+    lastUpdate = [1, 1];
+  }
+  index_lf = i - 1;                                                             //translate aspect to LF array
+
+  let quickprogress = getEffect(i);
+  let currentprogress = getEffect(i) - (Math.floor(getEffect(i) * 100) / 100);  // drop digits bigger than a hundredth
+  let roundedcurrent = Math.ceil(currentprogress * 10000) / 10000               // round it nearest 10,000th 
+  let nextprogress = 0.01;                                                      // next progress is 2 significant digits
+  let roundednext = Math.round((nextprogress + Number.EPSILON) * 100) / 100;    // round to 2 sig  digits (is this necessary?)
+  let progress = roundedcurrent / roundednext;                                  // find the ratio
+
+  if (quickprogress / lastUpdate[index_lf] >= 1.002 ) {
+    progress = 1
+  }
+  
+  if ( progress >= 1) {                                                           //loopy loop; sometimes this gets missed, may be too late in order?
+    progress = 1;
+  }
+  
+  //const showdebug = i == 2 ? console.log('i ', i, 'lastUpdate[index_lf]: ', lastUpdate[index_lf].toFixed(4), ' Progress: ', progress.toFixed(4), 'quickprogress: ', quickprogress, 'rate: ', (quickprogress / lastUpdate[index_lf]).toFixed(4)): '';
+  lastUpdate[index_lf] = quickprogress;
+
+  if (player.progress[i] == 0) {                                                  //haven't started, set it to 0
     return 0;
-  } else if (player.progress[i] <= 12) {
+  } else if (player.progress[i] <= 2) {                                          //started in the last 12 seconds, subtract -0.5 because rounding
     return progress -= 0.5;
-  }
-  if ( progress > 1) {
-    progress -= 1;
-  }
+  } 
   
   return progress;
 }
@@ -70,9 +85,9 @@ function findTimeToNextRetrofits(i) {
 function formatEffect(i, progressOverride) {
   let effect = getEffect(i, progressOverride);
   if (i === 1 || i === 5 || i == 7) {  //  Player and Fleeet Weapons, Leadership
-    return format(effect) + 'x';
+    return format(effect,3) + 'x';
   } else if (i === 2 || i === 6) {  // Player and Fleet Systems (Refactoring)
-    return '+' + format(effect);
+    return '+' + format(effect,3);
   } else if (i === 4) {    // Patience
     return toTime(effect, {secondFractions: true});
   } else {     // Space Battle & Recruiting

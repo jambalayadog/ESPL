@@ -39,8 +39,8 @@
   <div class="navbar">
     <button class="navitem" id="main-tab-button" onclick="setTab('main')">STARFIGHT</button>
     <button class="navitem" id="achievements-tab-button" onclick="setTab('achievements')">OBJECTIVES</button>
-    <button class="navitem" id="update-tab-button" onclick="setTab('update')" style="display: none;">LEGACY</button>
-    <button class="navitem" id="challenges-tab-button" onclick="setTab('challenges')" style="display: none;">MISSIONS</button> 
+    <button class="navitem" id="update-tab-button" onclick="setTab('update')">LEGACY</button>
+    <button class="navitem" id="challenges-tab-button" onclick="setTab('challenges')">MISSIONS</button> 
     <!--<button class="navitem" id="lore-tab-button" onclick="setTab('lore')">STORY GOALS</button> -->
     <button class="navitem" id="completion-milestones-tab-button" onclick="setTab('completion-milestones')">GUIDANCE</button>
   </div>
@@ -69,7 +69,7 @@
         <div class="battle">
           <div class="activity_title bg_starfight">STARFIGHT</div>
           <div class="activity_progress">
-            <div><span id="progress-span-0">0:00:00</span></div>
+            <div><span class="aspect_effect" id="progress-span-0">0:00:00</span></div>
           </div>
           <div class="activity_effect">
           </div>
@@ -92,17 +92,17 @@
           <div class="activity_progress"> </div>
           <div class="activity_prestige_effect"></div>
           <div class="activity_prestige_control">
-            <div><button class="prestige_button" id="update-button" onclick="update()"><span class="button_title">CLAIM VICTORY</span><br/><span class="activity_prestige_info" id="update-gain"></span><progress class="p1" id="progress_armistice" value="0"></progress></button></div>
+            <div><button class="prestige_button" id="update-button" onclick="update()"><span class="button_title">SETTLE WAR</span><br/><span class="activity_prestige_info" id="update-gain"></span><progress class="p1" id="progress_armistice" value="0"></progress></button></div>
           </div>
         </div>
         <!---- PILOTING ---->
         <div class="skill">
           <div class="activity_title bg_piloting">PILOTING</div>
           <div class="activity_progress">
-            <div><span id="progress-span-3">0:00:00</span></div>
+            <div><span class="starfight_effect">TOTAL SKILL:</span><span class="text_hidden">..</span><span class="aspect_effect" id="effect-span-3"></span></div>
           </div>
           <div class="activity_effect">
-            <div><span class="starfight_effect">TOTAL SKILL:</span><span class="text_hidden">..</span><span id="effect-span-3"></span></div>
+            <div><progress class="p2" id="progress_nextdev" value="0"></progress></div>
           </div>
           <div class="activity_skill">
             <div><span class="starfight_skill">SKILL:</span> <span class="text_hidden">...</span><span id="devs-3"></span></div>
@@ -120,7 +120,7 @@
             <div class="starfight_skill">AUTO-FRACTION: <input class="fraction_input" id="auto-dev-3" type="text" onchange="updateAutoDev(3)"></input></div>
           </div>
           <div class="activity_prestige_name"> </div>
-          <div class="activity_progress tutorial"> 
+          <div class="activity_progress tutorial">
             <div class="tutorial_text" id="tutorial_help" style="visibility: visible;">
               <div><span class="text_t1">STARFIGHT</span><br/><br/>
                 You will need <span class="text_t2">Piloting</span>, <span class="text_t3">Systems</span>, <span class="text_t4">Weapons</span>, and <span class="text_t5">Cool</span> to in order to <span class="text_t1">Starfight</span>.<br/><br/>Starfight generates <span class="text_t6">Legacy</span> and eventually unlocks <span class="text_t6">Missions</span>.
@@ -136,21 +136,21 @@
                 Augment <span class="text_t4">Weapons</span> to upgrade your ship's overall <span class="text_t4">Power</span>.<br/><br/>Power helps you destroy your enemies and starfight for longer durations.
               </div>
               <div><span class="text_t5">COOL</span><br/><br/>
-                You'll need <span class="text_t5">Cool</span> in a bit, but it's how you generate <span class="text_t5">Boost</span>.<br/><br/>In order to <span class="text_t5">Claim Victory</span>, you'll have to build your <span class="text_t5">Leadership</span>.
+                You'll need <span class="text_t5">Cool</span> in a bit, but it's how you generate <span class="text_t5">Boost</span>.<br/><br/>In order to <span class="text_t5">Settle War</span>, you'll have to build your <span class="text_t5">Leadership</span>.
               </div>
             </div>
             <div class="tutorial2_text" id="tutorial2_help" style="visibility: hidden;">
-              <div><span class="text_t1">CLAIM VICTORY</span><br/><br/>
-                In order to <span class="text_t1">Claim Victory</span>: <br/>- Min/max your <span class="text_t2">Skills</span><br/>- <span class="text_t3">Retrofit</span> your ship<br/>- Become a true <span class="text_t5">Leader</span><br/><br/>Claim victories to earn <span class="text_t6">Legacy</span> and unlock <span class="text_t6">Missions</span>.
+              <div><span class="text_t1">SETTLE WAR</span><br/><br/>
+                In order to <span class="text_t1">Settle War</span>: <br/>- Min/Max your <span class="text_t2">Skills</span><br/>- <span class="text_t3">Retrofit</span> your starfighter<br/>- Become a true <span class="text_t5">Leader</span><br/><br/><span class="text_t1">Settling Wars</span> earns <span class="text_t6">Legacy</span>.  Longer wars unlock <span class="text_t6">Missions</span>.
               </div>
               <div><span class="text_t3">FLEETS</span> and <span class="text_t5">LEADERSHIP</span><br/><br/>
-                You used your old parts to build a <span class="text_t3">Fleet</span>!  <br/><br/><span class="text_t3">Retrofit</span> to update your <span class="text_t3">Weapons</span> and <span class="text_t3">Systems</span>.<br/><br/>You'll find that you need strong <span class="text_t5">Leadership</span> to command well.<br/><br/>
+                When you <span class="text_t3">Retrofit</span>, you use your old parts to build a <span class="text_t3">Fleet</span>.  <span class="text_t3">Fleets</span> provide extra capacity and power.<br/><br/><span class="text_t5">Leadership</span> literally gives you a boost.  <span class="text_t5">Leader Up</span>.
               </div>
             </div>
           </div>
           <div class="activity_prestige_effect"></div>
           <div class="activity_prestige_control">
-            <div><span style="font-size:11px"><br/></span><span class="starfight_skill">AVAILABLE: </span><span class="text_hidden">..</span><span class="activity_effect" id="unassigned-devs"></span><br/><span style="font-size:7px"><br/></span><span class="starfight_skill">NEXT SKILL POINT:</span><br/><span style="font-size:1px"><br/></span><progress class="p2" id="progress_nextdev" value="0"></progress></div>
+            <div><span style="font-size:11px"><br/></span><span class="starfight_skill">AVAILABLE: </span><span class="text_hidden">..</span><span class="activity_effect" id="unassigned-devs"></span><br/><span style="font-size:7px"><br/></span></div>
           </div>
           <div class="activity_prestige_info"></div>
         </div>
@@ -158,11 +158,10 @@
         <div class="prestige">
           <div class="activity_title bg_systems">SYSTEMS</div>
           <div class="activity_progress">
-            <div><span id="progress-span-2">0:00:00</span></div>
-            <div><progress id="progress_2" value="0">0</progress></div>
+            <div><span class="starfight_effect">CAPACITY:</span><span class="text_hidden">..</span><span class="aspect_effect" id="effect-span-2"></span></div>
           </div>
           <div class="activity_effect">
-            <div><span class="starfight_effect">CAPACITY:</span><span class="text_hidden">..</span><span id="effect-span-2"></span></div>
+            <div><progress class="aspect_progress" id="progress_2" value="0">0</progress></div>
           </div>
           <div class="activity_skill">
             <div><span class="starfight_skill">SKILL:</span> <span class="text_hidden">...</span><span id="devs-2"></span></div>
@@ -180,8 +179,8 @@
             <div class="starfight_skill">AUTO-FRACTION: <input class="fraction_input" id="auto-dev-2" type="text" onchange="updateAutoDev(2)"></input></div>
           </div>
           <div class="unlock_prestige activity_prestige_name bg_systems" style="visibility: hidden;">FLEET SYSTEMS</div>
-          <div class="unlock_prestige activity_progress" style="visibility: hidden;"><span id="progress-span-6">0:00:00</span></div>
-          <div class="unlock_prestige activity_prestige_effect" style="visibility: hidden;"><span class="starfight_effect">HANDLING:</span><span class="text_hidden">..</span><span id="effect-span-6"></span></div>
+          <div class="unlock_prestige activity_progress" style="visibility: hidden;"><span class="starfight_effect">CAPACITY:</span><span class="text_hidden">..</span><span class="aspect_effect" id="effect-span-6"></span></div>
+          <div class="unlock_prestige activity_prestige_effect" style="visibility: hidden;"></div>
           <div class="activity_prestige_control">
             <div><button class="prestige_button" id="prestige-6-button" onclick="prestige(6)"><span class="button_title">RETROFIT SYSTEMS</span><br/><span class="activity_prestige_info" id="prestige-6"></span><progress class="p1" id="progress_starfight" value="0"></progress><progress class="p3" id="progress6_nextretrofit" value="0"></progress></button></div>
           </div>
@@ -190,11 +189,10 @@
         <div class="prestige">
           <div class="activity_title bg_weapons">WEAPONS</div>
           <div class="activity_progress">
-            <div><span id="progress-span-1">0:00:00</span></div>
-            <div><progress id="progress_1" value="0">0</progress></div>
+            <div><span class="starfight_effect">POWER:</span><span class="text_hidden">..</span><span class="aspect_effect" id="effect-span-1"></span></div>
           </div>
           <div class="activity_effect">
-            <div><span class="starfight_effect">POWER:</span><span class="text_hidden">..</span><span id="effect-span-1"></span></div>
+            <div><progress class="aspect_progress" id="progress_1" value="0">0</progress></div>
           </div>
           <div class="activity_skill">
             <div><span class="starfight_skill">SKILL:</span> <span class="text_hidden">...</span></span><span id="devs-1"></span></div>
@@ -212,8 +210,8 @@
             <div class="starfight_skill">AUTO-FRACTION: <input class="fraction_input" id="auto-dev-1" type="text" onchange="updateAutoDev(1)"></input></div>
           </div>
           <div class="unlock_prestige activity_prestige_name bg_weapons" style="visibility: hidden;">FLEET WEAPONS</div>
-          <div class="unlock_prestige activity_progress" style="visibility: hidden;"><span id="progress-span-5">0:00:00</span></div>
-          <div class="unlock_prestige activity_prestige_effect" style="visibility: hidden;"><span class="starfight_effect">POWER:</span><span class="text_hidden">..</span><span id="effect-span-5"></span></div>
+          <div class="unlock_prestige activity_progress" style="visibility: hidden;"><span class="starfight_effect">POWER:</span><span class="text_hidden">..</span><span class="aspect_effect" id="effect-span-5"></span></div>
+          <div class="unlock_prestige activity_prestige_effect" style="visibility: hidden;"></div>
           <div class="activity_prestige_control">
             <div><button class="prestige_button" id="prestige-5-button" onclick="prestige(5)"><span class="button_title">RETROFIT WEAPONS</span><br/><span class="activity_prestige_info" id="prestige-5"></span><progress class="p1" id="progress_starfight2" value="0"></progress><progress class="p3" id="progress5_nextretrofit" value="0"></button></div>
           </div>
@@ -222,10 +220,10 @@
         <div class="prestige">
           <div class="activity_title bg_cool">COOL</div>
           <div class="activity_progress">
-            <div><span id="progress-span-4">0:00:00</span></div>
+            <div><span class="starfight_effect">TIME:</span><span class="text_hidden">..</span><span class="aspect_effect" id="effect-span-4"></span></div>
           </div>
-          <div class="activity_effect">
-            <div><span class="starfight_effect">FILL:</span><span class="text_hidden">..</span><span id="effect-span-4"></span></div>
+          <div class="coolactivity_effect">
+            <div><span class="cool_effect" id="progress-span-7">0.0000</span></div>
           </div>
           <div class="activity_skill">
             <div><span class="starfight_skill">SKILL:</span> <span class="text_hidden">...</span></span><span id="devs-4"></span></div>
@@ -243,8 +241,8 @@
             <div class="starfight_skill">AUTO-FRACTION: <input class="fraction_input" id="auto-dev-4" type="text" onchange="updateAutoDev(4)"></input></div>
           </div>
           <div class="unlock_prestige activity_prestige_name bg_cool" style="visibility: hidden;">LEADERSHIP</div>
-          <div class="unlock_prestige activity_progress" style="visibility: hidden;"><span id="progress-span-7">0.0000</span></div>
-          <div class="unlock_prestige activity_prestige_effect" style="visibility: hidden;"><span class="starfight_effect">BOOST:</span><span class="text_hidden">..</span><span id="effect-span-7"></span></div>
+          <div class="unlock_prestige activity_progress" style="visibility: hidden;"><span class="starfight_effect">BOOST:</span><span class="text_hidden">..</span><span class="aspect_effect" id="effect-span-7"></span></div>
+          <div class="unlock_prestige activity_prestige_effect" style="visibility: hidden;"></div>
           <div class="activity_prestige_control">
             <div><button class="prestige_button" id="enlightened-button" onclick="enlightened()"><span class="button_title">LEADER UP</span><br/><span class="activity_prestige_info" id="enlightened-desc"></span><progress class="p5" id="progress_leader" value="0"></progress></button></div>
           </div>

@@ -3,15 +3,15 @@ const TAB_LIST = ['main', 'achievements', 'update', 'challenges', 'completion-mi
 
 function updateTabButtonDisplay () {
   if (player.updates > 0) {
-    document.getElementById('update-tab-button').style.display = '';
+    //document.getElementById('update-tab-button').style.display = '';
   } else {
-    document.getElementById('update-tab-button').style.display = 'none';
+    //document.getElementById('update-tab-button').style.display = 'none';
   }
   if (player.stats.recordDevelopment[''] >= 86400) {
-    document.getElementById('challenges-tab-button').style.display = '';
+    //document.getElementById('challenges-tab-button').style.display = '';
     //document.getElementById('completion-milestones-tab-button').style.display = '';
   } else {
-    document.getElementById('challenges-tab-button').style.display = 'none';
+    //document.getElementById('challenges-tab-button').style.display = 'none';
     //document.getElementById('completion-milestones-tab-button').style.display = 'none';
   }
 }

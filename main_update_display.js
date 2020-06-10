@@ -11,12 +11,16 @@ function updateDisplay () {
   updateTabButtonDisplay();
   document.getElementById("current-fight-time").innerHTML = toTime(player.progress[0]);
   for (let i = 0; i <= 6; i++) {
-    document.getElementById("progress-span-" + i).innerHTML = toTime(player.progress[i]);
+    
     if (i == 2 || i == 1)  {
       document.getElementById("progress_" + i).value = getProgressToNextHundredth(i);
+    } else if (i == 3 || i == 4 || i == 5 || i == 6 || i== 7) {
+
+    } else {
+      document.getElementById("progress-span-" + i).innerHTML = toTime(player.progress[i]);
     }
   }
-  document.getElementById("progress-span-7").innerHTML = format(player.progress[7], 4);
+  document.getElementById("progress-span-7").innerHTML = toPercent(format(player.progress[7], 4));
   for (let i = 1; i <= 7; i++) {
     document.getElementById("effect-span-" + i).innerHTML = formatEffect(i);
   }
@@ -31,41 +35,41 @@ function updateDisplay () {
     if (canPrestigeWithoutGain(i)) {
       el.innerHTML = formatEffect(i) + ' -> ' + formatEffect(i) + '<br/>' + toTime(player.progress[i]) + ' -> ' + toTime(player.progress[i]) + '';
       /*progele.style.display = '';*/
-      progele.style.visibility = 'visible';
+      progele.style.display = '';
       progele.value = findTimeToNextRetrofits(i);
       btn.style.backgroundColor = UIColors.button_useless;   //yellow: active, non-profit
     } else if (canPrestige(i)) {
-      progele.style.visibility = 'hidden';
+      progele.style.display = 'none';
       let newValue = newValueFromPrestige();
       el.innerHTML = formatEffect(i) + ' -> ' + formatEffect(i, newValue) + '<br/>' + toTime(player.progress[i]) + ' -> ' + toTime(newValue) + '<br/>' + toTime(newValue - player.progress[i]) + ' better<br/>'
       btn.style.backgroundColor = UIColors.button_active;    //green: active, profitable
     } else if (player.currentChallenge === 'unprestigious') {
-      progele.style.visibility = 'hidden';
+      progele.style.display = 'none';
       el.innerHTML = 'Disabled in this mission';
       btn.style.backgroundColor = UIColors.button_inactive;  //dark grey: disabled
     } else {
-      progele.style.visibility = 'hidden';
-      el.innerHTML = 'Requires ' + toTime(1800) + ' Starfight<br/><br/><br/>';  
+      progele.style.display = 'none';
+      el.innerHTML = 'Requires ' + toTime(1800) + ' Starfight<br/><br/>';  
       btn.style.backgroundColor = UIColors.button_inactive;  //dark grey: disabled
     }
   }
   if (player.progress[7] >= 1) {
-    document.getElementById('enlightened-desc').innerHTML = '<br/>Reset Leadership and make it slower but stronger<br/><br/>';
-    document.getElementById("progress_leader").style.visibility = 'hidden';
+    document.getElementById('enlightened-desc').innerHTML = '<br/>Reset Leadership and make it slower but stronger<br/>';
+    document.getElementById("progress_leader").style.display = 'none';
     document.getElementById('enlightened-button').style.backgroundColor = UIColors.button_active;
   } else {
     document.getElementById('enlightened-desc').innerHTML = 'Requires 1 Leadership<br/><br/>';
-    document.getElementById("progress_leader").style.visibility = 'visible';
+    document.getElementById("progress_leader").style.display = '';
     document.getElementById("progress_leader").value = player.progress[7];
     document.getElementById('enlightened-button').style.backgroundColor = UIColors.button_inactive;
   }
   if (player.progress[0] >= 1800) {
-    document.getElementById("progress_starfight").style.visibility = 'hidden';
-    document.getElementById("progress_starfight2").style.visibility = 'hidden';
+    document.getElementById("progress_starfight").style.display = 'none';
+    document.getElementById("progress_starfight2").style.display = 'none';
   } else {
-    document.getElementById("progress_starfight").style.visibility = 'visible';
+    document.getElementById("progress_starfight").style.display = '';
     document.getElementById("progress_starfight").value = player.progress[0] / 1800;
-    document.getElementById("progress_starfight2").style.visibility = 'visible';
+    document.getElementById("progress_starfight2").style.display = '';
     document.getElementById("progress_starfight2").value = player.progress[0] / 1800;
   }
   if (player.progress[0] >= 18000) {
