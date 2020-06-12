@@ -35,7 +35,22 @@ function updateDisplay () {
     let progele = document.getElementById(progid);
 
     if (canPrestigeWithoutGain(i)) {
-      el.innerHTML = formatEffect(i) + ' -> ' + formatEffect(i) + '<br/>' + toTime(player.progress[i]) + ' -> ' + toTime(player.progress[i]) + '';
+      if (i == 5) {
+        let trueGain = Number(getEffect(i,(Math.max(player.progress[i], newValueFromPrestige())) / getEffect(7)));
+        const noProgress_checkBase = player.progress[i] == 0 ? base = 1 : base = player.stats.retrofits.retrofitWeapons;
+        rate = trueGain / base;
+        //el.innerHTML = 'base: ' + (base*1).toFixed(2) + '<br/>new: ' + (trueGain*1).toFixed(2) + '<br/> Improvement: ' + (((rate-1)*100).toFixed(1) + '%');
+        el.innerHTML = 'Base Power: ' + (base*1).toFixed(2) + '<br/>New Base: ' + (trueGain*1).toFixed(2) + ''
+        //el.innerHTML = formatEffect(i) + ' -> ' + formatEffect(i) + '<br/>' + toTime(player.progress[i]) + ' -> ' + toTime(player.progress[i]) + '';
+      } else {
+        let newValue = newValueFromPrestige();
+        rate = formatEffect(i, newValue)/formatEffect(i);
+        const noProgress = formatEffect(i) == 0 ? actualNewValue = getEffect(i,newValueFromPrestige()) : actualNewValue = rate * player.stats.retrofits.retrofitSystems;
+        //el.innerHTML = 'base: ' + (player.stats.retrofits.retrofitSystems*1).toFixed(2) + '<br/>new: ' + (actualNewValue*1).toFixed(2) + '<br/> Improvement: ' + (((rate-1)*100).toFixed(1) + '%');
+        el.innerHTML = 'Base Capacity: ' + (player.stats.retrofits.retrofitSystems*1).toFixed(2) + '<br/>New Base: ' + (actualNewValue*1).toFixed(2) + '';
+        //el.innerHTML = formatEffect(i) + ' -> ' + formatEffect(i) + '<br/>' + toTime(player.progress[i]) + ' -> ' + toTime(player.progress[i]) + '';
+      }      
+      //el.innerHTML = formatEffect(i) + ' -> ' + formatEffect(i) + '<br/>' + toTime(player.progress[i]) + ' -> ' + toTime(player.progress[i]) + '';
       /*progele.style.display = '';*/
       progele.style.display = '';
       progele.value = findTimeToNextRetrofits(i);
@@ -44,36 +59,24 @@ function updateDisplay () {
       progele.style.display = 'none';
       let newValue = newValueFromPrestige();
       if (i == 5) {
-        //rate = formatEffect(i, newValue)/formatEffect(i);
-        //rate = getEffect(i, newValue)/getEffect(i);
-        //newValueFromPrestige
-        //rate = toTime(newValue)/toTime(i);
-        
         //rate = newValueFromPrestige() / player.progress[i];
-        //let trueGain = Number(getEffect(i,(Math.max(player.progress[i], newValueFromPrestige())) / getEffect(7)));
+        let trueGain = Number(getEffect(i,(Math.max(player.progress[i], newValueFromPrestige())) / getEffect(7)));
         const noProgress_checkBase = player.progress[i] == 0 ? base = 1 : base = player.stats.retrofits.retrofitWeapons;
-        const noProgress_checkRate = player.progress[i] == 0 ? rate = newValueFromPrestige() / 1 : rate = newValueFromPrestige() / player.progress[i];
-        //if the player has No Progress then the value is the new value from prestige (or starfight?), else its the rate of change between progress 
-        const noProgress_checkNewValue = player.progress[i] == 0 ? actualNewValue = newValueFromPrestige() : actualNewValue = Number(getEffect(i,(Math.max(player.progress[i], newValueFromPrestige())) / getEffect(7)));
+        //const noProgress_checkRate = player.progress[i] == 0 ? rate = newValueFromPrestige() / 1 : rate = newValueFromPrestige() / player.progress[i];
+        //const noProgress_checkNewValue = player.progress[i] == 0 ? actualNewValue = newValueFromPrestige() : actualNewValue = Number(getEffect(i,(Math.max(player.progress[i], newValueFromPrestige())) / getEffect(7)));
         //const noProgress_checkNewValue = player.progress[i] == 0 ? actualNewValue = newValueFromPrestige() : actualNewValue = rate * player.stats.retrofits.retrofitWeapons;
         //console.log('actual new value: ', actualNewValue, 'new value from prestige: ', newValueFromPrestige(), 'rated: ', rate * player.stats.retrofits.retrofitWeapons);
-
-        
+        rate = trueGain / base;
         //console.log('trueGain: ', trueGain);
-
         //console.log(typeof toTime(newValueFromPrestige()), toTime(newValueFromPrestige()), typeof player.progress[i], player.progress[i]);
-        //console.log('i: ', i, 'rate: ', rate.toFixed(2), typeof rate, 'value: ', (player.stats.retrofits.retrofitSystems*1).toFixed(2)); //this is broken
-        
-        el.innerHTML = 'base: ' + (base*1).toFixed(2) + '<br/>new: ' + (actualNewValue*1).toFixed(2)  + '<br/> Improvement: ' + (((rate-1)*100).toFixed(1) + '%');
-      
-      
+        //console.log('i: ', i, 'rate: ', rate.toFixed(2), typeof rate, 'value: ', (player.stats.retrofits.retrofitSystems*1).toFixed(2)); //this is broken     
+        el.innerHTML = 'Base Power: ' + (base*1).toFixed(2) + '<br/>New Base: ' + (trueGain*1).toFixed(2)  + '<br/> Improvement: ' + (((rate-1)*100).toFixed(1) + '%');
       } else {
         rate = formatEffect(i, newValue)/formatEffect(i)
         const noProgress = formatEffect(i) == 0 ? actualNewValue = getEffect(i,newValueFromPrestige()) : actualNewValue = rate * player.stats.retrofits.retrofitSystems;
         //console.log('i: ', i, typeof rate, rate, typeof actualNewValue, actualNewValue);
-
         //console.log('i: ', i, 'rate: ', rate.toFixed(2), typeof rate, 'value: ', player.stats.retrofits.retrofitWeapons.toFixed(2));
-        el.innerHTML = 'base: ' + (player.stats.retrofits.retrofitSystems*1).toFixed(2) + '<br/>new: ' + (actualNewValue*1).toFixed(2) + '<br/> Improvement: ' + (((rate-1)*100).toFixed(1) + '%');
+        el.innerHTML = 'Base Capacity: ' + (player.stats.retrofits.retrofitSystems*1).toFixed(2) + '<br/>New Base: ' + (actualNewValue*1).toFixed(2) + '<br/> Improvement: ' + (((rate-1)*100).toFixed(1) + '%');
       }
       //el.innerHTML = formatEffect(i) + ' -> ' + formatEffect(i, newValue) + '<br/>' + toTime(player.progress[i]) + ' -> ' + toTime(newValue) + '<br/>' + toTime(newValue - player.progress[i]) + ' better<br/>'
       btn.style.backgroundColor = UIColors.button_active;    //green: active, profitable
