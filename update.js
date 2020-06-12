@@ -86,17 +86,19 @@ function getPowerGainPerExperience() {
 function toggleAmount(i) {
   if (player.legacy.toggles[i] == '1') {
     player.legacy.toggles[i] = '33%';
-    console.log('toggle' + i + '1')
+    console.log('toggle' + i + ' 33%')
     document.getElementById('toggle' + i + '_1').classList.remove('toggle_active')
     document.getElementById('toggle' + i + '_2').classList.add('toggle_active')
     document.getElementById('toggle' + i + '_3').classList.remove('toggle_active')
   } else if (player.legacy.toggles[i] == '33%') {
     player.legacy.toggles[i] = '100%';
+    console.log('toggle' + i + ' 100%')
     document.getElementById('toggle' + i + '_1').classList.remove('toggle_active')
     document.getElementById('toggle' + i + '_2').classList.remove('toggle_active')
     document.getElementById('toggle' + i + '_3').classList.add('toggle_active')
   } else {
     player.legacy.toggles[i] = "1";
+    console.log('toggle' + i + ' 1')
     document.getElementById('toggle' + i + '_1').classList.add('toggle_active')
     document.getElementById('toggle' + i + '_2').classList.remove('toggle_active')
     document.getElementById('toggle' + i + '_3').classList.remove('toggle_active')
@@ -116,7 +118,7 @@ function reverseLegacyToggles(i) {
 function convertLegacy(i) {
   if (player.legacy.toggles[i] == '1'){
     assignOne(reverseLegacyToggles(i));
-  } else if (player.legacy.toggles[i] == '1/3'){
+  } else if (player.legacy.toggles[i] == '33%'){
     assignThird(reverseLegacyToggles(i));
   } else {
     assignAll(reverseLegacyToggles(i));

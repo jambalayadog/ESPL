@@ -282,6 +282,7 @@ body {
     max-width:800px;
     height: 445px;
     overflow-y: hidden;
+    overflow-x: hidden;
     padding:5px;
     box-sizing: border-box;
     font-size: 12px;
@@ -1298,7 +1299,7 @@ button, input {
 .tooltip .tooltiptext {
     visibility: hidden;
     width: 250px;
-    background-color: slategray;
+    background-color: midnightblue;
     color: var(--text_secondary);
     border-color: var(--tip_border);
     text-align: left;
@@ -1312,6 +1313,22 @@ button, input {
     top: 25px;
     z-index: 1;
 }
+
+.tooltip_autoskills {
+    left: -37px!important;
+    top: 20px!important;
+    width: 170px!important;
+}
+
+.tooltip_autoskilltoggle {
+    left: -48px!important;
+    top: 20px!important;
+    width: 170px!important;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+  }
 
 /*
 

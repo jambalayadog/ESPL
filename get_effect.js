@@ -31,9 +31,24 @@ function findTimeToNextSkillPoint(x) {
   if (player.currentChallenge === 'lonely') {
     return 0;
   } else {
+    if (typeof oldValue === 'undefined') {
+      oldValue = 0;
+    }
     let j = Math.floor(maybeLog(baseDevs() + getAdditionalDevsDueToUpdates() + x * getUpdatePowerEffect(2) * challengeReward('lonely') / 300));
     let k = maybeLog(baseDevs() + getAdditionalDevsDueToUpdates() + x * getUpdatePowerEffect(2) * challengeReward('lonely') / 300);
-    document.getElementById("progress_nextdev").value = k-j;
+    let newValue = k;
+    let rate = newValue / oldValue;
+    oldValue = k;
+    if (rate >= 1.00004) {
+      document.getElementById("progress_nextdev").value = 1;
+      frames = 20;
+    } else if (frames > 0) {
+      document.getElementById("progress_nextdev").value = 1;
+    } else {
+      document.getElementById("progress_nextdev").value = k-j;
+    }
+    frames -= 1;
+    console.log('new: ', (newValue).toFixed(4), 'old: ',(oldValue).toFixed(4), 'rate: ',(rate).toFixed(8), 'frames: ', frames);
   }
 }
 
@@ -61,14 +76,20 @@ function getProgressToNextHundredth(i) {
 
   let quickprogress = getEffect(i);
   let progress = digits / 100;
-  
-  if (quickprogress / lastUpdate[index_lf] >= 1.00125 ) {
+  if(i == 1){
+    //console.log('i: ', i, 'rate: ', quickprogress / lastUpdate[index_lf]);
+  }
+  //const showDebugRate = i == 1 ? console.log('i: ', i, 'rate: ', quickprogress / lastUpdate[index_lf]) : '';
+  if (quickprogress / lastUpdate[index_lf] >= 1.001 ) {  //1.00125
     progress = 1
+    frames = 20;
+  } else if (frames > 20 ){
+    progress = 1;
   }
   if ( progress >= 1) {                                                           //loopy loop; sometimes this gets missed, may be too late in order?
     progress = 1;
   }
-  
+  frames -= 1;
   //const showdebug = i == 1 ? console.log('i ', i, 'Last Progress: ', lastUpdate[index_lf].toFixed(4), 'Current Progress: ', quickprogress.toFixed(4), 'Rate: ', (quickprogress / lastUpdate[index_lf]).toFixed(7),'Progress: ', progress.toFixed(4), 'currenthundredth: ', currentprogress, 'rounded: ', roundedcurrent): '';
   lastUpdate[index_lf] = quickprogress;
 
