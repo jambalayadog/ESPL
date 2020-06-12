@@ -38,28 +38,38 @@ function findTimeToNextSkillPoint(x) {
 }
 
 function getProgressToNextHundredth(i) {
-  
+
   if (typeof lastUpdate == 'undefined') {
     lastUpdate = [1, 1];
   }
   index_lf = i - 1;                                                             //translate aspect to LF array
 
-  let quickprogress = getEffect(i);
-  let currentprogress = getEffect(i) - (Math.floor(getEffect(i) * 100) / 100);  // drop digits bigger than a hundredth
-  let roundedcurrent = Math.ceil(currentprogress * 10000) / 10000               // round it nearest 10,000th 
-  let nextprogress = 0.01;                                                      // next progress is 2 significant digits
-  let roundednext = Math.round((nextprogress + Number.EPSILON) * 100) / 100;    // round to 2 sig  digits (is this necessary?)
-  let progress = roundedcurrent / roundednext;                                  // find the ratio
+  if (i == 2) {
+    off = 1;
+  } else { off = 0}
+  let firstDigit = getEffect(i).toString().split('').slice(3+off,4+off);
+  let secondDigit = getEffect(i).toString().split('').slice(4+off,5+off);
+  if (firstDigit == '.' ) {
+    firstDigit = getEffect(i).toString().split('').slice(4+off,5+off);
+    secondDigit = getEffect(i).toString().split('').slice(5+off,6+off);
+  }
+  if (secondDigit == '.') {
+    secondDigit = getEffect(i).toString().split('').slice(5+off,6+off);
+  }
+  digits = Number(firstDigit + secondDigit);
+  //const showdebug = i == 2 ? console.log('digit: ', digits):'';
 
-  if (quickprogress / lastUpdate[index_lf] >= 1.002 ) {
+  let quickprogress = getEffect(i);
+  let progress = digits / 100;
+  
+  if (quickprogress / lastUpdate[index_lf] >= 1.00125 ) {
     progress = 1
   }
-  
   if ( progress >= 1) {                                                           //loopy loop; sometimes this gets missed, may be too late in order?
     progress = 1;
   }
   
-  //const showdebug = i == 2 ? console.log('i ', i, 'lastUpdate[index_lf]: ', lastUpdate[index_lf].toFixed(4), ' Progress: ', progress.toFixed(4), 'quickprogress: ', quickprogress, 'rate: ', (quickprogress / lastUpdate[index_lf]).toFixed(4)): '';
+  //const showdebug = i == 1 ? console.log('i ', i, 'Last Progress: ', lastUpdate[index_lf].toFixed(4), 'Current Progress: ', quickprogress.toFixed(4), 'Rate: ', (quickprogress / lastUpdate[index_lf]).toFixed(7),'Progress: ', progress.toFixed(4), 'currenthundredth: ', currentprogress, 'rounded: ', roundedcurrent): '';
   lastUpdate[index_lf] = quickprogress;
 
   if (player.progress[i] == 0) {                                                  //haven't started, set it to 0
@@ -67,7 +77,7 @@ function getProgressToNextHundredth(i) {
   } else if (player.progress[i] <= 2) {                                          //started in the last 12 seconds, subtract -0.5 because rounding
     return progress -= 0.5;
   } 
-  
+  //const showdebug2 = 2 == 1 ? console.log('drogress: ', progress):'';
   return progress;
 }
 

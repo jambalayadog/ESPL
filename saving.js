@@ -103,6 +103,12 @@ function fixPlayer () {
       updatePointGain: new Decimal(0)
     }
   }
+  if (!('retrofits' in player.stats)) {
+    player.stats.retrofits = {
+      retrofitWeapons: new Decimal(0),
+      retrofitSystems: new Decimal(0)
+    } 
+  }
   if (!('enlightened' in player.auto)) {
     player.auto.enlightened = {
       setting: 'Leader Rank',
@@ -329,6 +335,10 @@ let initialPlayer = {
       update: Date.now(),
       prestigeType: null,
       updatePointGain: new Decimal(0)
+    },
+    retrofits: {
+      retrofitWeapons: new Decimal(0),
+      retrofitSystems: new Decimal(0)
     }
   },
   achievements: {

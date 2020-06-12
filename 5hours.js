@@ -228,23 +228,40 @@ function confirmPrestige(i) {
 }
 
 function prestigeCore(i, now, oldProgress) {
+  console.log('D: effect: ', Number(getEffect(i)));
   for (let j = 0; j <= 4; j++) {
     player.progress[j] = 0;
     player.devs[j] = 0;
   }
+  //console.log('E: effect: ', Number(getEffect(i)));
   player.progress[7] = 0;
+  //console.log('F: effect: ', Number(getEffect(i)));
   player.enlightened = 0;
+  //console.log('G: effect: ', Number(getEffect(i)));
   givePrestigeAchievementsAndLore(i, oldProgress);
   player.stats.last.prestige = now;
   player.stats.last.enlightened = now;
   player.stats.last.prestigeType = i;
+  //console.log('3. - i: ', i, 'progress:',player.progress[i], 'new value: ',newValueFromPrestige(), 'effect: ', Number(getEffect(i)));   // get effect of player.progress[0] in [5]/[6] terms
+  //console.log('1. retros: ', player.stats.retrofits);
+  const retrofitType = i == 5 ? player.stats.retrofits.retrofitWeapons = Number(getEffect(i)) : player.stats.retrofits.retrofitSystems = getEffect(i);
+  //console.log('2. retros: ', player.stats.retrofits);
 }
+
 
 function prestige(i, noConfirm) {
   if (canPrestige(i) && (noConfirm || confirmPrestige(i))) {
     let oldProgress = player.progress[i];
+    //console.log('1. - i: ', i, 'progress:',player.progress[i], 'new value: ',newValueFromPrestige(), 'rate: ', newValueFromPrestige()/player.progress[i], 'effect: ', Number(getEffect(i)));
+    //console.log('B: effect: ', Number(getEffect(i)), 'prediction: ', Number(getEffect(i))*1.343);
+    let lookAhead = Math.max(player.progress[i], newValueFromPrestige());
+    //console.log('lookAhead: ', lookAhead, 'time', getEffect(i, lookAhead));
+    let lookAhead2 = lookAhead / getEffect(7);
+    //console.log('lookAhead2: ', lookAhead2, 'time', getEffect(i, lookAhead2), 'getEffect(7): ', getEffect(7));
+    //console.log(Math.max(player.progress[i], newValueFromPrestige()), getEffect(i,Math.max(player.progress[i], newValueFromPrestige())))
     player.progress[i] = Math.max(player.progress[i], newValueFromPrestige());
     let now = Date.now();
+    //console.log('C: effect: ', Number(getEffect(i)));
     prestigeCore(i, now, oldProgress);
   }
 }
@@ -267,7 +284,7 @@ var changeDev = null
 
 
 function toggleSkillAssignAmount(i) {
-  console.log("i: ", i, "player.skill.toggles[i]:", player.skill.toggles[i])
+  //console.log("i: ", i, "player.skill.toggles[i]:", player.skill.toggles[i])
   if (player.skill.toggles[i] == '20%') {
     player.skill.toggles[i] = '100%';
     document.getElementById('toggleskill' + i + '_1').classList.remove('toggle_active');
@@ -277,7 +294,7 @@ function toggleSkillAssignAmount(i) {
     document.getElementById('toggleskill' + i + '_1').classList.add('toggle_active');
     document.getElementById('toggleskill' + i + '_2').classList.remove('toggle_active');
   }
-  console.log("new: ", player.skill.toggles[i])
+  //console.log("new: ", player.skill.toggles[i])
 }
 
 function addToggle(i) {

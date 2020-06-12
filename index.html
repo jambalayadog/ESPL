@@ -39,8 +39,8 @@
   <div class="navbar">
     <button class="navitem" id="main-tab-button" onclick="setTab('main')">STARFIGHT</button>
     <button class="navitem" id="achievements-tab-button" onclick="setTab('achievements')">OBJECTIVES</button>
-    <button class="navitem" id="update-tab-button" onclick="setTab('update')">LEGACY</button>
-    <button class="navitem" id="challenges-tab-button" onclick="setTab('challenges')">MISSIONS</button> 
+    <button class="navitem" id="update-tab-button" onclick="setTab('update')" style="display:none;">LEGACY</button>
+    <button class="navitem" id="challenges-tab-button" onclick="setTab('challenges')" style="display:none;">MISSIONS</button> 
     <!--<button class="navitem" id="lore-tab-button" onclick="setTab('lore')">STORY GOALS</button> -->
     <button class="navitem" id="completion-milestones-tab-button" onclick="setTab('completion-milestones')">GUIDANCE</button>
   </div>
@@ -67,7 +67,7 @@
       <div class="starfight_page">
         <!---- SPACE BATTLE ---->
         <div class="battle">
-          <div class="activity_title bg_starfight">STARFIGHT</div>
+          <div class="activity_title bg_starfight">STARFIGHT-0</div>
           <div class="activity_progress">
             <div><span class="aspect_effect" id="progress-span-0">0:00:00</span></div>
           </div>
@@ -97,7 +97,7 @@
         </div>
         <!---- PILOTING ---->
         <div class="skill">
-          <div class="activity_title bg_piloting">PILOTING</div>
+          <div class="activity_title bg_piloting">PILOTING-3</div>
           <div class="activity_progress">
             <div><span class="starfight_effect">TOTAL SKILL:</span><span class="text_hidden">..</span><span class="aspect_effect" id="effect-span-3"></span></div>
           </div>
@@ -156,7 +156,7 @@
         </div>
         <!---- SYSTEMS ---->
         <div class="prestige">
-          <div class="activity_title bg_systems">SYSTEMS</div>
+          <div class="activity_title bg_systems">SYSTEMS-2</div>
           <div class="activity_progress">
             <div><span class="starfight_effect">CAPACITY:</span><span class="text_hidden">..</span><span class="aspect_effect" id="effect-span-2"></span></div>
           </div>
@@ -178,7 +178,7 @@
           <div class="activity_fraction">
             <div class="starfight_skill">AUTO-FRACTION: <input class="fraction_input" id="auto-dev-2" type="text" onchange="updateAutoDev(2)"></input></div>
           </div>
-          <div class="unlock_prestige activity_prestige_name bg_systems" style="visibility: hidden;">FLEET SYSTEMS</div>
+          <div class="unlock_prestige activity_prestige_name bg_systems" style="visibility: hidden;">FLEET SYSTE-6</div>
           <div class="unlock_prestige activity_progress" style="visibility: hidden;"><span class="starfight_effect">CAPACITY:</span><span class="text_hidden">..</span><span class="aspect_effect" id="effect-span-6"></span></div>
           <div class="unlock_prestige activity_prestige_effect" style="visibility: hidden;"></div>
           <div class="activity_prestige_control">
@@ -187,7 +187,7 @@
         </div>
         <!---- WEAPONS ---->
         <div class="prestige">
-          <div class="activity_title bg_weapons">WEAPONS</div>
+          <div class="activity_title bg_weapons">WEAPONS-1</div>
           <div class="activity_progress">
             <div><span class="starfight_effect">POWER:</span><span class="text_hidden">..</span><span class="aspect_effect" id="effect-span-1"></span></div>
           </div>
@@ -209,7 +209,7 @@
           <div class="activity_fraction">
             <div class="starfight_skill">AUTO-FRACTION: <input class="fraction_input" id="auto-dev-1" type="text" onchange="updateAutoDev(1)"></input></div>
           </div>
-          <div class="unlock_prestige activity_prestige_name bg_weapons" style="visibility: hidden;">FLEET WEAPONS</div>
+          <div class="unlock_prestige activity_prestige_name bg_weapons" style="visibility: hidden;">FLEET WEAPO-5</div>
           <div class="unlock_prestige activity_progress" style="visibility: hidden;"><span class="starfight_effect">POWER:</span><span class="text_hidden">..</span><span class="aspect_effect" id="effect-span-5"></span></div>
           <div class="unlock_prestige activity_prestige_effect" style="visibility: hidden;"></div>
           <div class="activity_prestige_control">
@@ -218,7 +218,7 @@
         </div>
         <!---- COOL ---->
         <div class="prestige">
-          <div class="activity_title bg_cool">COOL</div>
+          <div class="activity_title bg_cool">COOL-4</div>
           <div class="activity_progress">
             <div><span class="starfight_effect">TIME:</span><span class="text_hidden">..</span><span class="aspect_effect" id="effect-span-4"></span></div>
           </div>
@@ -240,7 +240,7 @@
           <div class="activity_fraction">
             <div class="starfight_skill">AUTO-FRACTION: <input class="fraction_input" id="auto-dev-4" type="text" onchange="updateAutoDev(4)"></input></div>
           </div>
-          <div class="unlock_prestige activity_prestige_name bg_cool" style="visibility: hidden;">LEADERSHIP</div>
+          <div class="unlock_prestige activity_prestige_name bg_cool" style="visibility: hidden;">LEADERSHIP-7</div>
           <div class="unlock_prestige activity_progress" style="visibility: hidden;"><span class="starfight_effect">BOOST:</span><span class="text_hidden">..</span><span class="aspect_effect" id="effect-span-7"></span></div>
           <div class="unlock_prestige activity_prestige_effect" style="visibility: hidden;"></div>
           <div class="activity_prestige_control">
