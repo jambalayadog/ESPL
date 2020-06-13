@@ -369,6 +369,7 @@ body {
 .starfight_effect {
     font-size: 10px;
     color: var(--text_battlestat);
+    font-weight: bold;
 }
 
 .activity_skill {
@@ -1044,7 +1045,7 @@ body {
     display: grid;
     grid-template-columns: auto auto;
     border: var(--debug_border);
-    padding: 5px;
+    /*padding: 5px;*/
 }
 
 .missiongroup_stat {

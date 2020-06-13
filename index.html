@@ -367,11 +367,11 @@
               <div class="legacypoints_number"><span id="total-normal-achievements"></span></div>
             </div>
             <div class="objectivegroup_stats">
-              <div class="provenance_stat">Skills Multiplier:</div>
+              <div class="provenance_stat starfight_effect">SKILLS MULTIPLIER:</div>
               <div class="provenance_number"><span id="normal-achievements-effect"></span>x</div>
-              <div class="provenance_stat">Leadership gain:</div>
+              <div class="provenance_stat starfight_effect">LEADERSHIP GAIN:</div>
               <div class="provenance_number"><span id="normal-achievements-patience-effect"></span>x</div>
-              <div class="provenance_stat">Leadership kept on Leader Up:</div>
+              <div class="provenance_stat starfight_effect">LEADERSHIP KEPT ON LEADER UP:</div>
               <div class="provenance_number"><span id="normal-achievements-patience-kept-effect"></span>x</div>
             </div>
           </div>
@@ -381,11 +381,11 @@
               <div class="legacypoints_number"><span id="total-lategame-achievements"></span></div>
             </div>
             <div class="objectivegroup_stats">
-              <div class="provenance_stat">Leadership gain:</div>
+              <div class="provenance_stat starfight_effect">LEADERSHIP GAIN:</div>
               <div class="provenance_number"><span id="lategame-achievements-patience-effect"></span>x</div>
-              <div class="provenance_stat">Missions complete:</div>
+              <div class="provenance_stat starfight_effect">MISSIONS COMPLETE:</div>
               <div class="provenance_number"><span id="lategame-achievements-completions-effect"></span>x</div>
-              <div class="provenance_stat">Leadership kept on Leader Up:</div>
+              <div class="provenance_stat starfight_effect">LEADERSHIP KEPT ON LEADER UP:</div>
               <div class="provenance_number"><span id="lategame-achievements-patience-kept-effect"></span>x</div>
             </div>
           </div>
@@ -689,7 +689,7 @@
               <div><span>BEST:</span></div>
               <div><span>STARTING LEADERSHIP:</span></div>
               <div><span>PROVENANCE per SEC:</span></div>
-              <div><span>TIMES COMPLETE:</span></div>
+              <div><span>OVERCOMPLETE:</span></div>
             </div>
             <div class="missiongroup_number">
               <div><span id="record-development-in-logarithmic"></span></div>
@@ -704,12 +704,22 @@
           <button class="mission_button tooltip" id="inefficient-button" onclick="enterChallenge('inefficient')">
             <span class="button_title">PASSIVE WAR</span>
             <span class="legacygroup_subtext"><br/>Policies prevent using Weapons aggressively,<br/> even in times of war.<br/></span>
-            Goal: <span id="inefficient-goal"></span> Starfight
+            <span class="legacygroup_subtext">Goal: <span id="inefficient-goal"></span> Starfight</span>
           </button>
-          <div class="mission_stats mission_header">Best:<span class="mission_number" id="record-development-in-inefficient"></span></div>
-          <div class="mission_stats">Production Multiplier<span class="mission_number" id="inefficient-reward-description"></span></div>
-          <div class="mission_stats"><span class="text_hidden">....</span></div>
-          <div class="mission_stats">Times Complete:<span class="mission_number" id="inefficient-completed-description"></span></div>
+          <div class="missiongroup_stats">
+            <div class="missiongroup_stat">
+              <div><span>BEST:</span></div>
+              <div><span>PRODUCTION MULTIPLIER:</span></div>
+              <div><span class="text_hidden">....</span></div>
+              <div><span>OVERCOMPLETE:</span></div>
+            </div>
+            <div class="missiongroup_number">
+              <div><span id="record-development-in-inefficient"></span></div>
+              <div><span id="inefficient-reward-description"></span></div>
+              <div><span class="text_hidden">....</span></div>
+              <div><span id="inefficient-completed-description"></span></div>
+            </div>
+          </div>
         </div>
         <!-- MISSION: -- SYSTEMS DOWN -->
         <div class="mission" id="ufd-td" style="display: none;">

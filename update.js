@@ -157,7 +157,7 @@ function getUpdatePowerEffect(i) {
 }
 
 const UPGRADE_COSTS = [5, 1e4];
-const UPGRADE_COSTS_NEW = [15, 3e4, 10, 2e4, 5, 1e4];
+const UPGRADE_COSTS_NEW = [15, 1e6, 10, 1e5, 5, 1e4];
 
 
 const HARD_MODE_UPGRADE_COSTS = [10, 1e6];
@@ -189,5 +189,6 @@ function buyUpdateUpgrade(i, j) {
     return false;
   }
   player.experience[j] = player.experience[j].minus(getUpgradeCost(i,j));
+  //player.updatePoints = player.updatePoints.minus(getUpgradeCost(i,j));   //consider spending legacy to upgrade
   player.upgrades[i][j] = true;
 }
