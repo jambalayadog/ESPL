@@ -228,7 +228,7 @@ function confirmPrestige(i) {
 }
 
 function prestigeCore(i, now, oldProgress) {
-  console.log('D: effect: ', Number(getEffect(i)));
+  //console.log('D: effect: ', Number(getEffect(i)));
   for (let j = 0; j <= 4; j++) {
     player.progress[j] = 0;
     player.devs[j] = 0;

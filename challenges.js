@@ -117,7 +117,7 @@ function nextChallengeUnlock() {
   if (locked.length === 0) {
     return 'All Missions are unlocked.';
   } else {
-    return 'Next Mission unlocks at ' + toTime(getChallengeUnlock(locked[0])) + ' Starfight.';
+    return 'NEXT MISSION UNLOCK: <span class="legacypoints_number">' + toTime(getChallengeUnlock(locked[0])) + '</span>';
   }
 }
 
@@ -176,5 +176,14 @@ function confirmExitChallenge() {
     'You will not get further in it than you are now until you enter it again, and every Starfight Win resets will reset.');
   } else {
     return true;
+  }
+}
+
+function getProgressToNextChallenge() {
+  let locked = sortedChallenges().filter(x => !isChallengeUnlocked(x));
+  if (locked.length === 0) {
+    return 0;
+  } else {
+    return getChallengeUnlock(locked[0]);
   }
 }

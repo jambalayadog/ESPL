@@ -72,6 +72,7 @@
             <div><span class="aspect_effect" id="progress-span-0">0:00:00</span></div>
           </div>
           <div class="activity_effect">
+            <div><progress class="p1" id="progress_starfight3" value="0.5"></progress></div>
           </div>
           <div class="activity_skill">
             <div><span class="starfight_skill">SKILL:</span> <span class="text_hidden">...</span><span id="devs-0"></span></div>
@@ -91,8 +92,8 @@
             </div>
           </div>
           <div class="activity_prestige_name"></div>
-          <div class="activity_progress"> </div>
-          <div class="activity_prestige_effect"></div>
+          <div class="activity_progress starfight_effect"><span id="progressVsChallengeText">MISSION UNLOCK:<span> </div>
+          <div class="activity_prestige_effect"><progress class="p1" id="progressVsChallenge" value="0"></progress> </div>
           <div class="activity_prestige_control">
             <div><button class="prestige_button" id="update-button" onclick="update()"><span class="button_title">SETTLE WAR</span><br/><span class="activity_prestige_info" id="update-gain"></span><progress class="p1" id="progress_armistice" value="0"></progress></button></div>
           </div>
@@ -538,19 +539,19 @@
           </div>
           <div class="legacyachievements_group">
             <div class="legacyachievements_grouprow">
-              <span><span id="milestone-status-0">&#x2718;</span> Auto Leadership Matrix</span><span class="text_hidden">.......</span><span>2+ Missions complete</span>
+              <span><span id="milestone-status-0">&#x2718;</span> Auto Leadership Matrix</span><span class="text_hidden">.llllflfll...</span><span>2+ Missions complete</span>
             </div>
             <div class="legacyachievements_grouprow">
-              <span><span id="milestone-status-1">&#x2718;</span> Auto Retrofit Scheduling</span><span class="text_hidden">f1lll</span><span>4+ Missions complete</span>
+              <span><span id="milestone-status-1">&#x2718;</span> Auto Retrofit Scheduling</span><span class="text_hidden">f1flflllll</span><span>4+ Missions complete</span>
             </div>
             <div class="legacyachievements_grouprow">
-              <span><span id="milestone-status-2">&#x2718;</span> Auto Starfight Planning</span><span class="text_hidden">.ll1l_</span><span>8+ Missions complete</span>
+              <span><span id="milestone-status-2">&#x2718;</span> Auto Starfight Planning</span><span class="text_hidden">.llflfll1l_</span><span>8+ Missions complete</span>
             </div>
             <div class="legacyachievements_grouprow">
               <span><span id="milestone-status-3">&#x2718;</span> Auto Legacy Introspection</span><span class="text_hidden"> llfll</span><span>16+ Missions complete</span>
             </div>
             <div class="legacyachievements_grouprow">
-              <span><span id="milestone-status-4">&#x2718;</span> Extra 1% from Skills</span><span class="text_hidden">..........</span><span>32+ Missions complete</span>
+              <span><span id="milestone-status-4">&#x2718;</span> Extra 1% from Skills</span><span class="text_hidden">......flfll....</span><span>32+ Missions complete</span>
             </div> 
           </div>
         </div>
@@ -666,10 +667,10 @@
   <div id="challenges-div" style="display: none;">
     <div class="missions_container">
       <div class="mission_control">
-        <div class="mission_control_element missioncontrol_text"><span id="next-challenge-unlock">Next Mission unlocks eventually.</span></div>
-        <div class="mission_control_element missioncontrol_text">Current: <span id="missioncontrol_currentmission"></span></div>
+        <div class="mission_control_element missiontitle_stat"><span id="next-challenge-unlock">NEXT MISSION UNLOCK:</span></div>
+        <div class="mission_control_element missiontitle_stat">CURRENT: <span class="legacypoints_number" id="missioncontrol_currentmission"></span></div>
         <div class="mission_control_element"><span><button class="mission_abort_button" onclick="exitChallenge()">Exit Current Mission</button></span></div>
-        <div class="mission_control_element missioncontrol_text">Complete: <span id="missioncontrol_missionscomplete"></span></div>
+        <div class="mission_control_element missiontitle_stat">COMPLETE: <span class="legacypoints_number" id="missioncontrol_missionscomplete"></span></div>
       </div>
       <div class="missions_list">
         <!-- MISSION: -- SOULO -->
@@ -677,16 +678,26 @@
           <button class="mission_button tooltip" id="logarithmic-button" onclick="enterChallenge('logarithmic')">
             <span class="button_title">INNER SOULO</span>
             <span class="legacygroup_subtext"><br/>Starfighter skills are nerfed as are many multipliers but you are augmented by your missions complete.<br/></span>
-            Goal: <span id="logarithmic-goal"></span> Starfight
+            <span class="legacygroup_subtext">Goal: <span id="logarithmic-goal"></span> Starfight</span>
             <span class="tooltiptext">
               Every 30 minutes Starfight reached grants permanent Leader Ranks, up to 10.
               <br><br>After 12 hours, you being to produce Provenance which boosts Player Weapons and Fleet Weapons.
             </span>
           </button>
-          <div class="mission_stats mission_header">Best:<span class="mission_number" id="record-development-in-logarithmic"></span></div>
-          <div class="mission_stats">Starting Leadership:<span class="mission_number" id="logarithmic-reward-description"></span></div>
-          <div class="mission_stats">Provenance per Second:<span class="mission_number" id="missions_provenance_per_second"></span></div>
-          <div class="mission_stats">Times Complete:<span class="mission_number" id="logarithmic-completed-description"></span></div>
+          <div class="missiongroup_stats">
+            <div class="missiongroup_stat">
+              <div><span>BEST:</span></div>
+              <div><span>STARTING LEADERSHIP:</span></div>
+              <div><span>PROVENANCE per SEC:</span></div>
+              <div><span>TIMES COMPLETE:</span></div>
+            </div>
+            <div class="missiongroup_number">
+              <div><span id="record-development-in-logarithmic"></span></div>
+              <div><span id="logarithmic-reward-description"></span></div>
+              <div><span id="missions_provenance_per_second"></span>.</div>
+              <div><span id="logarithmic-completed-description"></span></div>
+            </div>
+          </div>  
         </div>
         <!-- MISSION: -- WEAPONLESS -->
         <div class="mission" id="inefficient-td" style="display: none;">

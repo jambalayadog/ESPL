@@ -124,6 +124,22 @@ function updateDisplay () {
     document.getElementById('update-gain').innerHTML = 'Requires ' + toTime(getChallengeGoal(player.currentChallenge)) + ' Starfight<br/><br/>';
     document.getElementById('update-button').style.backgroundColor = UIColors.button_inactive;
   }
+  if (player.currentChallenge !== '' || canUpdate()) {
+    document.getElementById("progress_starfight3").style.display = '';
+    document.getElementById("progress_starfight3").value = player.progress[0] / player.stats.recordDevelopment[player.currentChallenge];
+    //console.log('progress: ', player.progress[0] / player.stats.recordDevelopment[player.currentChallenge], 'player: ', player.stats.recordDevelopment[player.currentChallenge], 'current challenge : ', player.currentChallenge)
+  } else {
+    document.getElementById("progress_starfight3").style.display = 'none';
+  }
+  //console.log('to next mission: ', getProgressToNextChallenge(), 'current: ', (player.progress[0]).toFixed(4), '%: ', (player.progress[0]/getProgressToNextChallenge()).toFixed(7));
+  if (getProgressToNextChallenge() > 1 && player.progress[0]/getProgressToNextChallenge() > 0.5 && player.currentChallenge == '') {
+    document.getElementById("progressVsChallengeText").style.display = '';
+    document.getElementById("progressVsChallenge").style.display = '';
+    document.getElementById("progressVsChallenge").value = player.progress[0]/getProgressToNextChallenge();
+  } else {
+    document.getElementById("progressVsChallengeText").style.display = 'none';
+    document.getElementById("progressVsChallenge").style.display = 'none';
+  }
   document.getElementById('update-points').innerHTML = format(player.updatePoints);
   document.getElementById('updates').innerHTML = format(player.updates);
   document.getElementById('power-gain-per-experience').innerHTML = format(getPowerGainPerExperience());
@@ -153,7 +169,7 @@ function updateDisplay () {
   // One line of code, it can go here.
   /*document.getElementById('total-challenge-completions-milestone-tab').innerHTML = format(getTotalChallengeCompletions());*/
   // Also one line of code, it can go here too.
-  document.getElementById('upgradeless-reward-up-1-0').innerHTML = format(challengeReward('upgradeless'))
+  document.getElementById('upgradeless-reward-up-1-0').innerHTML = format(getUpdateGainBase())     //getUpdateGainBase()  //challengeReward('upgradeless')
   //document.getElementById('progress-milestones').innerHTML = player.milestones;
   document.getElementById('progress-milestones-effect').innerHTML = getMilestoneEffect();
   document.getElementById('record-development').innerHTML = toTime(player.stats.recordDevelopment['']);

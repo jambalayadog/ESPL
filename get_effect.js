@@ -48,7 +48,7 @@ function findTimeToNextSkillPoint(x) {
       document.getElementById("progress_nextdev").value = k-j;
     }
     frames -= 1;
-    console.log('new: ', (newValue).toFixed(4), 'old: ',(oldValue).toFixed(4), 'rate: ',(rate).toFixed(8), 'frames: ', frames);
+    //console.log('new: ', (newValue).toFixed(4), 'old: ',(oldValue).toFixed(4), 'rate: ',(rate).toFixed(8), 'frames: ', frames);
   }
 }
 

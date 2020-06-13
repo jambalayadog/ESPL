@@ -76,6 +76,7 @@ function getPatienceMeterNewValue(old, diff, patience, enlights) {
   if (!updateUpgradeActive(1, 1)) {
     result = Math.min(1, result);
   }
+  //console.log(!updateUpgradeActive(1, 1), 'cool meter value: ', result)
   return result;
 }
 
