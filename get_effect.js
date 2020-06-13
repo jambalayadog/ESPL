@@ -39,7 +39,7 @@ function findTimeToNextSkillPoint(x) {
     let newValue = k;
     let rate = newValue / oldValue;
     oldValue = k;
-    if (rate >= 1.00004) {
+    if (rate >= 1.00004 && newValue >= 100) {
       document.getElementById("progress_nextdev").value = 1;
       frames = 20;
     } else if (frames > 0) {
@@ -53,15 +53,38 @@ function findTimeToNextSkillPoint(x) {
 }
 
 function getProgressToNextHundredth(i) {
-
+  if (typeof skillframes == 'undefined') {
+    skillframes = 0;
+  }
   if (typeof lastUpdate == 'undefined') {
     lastUpdate = [1, 1];
   }
-  index_lf = i - 1;                                                             //translate aspect to LF array
+  index_lf = i - 1;        //translate aspect to LF array
 
-  if (i == 2) {
-    off = 1;
-  } else { off = 0}
+  let firstDigit = 0;
+  let secondDigit = 0;
+  let rateComparison = 0;
+
+  if (getEffect(i) >= 10000) {
+    firstDigit = getEffect(i).toString().split('').slice(3,4);
+    secondDigit = getEffect(i).toString().split('').slice(4,5);
+    rateComparison = 1.001;
+  } else if (getEffect(i) >= 1000) {
+    firstDigit = getEffect(i).toString().split('').slice(3,4);
+    secondDigit = getEffect(i).toString().split('').slice(5,6);
+    rateComparison = 1.0005;
+  } else if (getEffect(i) < 1) {
+    firstDigit = getEffect(i).toString().split('').slice(5,6);
+    secondDigit = getEffect(i).toString().split('').slice(6,7);
+    rateComparison = 1.001;
+  } else {
+    firstDigit = getEffect(i).toString().split('').slice(4,5);
+    secondDigit = getEffect(i).toString().split('').slice(5,6);
+    rateComparison = 1.00062;
+  }
+  /*
+  //if (i == 2) { off = 1; } else { off = 0}
+  const aspecttype = i == 2 ? off = 1: off = 2;
   let firstDigit = getEffect(i).toString().split('').slice(3+off,4+off);
   let secondDigit = getEffect(i).toString().split('').slice(4+off,5+off);
   if (firstDigit == '.' ) {
@@ -70,35 +93,32 @@ function getProgressToNextHundredth(i) {
   }
   if (secondDigit == '.') {
     secondDigit = getEffect(i).toString().split('').slice(5+off,6+off);
-  }
+  }*/
   digits = Number(firstDigit + secondDigit);
-  //const showdebug = i == 2 ? console.log('digit: ', digits):'';
+  //const showdebug = i == 1 ? console.log('i: ', i, (getEffect(i)).toFixed(4), 'digits: ', digits):'';
 
   let quickprogress = getEffect(i);
   let progress = digits / 100;
-  if(i == 1){
-    //console.log('i: ', i, 'rate: ', quickprogress / lastUpdate[index_lf]);
-  }
+  let rate = quickprogress / lastUpdate[index_lf];
   //const showDebugRate = i == 1 ? console.log('i: ', i, 'rate: ', quickprogress / lastUpdate[index_lf]) : '';
-  if (quickprogress / lastUpdate[index_lf] >= 1.001 ) {  //1.00125
+  if ( (i == 1 && rate >= rateComparison) || (i == 2 && rate >= rateComparison && getEffect(i) > 0.5)) {  //1.00125
+    //console.log('getEffect(i): ', getEffect(i));
     progress = 1
-    frames = 20;
-  } else if (frames > 20 ){
+    skillframes = 20;
+  } else if (skillframes > 20 ){
     progress = 1;
   }
   if ( progress >= 1) {                                                           //loopy loop; sometimes this gets missed, may be too late in order?
     progress = 1;
   }
-  frames -= 1;
-  //const showdebug = i == 1 ? console.log('i ', i, 'Last Progress: ', lastUpdate[index_lf].toFixed(4), 'Current Progress: ', quickprogress.toFixed(4), 'Rate: ', (quickprogress / lastUpdate[index_lf]).toFixed(7),'Progress: ', progress.toFixed(4), 'currenthundredth: ', currentprogress, 'rounded: ', roundedcurrent): '';
+  skillframes -= 1;
+  const showdebug = i == 1 ? console.log('i ', i, 'Last Progress: ', lastUpdate[index_lf].toFixed(4), 'Current Progress: ', quickprogress.toFixed(4), 'Rate: ', (rate).toFixed(7), 'rateComparison: ', rateComparison, 'Progress: ', progress.toFixed(4)): '';
   lastUpdate[index_lf] = quickprogress;
 
   if (player.progress[i] == 0) {                                                  //haven't started, set it to 0
     return 0;
-  } else if (player.progress[i] <= 2) {                                          //started in the last 12 seconds, subtract -0.5 because rounding
-    return progress -= 0.5;
   } 
-  //const showdebug2 = 2 == 1 ? console.log('drogress: ', progress):'';
+  //const showdebug2 = i == 1 ? console.log('i: ', i, 'digits: ', digits, 'progress: ', progress, 'frames: ', skillframes, 'Last Progress: ', lastUpdate[index_lf].toFixed(5), 'Current Progress: ', (quickprogress).toFixed(5), 'Rate: ', (rate).toFixed(7)):'';
   return progress;
 }
 
