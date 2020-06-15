@@ -1051,13 +1051,15 @@ body {
 .missiongroup_stat {
     text-align: left;
     color: var(--text_battlestat);
-    line-height: 15px;
+    line-height: 14px;
+    padding: 0px 0px 0px 3px;
 }
 
 .missiongroup_number {
     color: var(--text_secondary);
     text-align: right;
-    line-height: 15px;
+    line-height: 14px;
+    padding: 0px 3px 0px 0px;
 }
 
 .missions_list {

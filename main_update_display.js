@@ -70,14 +70,14 @@ function updateDisplay () {
         //console.log('trueGain: ', trueGain);
         //console.log(typeof toTime(newValueFromPrestige()), toTime(newValueFromPrestige()), typeof player.progress[i], player.progress[i]);
         //console.log('i: ', i, 'rate: ', rate.toFixed(2), typeof rate, 'value: ', (player.stats.retrofits.retrofitSystems*1).toFixed(2)); //this is broken     
-        el.innerHTML = 'Base Power: ' + format(base) + '<br/>New Base: ' + format(trueGain)  + '<br/> Improvement: ' + (((rate-1)*100).toFixed(1) + '%');
+        el.innerHTML = 'Base Power: ' + format(base) + '<br/>New Base: ' + format(trueGain)  + '<br/> Improvement: ' + format((rate-1)*100) + '%';
       } else {
         rate = formatEffect(i, newValue)/formatEffect(i)
         const noProgress = formatEffect(i) == 0 ? actualNewValue = getEffect(i,newValueFromPrestige()) : actualNewValue = rate * player.stats.retrofits.retrofitSystems;
         const noProgress_checkBase2 = player.progress[i] == 0 ? base = 0 : base = player.stats.retrofits.retrofitSystems;
         //console.log('i: ', i, typeof rate, rate, typeof actualNewValue, actualNewValue);
         //console.log('i: ', i, 'rate: ', rate.toFixed(2), typeof rate, 'value: ', player.stats.retrofits.retrofitWeapons.toFixed(2));
-        el.innerHTML = 'Base Capacity: ' + format(base) + '<br/>New Base: ' + format(actualNewValue) + '<br/> Improvement: ' + (((rate-1)*100).toFixed(1) + '%');
+        el.innerHTML = 'Base Capacity: ' + format(base) + '<br/>New Base: ' + format(actualNewValue) + '<br/> Improvement: ' + format((rate-1)*100) + '%';
       }
       //el.innerHTML = formatEffect(i) + ' -> ' + formatEffect(i, newValue) + '<br/>' + toTime(player.progress[i]) + ' -> ' + toTime(newValue) + '<br/>' + toTime(newValue - player.progress[i]) + ' better<br/>'
       btn.style.backgroundColor = UIColors.button_active;    //green: active, profitable
