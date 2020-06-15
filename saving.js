@@ -217,12 +217,12 @@ function convertSaveToDecimal () {
 }
 
 function loadGameStorage () {
-  if (!localStorage.getItem('espl-save')) {
+  if (!localStorage.getItem('temp4-save')) {
     resetGame();
   } else {
     try {
       // We're loading from storage, player.options.offlineProgress isn't set yet.
-      loadGame(localStorage.getItem('espl-save'), null);
+      loadGame(localStorage.getItem('temp4-save'), null);
     } catch (ex) {
       console.log('Exception while loading game, please report this.', ex);
       resetGame();
@@ -244,7 +244,7 @@ function loadGamePrompt() {
 }
 
 function saveGame () {
-  localStorage.setItem('espl-save', btoa(JSON.stringify(player)))
+  localStorage.setItem('temp4-save', btoa(JSON.stringify(player)))
 }
 
 function exportGame () {

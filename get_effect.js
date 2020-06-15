@@ -28,7 +28,7 @@ function getEffect(i, progressOverride) {
 }
 
 function findTimeToNextSkillPoint(x) {
-  console.log('find time to next skill point');
+  //console.log('find time to next skill point');
   if (player.currentChallenge === 'lonely') {
     return 0;
   } else {
