@@ -112,7 +112,7 @@ function getProgressToNextHundredth(i) {
     progress = 1;
   }
   skillframes -= 1;
-  const showdebug = i == 1 ? console.log('i ', i, 'Last Progress: ', lastUpdate[index_lf].toFixed(4), 'Current Progress: ', quickprogress.toFixed(4), 'Rate: ', (rate).toFixed(7), 'rateComparison: ', rateComparison, 'Progress: ', progress.toFixed(4)): '';
+  //const showdebug = i == 1 ? console.log('i ', i, 'Last Progress: ', lastUpdate[index_lf].toFixed(4), 'Current Progress: ', quickprogress.toFixed(4), 'Rate: ', (rate).toFixed(7), 'rateComparison: ', rateComparison, 'Progress: ', progress.toFixed(4)): '';
   lastUpdate[index_lf] = quickprogress;
 
   if (player.progress[i] == 0) {                                                  //haven't started, set it to 0

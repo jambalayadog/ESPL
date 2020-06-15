@@ -125,10 +125,15 @@ function updateDisplay () {
     document.getElementById('update-gain').innerHTML = 'Requires ' + toTime(getChallengeGoal(player.currentChallenge)) + ' Starfight<br/><br/>';
     document.getElementById('update-button').style.backgroundColor = UIColors.button_inactive;
   }
-  if (player.currentChallenge !== '' || canUpdate()) {
+  if (player.currentChallenge !== '') {
+    recordDevelopment_currentChallenge = Math.max(player.stats.recordDevelopment[player.currentChallenge], getChallengeGoal(player.currentChallenge));
     document.getElementById("progress_starfight3").style.display = '';
-    document.getElementById("progress_starfight3").value = player.progress[0] / player.stats.recordDevelopment[player.currentChallenge];
-    //console.log('progress: ', player.progress[0] / player.stats.recordDevelopment[player.currentChallenge], 'player: ', player.stats.recordDevelopment[player.currentChallenge], 'current challenge : ', player.currentChallenge)
+    document.getElementById("progress_starfight3").value = player.progress[0] / recordDevelopment_currentChallenge;
+  } else if (player.currentChallenge == '' && canUpdate()) {
+    recordDevelopment_currentChallenge = player.stats.recordDevelopment[player.currentChallenge];
+    //console.log('progress: ', player.progress[0], 'record dev: ', recordDevelopment_currentChallenge, 'value: ', player.progress[0] / recordDevelopment_currentChallenge, 'challenge goal: ', getChallengeGoal(player.currentChallenge));
+    document.getElementById("progress_starfight3").style.display = '';
+    document.getElementById("progress_starfight3").value = player.progress[0] / recordDevelopment_currentChallenge;
   } else {
     document.getElementById("progress_starfight3").style.display = 'none';
   }

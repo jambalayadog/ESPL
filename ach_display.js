@@ -45,6 +45,6 @@ function updateAchievementDisplay() {
     //document.getElementById("tutorial2_help").style.visibility = "visible";   //start the second tutorial
   }
   if (checkForSpecificAchievement(8)) {
-    document.getElementById("tutorial2_help").style.visibility = "hidden";
+    //document.getElementById("tutorial2_help").style.visibility = "hidden";
   }
 }

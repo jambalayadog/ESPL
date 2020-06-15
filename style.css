@@ -1051,13 +1051,13 @@ body {
 .missiongroup_stat {
     text-align: left;
     color: var(--text_battlestat);
-    line-height: 17px;
+    line-height: 15px;
 }
 
 .missiongroup_number {
     color: var(--text_secondary);
     text-align: right;
-    line-height: 17px;
+    line-height: 15px;
 }
 
 .missions_list {
@@ -1244,15 +1244,15 @@ body {
     position: relative;
     display: inline-block;
     color:grey;
-    font-size: 30px;
+    font-size: 20px;
 }
 
 .toggle_1 {
     color: slategrey;
     /* Position the tooltip */
     position: absolute;
-    left: 50%;
-    top: -20px;
+    left: calc(50% - 11px);
+    top: -17px;
     z-index: 1;
     
     pointer-events:none;
@@ -1262,8 +1262,8 @@ body {
     color: slategrey;
     /* Position the tooltip */
     position: absolute;
-    left: calc(50% + 5px);
-    top: -20px;
+    left: calc(50% + 0px);
+    top: -17px;
     z-index: 1;
     
     pointer-events:none;
@@ -1273,8 +1273,8 @@ body {
     color: slategrey;
     /* Position the tooltip */
     position: absolute;
-    left: calc(50% + 10px);
-    top: -20px;
+    left: calc(50% + 11px);
+    top: -17px;
     z-index: 1;
     
     pointer-events:none;
@@ -1284,8 +1284,8 @@ body {
     color: slategrey;
     /* Position the tooltip */
     position: absolute;
-    left: calc(50% + 15px);
-    top: -20px;
+    left: calc(50% + 22px);
+    top: -17px;
     z-index: 1;
     pointer-events:none;
 }

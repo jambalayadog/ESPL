@@ -80,8 +80,8 @@
               <button class="skillassign_button" onclick="addToggle(0)">+</button>
               <div class="togglebtn">
                 <button class="skilltoggle_button" id="skilltoassign_starfight" onclick="toggleSkillAssignAmount(0)">Toggle</button>
-                <span class="toggle_1 toggle_active" id="toggleskill0_1">.</span>
-                <span class="toggle_2" id="toggleskill0_2">.</span>
+                <span class="toggle_1 toggle_active" id="toggleskill0_1">_</span>
+                <span class="toggle_2" id="toggleskill0_2">_</span>
               </div>
               <button class="skillassign_button" onclick="subToggle(0)">-</button>
             </div>
@@ -113,8 +113,8 @@
               <button class="skillassign_button" onclick="addToggle(3)">+</button>
               <div class="togglebtn">
                 <button class="skilltoggle_button" id="skilltoassign_piloting" onclick="toggleSkillAssignAmount(3)">Toggle</button>
-                <span class="toggle_1 toggle_active" id="toggleskill3_1">.</span>
-                <span class="toggle_2" id="toggleskill3_2">.</span>
+                <span class="toggle_1 toggle_active" id="toggleskill3_1">_</span>
+                <span class="toggle_2" id="toggleskill3_2">_</span>
               </div>
               <button class="skillassign_button" onclick="subToggle(3)">-</button>
             </div>
@@ -173,8 +173,8 @@
               <button class="skillassign_button" onclick="addToggle(2)">+</button>
               <div class="togglebtn">
                 <button class="skilltoggle_button" id="skilltoassign_systems" onclick="toggleSkillAssignAmount(2)">Toggle</button>
-                <span class="toggle_1 toggle_active" id="toggleskill2_1">.</span>
-                <span class="toggle_2" id="toggleskill2_2">.</span>
+                <span class="toggle_1 toggle_active" id="toggleskill2_1">_</span>
+                <span class="toggle_2" id="toggleskill2_2">_</span>
               </div>
               <button class="skillassign_button" onclick="subToggle(2)">-</button>
             </div>
@@ -206,8 +206,8 @@
               <button class="skillassign_button" onclick="addToggle(1)">+</button>
               <div class="togglebtn">
                 <button class="skilltoggle_button" id="skilltoassign_weapons" onclick="toggleSkillAssignAmount(1)">Toggle</button>
-                <span class="toggle_1 toggle_active" id="toggleskill1_1">.</span>
-                <span class="toggle_2" id="toggleskill1_2">.</span>
+                <span class="toggle_1 toggle_active" id="toggleskill1_1">_</span>
+                <span class="toggle_2" id="toggleskill1_2">_</span>
               </div>
               <button class="skillassign_button" onclick="subToggle(1)">-</button>
             </div>
@@ -239,8 +239,8 @@
               <button class="skillassign_button" onclick="addToggle(4)">+</button>
               <div class="togglebtn">
                 <button class="skilltoggle_button" id="skilltoassign_cool" onclick="toggleSkillAssignAmount(4)">Toggle</button>
-                <span class="toggle_1 toggle_active" id="toggleskill4_1">.</span>
-                <span class="toggle_2" id="toggleskill4_2">.</span>
+                <span class="toggle_1 toggle_active" id="toggleskill4_1">_</span>
+                <span class="toggle_2" id="toggleskill4_2">_</span>
               </div>
               <button class="skillassign_button" onclick="subToggle(4)">-</button>
             </div>
@@ -275,14 +275,23 @@
         
         <!--   AUTO BATTLE -->
         <div class="autooption_column" id="auto-update-span" >   <!--   AUTO BATTLE -->
-          <div class="auto_option"><span class="auto_spacewar" style="display:none"><input class="auto_checkbox" id="auto-update-on" onclick="toggleAutoOn('update')" type="checkbox"></input>AUTO-ARMISTICE</span></div>
-          <div><span class="auto_spacewar autooption_text" style="display:none">VALUE: <input class="auto_input" id="auto-update-value" type="text" onchange="updateAutoValue('update')"></input></span></div>
+          <div class="auto_option">
+            <span class="auto_spacewar" style="display:none">
+              <input class="auto_checkbox" id="auto-update-on" onclick="toggleAutoOn('update')" type="checkbox"></input>
+              <span class="autooption_option">AUTO-SETTLE WAR</span>
+            </span>
+          </div>
+          <div>
+            <span class="auto_spacewar starfight_skill" style="display:none">VALUE: 
+              <input class="auto_input" id="auto-update-value" type="text" onchange="updateAutoValue('update')"></input>
+            </span>
+          </div>
           <div class="togglebtn"><span class="auto_spacewar" style="display:none">
             <button class="auto_button" id="auto-update-setting" onclick="nextAutoSetting('update')"></button>
-            <span class="toggle_1 toggle_active" id="autovictorytoggle_1">.</span>
-            <span class="toggle_2" id="autovictorytoggle_2">.</span>
-            <span class="toggle_3" id="autovictorytoggle_3">.</span>
-            <span class="toggle_4" id="autovictorytoggle_4">.</span></span>
+            <span class="toggle_1 toggle_active" id="autovictorytoggle_1">_</span>
+            <span class="toggle_2" id="autovictorytoggle_2">_</span>
+            <span class="toggle_3" id="autovictorytoggle_3">_</span>
+            <span class="toggle_4" id="autovictorytoggle_4">_</span></span>
           </div>  
         </div> 
         <!--   AUTO SKILL -->
@@ -295,46 +304,72 @@
               <span class="tooltiptext tooltip_autoskilltoggle">Auto-Pilot assigns skills automatically!</span>
             </span>
           </div>
-          <div class="auto_retrofit autooption_text" style="display:none"><span>ENTER VALUE (#e#) or<br/>TIME (S or HH:MM:SS)</span></div>
+          <div class="auto_retrofit starfight_skill" style="display:none"><span>ENTER VALUE (#e#) or<br/>TIME (S or HH:MM:SS)</span></div>
         </div>
         <!--   LEGACY OPTIONS -->
         <div class="autooption_column">  <!--   LEGACY OPTIONS -->
-          <div class="auto_option"><span id="auto-assign-update-points-span" style="display: none;">
-            <input class="auto_checkbox" id="auto-assign-update-points-on" onclick="toggleAutoOn('assignUpdatePoints')" type="checkbox"></input>AUTO-SPEND LEGACY </span>
+          <div class="auto_option">
+            <span id="auto-assign-update-points-span" style="display: none;">
+              <input class="auto_checkbox" id="auto-assign-update-points-on" onclick="toggleAutoOn('assignUpdatePoints')" type="checkbox"></input>
+              <span class="autooption_option">AUTO-SPEND LEGACY</span>
+           </span>
           </div>
-          <div class="auto_retrofit autooption_text" style="display:none"><span>TRIGGER VALUE</span></div>
-          <div class="auto_retrofit autooption_text" style="display:none"><span>TRIGGER METHOD</span></div>    
+          <div class="auto_retrofit starfight_skill" style="display:none"><span>TRIGGER VALUE</span></div>
+          <div class="auto_retrofit starfight_skill" style="display:none"><span>TRIGGER METHOD</span></div>    
           <div></div>
           <div><div class="auto_option autooption_title">LEGACY OPTIONS</div></div>
         </div>
         <!--   AUTO RETROFIT   -->
         <div class="autooption_column" id="auto-prestige-span">  <!--   AUTO RETROFIT   -->
-          <div class="auto_option"><span class="auto_retrofit" style="display:none"><input class="auto_checkbox" id="auto-prestige-on" onclick="toggleAutoOn('prestige')" type="checkbox"></input>AUTO-RETROFIT</span></div>
-          <div><span class="auto_retrofit autooption_text" style="display:none">VALUE: <input class="auto_input" id="auto-prestige-value" type="text" onchange="updateAutoValue('prestige')"></input></span></div>
+          <div class="auto_option">
+            <span class="auto_retrofit" style="display:none">
+              <input class="auto_checkbox" id="auto-prestige-on" onclick="toggleAutoOn('prestige')" type="checkbox"></input>
+              <span class="autooption_option">AUTO-RETROFIT</span>
+            </span>
+          </div>
+          <div>
+            <span class="auto_retrofit starfight_skill" style="display:none">VALUE: 
+              <input class="auto_input" id="auto-prestige-value" type="text" onchange="updateAutoValue('prestige')"></input>
+            </span>
+          </div>
           <div class="togglebtn"><span class="auto_retrofit" style="display:none">
             <button class="auto_button" id="auto-prestige-setting" onclick="nextAutoSetting('prestige')"></button>
-            <span class="toggle_1 toggle_active" id="autoretrofittoggle_1">.</span>
-            <span class="toggle_2" id="autoretrofittoggle_2">.</span>
-            <span class="toggle_3" id="autoretrofittoggle_3">.</span>
-            <span class="toggle_4" id="autoretrofittoggle_4">.</span></span>
+            <span class="toggle_1 toggle_active" id="autoretrofittoggle_1">_</span>
+            <span class="toggle_2" id="autoretrofittoggle_2">_</span>
+            <span class="toggle_3" id="autoretrofittoggle_3">_</span>
+            <span class="toggle_4" id="autoretrofittoggle_4">_</span></span>
           </div>
-          <div class="togglebtn"><span class="auto_retrofit autooption_text" style="display:none">TYPE: 
+          <div class="togglebtn"><span class="auto_retrofit starfight_skill" style="display:none">TYPE: 
             <button class="auto_prioritize auto_button" id="auto-prestige-initial" onclick="toggleAutoPrestigeInitial()"></button>
-            <span class="toggle_1 toggle_active" id="retrotypetoggle_1">.</span>
-            <span class="toggle_2" id="retrotypetoggle_2">.</span></span>
+            <span class="toggle_1 toggle_active" id="retrotypetoggle_1">_</span>
+            <span class="toggle_2" id="retrotypetoggle_2">_</span></span>
           </div>
-          <div><span class="auto_retrofit autooption_text" style="display:none"><input class="auto_checkbox" id="auto-prestige-alternate" onclick="toggleAutoPrestigeAlternate()" type="checkbox"></input>TOGGLE TYPES</span></div>
+          <div>
+            <span class="auto_retrofit autooption_text" style="display:none">
+              <input class="auto_checkbox" id="auto-prestige-alternate" onclick="toggleAutoPrestigeAlternate()" type="checkbox"></input>
+              <span class="autooption_option">TOGGLE TYPES</span>
+            </span>
+          </div>
         </div>
         <!--   AUTO LEADER UP   -->
         <div class="autooption_column" id="auto-enlightened-span"> <!--   AUTO LEADER UP   -->
-          <div class="auto_option"><span class="auto_leaderup" style="display:none"><input class="auto_checkbox" id="auto-enlightened-on" onclick="toggleAutoOn('enlightened')" type="checkbox"></input>AUTO LEADER UP</span></div>
-          <div><span class="auto_leaderup autooption_text" style="display:none">VALUE: <input class="auto_input" id="auto-enlightened-value" type="text" onchange="updateAutoValue('enlightened')"></input></span></div>
+          <div class="auto_option">
+            <span class="auto_leaderup" style="display:none">
+              <input class="auto_checkbox" id="auto-enlightened-on" onclick="toggleAutoOn('enlightened')" type="checkbox"></input>
+              <span class="autooption_option">AUTO LEADER UP</span>
+            </span>
+          </div>
+          <div>
+            <span class="auto_leaderup starfight_skill" style="display:none">VALUE: 
+              <input class="auto_input" id="auto-enlightened-value" type="text" onchange="updateAutoValue('enlightened')"></input>
+            </span>
+          </div>
           <div class="togglebtn"><span class="auto_leaderup" style="display:none">
             <button class="auto_button" id="auto-enlightened-setting" onclick="nextAutoSetting('enlightened')"></button>
-            <span class="toggle_1 toggle_active" id="autoleadertoggle_1">.</span>
-            <span class="toggle_2" id="autoleadertoggle_2">.</span>
-            <span class="toggle_3" id="autoleadertoggle_3">.</span>
-            <span class="toggle_4" id="autoleadertoggle_4">.</span></span>
+            <span class="toggle_1 toggle_active" id="autoleadertoggle_1">_</span>
+            <span class="toggle_2" id="autoleadertoggle_2">_</span>
+            <span class="toggle_3" id="autoleadertoggle_3">_</span>
+            <span class="toggle_4" id="autoleadertoggle_4">_</span></span>
           </div>
         </div>
       </div>
@@ -569,9 +604,9 @@
               <div><button class="legacypoints_button" onclick="convertLegacy(0)">Convert LP to Resolve</button></div>
               <div class="togglebtn">
                 <button class="legacypoints_toggle" id="legacy_to_resolve" onclick="toggleAmount(0)">Toggle</button>
-                <span class="toggle_1 toggle_active" id="toggle0_1">.</span>
-                <span class="toggle_2" id="toggle0_2">.</span>
-                <span class="toggle_3" id="toggle0_3">.</span>
+                <span class="toggle_1 toggle_active" id="toggle0_1">_</span>
+                <span class="toggle_2" id="toggle0_2">_</span>
+                <span class="toggle_3" id="toggle0_3">_</span>
               </div>
             </div>
             <div class="legacygroup_stats">
@@ -586,7 +621,7 @@
                 <div><span id="update-effect-span-2">1</span>x</div>
               </div>
             </div>            
-            <div><button class="legacyupgrade_button" id="up-0-2-button" onclick="buyUpdateUpgrade(0, 2)"><span class="button_title">UNLOCK AUTO SKILL ALLOCATION</span><br/><span class="legacygroup_subtext">Start with 30 Skill<span class="text_hidden"><br/>.......</span></span><br/><span class="legacygroup_subtext">Cost: <span id="up-0-2-cost"></span> Resolve<span id="up-0-2-bought"></span></span></button></div>
+            <div><button class="legacyupgrade_button" id="up-0-2-button" onclick="buyUpdateUpgrade(0, 2)"><span class="button_title">OTTO PILOT</span><br/><span class="legacygroup_subtext">Start with 30 Skill<span class="text_hidden"><br/>.......</span></span><br/><span class="legacygroup_subtext">Cost: <span id="up-0-2-cost"></span> Resolve<span id="up-0-2-bought"></span></span></button></div>
             <div><button class="legacyupgrade_button" id="up-1-2-button" onclick="buyUpdateUpgrade(1, 2)"><span class="button_title">THE LAST STARFIGHTER</span><br/><span class="legacygroup_subtext">All Skills contribute extra to Starfighting<span class="text_hidden"><br/>.......</span></span><br/><span class="legacygroup_subtext">Cost: <span id="up-1-2-cost"></span> Resolve<span id="up-1-2-bought"></span></span></button></div>
             <div class="legacyfraction" id="auto-assign-update-points-row">AUTO-FRACTION: <input class="fraction_input" id="auto-assign-update-points-2" type="text" onchange="updateAutoAssignUpdatePoints(2)"></input></div>
           </div>
@@ -598,9 +633,9 @@
               <div><button class="legacypoints_button" onclick="convertLegacy(1)">Convert LP to Resonance</button></div>
               <div class="togglebtn">
                 <button class="legacypoints_toggle" id="legacy_to_resonance" onclick="toggleAmount(1)">Toggle</button>
-                <span class="toggle_1 toggle_active" id="toggle1_1">.</span>
-                <span class="toggle_2" id="toggle1_2">.</span>
-                <span class="toggle_3" id="toggle1_3">.</span>
+                <span class="toggle_1 toggle_active" id="toggle1_1">_</span>
+                <span class="toggle_2" id="toggle1_2">_</span>
+                <span class="toggle_3" id="toggle1_3">_</span>
               </div>
             </div>
             <div class="legacygroup_stats">
@@ -615,8 +650,8 @@
                 <div><span id="update-effect-span-1">1</span>x</div>
               </div>
             </div>
-            <div><button class="legacyupgrade_button" id="up-0-1-button" onclick="buyUpdateUpgrade(0, 1)"><span class="button_title">COOL AFFECTS LEADERSHIP MORE</span><br/><span class="legacygroup_subtext">Leader Up is available faster<br/></span><br/><span class="legacygroup_subtext">Cost: <span id="up-0-1-cost"></span> Resonance<span id="up-0-1-bought"></span></span></button></div>
-            <div><button class="legacyupgrade_button" id="up-1-1-button" onclick="buyUpdateUpgrade(1, 1)"><span class="button_title">SUPER DUPER LEADER</span><br/><span class="legacygroup_subtext">Leadership now increases past 1<span class="text_hidden"><br/>(but with reduced effect)</span></span><br/><span class="legacygroup_subtext">Cost: <span id="up-1-1-cost"></span> Resonance<span id="up-1-1-bought"></span></span></button></div>
+            <div><button class="legacyupgrade_button" id="up-0-1-button" onclick="buyUpdateUpgrade(0, 1)"><span class="button_title">USE THE FORCE</span><br/><span class="legacygroup_subtext">Leader Up is available faster<span class="text_hidden"><br/>.......</span></span><br/><span class="legacygroup_subtext">Cost: <span id="up-0-1-cost"></span> Resonance<span id="up-0-1-bought"></span></span></button></div>
+            <div><button class="legacyupgrade_button" id="up-1-1-button" onclick="buyUpdateUpgrade(1, 1)"><span class="button_title">THE GRAND POOBAH</span><br/><span class="legacygroup_subtext">Leadership now increases past 1<span class="text_hidden"><br/>(but with reduced effect)</span></span><br/><span class="legacygroup_subtext">Cost: <span id="up-1-1-cost"></span> Resonance<span id="up-1-1-bought"></span></span></button></div>
             <div class="legacyfraction" id="auto-assign-update-points-row">AUTO-FRACTION: <input class="fraction_input" id="auto-assign-update-points-1" type="text" onchange="updateAutoAssignUpdatePoints(1)"></input></div>
           </div>
         </div>
@@ -627,9 +662,9 @@
               <div><button class="legacypoints_button" onclick="convertLegacy(2)">Convert LP to Resource</button></div>
               <div class="togglebtn">
                 <button class="legacypoints_toggle" id="legacy_to_resource" onclick="toggleAmount(2)">Toggle</button>
-                <span class="toggle_1 toggle_active" id="toggle2_1">.</span>
-                <span class="toggle_2" id="toggle2_2">.</span>
-                <span class="toggle_3" id="toggle2_3">.</span>
+                <span class="toggle_1 toggle_active" id="toggle2_1">_</span>
+                <span class="toggle_2" id="toggle2_2">_</span>
+                <span class="toggle_3" id="toggle2_3">_</span>
               </div>
             </div>
             <div class="legacygroup_stats">
@@ -644,8 +679,8 @@
                 <div><span id="update-effect-span-0">1</span>x</div>
               </div>
             </div>
-            <div><button class="legacyupgrade_button" id="up-0-0-button" onclick="buyUpdateUpgrade(0, 0)"><span class="button_title">READY FOR THE LONG HAUL</span><br/><span class="legacygroup_subtext">Starfights get easier after 4:30:00<span class="text_hidden"><br/>.......</span></span><br/><span class="legacygroup_subtext">Cost: <span id="up-0-0-cost"></span> Resource<span id="up-0-0-bought"></span></span></button></div>
-            <div><button class="legacyupgrade_button" id="up-1-0-button" onclick="buyUpdateUpgrade(1, 0)"><span class="button_title">GAIN MORE LEGACY POINTS</span><br/><span class="legacygroup_subtext">10x Legacy Points<br/>+<span id="upgradeless-reward-up-1-0"></span>x per Hour</span><br/><span class="legacygroup_subtext">Cost: <span id="up-1-0-cost"></span> Resource<span id="up-1-0-bought"></span></span></button></div>
+            <div><button class="legacyupgrade_button" id="up-0-0-button" onclick="buyUpdateUpgrade(0, 0)"><span class="button_title">THE SPICE MUST FLOW</span><br/><span class="legacygroup_subtext">Deals make Starfight get easier after 4:30:00<span class="text_hidden"><br/>.......</span></span><br/><span class="legacygroup_subtext">Cost: <span id="up-0-0-cost"></span> Resource<span id="up-0-0-bought"></span></span></button></div>
+            <div><button class="legacyupgrade_button" id="up-1-0-button" onclick="buyUpdateUpgrade(1, 0)"><span class="button_title">BUILD A STARGATE</span><br/><span class="legacygroup_subtext">10x Legacy Points<br/>+<span id="upgradeless-reward-up-1-0"></span>x per Hour</span><br/><span class="legacygroup_subtext">Cost: <span id="up-1-0-cost"></span> Resource<span id="up-1-0-bought"></span></span></button></div>
             <div class="legacyfraction" id="auto-assign-update-points-row">AUTO-FRACTION: <input class="fraction_input" id="auto-assign-update-points-0" type="text" onchange="updateAutoAssignUpdatePoints(0)"></input></div>
           </div>
         </div>
@@ -675,7 +710,7 @@
         <!-- MISSION: -- SOULO -->
         <div class="mission" id="logarithmic-td" style="display: none;">
           <button class="mission_button tooltip" id="logarithmic-button" onclick="enterChallenge('logarithmic')">
-            <span class="button_title">INNER SOULO</span>
+            <span class="button_title">INNER SPACE</span>
             <span class="legacygroup_subtext"><br/>Starfighter skills are nerfed as are many multipliers but you are augmented by your missions complete.<br/></span>
             <span class="legacygroup_subtext">Goal: <span id="logarithmic-goal"></span> Starfight</span>
             <span class="tooltiptext">
@@ -725,84 +760,154 @@
           <button class="mission_button tooltip" id="ufd-button" onclick="enterChallenge('ufd')">
             <span class="button_title">HACK, SLICE, RIG</span>
             <span class="legacygroup_subtext"><br/>Your Starfighter's Systems and your entire Fleet's Systems are broken down.<br/></span>
-            Goal: <span id="ufd-goal"></span> Starfight
+            <span class="legacygroup_subtext">Goal: <span id="ufd-goal"></span> Starfight</span>
           </button>
-          <div class="mission_stats mission_header">Best:<span class="mission_number" id="record-development-in-ufd"></span></div>
-          <div class="mission_stats">Power Handling:<span class="mission_number" id="ufd-reward-description"></span></div>
-          <div class="mission_stats"><span class="text_hidden">....</span></div>
-          <div class="mission_stats">Times Complete:<span class="mission_number" id="ufd-completed-description"></span></div>
+          <div class="missiongroup_stats">
+            <div class="missiongroup_stat">
+              <div><span>BEST:</span></div>
+              <div><span>POWER HANDLING:</span></div>
+              <div><span class="text_hidden">....</span></div>
+              <div><span>OVERCOMPLETE:</span></div>
+            </div>
+            <div class="missiongroup_number">
+              <div><span id="record-development-in-ufd"></span></div>
+              <div><span id="ufd-reward-description"></span></div>
+              <div><span class="text_hidden">....</span></div>
+              <div><span id="ufd-completed-description"></span></div>
+            </div>
+          </div>
         </div>
         <!-- MISSION: -- COMMAND ROLE -->
         <div class="mission" id="lonely-td" style="display: none;">
           <button class="mission_button tooltip" id="lonely-button" onclick="enterChallenge('lonely')">
             <span class="button_title">COMMAND ROLE</span>
             <span class="legacygroup_subtext"><br/>You only get 1 Skill towards starfighting.<br/><span class="text_hidden">.......<br/></span></span>
-            Goal: <span id="lonely-goal"></span> Starfight
+            <span class="legacygroup_subtext">Goal: <span id="lonely-goal"></span> Starfight</span>
           </button>
-          <div class="mission_stats mission_header">Best:<span class="mission_number" id="record-development-in-lonely"></span></div>
-          <div class="mission_stats">Piloting Skill Multiplier:<span class="mission_number" id="lonely-reward-description"></span></div>
-          <div class="mission_stats"><span class="text_hidden">....</span></div>
-          <div class="mission_stats">Times Complete:<span class="mission_number" id="lonely-completed-description"></span></div>
+          <div class="missiongroup_stats">
+            <div class="missiongroup_stat">
+              <div><span>BEST:</span></div>
+              <div><span>PILOTING SKILL MULTIPLIER:</span></div>
+              <div><span class="text_hidden">....</span></div>
+              <div><span>OVERCOMPLETE:</span></div>
+            </div>
+            <div class="missiongroup_number">
+              <div><span id="record-development-in-lonely"></span></div>
+              <div><span id="lonely-reward-description"></span></div>
+              <div><span class="text_hidden">....</span></div>
+              <div><span id="lonely-completed-description"></span></div>
+            </div>
+          </div>
         </div>
         <!-- MISSION: -- NO LEADERSHIP -->
         <div class="mission" id="impatient-td" style="display: none;">
           <button class="mission_button tooltip" id="impatient-button" onclick="enterChallenge('impatient')">
             <span class="button_title">WITHOUT A LEADER</span>
             <span class="legacygroup_subtext"><br/>Leadership is always 0.<br/><span class="text_hidden">.......<br/></span></span>
-            Goal: <span id="impatient-goal"></span> Starfight
+            <span class="legacygroup_subtext">Goal: <span id="impatient-goal"></span> Starfight</span>
           </button>
-          <div class="mission_stats mission_header">Best:<span class="mission_number" id="record-development-in-impatient"></span></div>
-          <div class="mission_stats">Leadership Multiplier:<span class="mission_number" id="impatient-reward-description"></span></div>
-          <div class="mission_stats"><span class="text_hidden">....</span></div>
-          <div class="mission_stats">Times Complete:<span class="mission_number" id="impatient-completed-description"></span></div>
+          <div class="missiongroup_stats">
+            <div class="missiongroup_stat">
+              <div><span>BEST:</span></div>
+              <div><span>LEADERSHIP MULTIPLIER:</span></div>
+              <div><span class="text_hidden">....</span></div>
+              <div><span>OVERCOMPLETE:</span></div>
+            </div>
+            <div class="missiongroup_number">
+              <div><span id="record-development-in-impatient"></span></div>
+              <div><span id="impatient-reward-description"></span></div>
+              <div><span class="text_hidden">....</span></div>
+              <div><span id="impatient-completed-description"></span></div>
+            </div>
+          </div>
         </div>
         <!-- MISSION: -- CANT RETROFIT -->
         <div class="mission" id="unprestigious-td" style="display: none;">
           <button class="mission_button tooltip" id="unprestigious-button" onclick="enterChallenge('unprestigious')">
             <span class="button_title">OLD FARM EQUIPMENT</span>
             <span class="legacygroup_subtext"><br/>You can't Retrofit any of your ships.<br/><span class="text_hidden">.......<br/></span></span>
-            Goal: <span id="unprestigious-goal"></span> Starfight
+            <span class="legacygroup_subtext">Goal: <span id="unprestigious-goal"></span> Starfight</span>
           </button>
-          <div class="mission_stats mission_header">Best:<span class="mission_number" id="record-development-in-unprestigious"></span></div>
-          <div class="mission_stats">Retrofit Bonus:<span class="mission_number" id="unprestigious-reward-description"></span></div>
-          <div class="mission_stats"><span class="text_hidden">....</span></div>
-          <div class="mission_stats">Times Complete:<span class="mission_number" id="unprestigious-completed-description"></span></div>
+          <div class="missiongroup_stats">
+            <div class="missiongroup_stat">
+              <div><span>BEST:</span></div>
+              <div><span>RETROFIT BONUS:</span></div>
+              <div><span class="text_hidden">....</span></div>
+              <div><span>OVERCOMPLETE:</span></div>
+            </div>
+            <div class="missiongroup_number">
+              <div><span id="record-development-in-unprestigious"></span></div>
+              <div><span id="unprestigious-reward-description"></span></div>
+              <div><span class="text_hidden">....</span></div>
+              <div><span id="unprestigious-completed-description"></span></div>
+            </div>
+          </div>
         </div>
         <!-- MISSION: -- THOUSAND TIMES SLOWER -->
         <div class="mission" id="slow-td" style="display: none;">
           <button class="mission_button tooltip" id="slow-button" onclick="enterChallenge('slow')">
             <span class="button_title">SPACE SHIT CREEK</span>
             <span class="legacygroup_subtext"><br/>Leadership and Legacy Powers are a thousand times slower.<br/></span>
-            Goal: <span id="slow-goal"></span> Starfight
+            <span class="legacygroup_subtext">Goal: <span id="slow-goal"></span> Starfight</span>
           </button>
-          <div class="mission_stats mission_header">Best:<span class="mission_number" id="record-development-in-slow"></span></div>
-          <div class="mission_stats">Game Speed:<span class="mission_number" id="slow-reward-description"></span></div>
-          <div class="mission_stats"><span class="text_hidden">....</span></div>
-          <div class="mission_stats">Times Complete:<span class="mission_number" id="slow-completed-description"></span></div>
+          <div class="missiongroup_stats">
+            <div class="missiongroup_stat">
+              <div><span>BEST:</span></div>
+              <div><span>GAME SPEED:</span></div>
+              <div><span class="text_hidden">....</span></div>
+              <div><span>OVERCOMPLETE:</span></div>
+            </div>
+            <div class="missiongroup_number">
+              <div><span id="record-development-in-slow"></span></div>
+              <div><span id="slow-reward-description"></span></div>
+              <div><span class="text_hidden">....</span></div>
+              <div><span id="slow-completed-description"></span></div>
+            </div>
+          </div>
         </div>
         <!-- MISSION: -- NO LEGACY -->
         <div class="mission" id="powerless-td" style="display: none;">
           <button class="mission_button tooltip" id="powerless-button" onclick="enterChallenge('powerless')">
             <span class="button_title">WHO DO YOU THINK YOU ARE... I AM</span>
             <span class="legacygroup_subtext"><br/>Your Legacy Powers are useless.<br/><span class="text_hidden">.......<br/></span></span>
-            Goal: <span id="powerless-goal"></span> Starfight
+            <span class="legacygroup_subtext">Goal: <span id="powerless-goal"></span> Starfight</span>
           </button>
-          <div class="mission_stats mission_header">Best:<span class="mission_number" id="record-development-in-powerless"></span></div>
-          <div class="mission_stats">Legacy Power Power:<span class="mission_number" id="powerless-reward-description"></span></div>
-          <div class="mission_stats"><span class="text_hidden">....</span></div>
-          <div class="mission_stats">Times Complete:<span class="mission_number" id="powerless-completed-description"></span></div>
+          <div class="missiongroup_stats">
+            <div class="missiongroup_stat">
+              <div><span>BEST:</span></div>
+              <div><span>LEGACY POWER POWER:</span></div>
+              <div><span class="text_hidden">....</span></div>
+              <div><span>OVERCOMPLETE:</span></div>
+            </div>
+            <div class="missiongroup_number">
+              <div><span id="record-development-in-powerless"></span></div>
+              <div><span id="powerless-reward-description"></span></div>
+              <div><span class="text_hidden">....</span></div>
+              <div><span id="powerless-completed-description"></span></div>
+            </div>
+          </div>
         </div>
         <!-- MISSION: -- UPGRADELESS -->
         <div class="mission" id="upgradeless-td" style="display: none;">
           <button class="mission_button tooltip" id="upgradeless-button" onclick="enterChallenge('upgradeless')">
             <span class="button_title">EVERYTHING FOR NOTHING</span>
             <span class="legacygroup_subtext"><br/>LEGACY UPGRADES ARE MEANINGLESS.<br/><span class="text_hidden">.......<br/></span></span>
-            Goal: <span id="upgradeless-goal"></span> Starfight
+            <span class="legacygroup_subtext">Goal: <span id="upgradeless-goal"></span> Starfight</span>
           </button>
-          <div class="mission_stats mission_header">Best:<span class="mission_number" id="record-development-in-upgradeless"></span></div>
-          <div class="mission_stats">Legacy Point Gain Multiplier:<span class="mission_number" id="upgradeless-reward-description"></span></div>
-          <div class="mission_stats"><span class="text_hidden">....</span></div>
-          <div class="mission_stats">Times Complete:<span class="mission_number" id="upgradeless-completed-description"></span></div>
+          <div class="missiongroup_stats">
+            <div class="missiongroup_stat">
+              <div><span>BEST:</span></div>
+              <div><span>LEGACY POINT GAIN MULTIPLIER:</span></div>
+              <div><span class="text_hidden">....</span></div>
+              <div><span>OVERCOMPLETE:</span></div>
+            </div>
+            <div class="missiongroup_number">
+              <div><span id="record-development-in-upgradeless"></span></div>
+              <div><span id="upgradeless-reward-description"></span></div>
+              <div><span class="text_hidden">....</span></div>
+              <div><span id="upgradeless-completed-description"></span></div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
