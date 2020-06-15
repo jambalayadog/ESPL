@@ -140,7 +140,6 @@ function realTimeToGameTime(diff) {
 }
 
 function gameCode(diff) {
-  console.log('- loop start')
   let now = Date.now();
   if (diff === undefined) {
     diff = debug.speedmultiplier * (now - player.lastUpdate) / 1000;
@@ -149,28 +148,18 @@ function gameCode(diff) {
     diff = 0;
   }
   realDiff = diff;
-  console.log(' get diff')
+
   diff = realTimeToGameTime(diff);
   player.lastUpdate = now;
-  console.log(' doing autothings')
   doAutoThings();
-  console.log(' add to progress')
   addToProgress(diff);
-  console.log(' add to patience')
   addToPatience(diff);
-  console.log(' add to update power')
   addToUpdatePower(diff);
-  console.log(' adding to dilation')
   addToDilation(diff);
-  console.log(' check for milestones')
   checkForMilestones();
-  console.log(' check for completion milestones')
   checkForCompletionMilestones();
-  console.log(' check for record development')
   checkForRecordDevelopement();
-  console.log(' check for achievements and lore')
   checkForAchievementsAndLore();
-  console.log('- loop done')
 }
 
 function checkForRecordDevelopement() {

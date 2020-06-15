@@ -8,11 +8,8 @@ var MainUIColors = {
 }
 
 function updateDisplay () {
-  console.log('- update display ---- loop start');
-  console.log('UD update tab buttons');
   updateTabButtonDisplay();
   document.getElementById("current-fight-time").innerHTML = toTime(player.progress[0]);
-  console.log('UD update progress bars');
   for (let i = 0; i <= 6; i++) {
     
     if (i == 2 || i == 1)  {
@@ -30,16 +27,12 @@ function updateDisplay () {
   for (let i = 0; i <= 4; i++) {
     document.getElementById("devs-" + i).innerHTML = format(player.devs[i]);
   }
-  console.log('UD Retrofit buttons');
   for (let i = 5; i <= 6; i++) {
-    console.log('UD Retrofit buttons - retrofitting button');
     let el = document.getElementById('prestige-' + i);
     let btn = document.getElementById('prestige-' + i + '-button');
     let progid = 'progress' + i + '_nextretrofit';
     let progele = document.getElementById(progid);
-    
     if (canPrestigeWithoutGain(i)) {
-      console.log('UD Retrofit buttons - can prestige without gain');
       if (i == 5) {
         let trueGain = Number(getEffect(i,(Math.max(player.progress[i], newValueFromPrestige())) / getEffect(7)));
         const noProgress_checkBase = player.progress[i] == 0 ? base = 1 : base = player.stats.retrofits.retrofitWeapons;
@@ -61,11 +54,9 @@ function updateDisplay () {
       progele.value = findTimeToNextRetrofits(i);
       btn.style.backgroundColor = UIColors.button_useless;   //yellow: active, non-profit
     } else if (canPrestige(i)) {
-      console.log('UD Retrofit buttons - can prestige');
       progele.style.display = 'none';
       let newValue = newValueFromPrestige();
       if (i == 5) {
-        console.log('UD Retrofit buttons - can prestige ', i);
         //rate = newValueFromPrestige() / player.progress[i];
         let trueGain = Number(getEffect(i,(Math.max(player.progress[i], newValueFromPrestige())) / getEffect(7)));
         const noProgress_checkBase = player.progress[i] == 0 ? base = 1 : base = player.stats.retrofits.retrofitWeapons;
@@ -79,38 +70,30 @@ function updateDisplay () {
         //console.log('i: ', i, 'rate: ', rate.toFixed(2), typeof rate, 'value: ', (player.stats.retrofits.retrofitSystems*1).toFixed(2)); //this is broken     
         el.innerHTML = 'Base Power: ' + format(base) + '<br/>New Base: ' + format(trueGain)  + '<br/> Improvement: ' + format((rate-1)*100) + '%';
       } else {
-        console.log('UD Retrofit buttons - can prestige ', i);
-        console.log('UD Retrofit buttons - can prestige ', i, ' - rate');
         rate = formatEffect(i, newValue)/formatEffect(i)
-        console.log('UD Retrofit buttons - can prestige ', i, ' - const1');
         const noProgress = formatEffect(i) == 0 ? actualNewValue = getEffect(i,newValueFromPrestige()) : actualNewValue = rate * player.stats.retrofits.retrofitSystems;
-        console.log('UD Retrofit buttons - can prestige ', i, ' - const2');
         const noProgress_checkBase2 = player.progress[i] == 0 ? base = 0 : base = player.stats.retrofits.retrofitSystems;
         //console.log('i: ', i, typeof rate, rate, typeof actualNewValue, actualNewValue);
         //console.log('i: ', i, 'rate: ', (rate).toFixed(2), typeof rate, 'value: ', player.stats.retrofits.retrofitWeapons);
-        console.log('UD Retrofit buttons - can prestige ', i, ' - inner element');
-        console.log(rate);
+        //console.log(rate);
         const infiniteRate = rate === Infinity ? improvement = ((rate-1)*100).toFixed(1) : improvement = format((rate-1)*100);
-        console.log(improvement);
+        //console.log(improvement);
         el.innerHTML = 'Base Capacity: ' + format(base) + '<br/>New Base: ' + format(actualNewValue) + '<br/> Improvement: ' + improvement + '%';  //(((rate-1)*100).toFixed(1) + '%');    //format((rate-1)*100) + '%'
-        console.log('UD Retrofit buttons - can prestige ', i, ' - end');
+        
       }
       //el.innerHTML = formatEffect(i) + ' -> ' + formatEffect(i, newValue) + '<br/>' + toTime(player.progress[i]) + ' -> ' + toTime(newValue) + '<br/>' + toTime(newValue - player.progress[i]) + ' better<br/>'
       btn.style.backgroundColor = UIColors.button_active;    //green: active, profitable
     } else if (player.currentChallenge === 'unprestigious') {
-      console.log('UD Retrofit buttons - disabled');
       progele.style.display = 'none';
       el.innerHTML = 'Disabled in this mission';
       btn.style.backgroundColor = UIColors.button_inactive;  //dark grey: disabled
     } else {
-      console.log('UD Retrofit buttons - needs 30 min starfight');
       progele.style.display = 'none';
       el.innerHTML = 'Requires ' + toTime(1800) + ' Starfight<br/><br/>';  
       btn.style.backgroundColor = UIColors.button_inactive;  //dark grey: disabled
     }
   }
 
-  console.log('UD Leadership buttons');
   if (player.progress[7] >= 1) {
     document.getElementById('enlightened-desc').innerHTML = '<br/>Reset Leadership and make it slower but stronger<br/>';
     document.getElementById("progress_leader").style.display = 'none';
@@ -121,7 +104,6 @@ function updateDisplay () {
     document.getElementById("progress_leader").value = player.progress[7];
     document.getElementById('enlightened-button').style.backgroundColor = UIColors.button_inactive;
   }
-  console.log('UD show progress starfight after 30 minutes');
   if (player.progress[0] >= 1800) {
     document.getElementById("progress_starfight").style.display = 'none';
     document.getElementById("progress_starfight2").style.display = 'none';
@@ -131,7 +113,6 @@ function updateDisplay () {
     document.getElementById("progress_starfight2").style.display = '';
     document.getElementById("progress_starfight2").value = player.progress[0] / 1800;
   }
-  console.log('UD show progress starfight after 5 hours');
   if (player.progress[0] >= 18000) {
     document.getElementById("progress_armistice").style.visibility = 'hidden';
   } else {
