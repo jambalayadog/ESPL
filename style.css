@@ -826,8 +826,9 @@ body {
 
 
 .provenance_button {
-    width: 180px;
+    width: 210px;
     height: 60px;
+    border: 1px solid;
 }
 
 .legacyupgrade_group {
@@ -909,10 +910,13 @@ body {
     grid-template-columns: 
         auto auto;
     border: var(--debug_border);
-    padding: 20px;
+    padding: 10px 20px 10px 20px;
     color: var(--text_secondary);
 }
 
+.legacybutton_padding {
+    padding: 10px 0px 10px 0px;
+}
 
 .legacyupgrade_button {
     border: 1px solid;
@@ -924,11 +928,8 @@ body {
 }
 
 .legacyfraction {
-    border: var(--debug_border);
-    padding: 1px;
-    color: var(--act_color);
-    font-size: 10px;
-    font-weight: bold;
+    padding: 3px 0px 0px 0px;
+    line-height: 19px;
 }
 
 
@@ -937,7 +938,7 @@ body {
 .legacyachievements_group {
     font-size: 12px;
     padding: 5px;
-    color: var(--text_progress);
+    color: var(--text_battlestat);
 }
 
 .legacyachievements_grouprow {
@@ -952,11 +953,11 @@ body {
 
 .legacyachievements_title {
     box-shadow: var(--box_shadow);
-    border: var(--border_black);
+    /*border: var(--border_black);*/
     font-weight: bold;
     font-size: 14px;
     padding: 5px;
-    background-color: var(--act_bg);
+    background-color: var(--background_titledark);
     color: var(--text_primary);
     /*width: 10%;*/
     box-sizing: border-box;

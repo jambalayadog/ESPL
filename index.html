@@ -309,10 +309,7 @@
         <!--   LEGACY OPTIONS -->
         <div class="autooption_column">  <!--   LEGACY OPTIONS -->
           <div class="auto_option">
-            <span id="auto-assign-update-points-span" style="display: none;">
-              <input class="auto_checkbox" id="auto-assign-update-points-on" onclick="toggleAutoOn('assignUpdatePoints')" type="checkbox"></input>
-              <span class="autooption_option">AUTO-SPEND LEGACY</span>
-           </span>
+            
           </div>
           <div class="auto_retrofit starfight_skill" style="display:none"><span>TRIGGER VALUE</span></div>
           <div class="auto_retrofit starfight_skill" style="display:none"><span>TRIGGER METHOD</span></div>    
@@ -538,7 +535,7 @@
           <div class="legacystatus_stats">
             <div class="provenance_stat">
               <div><span class="starfight_effect">CLAIMED VICTORIES:</span></div>
-              <div><span class="starfight_effect">CO-PILOT SKILL (FROM VICTORIES):</span></div>
+              <div><span class="starfight_effect">CO-PILOT SKILL:</span></div>  <!-- from victories -->
               <div><span class="starfight_effect">POWER PER XP PER SEC:</span></div>
             </div>
             <div class="provenance_number">
@@ -553,8 +550,8 @@
         <div class="provenancestatus_stats" id="dilation" style="visibility: hidden;">
           <div class="provenance_stats">
             <div class="provenance_stat">
-              <div>Provenance:</div>
-              <div>Weapons, Systems Power:</div>
+              <div><span class="starfight_effect">PROVENANCE:</span></div>
+              <div><span class="starfight_effect">WEAPONS + SYSTEMS EXP:</span></div>
             </div>
             <div class="provenance_number">
               <div><span id="dilation-text"></span></div>
@@ -586,13 +583,22 @@
             </div>
             <div class="legacyachievements_grouprow">
               <span><span id="milestone-status-4">&#x2718;</span> Extra 1% from Skills</span><span class="text_hidden">......flfll....</span><span>32+ Missions complete</span>
-            </div> 
+            </div>
+            <div>
+              <span class="text_hidden">. </span>
+            </div>
+            <div> 
+              <span id="auto-assign-update-points-span" style="display: none;">
+                <input class="auto_checkbox" id="auto-assign-update-points-on" onclick="toggleAutoOn('assignUpdatePoints')" type="checkbox"></input>
+                <span class="autooption_option">AUTO-SPEND LEGACY</span>
+              </span>
+            </div>
           </div>
         </div>
         
         
       </div>
-      <div style="line-height: 11px;"><span>. </span>
+      <div style="line-height: 5px;"><span class="text_hidden">. </span>
 
       </div>
       <!-- Legacy Upgrades -->
@@ -609,6 +615,7 @@
                 <span class="toggle_3" id="toggle0_3">_</span>
               </div>
             </div>
+            <div class="starfight_skill legacyfraction" id="auto-assign-update-points-row">AUTO-LEGACY: <input class="fraction_input" id="auto-assign-update-points-2" type="text" onchange="updateAutoAssignUpdatePoints(2)"></input></div>
             <div class="legacygroup_stats">
               <div class="provenance_stat">
                 <div><span class="starfight_effect">RESOLVE:</span></div>
@@ -621,9 +628,9 @@
                 <div><span id="update-effect-span-2">1</span>x</div>
               </div>
             </div>            
-            <div><button class="legacyupgrade_button" id="up-0-2-button" onclick="buyUpdateUpgrade(0, 2)"><span class="button_title">OTTO PILOT</span><br/><span class="legacygroup_subtext">Start with 30 Skill<span class="text_hidden"><br/>.......</span></span><br/><span class="legacygroup_subtext">Cost: <span id="up-0-2-cost"></span> Resolve<span id="up-0-2-bought"></span></span></button></div>
+            <div class="legacybutton_padding"><button class="legacyupgrade_button" id="up-0-2-button" onclick="buyUpdateUpgrade(0, 2)"><span class="button_title">OTTO PILOT</span><br/><span class="legacygroup_subtext">Start with 30 Skill<span class="text_hidden"><br/>.......</span></span><br/><span class="legacygroup_subtext">Cost: <span id="up-0-2-cost"></span> Resolve<span id="up-0-2-bought"></span></span></button></div>
             <div><button class="legacyupgrade_button" id="up-1-2-button" onclick="buyUpdateUpgrade(1, 2)"><span class="button_title">THE LAST STARFIGHTER</span><br/><span class="legacygroup_subtext">All Skills contribute extra to Starfighting<span class="text_hidden"><br/>.......</span></span><br/><span class="legacygroup_subtext">Cost: <span id="up-1-2-cost"></span> Resolve<span id="up-1-2-bought"></span></span></button></div>
-            <div class="legacyfraction" id="auto-assign-update-points-row">AUTO-FRACTION: <input class="fraction_input" id="auto-assign-update-points-2" type="text" onchange="updateAutoAssignUpdatePoints(2)"></input></div>
+            
           </div>
         </div>
         <div class="legacyupgrade_upgrade">
@@ -638,6 +645,7 @@
                 <span class="toggle_3" id="toggle1_3">_</span>
               </div>
             </div>
+            <div class="starfight_skill legacyfraction" id="auto-assign-update-points-row">AUTO-LEGACY: <input class="fraction_input" id="auto-assign-update-points-1" type="text" onchange="updateAutoAssignUpdatePoints(1)"></input></div>
             <div class="legacygroup_stats">
               <div class="provenance_stat">
                 <div><span class="starfight_effect">RESONANCE:</span></div>
@@ -650,9 +658,9 @@
                 <div><span id="update-effect-span-1">1</span>x</div>
               </div>
             </div>
-            <div><button class="legacyupgrade_button" id="up-0-1-button" onclick="buyUpdateUpgrade(0, 1)"><span class="button_title">USE THE FORCE</span><br/><span class="legacygroup_subtext">Leader Up is available faster<span class="text_hidden"><br/>.......</span></span><br/><span class="legacygroup_subtext">Cost: <span id="up-0-1-cost"></span> Resonance<span id="up-0-1-bought"></span></span></button></div>
+            <div class="legacybutton_padding"><button class="legacyupgrade_button" id="up-0-1-button" onclick="buyUpdateUpgrade(0, 1)"><span class="button_title">USE THE FORCE</span><br/><span class="legacygroup_subtext">Leader Up is available faster<span class="text_hidden"><br/>.......</span></span><br/><span class="legacygroup_subtext">Cost: <span id="up-0-1-cost"></span> Resonance<span id="up-0-1-bought"></span></span></button></div>
             <div><button class="legacyupgrade_button" id="up-1-1-button" onclick="buyUpdateUpgrade(1, 1)"><span class="button_title">THE GRAND POOBAH</span><br/><span class="legacygroup_subtext">Leadership now increases past 1<span class="text_hidden"><br/>(but with reduced effect)</span></span><br/><span class="legacygroup_subtext">Cost: <span id="up-1-1-cost"></span> Resonance<span id="up-1-1-bought"></span></span></button></div>
-            <div class="legacyfraction" id="auto-assign-update-points-row">AUTO-FRACTION: <input class="fraction_input" id="auto-assign-update-points-1" type="text" onchange="updateAutoAssignUpdatePoints(1)"></input></div>
+            
           </div>
         </div>
         <div class="legacyupgrade_upgrade">
@@ -667,6 +675,7 @@
                 <span class="toggle_3" id="toggle2_3">_</span>
               </div>
             </div>
+            <div class="starfight_skill legacyfraction" id="auto-assign-update-points-row">AUTO-LEGACY: <input class="fraction_input" id="auto-assign-update-points-0" type="text" onchange="updateAutoAssignUpdatePoints(0)"></input></div>
             <div class="legacygroup_stats">
               <div class="provenance_stat">
                 <div><span class="starfight_effect">RESOURCE:</span></div>
@@ -679,9 +688,9 @@
                 <div><span id="update-effect-span-0">1</span>x</div>
               </div>
             </div>
-            <div><button class="legacyupgrade_button" id="up-0-0-button" onclick="buyUpdateUpgrade(0, 0)"><span class="button_title">THE SPICE MUST FLOW</span><br/><span class="legacygroup_subtext">Deals make Starfight get easier after 4:30:00<span class="text_hidden"><br/>.......</span></span><br/><span class="legacygroup_subtext">Cost: <span id="up-0-0-cost"></span> Resource<span id="up-0-0-bought"></span></span></button></div>
+            <div class="legacybutton_padding"><button class="legacyupgrade_button" id="up-0-0-button" onclick="buyUpdateUpgrade(0, 0)"><span class="button_title">THE SPICE MUST FLOW</span><br/><span class="legacygroup_subtext">Deals make Starfight get easier after 4:30:00<span class="text_hidden"><br/>.......</span></span><br/><span class="legacygroup_subtext">Cost: <span id="up-0-0-cost"></span> Resource<span id="up-0-0-bought"></span></span></button></div>
             <div><button class="legacyupgrade_button" id="up-1-0-button" onclick="buyUpdateUpgrade(1, 0)"><span class="button_title">BUILD A STARGATE</span><br/><span class="legacygroup_subtext">10x Legacy Points<br/>+<span id="upgradeless-reward-up-1-0"></span>x per Hour</span><br/><span class="legacygroup_subtext">Cost: <span id="up-1-0-cost"></span> Resource<span id="up-1-0-bought"></span></span></button></div>
-            <div class="legacyfraction" id="auto-assign-update-points-row">AUTO-FRACTION: <input class="fraction_input" id="auto-assign-update-points-0" type="text" onchange="updateAutoAssignUpdatePoints(0)"></input></div>
+            
           </div>
         </div>
       </div>

@@ -8,6 +8,7 @@ var MainUIColors = {
 }
 
 function updateDisplay () {
+  //console.log('update display - ')
   updateTabButtonDisplay();
   document.getElementById("current-fight-time").innerHTML = toTime(player.progress[0]);
   for (let i = 0; i <= 6; i++) {
@@ -20,7 +21,7 @@ function updateDisplay () {
       document.getElementById("progress-span-" + i).innerHTML = toTime(player.progress[i]);
     }
   }
-  document.getElementById("progress-span-7").innerHTML = toPercent(format(player.progress[7], 4));
+  document.getElementById("progress-span-7").innerHTML = format(player.progress[7]*100, 4) + '%';
   for (let i = 1; i <= 7; i++) {
     document.getElementById("effect-span-" + i).innerHTML = formatEffect(i);
   }
@@ -28,19 +29,26 @@ function updateDisplay () {
     document.getElementById("devs-" + i).innerHTML = format(player.devs[i]);
   }
   for (let i = 5; i <= 6; i++) {
+    //console.log('update display - prestige button')
     let el = document.getElementById('prestige-' + i);
     let btn = document.getElementById('prestige-' + i + '-button');
     let progid = 'progress' + i + '_nextretrofit';
     let progele = document.getElementById(progid);
     if (canPrestigeWithoutGain(i)) {
+      //console.log('update display - prestige button - without gain')
       if (i == 5) {
+        //console.log('update display - prestige button - without gain ', i)
         let trueGain = Number(getEffect(i,(Math.max(player.progress[i], newValueFromPrestige())) / getEffect(7)));
         const noProgress_checkBase = player.progress[i] == 0 ? base = 1 : base = player.stats.retrofits.retrofitWeapons;
-        rate = trueGain / base;
-        //el.innerHTML = 'base: ' + (base*1).toFixed(2) + '<br/>new: ' + (trueGain*1).toFixed(2) + '<br/> Improvement: ' + (((rate-1)*100).toFixed(1) + '%');
-        el.innerHTML = 'Base Power: ' + format(base) + '<br/>New Base: ' + format(trueGain) + ''
-        //el.innerHTML = formatEffect(i) + ' -> ' + formatEffect(i) + '<br/>' + toTime(player.progress[i]) + ' -> ' + toTime(player.progress[i]) + '';
+        //console.log('trueGain: ', trueGain)
+        //console.log('base: ', base)
+        const infiniteBase = base === Infinity ? base = 'Infinity' : base = format(base);
+        const infiniteTrueGain = trueGain === Infinity ? trueGain = 'Infinity' : trueGain = format(base);
+        //console.log('format(base): ', format(base))
+        //console.log('format(trueGain): ', format(trueGain))
+        el.innerHTML = 'Base Power: ' + base + '<br/>New Base: ' + format(trueGain) + ''
       } else {
+        //console.log('update display - prestige button - without gain ', i)
         let newValue = newValueFromPrestige();
         rate = formatEffect(i, newValue)/formatEffect(i);
         const noProgress = formatEffect(i) == 0 ? actualNewValue = getEffect(i,newValueFromPrestige()) : actualNewValue = rate * player.stats.retrofits.retrofitSystems;
@@ -54,29 +62,60 @@ function updateDisplay () {
       progele.value = findTimeToNextRetrofits(i);
       btn.style.backgroundColor = UIColors.button_useless;   //yellow: active, non-profit
     } else if (canPrestige(i)) {
+      //console.log('update display - prestige button - with gain')
       progele.style.display = 'none';
       let newValue = newValueFromPrestige();
       if (i == 5) {
-        //rate = newValueFromPrestige() / player.progress[i];
+        //console.log('update display - prestige button - with gain ', i)
         let trueGain = Number(getEffect(i,(Math.max(player.progress[i], newValueFromPrestige())) / getEffect(7)));
         const noProgress_checkBase = player.progress[i] == 0 ? base = 1 : base = player.stats.retrofits.retrofitWeapons;
-        //const noProgress_checkRate = player.progress[i] == 0 ? rate = newValueFromPrestige() / 1 : rate = newValueFromPrestige() / player.progress[i];
-        //const noProgress_checkNewValue = player.progress[i] == 0 ? actualNewValue = newValueFromPrestige() : actualNewValue = Number(getEffect(i,(Math.max(player.progress[i], newValueFromPrestige())) / getEffect(7)));
-        //const noProgress_checkNewValue = player.progress[i] == 0 ? actualNewValue = newValueFromPrestige() : actualNewValue = rate * player.stats.retrofits.retrofitWeapons;
-        //console.log('actual new value: ', actualNewValue, 'new value from prestige: ', newValueFromPrestige(), 'rated: ', rate * player.stats.retrofits.retrofitWeapons);
         rate = trueGain / base;
+        if (isNaN(rate)) {
+          //console.log('rate = NaN');
+          improvement = 0;
+        } else if (rate === Infinity) {
+          //console.log('rate = Infinity');
+          improvement = ((rate-1)*100).toFixed(1);
+        } else {
+          //console.log('rate = rational');
+          improvement = format((rate-1)*100);
+        }
+        //console.log(base);
+        //console.log(trueGain);
+        const infiniteBase = base === Infinity ? base = 'Infinity' : base = format(trueGain); //THIS IS BUG
+        const infiniteGain = trueGain === Infinity ? newBase = 'Infinity' : newBase = format(trueGain);
+        //console.log(improvement);
         //console.log('trueGain: ', trueGain);
         //console.log(typeof toTime(newValueFromPrestige()), toTime(newValueFromPrestige()), typeof player.progress[i], player.progress[i]);
         //console.log('i: ', i, 'rate: ', rate.toFixed(2), typeof rate, 'value: ', (player.stats.retrofits.retrofitSystems*1).toFixed(2)); //this is broken     
-        el.innerHTML = 'Base Power: ' + format(base) + '<br/>New Base: ' + format(trueGain)  + '<br/> Improvement: ' + format((rate-1)*100) + '%';
-      } else {
+        el.innerHTML = 'Base Power: ' + base + '<br/>New Base: ' + newBase  + '<br/> Improvement: ' + improvement + '%';
+        //console.log('if you see this, the bug is fixed');
+      } else {  // i == 6
+        //console.log('update display - prestige button - with gain ', i)
         rate = formatEffect(i, newValue)/formatEffect(i)
+        //console.log('update display - prestige button - with gain a', i)
         const noProgress = formatEffect(i) == 0 ? actualNewValue = getEffect(i,newValueFromPrestige()) : actualNewValue = rate * player.stats.retrofits.retrofitSystems;
+        //console.log('update display - prestige button - with gain b', i)
         const noProgress_checkBase2 = player.progress[i] == 0 ? base = 0 : base = player.stats.retrofits.retrofitSystems;
+        //console.log('update display - prestige button - with gain c', i)
         //console.log('i: ', i, typeof rate, rate, typeof actualNewValue, actualNewValue);
         //console.log('i: ', i, 'rate: ', (rate).toFixed(2), typeof rate, 'value: ', player.stats.retrofits.retrofitWeapons);
         //console.log(rate);
-        const infiniteRate = rate === Infinity ? improvement = ((rate-1)*100).toFixed(1) : improvement = format((rate-1)*100);
+        //console.log('rate: ', rate);
+        if (isNaN(rate)) {
+          //console.log('rate = NaN');
+          improvement = 0;
+        } else if (rate === Infinity) {
+          //console.log('rate = Infinity');
+          improvement = ((rate-1)*100).toFixed(1);
+        } else {
+          //console.log('rate = rational');
+          improvement = format((rate-1)*100);
+        }
+        //const infiniteRate = rate === Infinity ? improvement = ((rate-1)*100).toFixed(1) : improvement = format((rate-1)*100);
+        //console.log('base: ', base);
+        //console.log('actualNewValue: ', actualNewValue);
+        //console.log('improvement: ',  improvement);
         //console.log(improvement);
         el.innerHTML = 'Base Capacity: ' + format(base) + '<br/>New Base: ' + format(actualNewValue) + '<br/> Improvement: ' + improvement + '%';  //(((rate-1)*100).toFixed(1) + '%');    //format((rate-1)*100) + '%'
         
@@ -84,15 +123,19 @@ function updateDisplay () {
       //el.innerHTML = formatEffect(i) + ' -> ' + formatEffect(i, newValue) + '<br/>' + toTime(player.progress[i]) + ' -> ' + toTime(newValue) + '<br/>' + toTime(newValue - player.progress[i]) + ' better<br/>'
       btn.style.backgroundColor = UIColors.button_active;    //green: active, profitable
     } else if (player.currentChallenge === 'unprestigious') {
+      //console.log('update display - prestige button - in challenge')
       progele.style.display = 'none';
       el.innerHTML = 'Disabled in this mission';
       btn.style.backgroundColor = UIColors.button_inactive;  //dark grey: disabled
     } else {
+      //console.log('update display - prestige button - needs 30 min starfight')
       progele.style.display = 'none';
       el.innerHTML = 'Requires ' + toTime(1800) + ' Starfight<br/><br/>';  
       btn.style.backgroundColor = UIColors.button_inactive;  //dark grey: disabled
     }
   }
+
+  //console.log('update display - leadership')
 
   if (player.progress[7] >= 1) {
     document.getElementById('enlightened-desc').innerHTML = '<br/>Reset Leadership and make it slower but stronger<br/>';
@@ -171,6 +214,15 @@ function updateDisplay () {
       }
     }
   }
+  if (player.dilation > 0) {
+    if (player.dilation < getDilationUpgradeCost(0)) {
+      document.getElementById('dilation-upgrade-0-button').style.backgroundColor = UIColors.button_inactive;
+    } else {
+      document.getElementById('dilation-upgrade-0-button').style.backgroundColor = UIColors.button_active;
+    }
+  }
+  
+    
   updateLonelyInfoDisplay();
   updateAutoDisplay();
   updateChallengeDisplay();
@@ -179,12 +231,12 @@ function updateDisplay () {
   // Also one line of code, it can go here too.
   document.getElementById('upgradeless-reward-up-1-0').innerHTML = format(getUpdateGainBase())     //getUpdateGainBase()  //challengeReward('upgradeless')
   //document.getElementById('progress-milestones').innerHTML = player.milestones;
-  document.getElementById('progress-milestones-effect').innerHTML = getMilestoneEffect();
+  document.getElementById('progress-milestones-effect').innerHTML = format(getMilestoneEffect());
   document.getElementById('record-development').innerHTML = toTime(player.stats.recordDevelopment['']);
   document.getElementById('unassigned-devs').innerHTML = format(getUnassignedDevs());
   document.getElementById('enlightened').innerHTML = getTotalEnlightened();
   document.getElementById('last-update-point-gain').innerHTML = format(player.stats.last.updatePointGain);
-  document.getElementById('game-speed').innerHTML = format(getGameSpeed(), 4);
+  document.getElementById('game-speed').innerHTML = format(getGameSpeed(), 2);
   document.getElementById('time-since-last-enlightened').innerHTML = toTime((Date.now() - player.stats.last.enlightened) / 1000);
   document.getElementById('time-since-last-prestige').innerHTML = toTime((Date.now() - player.stats.last.prestige) / 1000);
   document.getElementById('time-since-last-update').innerHTML = toTime((Date.now() - player.stats.last.update) / 1000);

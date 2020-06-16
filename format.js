@@ -4,6 +4,9 @@ var formathelp = {
 
 
 function format(x, n) {
+  if (x === Infinity) {
+    return 'Infinity';
+  }
   x = new Decimal(x);
   if (n === undefined) {
     n = 2;
