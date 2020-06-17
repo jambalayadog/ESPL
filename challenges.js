@@ -123,7 +123,7 @@ function nextChallengeUnlock() {
 
 function getChallengeForDisplay(challenge) {
   if (challenge === '') {
-    return 'no mission';
+    return '-= None =-';
   } else if (challenge === 'ufd') {
     return 'UFD';
   } else {
