@@ -300,8 +300,9 @@ function toggleSkillAssignAmount(i) {
 
 function addToggle(i) {
   var toggleAmount = player.skill.toggles[i];
-  if (toggleAmount =="20%") { 
-    var amountToToggle = Math.floor(0.2 * getTotalDevs());
+  if (toggleAmount =="20%") {
+    var amountAvailable = getTotalDevs();
+    const amount = amountAvailable < 5 ? amountToToggle = 1 : amountToToggle = Math.floor(0.2 * getTotalDevs());
     tryToChangeDevs(i, amountToToggle);
   } else { 
     var amountToToggle = getTotalDevs();
@@ -312,7 +313,9 @@ function addToggle(i) {
 function subToggle(i) {
   var toggleAmount = player.skill.toggles[i];
   if (toggleAmount =="20%") { 
-    var amountToToggle = Math.ceil(-0.2 * getTotalDevs());
+    var amountAvailable = getTotalDevs();
+    const amount = amountAvailable < 5 ? amountToToggle = -1 : amountToToggle = Math.ceil(-0.2 * getTotalDevs());
+    //var amountToToggle = Math.ceil(-0.2 * getTotalDevs());
     tryToChangeDevs(i, amountToToggle);
   } else { 
     var amountToToggle = -getTotalDevs();

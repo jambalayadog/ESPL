@@ -17,7 +17,7 @@ function nextAutoSetting(x) {
   let z = AUTO_SETTINGS[x].length;
   if (x == 'enlightened') {
     for (i = 1; i < z+1; i++) {
-      console.log("i: ", i)
+      //console.log("i: ", i)
       if (i == y) {
         document.getElementById('autoleadertoggle_' + i).classList.add('toggle_active')
       } else {
@@ -27,7 +27,7 @@ function nextAutoSetting(x) {
   }
   if (x == 'prestige') {
     for (i = 1; i < z+1; i++) {
-      console.log("i: ", i)
+      //console.log("i: ", i)
       if (i == y) {
         document.getElementById('autoretrofittoggle_' + i).classList.add('toggle_active')
       } else {
@@ -37,7 +37,7 @@ function nextAutoSetting(x) {
   }
   if (x == 'update') {
     for (i = 1; i < z+1; i++) {
-      console.log("i: ", i)
+      //console.log("i: ", i)
       if (i == y) {
         document.getElementById('autovictorytoggle_' + i).classList.add('toggle_active')
       } else {
@@ -45,8 +45,8 @@ function nextAutoSetting(x) {
       }
     }
   }
-  console.log("index: ", AUTO_SETTINGS[x].indexOf(player.auto[x].setting) +1);
-  console.log("setting: ", player.auto[x].setting);
+  //console.log("index: ", AUTO_SETTINGS[x].indexOf(player.auto[x].setting) +1);
+  //console.log("setting: ", player.auto[x].setting);
  
 }
 
