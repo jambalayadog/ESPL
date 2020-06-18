@@ -22,9 +22,47 @@ function fillInAutoOther () {
       document.getElementById('auto-' + AUTO_LIST[i] + '-value').value = player.auto[AUTO_LIST[i]].displayValue;
       document.getElementById('auto-' + AUTO_LIST[i] + '-on').checked = player.auto[AUTO_LIST[i]].on;
     }
-    
-    
+    if ( i == 0 ) {
+      document.getElementById('autoleadertoggle_1').classList.remove('toggle_active');
+      let toggleSetting = player.auto[AUTO_LIST[i]].setting;
+      switch (toggleSetting) {
+        case 'Leader Rank':     
+          document.getElementById('autoleadertoggle_1').classList.add('toggle_active');
+          break;
+        case 'time since last Leader Up':     
+          document.getElementById('autoleadertoggle_2').classList.add('toggle_active');
+          break;
+        case 'time to fill Leadership':     
+          document.getElementById('autoleadertoggle_3').classList.add('toggle_active');
+          break;
+        case 'X-second-long Retrofit':     
+          document.getElementById('autoleadertoggle_4').classList.add('toggle_active');
+          break;
+      }
+    } else if ( i == 2 ) {
+      document.getElementById('autovictorytoggle_1').classList.remove('toggle_active');
+      let toggleSetting = player.auto[AUTO_LIST[i]].setting;
+      switch (toggleSetting) {
+        case 'Starfight time':     
+          document.getElementById('autovictorytoggle_1').classList.add('toggle_active');
+          break;
+        case 'Legacy Points':     
+          document.getElementById('autovictorytoggle_2').classList.add('toggle_active');
+          break;
+        case 'X times last Legacy Points':     
+          document.getElementById('autovictorytoggle_3').classList.add('toggle_active');
+          break;
+        case 'time since last Victory':     
+          document.getElementById('autovictorytoggle_4').classList.add('toggle_active');
+          break;
+      }
+    }
   }
+  document.getElementById('weapons_gain_auto').checked = player.auto.gain.toggles[0];
+  document.getElementById('systems_gain_auto').checked = player.auto.gain.toggles[1];
+  document.getElementById('weapons_gain_input').value = format(player.auto.gain.values[0]);
+  document.getElementById('systems_gain_input').value = format(player.auto.gain.values[1]);
+  
   //document.getElementById('auto-prestige-initial').innerHTML = ['Weapons', 'Systems'][player.auto.prestige.initial - 5];
   //document.getElementById('auto-prestige-alternate').checked = player.auto.prestige.alternate;
 }
@@ -32,6 +70,19 @@ function fillInAutoOther () {
 function fillInAutoAssignUpdatePoints() {
   for (let i = 0; i <= 2; i++) {
     document.getElementById('auto-assign-update-points-' + i).value = player.auto.assignUpdatePoints.settings[i];
+    let toggleSetting = player.legacy.toggles[i];
+    document.getElementById('toggle' + i + '_1').classList.remove('toggle_active');
+    switch (toggleSetting) {
+      case '1':
+        document.getElementById('toggle' + i + '_1').classList.add('toggle_active');
+        break;
+      case '33%':
+        document.getElementById('toggle' + i + '_2').classList.add('toggle_active');
+        break;
+      case '100%':
+        document.getElementById('toggle' + i + '_3').classList.add('toggle_active');
+        break;
+    }
   }
   document.getElementById('auto-assign-update-points-on').checked = player.auto.assignUpdatePoints.on;
 }

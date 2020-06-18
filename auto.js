@@ -118,50 +118,52 @@ function checkForAutoPrestige() {
 }
 
 function toggleAutoGain(type) {
-  //console.log('turning on or off: ', type);
+  const toggleType = type == 'systems' ? element = 'systems_gain_auto' : element = 'weapons_gain_auto';
+  let toggleValue = document.getElementById(element).checked;
+  const toggleTypeIndex = type == 'systems' ? index = 1 : index = 0;
+  player.auto.gain.toggles[index] = toggleValue;
 }
 
 function updateAutoGain(type) {
-  //console.log('updating gain value to: ', type);
   const setInput = type == 'systems' ? inputValue = Number(document.getElementById('systems_gain_input').value) : inputValue = Number(document.getElementById('weapons_gain_input').value);
   const setType = type == 'systems' ? type = 6 : type = 5;
-  console.log(type);
-  console.log(inputValue);
   player.auto.gain.values[type-5] = inputValue;
-  console.log(player.auto.gain.values);
 }
 
 function checkForAutoGain() {
-  //if ( player.currentChallenge != ''
-  //console.log('checking for autogain');
-  let systemsAutoGain = document.getElementById('systems_gain_auto').checked;
-  //console.log(systemsAutoGain);
-  if (systemsAutoGain) {
-    let systemsAutoGainValue = player.auto.gain.values[1] + 100;
-    //console.log('new value from prestige: ', newValueFromPrestige());
-    //console.log('player.progress[6]: ', player.progress[6]);
-    currentGain = formatEffect(6, newValueFromPrestige())/formatEffect(6);
-    //console.log('current gain: ', currentGain);
-    //console.log('target gain: ', systemsAutoGainValue);
-    //console.log('if: ', currentGain > systemsAutoGainValue / 100)
-    if (currentGain > systemsAutoGainValue / 100) {
-      prestige(6, true);
+  console.log(player.currentChallenge);
+  if ( player.currentChallenge != 'upgradeless') {
+    //console.log('checking for autogain');
+    let systemsAutoGain = document.getElementById('systems_gain_auto').checked;
+    //console.log(systemsAutoGain);
+    if (systemsAutoGain) {
+      let systemsAutoGainValue = player.auto.gain.values[1] + 100;
+      //console.log('new value from prestige: ', newValueFromPrestige());
+      //console.log('player.progress[6]: ', player.progress[6]);
+      currentGain = formatEffect(6, newValueFromPrestige())/formatEffect(6);
+      //console.log('current gain: ', currentGain);
+      //console.log('target gain: ', systemsAutoGainValue);
+      //console.log('if: ', currentGain > systemsAutoGainValue / 100)
+      if (currentGain > systemsAutoGainValue / 100) {
+        prestige(6, true);
+      }
+    }
+    let weaponsAutoGain = document.getElementById('weapons_gain_auto').checked;
+    if (weaponsAutoGain) {
+      let weaponsAutoGainValue = player.auto.gain.values[0] + 100;
+      //console.log('new value from prestige: ', newValueFromPrestige());
+      //console.log('player.progress[5]: ', player.progress[5]);
+      currentGain =  getImprovement(5);
+      //console.log('current gain: ', currentGain);
+      //console.log('target gain: ', weaponsAutoGainValue);
+      //console.log('if: ', currentGain > weaponsAutoGainValue / 100)
+      if (currentGain > weaponsAutoGainValue / 100) {
+        //console.log(' PRESTIGE 5 PRESTIGE 5 PRESTIGE 5 PRESTIGE 5 PRESTIGE 5 PRESTIGE 5 PRESTIGE 5 PRESTIGE 5 PRESTIGE 5 PRESTIGE 5 PRESTIGE 5 PRESTIGE 5 PRESTIGE 5 PRESTIGE 5 ');
+        prestige(5, true);
+      }
     }
   }
-  let weaponsAutoGain = document.getElementById('weapons_gain_auto').checked;
-  if (weaponsAutoGain) {
-    let weaponsAutoGainValue = player.auto.gain.values[0] + 100;
-    console.log('new value from prestige: ', newValueFromPrestige());
-    console.log('player.progress[5]: ', player.progress[5]);
-    currentGain =  getImprovement(5);
-    console.log('current gain: ', currentGain);
-    console.log('target gain: ', weaponsAutoGainValue);
-    console.log('if: ', currentGain > weaponsAutoGainValue / 100)
-    if (currentGain > weaponsAutoGainValue / 100) {
-      console.log(' PRESTIGE 5 PRESTIGE 5 PRESTIGE 5 PRESTIGE 5 PRESTIGE 5 PRESTIGE 5 PRESTIGE 5 PRESTIGE 5 PRESTIGE 5 PRESTIGE 5 PRESTIGE 5 PRESTIGE 5 PRESTIGE 5 PRESTIGE 5 ');
-      prestige(5, true);
-    }
-  }
+  
 }
 
 function checkForAutoUpdate() {
@@ -180,14 +182,14 @@ function doAutoThings() {
   if (updateUpgradeActive(0, 2) && player.auto.dev.on) {
     autoAssignDevs();
   }
-  if (hasAuto('update') && player.auto.update.on) {
+  if (hasAuto('update') && player.auto.update.on && player.currentChallenge != 'upgradeless') {
     checkForAutoUpdate();
   }
   if (hasAuto('prestige') && player.auto.prestige.on) {
     //checkForAutoPrestige();
   }
   checkForAutoGain();
-  if (hasAuto('enlightened') && player.auto.enlightened.on) {
+  if (hasAuto('enlightened') && player.auto.enlightened.on && player.currentChallenge != 'upgradeless') {
     checkForAutoEnlightened();
   }
   if (hasAuto('assign-update-points') && player.auto.assignUpdatePoints.on) {

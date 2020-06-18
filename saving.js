@@ -204,9 +204,11 @@ function fixPlayer () {
   }
   if (!('values' in player.auto.gain)) {
     player.auto.gain = {
-      values: [0,0]
+      values: [0,0],
+      toggles: [false, false]
     }
   }
+  
 }
 
 function convertSaveToDecimal () {
@@ -306,7 +308,8 @@ let initialPlayer = {
       on: false
     },
     gain: {
-      values: [0,0]
+      values: [0,0],
+      toggles: [false, false]
     }
   },
   options: {
