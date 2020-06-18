@@ -17,12 +17,16 @@ let AUTO_LIST = ['enlightened', 'prestige', 'update'];
 
 function fillInAutoOther () {
   for (let i = 0; i <= 2; i++) {
-    document.getElementById('auto-' + AUTO_LIST[i] + '-setting').innerHTML = player.auto[AUTO_LIST[i]].setting;
-    document.getElementById('auto-' + AUTO_LIST[i] + '-value').value = player.auto[AUTO_LIST[i]].displayValue;
-    document.getElementById('auto-' + AUTO_LIST[i] + '-on').checked = player.auto[AUTO_LIST[i]].on;
+    if ( i != 1 ) {
+      document.getElementById('auto-' + AUTO_LIST[i] + '-setting').innerHTML = player.auto[AUTO_LIST[i]].setting;
+      document.getElementById('auto-' + AUTO_LIST[i] + '-value').value = player.auto[AUTO_LIST[i]].displayValue;
+      document.getElementById('auto-' + AUTO_LIST[i] + '-on').checked = player.auto[AUTO_LIST[i]].on;
+    }
+    
+    
   }
-  document.getElementById('auto-prestige-initial').innerHTML = ['Weapons', 'Systems'][player.auto.prestige.initial - 5];
-  document.getElementById('auto-prestige-alternate').checked = player.auto.prestige.alternate;
+  //document.getElementById('auto-prestige-initial').innerHTML = ['Weapons', 'Systems'][player.auto.prestige.initial - 5];
+  //document.getElementById('auto-prestige-alternate').checked = player.auto.prestige.alternate;
 }
 
 function fillInAutoAssignUpdatePoints() {

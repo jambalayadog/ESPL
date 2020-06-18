@@ -147,3 +147,63 @@ function formatEffect(i, progressOverride) {
     return format(effect);
   }
 }
+
+
+function getBase(i) {
+  if (i == 5) {  //weapons
+    const noProgress_checkBase = player.progress[i] == 0 ? base = 1 : base = player.stats.retrofits.retrofitWeapons;
+    //console.log('i: ', i, 'baseA: ', base);
+    const infiniteBase = base === Infinity ? base = 'Infinity' : base = base; //THIS IS BETTER, not sure why this was what it was
+    //console.log('i: ', i, 'baseB: ', base);
+  } else {  //systems
+    const noProgress_checkBase2 = player.progress[i] == 0 ? base = 0 : base = player.stats.retrofits.retrofitSystems;
+  }
+  //console.log('i: ', i, 'base: ', base);
+  return base;
+}
+
+function getImprovement(i) {
+  if (i == 5) {  //weapons
+    let trueGain = Number(getEffect(i,(Math.max(player.progress[i], newValueFromPrestige())) / getEffect(7)));
+    rate = trueGain / getBase(i);
+    //console.log('TrueGain: ', trueGain, 'rate: ', rate);
+    if (isNaN(rate)) {
+      //console.log('rate = NaN');
+      improvement = 0;
+    } else if (rate === Infinity) {
+      //console.log('rate = Infinity');
+      improvement = ((rate-1)*100).toFixed(1);
+    } else {
+      //console.log('rate = rational');
+      improvement = format((rate-1)*100);
+    }
+  } else {  //systems
+    rate = formatEffect(i, newValueFromPrestige()) / formatEffect(i);
+    //console.log('rate: ', rate);
+    if (isNaN(rate)) {
+      //console.log('rate = NaN');
+      improvement = 0;
+    } else if (rate === Infinity) {
+      //console.log('rate = Infinity');
+      improvement = ((rate-1)*100).toFixed(1);
+    } else {
+      //console.log('rate = rational');
+      improvement = format((rate-1)*100);
+    }
+  }
+  //console.log('i: ', i, 'improvement: ', improvement);
+  return improvement;
+}
+
+function getNewBase(i) {
+  if (i == 5) {  //weapons
+    let trueGain = Number(getEffect(i,(Math.max(player.progress[i], newValueFromPrestige())) / getEffect(7)));
+    const infiniteGain = trueGain === Infinity ? newBase = 'Infinity' : newBase = format(trueGain);
+    //console.log('i: ', i, 'newBase: ', newBase);
+  } else {  //systems
+    rate = formatEffect(i, newValueFromPrestige())/formatEffect(i)
+    const noProgress = formatEffect(i) == 0 ? newBase = getEffect(i,newValueFromPrestige()) : newBase = rate * player.stats.retrofits.retrofitSystems;
+  }
+  //console.log('i: ', i, 'newBase: ', newBase);
+  return newBase;
+}

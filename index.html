@@ -304,21 +304,42 @@
               <span class="tooltiptext tooltip_autoskilltoggle">Auto-Pilot assigns skills automatically!</span>
             </span>
           </div>
-          <div class="auto_retrofit starfight_skill" style="display:none"><span>ENTER VALUE (#e#) or<br/>TIME (S or HH:MM:SS)</span></div>
+          <div></div>
         </div>
         <!--   LEGACY OPTIONS -->
         <div class="autooption_column">  <!--   LEGACY OPTIONS -->
           <div class="auto_option">
-            
+            <span class="auto_retrofit" style="display:none">
+              <input class="auto_checkbox" id="systems_gain_auto" onclick="toggleAutoGain('systems')" type="checkbox"></input>
+              <span class="autooption_option">RETROFIT SCHEDULE</span>
+            </span>
           </div>
-          <div class="auto_retrofit starfight_skill" style="display:none"><span>TRIGGER VALUE</span></div>
-          <div class="auto_retrofit starfight_skill" style="display:none"><span>TRIGGER METHOD</span></div>    
+          <div>
+            <span class="auto_retrofit starfight_skill" style="display:none">GAIN: 
+              <input class="auto_input" id="systems_gain_input" type="text" onchange="updateAutoGain('systems')" value="0"></input>
+            </span>
+          </div>
+          <div></div>    
           <div></div>
           <div><div class="auto_option autooption_title">LEGACY OPTIONS</div></div>
         </div>
         <!--   AUTO RETROFIT   -->
         <div class="autooption_column" id="auto-prestige-span">  <!--   AUTO RETROFIT   -->
           <div class="auto_option">
+            <span class="auto_retrofit" style="display:none">
+              <input class="auto_checkbox" id="weapons_gain_auto" onclick="toggleAutoGain('weapons')" type="checkbox"></input>
+              <span class="autooption_option">RETROFIT SCHEDULE</span>
+            </span>
+          </div>
+          <div>
+            <span class="auto_retrofit starfight_skill" style="display:none">GAIN: 
+              <input class="auto_input" id="weapons_gain_input" type="text" onchange="updateAutoGain('weapons')" value="0"></input>
+            </span>
+          </div>
+          <div></div>    
+          <div></div>
+          <div></div>
+          <!--<div class="auto_option">
             <span class="auto_retrofit" style="display:none">
               <input class="auto_checkbox" id="auto-prestige-on" onclick="toggleAutoOn('prestige')" type="checkbox"></input>
               <span class="autooption_option">RETROFIT SCHEDULE</span>
@@ -346,7 +367,7 @@
               <input class="auto_checkbox" id="auto-prestige-alternate" onclick="toggleAutoPrestigeAlternate()" type="checkbox"></input>
               <span class="autooption_option">TOGGLE TYPES</span>
             </span>
-          </div>
+          </div>-->
         </div>
         <!--   AUTO LEADER UP   -->
         <div class="autooption_column" id="auto-enlightened-span"> <!--   AUTO LEADER UP   -->

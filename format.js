@@ -4,7 +4,7 @@ var formathelp = {
 
 
 function format(x, n) {
-  if (x === Infinity) {
+  if (x === Infinity || x == 'Infinity') {
     return 'Infinity';
   }
   x = new Decimal(x);

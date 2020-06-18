@@ -1357,6 +1357,35 @@ button, input {
     visibility: visible;
   }
 
+/* TEXT EFFECT 
+TEXT EFFECT 
+TEXT EFFECT 
+TEXT EFFECT 
+TEXT EFFECT 
+TEXT EFFECT 
+*/
+
+.texteffect {
+    position: relative;
+    display: inline-block;
+}
+
+.texteffect .texteffect_text {
+    background-color: rgba(0,0,0,0);
+    color: white;
+    font-size: 15px;
+    transform: rotate(20deg);
+    transform: scale(1.5);
+    position: absolute;
+    left: -156px;
+    top: -66px;
+    z-index: 1;
+
+    
+}
+
+
+
 /*
 
 ████████ ██    ██ ████████  ██████  ██████  ██  █████  ██      

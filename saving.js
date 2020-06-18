@@ -202,6 +202,11 @@ function fixPlayer () {
       toggles: ['20%', '20%', '20%', '20%', '20%']
     }
   }
+  if (!('values' in player.auto.gain)) {
+    player.auto.gain = {
+      values: [0,0]
+    }
+  }
 }
 
 function convertSaveToDecimal () {
@@ -299,6 +304,9 @@ let initialPlayer = {
     assignUpdatePoints: {
       settings: [0.33, 0.33, 0.33],
       on: false
+    },
+    gain: {
+      values: [0,0]
     }
   },
   options: {
