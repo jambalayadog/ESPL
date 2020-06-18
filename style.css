@@ -85,9 +85,7 @@ body {
     height: 600px;
     max-height: 600px;
     /*overflow-y: scroll;*/
-    /*background-image: url("https://upload.wikimedia.org/wikipedia/en/1/16/Bloodbath_of_B-R5RB.jpg");*/
-    /*background-image: url("https://image.shutterstock.com/image-illustration/alien-mothership-deep-space-futuristic-600w-200577308.jpg");*/
-    background-image: url("https://now.northropgrumman.com/wp-content/uploads/2018/04/now-stars.jpg");
+    background-image: url(images/now-stars.jpg);
     background-blend-mode: screen;
     background-repeat: no-repeat;
     background-size: 800px 600px;
@@ -215,7 +213,7 @@ body {
     margin: auto;
     box-sizing: border-box;
     text-align: center;*/
-    background-image: url(../ESPL/images/GameLogo.png);
+    background-image: url(images/GameLogo.png);
     background-size: 158px 78px;
     border: var(--border_black);
 }
