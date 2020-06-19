@@ -1114,43 +1114,117 @@ body {
     width:100%;
     max-width:800px;
     display: grid;
-    grid-template-rows:
-        auto auto auto auto auto auto;
-    justify-content: center;
-    padding: 5px 0px 5px 0px;
+    grid-template-columns:
+        auto auto;
+    padding: 5px;
     box-sizing: border-box;
     height: 445px;
 }
       
 .guidance_guide{
-    width: 100%;
+    width: 270px;
     font-size: 12px;
     border: var(--border_black);
     background-color: var(--background_common);
-    box-sizing: border-box;
     color: var(--text_secondary);
     padding: 5px;
     text-align: center;
     display: grid;
-    grid-template-columns:
+    grid-template-rows:
         auto auto auto;
-    margin: auto;
-    grid-column-gap: 10px;
-    height: 71px;
 }
 
-.guidance_portrait{
-
+.guidance_information {
+    width: 508px;
+    font-size: 12px;
+    background-color: var(--background_common);
+    box-sizing: border-box;
+    color: var(--text_secondary);
+    text-align: center;
+    display: grid;
+    grid-template-rows:
+        auto auto auto auto;
 }
 
-.guidance_summary{
-
+.guidance_title{
+    display: grid;
+    grid-template-columns: 
+        auto auto;
+    height: 44px;
+    border: 1px solid white;
 }
 
-.guidance_content{
+.guidance_title_left {
+    width: 122px;
+    background-color: dodgerblue;
+    color: white;
+    text-align: right;
+    padding: 5px;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.guidance_title_right {
+    width: 108px;
+    background-color: black;
+    color: white;
     text-align: left;
+    padding: 5px;
+    font-size: 30px;
+    font-weight: bold;
 }
 
+.guidance_role {
+    display: grid;
+    grid-template-columns: 
+        auto auto;
+}
+
+.guidance_copilot {
+    height: 320px;
+}
+
+.guidance_image {
+    height: 320px;
+}
+
+.guidance_halspeaker{
+    height: 30px;
+    
+}
+
+.guidance_row {
+    height: 100%;
+    border: var(--border_black);
+}
+
+.guidance_objective {
+    width: 100%;
+    padding: 30px;
+}
+
+.guidance_halisms {
+    width: 100%;
+    padding: 30px;
+}
+
+.guidance_kredits {
+    display: grid;
+    grid-template-columns: 
+        auto auto auto auto auto;
+}
+
+.guidance_kreditsboost {
+    display: grid;
+    grid-template-columns: 
+        auto auto;
+}
+
+.guidance_contact {
+    display: grid;
+    grid-template-columns: 
+        auto auto auto auto;
+}
 
 
 

@@ -131,7 +131,7 @@ function updateAutoGain(type) {
 }
 
 function checkForAutoGain() {
-  console.log(player.currentChallenge);
+  //console.log(player.currentChallenge);
   if ( player.currentChallenge != 'upgradeless') {
     //console.log('checking for autogain');
     let systemsAutoGain = document.getElementById('systems_gain_auto').checked;

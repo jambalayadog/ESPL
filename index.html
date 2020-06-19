@@ -1,6 +1,7 @@
 <html lang="en" xml:lang="en">
 <head>
   <title>Epic Starfighter Pilot Legacy</title>  <!-- Just Another Battle in Space -->
+  <!-- SCRIPTS -->
   <script src="break_eternity.js"></script>
   <script src="saving.js"></script>
   <script src="ach_and_lore.js"></script>
@@ -19,7 +20,11 @@
   <script src="tab_display.js"></script>
   <script src="update.js"></script>
   <script src="espl.js"></script>
+  <!-- kong API -->
+  <script src='https://cdn1.kongregate.com/javascripts/kongregate_api.js'></script>
+  <!-- STYLE SHEET -->
   <link href="style.css" rel="stylesheet" type="text/css" >
+  
 </head>
 <body>
 
@@ -945,112 +950,79 @@
 
 <!--- HELP ---------------------------------------------------------
 
-██   ██ ███████ ██      ██████  
-██   ██ ██      ██      ██   ██ 
-███████ █████   ██      ██████  
-██   ██ ██      ██      ██      
-██   ██ ███████ ███████ ██     
-                                                                                                               
+ ██████  ██    ██ ██ ██████   █████  ███    ██  ██████ ███████ 
+██       ██    ██ ██ ██   ██ ██   ██ ████   ██ ██      ██      
+██   ███ ██    ██ ██ ██   ██ ███████ ██ ██  ██ ██      █████   
+██    ██ ██    ██ ██ ██   ██ ██   ██ ██  ██ ██ ██      ██      
+ ██████   ██████  ██ ██████  ██   ██ ██   ████  ██████ ███████
+
 - HELP --------------------------------------------------------- -->
 
 
   <div id="completion-milestones-div" style="display: none;">
-    <div>
-      <span><input class="debugspeedup" id="debug_speedup" type="text" onchange="updateDebugSpeed()"></input>
-      <button onclick="saveGame()">Save</button>
-      <button onclick="exportGame()">Export</button>
-      <button onclick="loadGamePrompt()">Load</button>
-      <button onclick="resetGameWithConfirmation()">RESET</button></span>
-      <br/>
-      <span style="display: none;">Exported save (also copied to clipboard): <input id="export-output"></input></span>
-    </div>
+    
     <div class="guidance_container">
       <div class="guidance_guide">
-        <div class="guidance_portrait">
-          Img of Astromech
+        <div class="guidance_title">
+          <div class="guidance_title_left">C00KIE</div>
+          <div class="guidance_title_right">9OOO</div>
         </div>
-        <div class="guidance_summary">
-          <div>B4</div>
-          <div>Astromech Borg</div>
+        <div class="guidance_role">
+          <div class="provenance_stat">
+            <div>Primary Function:</div>
+            <div>Secondary Role:</div>
+            <div>Enjoys:</div>
+          </div>
+          <div class="provenance_number">
+            <div>RASTROMECH BORG</div>
+            <div>Most Epic Co-Pilot</div>
+            <div>Nap time, play time, starfighting</div>
+          </div>
         </div>
-        <div class="guidance_content">
-          <div>Getting in a ship and flying it is one thing, but you'll need patience to git epic.</div>
-          <div>Put time in Piloting to increase total skill and invest in Systems and Weapons to master your starfighting.</div>
-          <div>Once you've got a hang of things, start Starfighting, and work towards your first retrofit.</div>
-        </div>
-      </div>
-      <div class="guidance_guide">
-        <div class="guidance_portrait">
-          Img of Astromech
-        </div>
-        <div class="guidance_summary">
-          <div>B4</div>
-          <div>Astromech Borg</div>
-        </div>
-        <div class="guidance_content">
-          <div>Getting in a ship and flying it is one thing, but you'll need patience to git epic.</div>
-          <div>Put time in Piloting to increase total skill and invest in Systems and Weapons to master your starfighting.</div>
-          <div>Once you've got a hang of things, start Starfighting, and work towards your first retrofit.</div>
+        <div class="guidance_copilot">
+          <img class="guidance_image" src="images/Cookie9000.png"></src>
         </div>
       </div>
-      <div class="guidance_guide">
-        <div class="guidance_portrait">
-          Img of Astromech
+      <div class="guidance_information">
+        <div class="guidance_row">
+          <div class="guidance_objective">STARFIGHT!</div>
         </div>
-        <div class="guidance_summary">
-          <div>B4</div>
-          <div>Astromech Borg</div>
+        <div class="guidance_row">
+          <div class="guidance_halisms">What are you doing, Dave?</div>
         </div>
-        <div class="guidance_content">
-          <div>Getting in a ship and flying it is one thing, but you'll need patience to git epic.</div>
-          <div>Put time in Piloting to increase total skill and invest in Systems and Weapons to master your starfighting.</div>
-          <div>Once you've got a hang of things, start Starfighting, and work towards your first retrofit.</div>
+        <div class="guidance_row">
+          <div class="guidance_kredits">
+            <div>KredOffer1</div>
+            <div>KredOffer2</div>
+            <div>KredOffer3</div>
+            <div>KredOffer4</div>
+            <div>KredOffer5</div>
+          </div>
+          <div class="guidance_kreditsboost">
+            <div class="provenance_stat">boost from kreds:</div>
+            <div class="provenance_number">#</div>
+          </div>
+          <div>
+            <span><input class="debugspeedup" id="debug_speedup" type="text" onchange="updateDebugSpeed()"></input>
+            <button onclick="saveGame()">Save</button>
+            <button onclick="exportGame()">Export</button>
+            <button onclick="loadGamePrompt()">Load</button>
+            <button onclick="resetGameWithConfirmation()">RESET</button></span>
+            <br/>
+            <span style="display: none;">Exported save (also copied to clipboard): <input id="export-output"></input></span>
+          </div>
+          
         </div>
-      </div>
-      <div class="guidance_guide">
-        <div class="guidance_portrait">
-          Img of Astromech
-        </div>
-        <div class="guidance_summary">
-          <div>B4</div>
-          <div>Astromech Borg</div>
-        </div>
-        <div class="guidance_content">
-          <div>Getting in a ship and flying it is one thing, but you'll need patience to git epic.</div>
-          <div>Put time in Piloting to increase total skill and invest in Systems and Weapons to master your starfighting.</div>
-          <div>Once you've got a hang of things, start Starfighting, and work towards your first retrofit.</div>
-        </div>
-      </div>
-      <div class="guidance_guide">
-        <div class="guidance_portrait">
-          Img of Astromech
-        </div>
-        <div class="guidance_summary">
-          <div>B4</div>
-          <div>Astromech Borg</div>
-        </div>
-        <div class="guidance_content">
-          <div>Getting in a ship and flying it is one thing, but you'll need patience to git epic.</div>
-          <div>Put time in Piloting to increase total skill and invest in Systems and Weapons to master your starfighting.</div>
-          <div>Once you've got a hang of things, start Starfighting, and work towards your first retrofit.</div>
-        </div>
-      </div>
-      <div class="guidance_guide">
-        <div class="guidance_portrait">
-          Img of Astromech
-        </div>
-        <div class="guidance_summary">
-          <div>B4</div>
-          <div>Astromech Borg</div>
-        </div>
-        <div class="guidance_content">
-          <div>Getting in a ship and flying it is one thing, but you'll need patience to git epic.</div>
-          <div>Put time in Piloting to increase total skill and invest in Systems and Weapons to master your starfighting.</div>
-          <div>Once you've got a hang of things, start Starfighting, and work towards your first retrofit.</div>
+        <div class="guidance_row guidance_contact">
+          <div>Feedback</div>
+          <div>Discord</div>
+          <div>Reddit</div>
+          <div>Patreon</div>
         </div>
       </div>
       
     </div>
+    
   </div>
 
 <!--- OTHER INFORMATION ---------------------------------------------------------
