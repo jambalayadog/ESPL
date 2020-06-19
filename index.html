@@ -969,14 +969,14 @@
         </div>
         <div class="guidance_role">
           <div class="provenance_stat">
-            <div>Primary Function:</div>
-            <div>Secondary Role:</div>
-            <div>Enjoys:</div>
+            <div class="starfight_effect">PRIMARY FUNCTION:</div>
+            <div class="starfight_effect">SECONDARY ROLE:</div>
+            <div class="starfight_effect">ENJOYS:</div>
           </div>
           <div class="provenance_number">
             <div>RASTROMECH BORG</div>
             <div>Most Epic Co-Pilot</div>
-            <div>Nap time, play time, starfighting</div>
+            <div>Socializing and starfighting</div>
           </div>
         </div>
         <div class="guidance_copilot">
@@ -985,44 +985,91 @@
       </div>
       <div class="guidance_information">
         <div class="guidance_row">
-          <div class="guidance_objective">STARFIGHT!</div>
+          <div class="guidancesection_objective">
+            <div>
+              <div class="kredoffer_effect">OBJECTIVE</div>
+            </div>
+            <div>
+              <div class="guidance_objective"><span id='objectivetext'>STARFIGHT!</span></div>
+            </div>
+            <div>
+              <div style="visibility: visible;">
+                <span><input class="debugspeedup" id="debug_speedup" type="text" onchange="updateDebugSpeed()"></input>
+                <button onclick="saveGame()">Save</button>
+                <button onclick="exportGame()">Export</button>
+                <button onclick="loadGamePrompt()">Load</button>
+                <button onclick="resetGameWithConfirmation()">RESET</button></span>
+                <br/>
+                <span style="display: none;">Exported save (also copied to clipboard): <input id="export-output"></input></span>
+              </div>
+            </div>
+          </div>
         </div>
         <div class="guidance_row">
-          <div class="guidance_halisms">What are you doing, Dave?</div>
+          <div class="guidancesection_objective">
+            <div>
+              <div class="kredoffer_effect">NOTES</div>
+            </div>
+            <div class="guidance_notes">
+              <div>This game was made as part of an effort to learn basic web development.  It is inspired by Dan Simon's '5 hours until the update'; google it.</div>
+              <div>ESPL 2 is already under development and features all new mechanics.</div>
+              <div>Epic Starfighter Pilot Legacy is dedicated to everyone.  And especially to the memory of Starfish691.  Life did not throw you a break.</div>
+              <div>We are all shaped by our own unique series of experiences in life, so take the time to listen to and understand each other.  You're not crazy.  Get better or get bitter.</div>
+            </div>
+          </div>
         </div>
         <div class="guidance_row">
-          <div class="guidance_kredits">
-            <div>KredOffer1</div>
-            <div>KredOffer2</div>
-            <div>KredOffer3</div>
-            <div>KredOffer4</div>
-            <div>KredOffer5</div>
+          <div class="guidancesection_kredits">
+            <div>
+              <div class="kredoffer_effect">PERMANENT TIME BOOST</div>
+            </div>
+            <div class="guidance_kredits">
+              <div class="kredoffer">
+                <div><span class="contact_text">TIME BOOST:</span><span class="legacypoints_number">  +10%</span></div>
+                <div class="kredoffer_image"><img class="kredoffer_image" src="images/kred_single.png"></img></div>
+                <div><span class="contact_text">COST:</span><span class="legacypoints_number"> 1 Kred </span><button class="skilltoggle_button">BUY</button></div>
+              </div>
+              <div class="kredoffer">
+                <div><span class="contact_text">TIME BOOST:</span><span class="legacypoints_number">  +100%</span></div>
+                <div class="kredoffer_image"><img class="kredoffer_image" src="images/kred_double.png"></img></div>
+                <div><span class="contact_text">COST:</span><span class="legacypoints_number"> 10 Kreds </span><button class="skilltoggle_button">BUY</button></div>
+              </div>
+              <div class="kredoffer">
+                <div><span class="contact_text">TIME BOOST:</span><span class="legacypoints_number"> +1000%</span></div>
+                <div class="kredoffer_image"><img class="kredoffer_image" src="images/kred_stack.png"></img></div>
+                <div><span class="contact_text">COST:</span><span class="legacypoints_number"> 100 Kreds </span><button class="skilltoggle_button">BUY</button></div>
+              </div>
+            </div>
+            <div class="guidance_kreditsboost">
+              <div><span class="contact_text">BOOST FROM KREDS:</span><span class="legacypoints_number"> #</span></div>
+            </div>
           </div>
-          <div class="guidance_kreditsboost">
-            <div class="provenance_stat">boost from kreds:</div>
-            <div class="provenance_number">#</div>
-          </div>
+        </div>
+        <div class="guidance_row guidancessection_community">
           <div>
-            <span><input class="debugspeedup" id="debug_speedup" type="text" onchange="updateDebugSpeed()"></input>
-            <button onclick="saveGame()">Save</button>
-            <button onclick="exportGame()">Export</button>
-            <button onclick="loadGamePrompt()">Load</button>
-            <button onclick="resetGameWithConfirmation()">RESET</button></span>
-            <br/>
-            <span style="display: none;">Exported save (also copied to clipboard): <input id="export-output"></input></span>
+            <div class="kredoffer_effect">GET IN TOUCH</div>
           </div>
-          
-        </div>
-        <div class="guidance_row guidance_contact">
-          <div>Feedback</div>
-          <div>Discord</div>
-          <div>Reddit</div>
-          <div>Patreon</div>
+          <div class="guidance_contact">
+            <div class="guidance_contact_layout">
+              <div class="contact_text">FEEDBACK</div>
+              <div><img class="icon_image" src="images/icon_mail.png"><img></div>
+            </div>
+            <div class="guidance_contact_layout">
+              <div class="contact_text">DISCORD</div>
+              <div><img class="icon_image" src="images/icon_discord.png"><img></div>
+            </div>
+            <div class="guidance_contact_layout">
+              <div class="contact_text">REDDIT</div>
+              <div><img class="icon_image" src="images/icon-reddit.png"><img></div>
+            </div>
+            <div class="guidance_contact_layout">
+              <div class="contact_text">PATREON</div>
+              <div><img class="icon_image" src="images/icon_patreon.png"><img></div>
+            </div>
+          </div>
         </div>
       </div>
-      
     </div>
-    
   </div>
 
 <!--- OTHER INFORMATION ---------------------------------------------------------

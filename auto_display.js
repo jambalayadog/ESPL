@@ -168,3 +168,24 @@ function updateAutoDisplay() {
   }
   */
 }
+
+
+function updateCookieObjectives() {
+  let ele = document.getElementById('objectivetext');
+  if (player.stats.recordDevelopment[''] <= 1800) {
+    response = "Retrofit!";
+  } else if (player.stats.recordDevelopment[''] <= 18000) {
+    response = "Settle A War!";
+  } else if (!(checkForSpecificAchievement(12))) {
+    response = "Get Legacy Upgrades";
+  } else if (!(isChallengeUnlocked('upgradeless'))) {
+    response = "Unlock All Missions";
+  } else if (getDilationEffect() == 1) {
+    response = "Discover your Provenance!";
+  } else if (!(player.achievements.lategame.list.every(x => x))) {
+    response = "Complete Your Legacy";
+  } else {
+    response = "I'm retired, get a new co-pilot.";
+  }
+  ele.innerHTML = response;
+}

@@ -1194,13 +1194,18 @@ body {
 }
 
 .guidance_row {
-    height: 100%;
     border: var(--border_black);
+}
+
+.guidancesection_objective {
+    display: grid;
+    grid-template-rows:
+        auto auto auto;
 }
 
 .guidance_objective {
     width: 100%;
-    padding: 30px;
+    padding: 20px;
 }
 
 .guidance_halisms {
@@ -1208,16 +1213,33 @@ body {
     padding: 30px;
 }
 
+.guidance_notes {
+    text-align: left;
+    line-height: 17px;
+    color: var(--text_battlestat);
+    font-size: 12px;
+}
+
+.guidancesection_kredits {
+    display: grid;
+    grid-template-rows:
+        auto auto auto;
+}
+
+.guidancessection_community {
+    display: grid;
+    grid-template-rows:
+        auto auto;
+}
+
 .guidance_kredits {
     display: grid;
     grid-template-columns: 
-        auto auto auto auto auto;
+        auto auto auto;
 }
 
 .guidance_kreditsboost {
-    display: grid;
-    grid-template-columns: 
-        auto auto;
+    line-height: 35px;
 }
 
 .guidance_contact {
@@ -1226,6 +1248,32 @@ body {
         auto auto auto auto;
 }
 
+.guidance_contact_layout {
+    display: grid;
+    grid-template-rows: 
+        auto auto;
+}
+
+.kredoffer_image {
+    height: 40px;
+}
+
+.kredoffer_effect {
+    color: var(--text_boldeffect);
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.icon_image {
+    height: 30px;
+}
+
+.contact_text {
+    margin: auto;
+    font-size: 10px;
+    color: var(--text_battlestat);
+    font-weight: bold;
+}
 
 
 

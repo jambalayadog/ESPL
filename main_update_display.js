@@ -153,6 +153,7 @@ function updateDisplay () {
   updateLonelyInfoDisplay();
   updateAutoDisplay();
   updateChallengeDisplay();
+  updateCookieObjectives();
   // One line of code, it can go here.
   /*document.getElementById('total-challenge-completions-milestone-tab').innerHTML = format(getTotalChallengeCompletions());*/
   // Also one line of code, it can go here too.

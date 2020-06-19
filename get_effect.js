@@ -40,10 +40,14 @@ function findTimeToNextSkillPoint(x) {
     let newValue = k;
     let rate = newValue / oldValue;
     oldValue = k;
+    //console.log('k: ', k, 'j: ', j)
     if (rate >= 1.00004 && newValue >= 100) {
       document.getElementById("progress_nextdev").value = 1;
       frames = 20;
     } else if (frames > 0) {
+      document.getElementById("progress_nextdev").value = 1;
+    } else if (isNaN(k) || isNaN(j)) {
+      //console.log('NAN FOUND');
       document.getElementById("progress_nextdev").value = 1;
     } else {
       //console.log('k: ', k, 'j: ', j, 'k-j: ', k-j);
@@ -66,8 +70,12 @@ function getProgressToNextHundredth(i) {
   let firstDigit = 0;
   let secondDigit = 0;
   let rateComparison = 0;
-
-  if (getEffect(i) >= 10000) {
+  //console.log('i: ', i, 'effect: ', getEffect(i));
+  if (isNaN(getEffect(i) >= 10000)) {
+    firstDigit = '9';
+    secondDigit = '9';
+    rateComparison = 1.000;
+  } else if (getEffect(i) >= 10000) {
     firstDigit = getEffect(i).toString().split('').slice(3,4);
     secondDigit = getEffect(i).toString().split('').slice(4,5);
     rateComparison = 1.001;
