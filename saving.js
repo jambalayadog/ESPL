@@ -208,6 +208,12 @@ function fixPlayer () {
       toggles: [false, false]
     }
   }
+  if (!('purchaseBoostMultiplier' in player)) {
+    player.purchaseBoostMultiplier = 1;
+  }
+  if (!('purchases' in player)) {
+    player.purchases = [0, 0, 0];
+  }
   
 }
 
@@ -251,6 +257,7 @@ function loadGamePrompt() {
 }
 
 function saveGame () {
+  console.log('saving');
   localStorage.setItem('temp4-save', btoa(JSON.stringify(player)))
 }
 
@@ -381,7 +388,9 @@ let initialPlayer = {
   dilation: 0,
   dilationUpgradesBought: [0],
   completionMilestones: 0,
-  lastUpdate: Date.now()
+  lastUpdate: Date.now(),
+  purchaseBoostMultiplier: 1,
+  purchases: [0, 0, 0]
 }
 
 function resetGame() {

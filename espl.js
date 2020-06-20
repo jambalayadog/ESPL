@@ -136,7 +136,8 @@ function getGameSpeed() {
 }
 
 function realTimeToGameTime(diff) {
-  return diff * getGameSpeed();
+  //console.log((diff * getGameSpeed() * player.purchaseBoostMultiplier).toFixed(2), player.purchaseBoostMultiplier);
+  return diff * getGameSpeed() * (player.purchaseBoostMultiplier/100);
 }
 
 function gameCode(diff) {

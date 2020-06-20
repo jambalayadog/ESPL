@@ -4,6 +4,7 @@ function fillInInputs() {
   fillInAutoAssignUpdatePoints();
   fillInOptions();
   fillInConfirmations();
+  fillInGuidance();
 }
 
 function fillInAutoDev () {
@@ -103,4 +104,8 @@ function fillInConfirmations() {
   document.getElementById('turn-all-update-points-into-experience-confirmation').checked = player.options.confirmations.turnAllUpdatePointsIntoExperience;
   document.getElementById('enter-challenge-confirmation').checked = player.options.confirmations.enterChallenge;
   document.getElementById('exit-challenge-confirmation').checked = player.options.confirmations.exitChallenge;
+}
+
+function fillInGuidance() {
+  document.getElementById('purchasedBoostMultiplier').innerHTML = player.purchaseBoostMultiplier + 'x';
 }

@@ -20,6 +20,7 @@
   <script src="tab_display.js"></script>
   <script src="update.js"></script>
   <script src="espl.js"></script>
+  <script src="esplkong.js"></script>
   <!-- kong API -->
   <script src='https://cdn1.kongregate.com/javascripts/kongregate_api.js'></script>
   <!-- STYLE SHEET -->
@@ -975,8 +976,8 @@
           </div>
           <div class="provenance_number">
             <div>RASTROMECH BORG</div>
-            <div>Most Epic Co-Pilot</div>
-            <div>Socializing and starfighting</div>
+            <div>Ship Computer's Dog / Co-Pilot</div>
+            <div>Socializing, Starfighting, Naps</div>
           </div>
         </div>
         <div class="guidance_copilot">
@@ -1014,8 +1015,8 @@
               <!--<div>This game was made as part of an effort to learn basic web development.  It is inspired by Dan Simon's '5 hours until the update'.  Google it.</div>-->
               <div>THIS GAME WAS MADE AS PART OF AN EFFORT TO LEARN BASIC WEB DEVELOPMENT.  IT IS INSPIRED BY DAN SIMON'S <span class="guidance_tantext">'5 Hours until the update'</span>.  GOOGLE IT.<br/><br/>
               <span class="guidance_tantext">ESPL 2</span> IS ALREADY IN DEVELOPMENT AND FEATURES ALL NEW MECHANICS.<br/><br>
-              EPIC STARFIGHTER PILOT IS <span class="guidance_tantext">DEDICATED TO EVERYONE</span>.  AND ESPECIALLY TO THE MEMORY OF STARFISH691.  LIFE DID NOT THROW YOU A BREAK.<br/><br>
-              WE ARE ALL SHAPED BY OUR OWN EXPERIENCES, GIVING US ALL UNIQUE PERSPECTIVE.  LISTEN TO AND UNDERSTAND EACH OTHER.  WORK TO IMPROVE YOURSELF.  <span class="guidance_tantext">LEARN TO PROGRAM</span>.
+              <span class="guidance_tantext">EPIC STARFIGHTER PILOT LEGACY</span> IS <span class="guidance_tantext">DEDICATED TO EVERYONE</span>.  AND ESPECIALLY TO THE MEMORY OF STARFISH691.  LIFE DID NOT THROW YOU A BREAK.<br/><br>
+              WE ARE ALL SHAPED BY OUR OWN EXPERIENCES, GIVING US ALL UNIQUE PERSPECTIVE.  LISTEN TO AND UNDERSTAND EACH OTHER.  WORK TO IMPROVE YOURSELF.  <span class="guidance_tantext">LEARN TO PROGRAM?</span>
             </div>
           </div>
         </div>
@@ -1026,23 +1027,23 @@
             </div>
             <div class="guidance_kredits">
               <div class="kredoffer">
-                <div><span class="contact_text">TIME BOOST:</span><span class="legacypoints_number">  +10%</span></div>
+                <div><span class="contact_text">TIME BOOST:</span><span class="legacypoints_number">  +100%</span></div>
                 <div class="kredoffer_image"><img class="kredoffer_image" src="images/kred_single.png"></img></div>
-                <div><span class="contact_text">COST:</span><span class="legacypoints_number"> 10 Kred </span><button class="skilltoggle_button">BUY</button></div>
+                <div><span class="contact_text">COST:</span><span class="legacypoints_number"> 10 Kred </span><button class="skilltoggle_button" onclick="buytb('pack1')">BUY</button></div>
               </div>
               <div class="kredoffer">
-                <div><span class="contact_text">TIME BOOST:</span><span class="legacypoints_number">  +110%</span></div>
+                <div><span class="contact_text">TIME BOOST:</span><span class="legacypoints_number">  +1100%</span></div>
                 <div class="kredoffer_image"><img class="kredoffer_image" src="images/kred_double.png"></img></div>
-                <div><span class="contact_text">COST:</span><span class="legacypoints_number"> 100 Kreds </span><button class="skilltoggle_button">BUY</button></div>
+                <div><span class="contact_text">COST:</span><span class="legacypoints_number"> 100 Kred </span><button class="skilltoggle_button" onclick="buytb('pack2')">BUY</button></div>
               </div>
               <div class="kredoffer">
-                <div><span class="contact_text">TIME BOOST:</span><span class="legacypoints_number"> +560%</span></div>
+                <div><span class="contact_text">TIME BOOST:</span><span class="legacypoints_number"> +5600%</span></div>
                 <div class="kredoffer_image"><img class="kredoffer_image" src="images/kred_stack.png"></img></div>
-                <div><span class="contact_text">COST:</span><span class="legacypoints_number"> 500 Kreds </span><button class="skilltoggle_button">BUY</button></div>
+                <div><span class="contact_text">COST:</span><span class="legacypoints_number"> 500 Kred </span><button class="skilltoggle_button" onclick="buytb('pack3')">BUY</button></div>
               </div>
             </div>
             <div class="guidance_kreditsboost">
-              <div><span class="contact_text">BOOST FROM KREDS:</span><span class="legacypoints_number"> #</span><span> / MAX </span></div>
+              <div><span class="contact_text">PERMANENT TIME BOOST FROM KREDS: </span><span class="legacypoints_number" id="purchasedBoostMultiplier"> 0</span></div>
             </div>
           </div>
         </div>
