@@ -165,7 +165,7 @@ body {
     color: var(--text_secondary);
     height: 28px;
     display: flex;
-    overflow-y: scroll;
+    overflow-y: hidden;
     flex-direction: column-reverse;
     line-height: normal;
     scroll-snap-type: y mandatory;
@@ -174,6 +174,37 @@ body {
     border: 1px solid slategray;
     scroll-behavior: smooth;
 }
+
+
+.loretip {
+    position: relative;
+    display: inline-block;
+    /*border-bottom: 1px dotted black;*/
+  }
+
+.loretip .loretiptext {
+    visibility: hidden;
+    height: 300px;
+    width: 500px;
+    background-color: darkslategray;
+    color: var(--text_secondary);
+    border-color: var(--tip_border);
+    text-align: left;
+    border-radius: 2px;
+    padding: 5px;
+    font-size: 10px;
+
+    /* Position the tooltip */
+    position: absolute;
+    left: 0px;
+    top: 150px;
+    z-index: 1;
+}
+
+.loretip:hover .loretiptext {
+    visibility: visible;
+}
+
 
 
 
@@ -1467,6 +1498,10 @@ button, input {
     z-index: 1;
 }
 
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+
 .tooltip_autoskills {
     left: -37px!important;
     top: 20px!important;
@@ -1479,9 +1514,6 @@ button, input {
     width: 170px!important;
 }
 
-.tooltip:hover .tooltiptext {
-    visibility: visible;
-  }
 
 /* TEXT EFFECT 
 TEXT EFFECT 
