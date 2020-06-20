@@ -1194,7 +1194,6 @@ body {
 }
 
 .guidance_row {
-    border: var(--border_black);
 }
 
 .guidancesection_objective {
@@ -1204,20 +1203,20 @@ body {
 }
 
 .guidance_objective {
-    width: 100%;
-    padding: 20px;
+    padding: 5px;
+    font-size: 10px;
 }
 
-.guidance_halisms {
-    width: 100%;
-    padding: 30px;
+.guidance_objectiveinfo {
+    color: var(--text_battlestat);
 }
+
 
 .guidance_notes {
     text-align: left;
-    line-height: 17px;
     color: var(--text_battlestat);
-    font-size: 12px;
+    font-size: 10px;
+    padding: 5px;
 }
 
 .guidancesection_kredits {
@@ -1239,7 +1238,7 @@ body {
 }
 
 .guidance_kreditsboost {
-    line-height: 35px;
+    line-height: 25px;
 }
 
 .guidance_contact {
@@ -1255,13 +1254,15 @@ body {
 }
 
 .kredoffer_image {
-    height: 40px;
+    height: 30px;
 }
 
 .kredoffer_effect {
-    color: var(--text_boldeffect);
+    color: var(--text_title);
     font-weight: bold;
     font-size: 14px;
+    line-height: 20px;
+    background-color: var(--background_titledark);
 }
 
 .icon_image {
@@ -1273,8 +1274,13 @@ body {
     font-size: 10px;
     color: var(--text_battlestat);
     font-weight: bold;
+    line-height: 25px;
 }
 
+.guidance_tantext {
+    font-weight: normal;
+    color: tan;
+}
 
 
 

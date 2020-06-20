@@ -173,19 +173,19 @@ function updateAutoDisplay() {
 function updateCookieObjectives() {
   let ele = document.getElementById('objectivetext');
   if (player.stats.recordDevelopment[''] <= 1800) {
-    response = "Retrofit!";
+    response = 'YOUR FIRST OBJECTIVE IS TO RETROFIT YOUR STARFIGHTER.<br/><br/><span class="guidance_objectiveinfo">ASSIGN SKILLS TO IMPROVE SYSTEMS AND WEAPONS, THEN ASSIGN SKILLS TO STARFIGHT UNTIL RETROFIT IS AVAILABLE.  YOU WON\'T STARFIGHT LONG WITHOUT AUGMENTING YOUR STARFIGHTER.</span>';
   } else if (player.stats.recordDevelopment[''] <= 18000) {
-    response = "Settle A War!";
+    response = 'YOUR NEXT GOAL IS TO SETTLE A WAR AND EARN LEGACY POINTS!<br/><br><span class="guidance_objectiveinfo">WORK ON YOUR PILOTING, AND RETROFIT YOUR SHIP AND UPGRADE YOUR FLEET.  DEVELOP YOUR LEADERSHIP AND RANK UP UNTIL YOU REACH YOUR STARFIGHT GOAL AND START YOUR LEGACY.</span>';
   } else if (!(checkForSpecificAchievement(12))) {
-    response = "Get Legacy Upgrades";
+    response = 'AMAZING!  TIME TO BUILD UP YOUR LEGACY.<br/><br/><span class="guidance_objectiveinfo">SETTLE BIGGER WARS TO EARN MORE LEGACY POINTS.  BUILD UP YOUR RESOLVE, RESONANCE, AND RESOURCE, AND BUY LEGACY UPGRADES TO CEMENT THE FOUNDATION OF YOUR LEGACY.</span>';
   } else if (!(isChallengeUnlocked('upgradeless'))) {
-    response = "Unlock All Missions";
+    response = 'UNLOCK AND COMPLETE ALL OF THE MISSION HARDSHIPS.<br/><br/><span class="guidance_objectiveinfo">AUTOMATE OPERATIONS TO OVERCOME MISSION HARDSHIPS AND EARN ADAPTATION BONUSES.  BUILD ENORMOUS FLEETS, REACH NEW RANKS OF LEADERSHIP, AND SETTLE GALACTIC WARS.</span>';
   } else if (getDilationEffect() == 1) {
-    response = "Discover your Provenance!";
+    response = 'DISCOVER YOUR ORIGIN AND DEVELOP YOUR PRE-EMINENT PROWESS.<br/><br/><span class="guidance_objectiveinfo">TAKE ON THE MOST IMPORTANT MISSION: INNER SOULO.  DISCOVER YOUR PROVENANCE AND UNVEIL YOUR PRE-EMINENT NATURE.  COMPLETE MISSIONS TO LEND INSIGHT INTO INNER SOULO.</span>';
   } else if (!(player.achievements.lategame.list.every(x => x))) {
-    response = "Complete Your Legacy";
+    response = 'COMPLETE THE MASTER OBJECTIVES AND COMPLETE YOUR LEGACY.<br/><br/><span class="guidance_objectiveinfo">ATTAIN THE HIGHEST LEADERSHIP RANKS, BECOME ACE PILOT OF THE GALAXY, HARNESS THE POWER OF YOUR BEING, AND WAGE STARFIGHTS THAT RAVAGE GALAXIES ACROSS THE UNIVERSE.</span>';
   } else {
-    response = "I'm retired, get a new co-pilot.";
+    response = 'I AM RETIRED, GET A NEW CO-PILOT.<br/><br/><span class="guidance_objectiveinfo">THANK YOU FOR PLAYING.  I HOPE YOU HAD FUN.  I LEARNED A LOT MAKING THIS PROJECT.  BY ALL MEANS, KEEP PLAYING.  YOU ARE AN EPIC STARFIGHTER PILOT AND THIS IS YOUR LEGACY.</span>';
   }
   ele.innerHTML = response;
 }

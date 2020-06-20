@@ -987,13 +987,13 @@
         <div class="guidance_row">
           <div class="guidancesection_objective">
             <div>
-              <div class="kredoffer_effect">OBJECTIVE</div>
+              <div class="kredoffer_effect">COOKIE-9000's GUIDANCE:</div>
             </div>
             <div>
               <div class="guidance_objective"><span id='objectivetext'>STARFIGHT!</span></div>
             </div>
             <div>
-              <div style="visibility: visible;">
+              <div style="display: none;">
                 <span><input class="debugspeedup" id="debug_speedup" type="text" onchange="updateDebugSpeed()"></input>
                 <button onclick="saveGame()">Save</button>
                 <button onclick="exportGame()">Export</button>
@@ -1008,40 +1008,41 @@
         <div class="guidance_row">
           <div class="guidancesection_objective">
             <div>
-              <div class="kredoffer_effect">NOTES</div>
+              <div class="kredoffer_effect">GAME NOTES</div>
             </div>
             <div class="guidance_notes">
-              <div>This game was made as part of an effort to learn basic web development.  It is inspired by Dan Simon's '5 hours until the update'; google it.</div>
-              <div>ESPL 2 is already under development and features all new mechanics.</div>
-              <div>Epic Starfighter Pilot Legacy is dedicated to everyone.  And especially to the memory of Starfish691.  Life did not throw you a break.</div>
-              <div>We are all shaped by our own unique series of experiences in life, so take the time to listen to and understand each other.  You're not crazy.  Get better or get bitter.</div>
+              <!--<div>This game was made as part of an effort to learn basic web development.  It is inspired by Dan Simon's '5 hours until the update'.  Google it.</div>-->
+              <div>THIS GAME WAS MADE AS PART OF AN EFFORT TO LEARN BASIC WEB DEVELOPMENT.  IT IS INSPIRED BY DAN SIMON'S <span class="guidance_tantext">'5 Hours until the update'</span>.  GOOGLE IT.<br/><br/>
+              <span class="guidance_tantext">ESPL 2</span> IS ALREADY IN DEVELOPMENT AND FEATURES ALL NEW MECHANICS.<br/><br>
+              EPIC STARFIGHTER PILOT IS <span class="guidance_tantext">DEDICATED TO EVERYONE</span>.  AND ESPECIALLY TO THE MEMORY OF STARFISH691.  LIFE DID NOT THROW YOU A BREAK.<br/><br>
+              WE ARE ALL SHAPED BY OUR OWN EXPERIENCES, GIVING US ALL UNIQUE PERSPECTIVE.  LISTEN TO AND UNDERSTAND EACH OTHER.  WORK TO IMPROVE YOURSELF.  <span class="guidance_tantext">LEARN TO PROGRAM</span>.
             </div>
           </div>
         </div>
         <div class="guidance_row">
           <div class="guidancesection_kredits">
             <div>
-              <div class="kredoffer_effect">PERMANENT TIME BOOST</div>
+              <div class="kredoffer_effect">BUY PERMANENT TIME BOOSTS</div>
             </div>
             <div class="guidance_kredits">
               <div class="kredoffer">
                 <div><span class="contact_text">TIME BOOST:</span><span class="legacypoints_number">  +10%</span></div>
                 <div class="kredoffer_image"><img class="kredoffer_image" src="images/kred_single.png"></img></div>
-                <div><span class="contact_text">COST:</span><span class="legacypoints_number"> 1 Kred </span><button class="skilltoggle_button">BUY</button></div>
+                <div><span class="contact_text">COST:</span><span class="legacypoints_number"> 10 Kred </span><button class="skilltoggle_button">BUY</button></div>
               </div>
               <div class="kredoffer">
-                <div><span class="contact_text">TIME BOOST:</span><span class="legacypoints_number">  +100%</span></div>
+                <div><span class="contact_text">TIME BOOST:</span><span class="legacypoints_number">  +110%</span></div>
                 <div class="kredoffer_image"><img class="kredoffer_image" src="images/kred_double.png"></img></div>
-                <div><span class="contact_text">COST:</span><span class="legacypoints_number"> 10 Kreds </span><button class="skilltoggle_button">BUY</button></div>
+                <div><span class="contact_text">COST:</span><span class="legacypoints_number"> 100 Kreds </span><button class="skilltoggle_button">BUY</button></div>
               </div>
               <div class="kredoffer">
-                <div><span class="contact_text">TIME BOOST:</span><span class="legacypoints_number"> +1000%</span></div>
+                <div><span class="contact_text">TIME BOOST:</span><span class="legacypoints_number"> +560%</span></div>
                 <div class="kredoffer_image"><img class="kredoffer_image" src="images/kred_stack.png"></img></div>
-                <div><span class="contact_text">COST:</span><span class="legacypoints_number"> 100 Kreds </span><button class="skilltoggle_button">BUY</button></div>
+                <div><span class="contact_text">COST:</span><span class="legacypoints_number"> 500 Kreds </span><button class="skilltoggle_button">BUY</button></div>
               </div>
             </div>
             <div class="guidance_kreditsboost">
-              <div><span class="contact_text">BOOST FROM KREDS:</span><span class="legacypoints_number"> #</span></div>
+              <div><span class="contact_text">BOOST FROM KREDS:</span><span class="legacypoints_number"> #</span><span> / MAX </span></div>
             </div>
           </div>
         </div>
@@ -1054,15 +1055,15 @@
               <div class="contact_text">FEEDBACK</div>
               <div><img class="icon_image" src="images/icon_mail.png"><img></div>
             </div>
-            <div class="guidance_contact_layout">
+            <div class="guidance_contact_layout" style="visibility:hidden;">
               <div class="contact_text">DISCORD</div>
               <div><img class="icon_image" src="images/icon_discord.png"><img></div>
             </div>
-            <div class="guidance_contact_layout">
+            <div class="guidance_contact_layout" style="visibility:hidden;">
               <div class="contact_text">REDDIT</div>
               <div><img class="icon_image" src="images/icon-reddit.png"><img></div>
             </div>
-            <div class="guidance_contact_layout">
+            <div class="guidance_contact_layout" style="visibility:hidden;">
               <div class="contact_text">PATREON</div>
               <div><img class="icon_image" src="images/icon_patreon.png"><img></div>
             </div>
