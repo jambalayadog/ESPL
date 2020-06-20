@@ -6,7 +6,7 @@ function buytb(amount) {
         player.purchaseBoostMultiplier = 1;
     } else if (amount == 'pack2') {
         player.purchases[1] += 1;
-        player.purchaseBoostMultiplier = 1e100;
+        player.purchaseBoostMultiplier = 1e10;
     } else if (amount == 'pack3') {
         player.purchases[2] += 1;
         player.purchaseBoostMultiplier += 5600;
