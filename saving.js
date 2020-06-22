@@ -209,7 +209,7 @@ function fixPlayer () {
     }
   }
   if (!('purchaseBoostMultiplier' in player)) {
-    player.purchaseBoostMultiplier = 1;
+    player.purchaseBoostMultiplier = 100;
   }
   if (!('purchases' in player)) {
     player.purchases = [0, 0, 0];
@@ -389,7 +389,7 @@ let initialPlayer = {
   dilationUpgradesBought: [0],
   completionMilestones: 0,
   lastUpdate: Date.now(),
-  purchaseBoostMultiplier: 1,
+  purchaseBoostMultiplier: 100,
   purchases: [0, 0, 0]
 }
 

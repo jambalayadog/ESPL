@@ -50,9 +50,11 @@
     <!--<button class="navitem" id="lore-tab-button" onclick="setTab('lore')">STORY GOALS</button> -->
     <button class="navitem" id="completion-milestones-tab-button" onclick="setTab('completion-milestones')">GUIDANCE</button>
   </div>
-  <div class="lore_container loretip">
-    <div class="lore" id="lore_goal"></div>
-    <span class="loretiptext">loretip loretip loretip loretip<br/>loretip loretip loretip loretip</span>
+  <div class="lore_container ">
+    <div class="loresections">
+      <div><span class="loretip"><img class="loreicon" src="images/icon_lore.png"></img><span class="loretiptext" id="lore_goal2"></span></span></div>
+      <div><span class="lore" id="lore_goal"></span></div>
+    </div>
   </div>
 
   <!--   MAIN PAGE -----------------------------------------          
@@ -73,7 +75,7 @@
       <div class="starfight_page">
         <!---- SPACE BATTLE ---->
         <div class="battle">
-          <div class="activity_title bg_starfight">STARFIGHT-0</div>
+          <div class="activity_title bg_starfight">STARFIGHT</div>
           <div class="activity_progress">
             <div><span class="aspect_effect" id="progress-span-0">0:00:00</span></div>
           </div>
@@ -106,7 +108,7 @@
         </div>
         <!---- PILOTING ---->
         <div class="skill">
-          <div class="activity_title bg_piloting">PILOTING-3</div>
+          <div class="activity_title bg_piloting">PILOTING</div>
           <div class="activity_progress">
             <div><span class="starfight_effect">TOTAL SKILL:</span><span class="text_hidden">..</span><span class="aspect_effect" id="effect-span-3"></span></div>
           </div>
@@ -166,7 +168,7 @@
         </div>
         <!---- SYSTEMS ---->
         <div class="prestige">
-          <div class="activity_title bg_systems">SYSTEMS-2</div>
+          <div class="activity_title bg_systems">SYSTEMS</div>
           <div class="activity_progress">
             <div><span class="starfight_effect">CAPACITY:</span><span class="text_hidden">..</span><span class="aspect_effect" id="effect-span-2"></span></div>
           </div>
@@ -190,7 +192,7 @@
               <span class="tooltiptext tooltip_autoskills">Set Auto-Pilot to decimals.  0.2 = 20%.</span>
             </div>
           </div>
-          <div class="unlock_prestige activity_prestige_name bg_systems" style="visibility: hidden;">FLEET SYSTE-6</div>
+          <div class="unlock_prestige activity_prestige_name bg_systems" style="visibility: hidden;">FLEET SYSTEMS</div>
           <div class="unlock_prestige activity_progress" style="visibility: hidden;"><span class="starfight_effect">CAPACITY:</span><span class="text_hidden">..</span><span class="aspect_effect" id="effect-span-6"></span></div>
           <div class="unlock_prestige activity_prestige_effect" style="visibility: hidden;"></div>
           <div class="activity_prestige_control">
@@ -199,7 +201,7 @@
         </div>
         <!---- WEAPONS ---->
         <div class="prestige">
-          <div class="activity_title bg_weapons">WEAPONS-1</div>
+          <div class="activity_title bg_weapons">WEAPONS</div>
           <div class="activity_progress">
             <div><span class="starfight_effect">POWER:</span><span class="text_hidden">..</span><span class="aspect_effect" id="effect-span-1"></span></div>
           </div>
@@ -223,7 +225,7 @@
               <span class="tooltiptext tooltip_autoskills">Set Auto-Pilot to decimals.  0.2 = 20%.</span>
             </div>
           </div>
-          <div class="unlock_prestige activity_prestige_name bg_weapons" style="visibility: hidden;">FLEET WEAPO-5</div>
+          <div class="unlock_prestige activity_prestige_name bg_weapons" style="visibility: hidden;">FLEET WEAPONS</div>
           <div class="unlock_prestige activity_progress" style="visibility: hidden;"><span class="starfight_effect">POWER:</span><span class="text_hidden">..</span><span class="aspect_effect" id="effect-span-5"></span></div>
           <div class="unlock_prestige activity_prestige_effect" style="visibility: hidden;"></div>
           <div class="activity_prestige_control">
@@ -232,7 +234,7 @@
         </div>
         <!---- COOL ---->
         <div class="prestige">
-          <div class="activity_title bg_cool">COOL-4</div>
+          <div class="activity_title bg_cool">COOL</div>
           <div class="activity_progress">
             <div><span class="starfight_effect">TIME:</span><span class="text_hidden">..</span><span class="aspect_effect" id="effect-span-4"></span></div>
           </div>
@@ -256,7 +258,7 @@
               <span class="tooltiptext tooltip_autoskills">Set Auto-Pilot to decimals.  0.2 = 20%.</span>
             </div>
           </div>
-          <div class="unlock_prestige activity_prestige_name bg_cool" style="visibility: hidden;">LEADERSHIP-7</div>
+          <div class="unlock_prestige activity_prestige_name bg_cool" style="visibility: hidden;">LEADERSHIP</div>
           <div class="unlock_prestige activity_progress" style="visibility: hidden;"><span class="starfight_effect">BOOST:</span><span class="text_hidden">..</span><span class="aspect_effect" id="effect-span-7"></span></div>
           <div class="unlock_prestige activity_prestige_effect" style="visibility: hidden;"><span class="starfight_effect">LEADER RANK:</span><span class="text_hidden">..</span><span class="aspect_effect" id="enlightened"></span></div>
           <div class="activity_prestige_control">
@@ -287,12 +289,12 @@
               <span class="autooption_option">STAR WAR PLAN</span>
             </span>
           </div>
-          <div>
+          <div class="optionspadding">
             <span class="auto_spacewar starfight_skill" style="display:none">VALUE: 
               <input class="auto_input" id="auto-update-value" type="text" onchange="updateAutoValue('update')"></input>
             </span>
           </div>
-          <div class="togglebtn"><span class="auto_spacewar" style="display:none">
+          <div class="togglebtn optionspadding"><span class="auto_spacewar" style="display:none">
             <button class="auto_button" id="auto-update-setting" onclick="nextAutoSetting('update')"></button>
             <span class="toggle_1 toggle_active" id="autovictorytoggle_1">_</span>
             <span class="toggle_2" id="autovictorytoggle_2">_</span>
@@ -320,12 +322,11 @@
               <span class="autooption_option">RETROFIT SCHEDULE</span>
             </span>
           </div>
-          <div>
+          <div class="optionspadding">
             <span class="auto_retrofit starfight_skill" style="display:none">GAIN: 
               <input class="auto_input" id="systems_gain_input" type="text" onchange="updateAutoGain('systems')" value="0"></input>
             </span>
-          </div>
-          <div></div>    
+          </div>   
           <div></div>
           <div><div class="auto_option autooption_title">LEGACY OPTIONS</div></div>
         </div>
@@ -337,43 +338,11 @@
               <span class="autooption_option">RETROFIT SCHEDULE</span>
             </span>
           </div>
-          <div>
+          <div class="optionspadding">
             <span class="auto_retrofit starfight_skill" style="display:none">GAIN: 
               <input class="auto_input" id="weapons_gain_input" type="text" onchange="updateAutoGain('weapons')" value="0"></input>
             </span>
           </div>
-          <div></div>    
-          <div></div>
-          <div></div>
-          <!--<div class="auto_option">
-            <span class="auto_retrofit" style="display:none">
-              <input class="auto_checkbox" id="auto-prestige-on" onclick="toggleAutoOn('prestige')" type="checkbox"></input>
-              <span class="autooption_option">RETROFIT SCHEDULE</span>
-            </span>
-          </div>
-          <div>
-            <span class="auto_retrofit starfight_skill" style="display:none">VALUE: 
-              <input class="auto_input" id="auto-prestige-value" type="text" onchange="updateAutoValue('prestige')"></input>
-            </span>
-          </div>
-          <div class="togglebtn"><span class="auto_retrofit" style="display:none">
-            <button class="auto_button" id="auto-prestige-setting" onclick="nextAutoSetting('prestige')"></button>
-            <span class="toggle_1 toggle_active" id="autoretrofittoggle_1">_</span>
-            <span class="toggle_2" id="autoretrofittoggle_2">_</span>
-            <span class="toggle_3" id="autoretrofittoggle_3">_</span>
-            <span class="toggle_4" id="autoretrofittoggle_4">_</span></span>
-          </div>
-          <div class="togglebtn"><span class="auto_retrofit starfight_skill" style="display:none">TYPE: 
-            <button class="auto_prioritize auto_button" id="auto-prestige-initial" onclick="toggleAutoPrestigeInitial()"></button>
-            <span class="toggle_1 toggle_active" id="retrotypetoggle_1">_</span>
-            <span class="toggle_2" id="retrotypetoggle_2">_</span></span>
-          </div>
-          <div>
-            <span class="auto_retrofit autooption_text" style="display:none">
-              <input class="auto_checkbox" id="auto-prestige-alternate" onclick="toggleAutoPrestigeAlternate()" type="checkbox"></input>
-              <span class="autooption_option">TOGGLE TYPES</span>
-            </span>
-          </div>-->
         </div>
         <!--   AUTO LEADER UP   -->
         <div class="autooption_column" id="auto-enlightened-span"> <!--   AUTO LEADER UP   -->
@@ -383,12 +352,12 @@
               <span class="autooption_option">LEADERSHIP MATRIX</span>
             </span>
           </div>
-          <div>
+          <div class="optionspadding">
             <span class="auto_leaderup starfight_skill" style="display:none">VALUE: 
               <input class="auto_input" id="auto-enlightened-value" type="text" onchange="updateAutoValue('enlightened')"></input>
             </span>
           </div>
-          <div class="togglebtn"><span class="auto_leaderup" style="display:none">
+          <div class="togglebtn optionspadding"><span class="auto_leaderup" style="display:none">
             <button class="auto_button" id="auto-enlightened-setting" onclick="nextAutoSetting('enlightened')"></button>
             <span class="toggle_1 toggle_active" id="autoleadertoggle_1">_</span>
             <span class="toggle_2" id="autoleadertoggle_2">_</span>
@@ -764,7 +733,7 @@
             <div class="missiongroup_number">
               <div><span id="record-development-in-logarithmic"></span></div>
               <div><span id="logarithmic-reward-description"></span></div>
-              <div><span id="missions_provenance_per_second"></span>.</div>
+              <div><span id="missions_provenance_per_second"></span></div>
               <div><span id="logarithmic-completed-description"></span></div>
             </div>
           </div>  
@@ -1013,7 +982,7 @@
             </div>
             <div class="guidance_notes">
               <!--<div>This game was made as part of an effort to learn basic web development.  It is inspired by Dan Simon's '5 hours until the update'.  Google it.</div>-->
-              <div>THIS GAME WAS MADE AS PART OF AN EFFORT TO LEARN BASIC WEB DEVELOPMENT.  IT IS INSPIRED BY DAN SIMON'S <span class="guidance_tantext">'5 Hours until the update'</span>.  GOOGLE IT.<br/><br/>
+              THIS GAME WAS MADE AS PART OF AN EFFORT TO LEARN BASIC WEB DEVELOPMENT.  IT IS INSPIRED BY DAN SIMON'S <span class="guidance_tantext">'5 Hours until the update'</span>.  GOOGLE IT.<br/><br/>
               <span class="guidance_tantext">ESPL 2</span> IS ALREADY IN DEVELOPMENT AND FEATURES ALL NEW MECHANICS.<br/><br>
               <span class="guidance_tantext">EPIC STARFIGHTER PILOT LEGACY</span> IS <span class="guidance_tantext">DEDICATED TO EVERYONE</span>.  AND ESPECIALLY TO THE MEMORY OF STARFISH691.  LIFE DID NOT THROW YOU A BREAK.<br/><br>
               WE ARE ALL SHAPED BY OUR OWN EXPERIENCES, GIVING US ALL UNIQUE PERSPECTIVE.  LISTEN TO AND UNDERSTAND EACH OTHER.  WORK TO IMPROVE YOURSELF.  <span class="guidance_tantext">LEARN TO PROGRAM?</span>
@@ -1053,8 +1022,8 @@
           </div>
           <div class="guidance_contact">
             <div class="guidance_contact_layout">
-              <div class="contact_text">FEEDBACK</div>
-              <div><img class="icon_image" src="images/icon_mail.png"><img></div>
+              <div class="contact_text">CONTACT</div>
+              <div><a href="mailto:feedback@epicstarfighterpilotlegacy.com"><img class="icon_image" src="images/icon_mail.png"><img></a></div>
             </div>
             <div class="guidance_contact_layout" style="visibility:hidden;">
               <div class="contact_text">DISCORD</div>

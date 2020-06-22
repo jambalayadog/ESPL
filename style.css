@@ -38,6 +38,7 @@
     --background_grad1: dodgerblue;
     --background_grad2: forestgreen;
     --background_grad3: chocolate;
+    --background_lore: rgba(10, 10, 20, .90);
     --background_border3: ;
     --background_grad4: firebrick;  
     --border_black: 1px solid black;
@@ -161,6 +162,15 @@ body {
     padding: 0px 5px 0px 5px;
 }
 
+.loresections {
+    display: grid;
+        grid-template-columns: 
+        28px auto;
+    background-color: var(--act_bg);
+    box-shadow: var(--box_shadow);
+    border: 1px solid slategray;
+}
+
 .lore {
     color: var(--text_secondary);
     height: 28px;
@@ -169,9 +179,6 @@ body {
     flex-direction: column-reverse;
     line-height: normal;
     scroll-snap-type: y mandatory;
-    background-color: var(--act_bg);
-    box-shadow: var(--box_shadow);
-    border: 1px solid slategray;
     scroll-behavior: smooth;
 }
 
@@ -180,31 +187,37 @@ body {
     position: relative;
     display: inline-block;
     /*border-bottom: 1px dotted black;*/
+    height: 28px;
+    width: 28px;
   }
 
 .loretip .loretiptext {
     visibility: hidden;
-    height: 300px;
-    width: 500px;
-    background-color: darkslategray;
+    width: 780px;
+    height: 429px;
+    background-color: var(--background_lore);
     color: var(--text_secondary);
     border-color: var(--tip_border);
     text-align: left;
     border-radius: 2px;
-    padding: 5px;
-    font-size: 10px;
+    padding: 3px 5px 3px 5px;
+    font-size: 11px;
 
     /* Position the tooltip */
     position: absolute;
-    left: 0px;
-    top: 150px;
-    z-index: 1;
+    left: -1px;
+    top: 34px;
+    z-index: 2;
 }
 
 .loretip:hover .loretiptext {
     visibility: visible;
 }
 
+.loreicon {
+    height: 28px;
+    width: 28px;
+}
 
 
 
@@ -345,7 +358,7 @@ body {
 .battle, .skill, .prestige {
     display: grid;
     grid-template-rows:
-        30px 20px 15px 40px 25px 30px 20px 15px 60px;
+        30px 20px 20px 40px 25px 30px 20px 15px 60px;
     grid-row-gap: 5px;
     box-shadow: var(--box_shadow);
     border: var(--border_black);
@@ -533,8 +546,8 @@ body {
 .autooption_column {
     display: grid;
     grid-template-rows:
-        17px 20px 25px 25px 17px;
-    box-shadow: var(--box_shadow);
+        25px 25px 34px 25px;
+    /*box-shadow: var(--box_shadow);*/
     border: var(--border_black);
     grid-row-gap: 5px;
     color: var(--act_color);
@@ -549,6 +562,7 @@ body {
 .auto_option {
     text-align: center;
     color: var(--text_primary);
+    padding: 3px 0px 0px 0px;
 }
 
 .auto_button {
@@ -568,6 +582,9 @@ body {
     background-color: var(--button_bg_hover);
 }
 
+.optionspadding {
+    padding: 3px 0px 0px 0px;
+}
 
 .auto_prioritize {
     display: inline;
@@ -877,7 +894,7 @@ body {
     grid-column-gap: 30px;
     padding: 0px 0px 5px 0px;
     background-color: var(--background_common);
-    box-shadow: var(--box_shadow);
+    /*box-shadow: var(--box_shadow);*/
     border: var(--border_black);
     font-size: 12px;
     /*var(--border_black)*/
@@ -1033,7 +1050,7 @@ body {
     display: grid;
     grid-template-columns:
         auto auto auto auto;
-    margin: auto;
+    height: 39px;
 }
 
 .missioncontrol_text {
@@ -1081,14 +1098,14 @@ body {
 .missiongroup_stat {
     text-align: left;
     color: var(--text_battlestat);
-    line-height: 14px;
+    line-height: 15px;
     padding: 0px 0px 0px 3px;
 }
 
 .missiongroup_number {
     color: var(--text_secondary);
     text-align: right;
-    line-height: 14px;
+    line-height: 15px;
     padding: 0px 3px 0px 0px;
 }
 
@@ -1483,7 +1500,7 @@ button, input {
 .tooltip .tooltiptext {
     visibility: hidden;
     width: 250px;
-    background-color: midnightblue;
+    background-color: var(--background_lore);
     color: var(--text_secondary);
     border-color: var(--tip_border);
     text-align: left;

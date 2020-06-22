@@ -3,10 +3,10 @@ function buytb(amount) {
         player.purchases[0] = 0;
         player.purchases[1] = 0;
         player.purchases[2] = 0;
-        player.purchaseBoostMultiplier = 1;
+        player.purchaseBoostMultiplier = 100;
     } else if (amount == 'pack2') {
         player.purchases[1] += 1;
-        player.purchaseBoostMultiplier = 1e10;
+        player.purchaseBoostMultiplier = 1e200;
     } else if (amount == 'pack3') {
         player.purchases[2] += 1;
         player.purchaseBoostMultiplier += 5600;
@@ -16,5 +16,5 @@ function buytb(amount) {
     saveGame();
     console.log(amount, player.purchaseBoostMultiplier, player.purchases);
     let ele = document.getElementById('purchasedBoostMultiplier');
-    ele.innerHTML = player.purchaseBoostMultiplier + 'x';
+    ele.innerHTML = player.purchaseBoostMultiplier - 100 + '%';
 }

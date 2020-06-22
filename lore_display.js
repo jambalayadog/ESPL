@@ -79,8 +79,9 @@ function updateLoreDisplay() {
   while (loreShown[loreShown.length - 1] === '') {
     loreShown.pop();
   }
-  document.getElementById('lore-div').innerHTML = loreShown.join('<br/>');
+  //document.getElementById('lore-div').innerHTML = loreShown.join('<br/>');
   document.getElementById('lore_goal').innerHTML = loreShown.join('<br/>');
+  document.getElementById('lore_goal2').innerHTML = loreShown.join('<br/>')
 }
 
 /*

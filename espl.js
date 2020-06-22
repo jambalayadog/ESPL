@@ -137,6 +137,7 @@ function getGameSpeed() {
 
 function realTimeToGameTime(diff) {
   //console.log((diff * getGameSpeed() * player.purchaseBoostMultiplier).toFixed(2), player.purchaseBoostMultiplier);
+  console.log('boost: ', player.purchaseBoostMultiplier/100);
   return diff * getGameSpeed() * (player.purchaseBoostMultiplier/100);
 }
 
@@ -427,6 +428,7 @@ function updateChallengeDisplay() {
     document.getElementById('missions_provenance_per_second').innerHTML = format(getDilationPerSecond(), 4);
   } else {
     document.getElementById('dilation').style.visibility = 'hidden';
+    document.getElementById('missions_provenance_per_second').innerHTML = 0;
   }
 }
 

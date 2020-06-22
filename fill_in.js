@@ -107,5 +107,5 @@ function fillInConfirmations() {
 }
 
 function fillInGuidance() {
-  document.getElementById('purchasedBoostMultiplier').innerHTML = player.purchaseBoostMultiplier + 'x';
+  document.getElementById('purchasedBoostMultiplier').innerHTML = player.purchaseBoostMultiplier - 100 + '%';
 }
