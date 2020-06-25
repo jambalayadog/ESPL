@@ -214,6 +214,9 @@ function fixPlayer () {
   if (!('purchases' in player)) {
     player.purchases = [0, 0, 0];
   }
+  if (!('firstRetrofit' in player)) {
+    player.firstRetrofit = '';
+  }
   
 }
 
@@ -390,7 +393,8 @@ let initialPlayer = {
   completionMilestones: 0,
   lastUpdate: Date.now(),
   purchaseBoostMultiplier: 100,
-  purchases: [0, 0, 0]
+  purchases: [0, 0, 0],
+  firstRetrofit: ''
 }
 
 function resetGame() {

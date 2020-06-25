@@ -96,7 +96,7 @@
           </div>
           <div class="activity_fraction">
             <div class="starfight_skill tooltip">AUTO-PILOT: <input class="fraction_input" id="auto-dev-0" type="text" onchange="updateAutoDev(0)"></input>
-              <span class="tooltiptext tooltip_autoskills">Set Auto-Pilot to decimals.  0.2 = 20%.</span>
+              <span class="tooltiptext tooltip_autoskills">Use decimals: 0.2 = 20%</span>
             </div>
           </div>
           <div class="activity_prestige_name"></div>
@@ -129,7 +129,7 @@
           </div>
           <div class="activity_fraction">
             <div class="starfight_skill tooltip">AUTO-PILOT: <input class="fraction_input" id="auto-dev-3" type="text" onchange="updateAutoDev(3)"></input>
-              <span class="tooltiptext tooltip_autoskills">Set Auto-Pilot to decimals.  0.2 = 20%.</span>
+              <span class="tooltiptext tooltip_autoskills">Use decimals: 0.2 = 20%</span>
             </div>
           </div>
           <div class="activity_prestige_name"> </div>
@@ -155,8 +155,8 @@
               <div><span class="text_t1">SETTLE WAR</span><br/><br/>
                 In order to <span class="text_t1">Settle War</span>: <br/>- Min/Max your <span class="text_t2">Skills</span><br/>- <span class="text_t3">Retrofit</span> your starfighter<br/>- Become a true <span class="text_t5">Leader</span><br/><br/><span class="text_t1">Settling Wars</span> earns <span class="text_t6">Legacy</span>.  Longer wars unlock <span class="text_t6">Missions</span>.
               </div>
-              <div><span class="text_t3">FLEETS</span> and <span class="text_t5">LEADERSHIP</span><br/><br/>
-                When you <span class="text_t3">Retrofit</span>, you use your old parts to build a <span class="text_t3">Fleet</span>.  <span class="text_t3">Fleets</span> provide extra capacity and power.<br/><br/><span class="text_t5">Leadership</span> literally gives you a boost.  <span class="text_t5">Leader Up</span>.
+              <div><span class="text_t3">Armada</span> and <span class="text_t5">LEADERSHIP</span><br/><br/>
+                When you <span class="text_t3">Retrofit</span>, you use your old parts to build a <span class="text_t3">Armada</span>.  <span class="text_t3">Armada</span> provide extra capacity and power.<br/><br/><span class="text_t5">Leadership</span> literally gives you a boost.  <span class="text_t5">Leader Up</span>.
               </div>
             </div>-->
           </div>
@@ -189,10 +189,10 @@
           </div>
           <div class="activity_fraction">
             <div class="starfight_skill tooltip">AUTO-PILOT: <input class="fraction_input" id="auto-dev-2" type="text" onchange="updateAutoDev(2)"></input>
-              <span class="tooltiptext tooltip_autoskills">Set Auto-Pilot to decimals.  0.2 = 20%.</span>
+              <span class="tooltiptext tooltip_autoskills">Use decimals: 0.2 = 20%</span>
             </div>
           </div>
-          <div class="unlock_prestige activity_prestige_name bg_systems" style="visibility: hidden;">FLEET SYSTEMS</div>
+          <div class="unlock_prestige activity_prestige_name bg_systems" style="visibility: hidden;">ARMADA SYSTEMS</div>
           <div class="unlock_prestige activity_progress" style="visibility: hidden;"><span class="starfight_effect">CAPACITY:</span><span class="text_hidden">..</span><span class="aspect_effect" id="effect-span-6"></span></div>
           <div class="unlock_prestige activity_prestige_effect" style="visibility: hidden;"></div>
           <div class="activity_prestige_control">
@@ -222,10 +222,10 @@
           </div>
           <div class="activity_fraction">
             <div class="starfight_skill tooltip">AUTO-PILOT: <input class="fraction_input" id="auto-dev-1" type="text" onchange="updateAutoDev(1)"></input>
-              <span class="tooltiptext tooltip_autoskills">Set Auto-Pilot to decimals.  0.2 = 20%.</span>
+              <span class="tooltiptext tooltip_autoskills">Use decimals: 0.2 = 20%</span>
             </div>
           </div>
-          <div class="unlock_prestige activity_prestige_name bg_weapons" style="visibility: hidden;">FLEET WEAPONS</div>
+          <div class="unlock_prestige activity_prestige_name bg_weapons" style="visibility: hidden;">ARMADA WEAPONS</div>
           <div class="unlock_prestige activity_progress" style="visibility: hidden;"><span class="starfight_effect">POWER:</span><span class="text_hidden">..</span><span class="aspect_effect" id="effect-span-5"></span></div>
           <div class="unlock_prestige activity_prestige_effect" style="visibility: hidden;"></div>
           <div class="activity_prestige_control">
@@ -255,7 +255,7 @@
           </div>
           <div class="activity_fraction">
             <div class="starfight_skill tooltip">AUTO-PILOT: <input class="fraction_input" id="auto-dev-4" type="text" onchange="updateAutoDev(4)"></input>
-              <span class="tooltiptext tooltip_autoskills">Set Auto-Pilot to decimals.  0.2 = 20%.</span>
+              <span class="tooltiptext tooltip_autoskills">Use decimals: 0.2 = 20%</span>
             </div>
           </div>
           <div class="unlock_prestige activity_prestige_name bg_cool" style="visibility: hidden;">LEADERSHIP</div>
@@ -309,7 +309,7 @@
               <input class="auto_checkbox " id="auto-dev-on" onclick="toggleAutoOn('dev')" type="checkbox"></input>
               <span class="autooption_option">ENGAGE AUTO PILOT</span>
               <span id="auto-dev-lonely-info"></span> 
-              <span class="tooltiptext tooltip_autoskilltoggle">Auto-Pilot assigns skills automatically!</span>
+              <span class="tooltiptext tooltip_autoskilltoggle">Automatically assign skills</span>
             </span>
           </div>
           <div></div>
@@ -421,38 +421,36 @@
       <div class="achievements_row">
         <div class="achievements_title" style="background-color: var(--background_grad1);">          
           <div class="title_support">JOURNEY BEGINS</div>
-          <div class="title_text">Become a Starfighter</div>
+          <div class="title_text">Enter The Starfighter</div>
         </div>
         <div class="achievements_grouping">
-          <span id="normal-ach-status-0">&#x2610;</span><span> Get In The Chopper: Assign a skill. </span>
-          <br/><span id="normal-ach-status-1">&#x2610;</span><span> CHANGE ME: Have at least one skill asigned to space battle, weapons, systems, piloting, and cool at once. </span>
-          <br/><span id="normal-ach-status-2">&#x2610;</span><span> Time To Upgrade: Retrofit. </span>
-          <br/><span id="normal-ach-status-3">&#x2610;</span><span> CHANGE ME: No skills assigned, with one hour of progress in space battle, weapons, systems, piloting, and cool. </span>
-          <br/><span id="normal-ach-status-4">&#x2610;</span><span> CHANGE ME: Have space battle, weapons, systems, piloting, and cool all within a minute of each other and all over an hour. </span>
-          <br/><span id="normal-ach-status-5">&#x2610;</span><span> CHANGE ME: Have your Destruction multiplier from Weapons above your number of Skill, with more than one Skill. </span>
-          <br/><span id="normal-ach-status-6">&#x2610;</span><span> CHANGE ME: Gain at least 1:00:00 in one Retrofit. </span>
-          <br/><span id="normal-ach-status-7">&#x2610;</span><span> Take Command: Become a Leader. </span>
-          <br/><span id="normal-ach-status-8">&#x2610;</span><span> Baby Steps: Settle a Space War. </span>
-          <br/>
+          <span id="normal-ach-status-0">&#x2610;</span><span> Get In The Chopper: <span class="objective_support">Assign a skill</span></span>
+          <br/><span id="normal-ach-status-1">&#x2610;</span><span> Work On Your Starfighter: <span class="objective_support">Get Capacity to 1 + Power to 2</span></span>
+          <br/><span id="normal-ach-status-2">&#x2610;</span><span> Skill Up: <span class="objective_support">Get Total Skill to 15</span></span>
+          <br/><span id="normal-ach-status-3">&#x2610;</span><span> Retrofit: <span class="objective_support">Retrofit either your weapons or your systems</span></span>
+          <br/><span id="normal-ach-status-4">&#x2610;</span><span> Retrofit²: <span class="objective_support">Retrofit whatever you didn't last objective</span></span>
+          <br/><span id="normal-ach-status-5">&#x2610;</span><span> Super Starfighter Championship Edition: <span class="objective_support">Capacity = 5, Power = 20</span></span>
+          <br/><span id="normal-ach-status-6">&#x2610;</span><span> Take Charge: <span class="objective_support">Attain Leadership Rank 1</span></span>
+          <br/><span id="normal-ach-status-7">&#x2610;</span><span> Take Command: <span class="objective_support">Attain Leadership Rank 5 </span></span>
+          <br/><span id="normal-ach-status-8">&#x2610;</span><span> Baby Steps: <span class="objective_support">Settle a Space War</span></span>
         </div>
       </div>
       <div class="achievements_row">
         <div class="achievements_title" style="background-color: var(--background_grad2);">
-          <div class="title_support">HEROIC CHRONICLES</div>
-          <div class="title_text">Build Your Legacy</div>
+          <div class="title_support">HEROIC CHRONICLES<span class="text_hidden"> .</span></div>
+          <div class="title_text">Your Legacy Begins </div>
         </div>
         <div class="achievements_grouping">
-          <span id="normal-ach-status-9">&#x2610;</span><span> Begin Your Legacy: Have at least one experience of each type (Resolve, Resources, Reputation). </span>
-          <br/><span id="normal-ach-status-10">&#x2610;</span><span> Warfighter: Settle a Space War in an hour. </span>
-          <br/><span id="normal-ach-status-11">&#x2610;</span><span> Legacying: Get at least 2 Legacy Points in one Space War. </span>
-          <br/><span id="normal-ach-status-12">&#x2610;</span><span> Bring On The Missions: Get all the Legacy upgrades. </span>
-          <br/><span id="normal-ach-status-13">&#x2610;</span><span> Starfighter Settle a Space War in a minute. </span>
-          <br/><span id="normal-ach-status-14">&#x2610;</span><span> Brute Force: Settle a Space War without becoming a Leader. </span>
-          <br/><span id="normal-ach-status-15">&#x2610;</span><span> Heralded Champion: Starfight for a day (Unlock Missions!). </span>
-          <br/><span id="normal-ach-status-16">&#x2610;</span><span> Fast-Draw: Settle a Space War in 1 second. </span>
-          <br/><span id="normal-ach-status-17">&#x2610;</span><span> CHANGE ME: Get fifty thousand Skill. </span>
-          <br/><span id="normal-ach-status-18">&#x2610;</span><span> Inner Peace Found: Settle a Space War in Inner Soulo. </span>
-          <br/>
+          <span id="normal-ach-status-9">&#x2610;</span><span> Legacy Begins: <span class="objective_support">Get one experience of each type: Resolve, Resources, Reputation </span></span>
+          <br/><span id="normal-ach-status-10">&#x2610;</span><span> Auto Pilot: <span class="objective_support">Get Auto-pilot </span></span>
+          <br/><span id="normal-ach-status-11">&#x2610;</span><span> Warfighter: <span class="objective_support">Settle a Space War in an hour </span></span>
+          <br/><span id="normal-ach-status-12">&#x2610;</span><span> Legacying: <span class="objective_support">Get at least 2 Legacy Points in one Space War</span></span>
+          <br/><span id="normal-ach-status-13">&#x2610;</span><span> Bring On The Missions: <span class="objective_support">Get all the Legacy upgrades </span></span>
+          <br/><span id="normal-ach-status-14">&#x2610;</span><span> Starfighter: <span class="objective_support">Settle a Space War in a minute. </span></span>
+          <br/><span id="normal-ach-status-15">&#x2610;</span><span> Brute Force: <span class="objective_support">Settle a Space War without becoming a Leader </span></span>
+          <br/><span id="normal-ach-status-16">&#x2610;</span><span> Heralded Champion: <span class="objective_support">Starfight for a day ----- Unlock Missions! </span></span>
+          <br/><span id="normal-ach-status-17">&#x2610;</span><span> Take Control: <span class="objective_support">Attain Leadership Rank 20 </span></span>
+          <!--<span id="normal-ach-status-17">&#x2610;</span><span> Fast-Draw: Settle a Space War in 1 second </span></span>-->
         </div>
       </div>
       <div class="achievements_row">
@@ -461,14 +459,15 @@
           <div class="title_text">Conquer The Galaxy</div>
         </div>
         <div class="achievements_grouping">
-          <span id="normal-ach-status-19">&#x2610;</span><span> Admiral: Complete 12 missions. </span>
-          <br/><span id="normal-ach-status-20">&#x2610;</span><span> Rear Admiral: Complete 20 missions. </span>
-          <br/><span id="normal-ach-status-21">&#x2610;</span><span> Not Getting Involved: Settle A War without assigning skills. </span>
-          <br/><span id="normal-ach-status-22">&#x2610;</span><span> Getting Ahead: Start production of Provenance. </span>
-          <br/><span id="normal-ach-status-23">&#x2610;</span><span> We're Ahead: Get 33.3333 Pre-Eminence. </span>
-          <br/><span id="normal-ach-status-24">&#x2610;</span><span> Fleet Admiral: Leader Up x 40. </span>
-          <br/><span id="normal-ach-status-25">&#x2610;</span><span> Billion Skillion: Get a billion Skill. </span>
-          <br/><span id="normal-ach-status-26">&#x2610;</span><span> Stories Of Infinite: Get at least 1.80e308 Legacy Points in one Space War. </span>
+          <span id="normal-ach-status-18">&#x2610;</span><span> Inner Peace Found: <span class="objective_support">Settle a Space War in Inner Soulo </span></span>
+          <br/><span id="normal-ach-status-19">&#x2610;</span><span> Admiral: <span class="objective_support">Complete 12 missions </span></span>
+          <br/><span id="normal-ach-status-20">&#x2610;</span><span> Rear Admiral: <span class="objective_support">Complete 20 missions </span></span>
+          <br/><span id="normal-ach-status-21">&#x2610;</span><span> Not Getting Involved: <span class="objective_support">Settle A War without assigning skills </span></span>
+          <br/><span id="normal-ach-status-22">&#x2610;</span><span> Getting Ahead: <span class="objective_support">Start production of Provenance </span></span>
+          <br/><span id="normal-ach-status-23">&#x2610;</span><span> We're Ahead: <span class="objective_support">Get 33.3333 Pre-Eminence </span></span>
+          <br/><span id="normal-ach-status-24">&#x2610;</span><span> Armada Admiral: <span class="objective_support">Leader Up <span class="lowercase">x</span> 40 </span></span>
+          <br/><span id="normal-ach-status-25">&#x2610;</span><span> Billion Skillion: <span class="objective_support">Get 1<span class="lowercase">e</span>9 Total Skill </span></span>
+          <br/><span id="normal-ach-status-26">&#x2610;</span><span> Stories Of Infinite: <span class="objective_support">Get at least 1.80<span class="lowercase">e</span>308 Legacy Points in one Space War </span></span>
           <br/>
         </div>  
       </div>
@@ -478,15 +477,15 @@
           <div class="title_text">Become the Master</div>
         </div>
         <div class="achievements_grouping">
-          <span id="lategame-ach-status-0">&#x2610;</span><span> Normalized: Get all the normal achievements. </span>
-          <br/><span id="lategame-ach-status-1">&#x2610;</span><span> Climb The Ranks: Have 10 Space Wars give at least 1.80e308x more Legacy Points than the previous. </span>
-          <br/><span id="lategame-ach-status-2">&#x2610;</span><span> Saving Up: Gain at least 4383:00:00 in one Retrofit. </span>
-          <br/><span id="lategame-ach-status-3">&#x2610;</span><span> Exalted One: Get 10x Leadership boost. </span>
-          <br/><span id="lategame-ach-status-4">&#x2610;</span><span> The Answer: Complete 42 missions. </span>
-          <br/><span id="lategame-ach-status-5">&#x2610;</span><span> So Far Ahead: Get a trillion provenance. </span>
-          <br/><span id="lategame-ach-status-6">&#x2610;</span><span> Galaxy Command: Leader Up x 80. </span>
-          <br/><span id="lategame-ach-status-7">&#x2610;</span><span> Unparalled: Get ten trillion Skill. </span>
-          <br/><span id="lategame-ach-status-8">&#x2610;</span><span> Fighting For Years: Get 17532:00:00 record Space Battle. </span>
+          <span id="lategame-ach-status-0">&#x2610;</span><span> Normalized: <span class="objective_support">Get all the normal achievements </span></span>
+          <br/><span id="lategame-ach-status-1">&#x2610;</span><span> Climb The Ranks: <span class="objective_support">Have 10 Space Wars give at least 1.80<span class="lowercase">e</span>308<span class="lowercase">x</span> more Legacy Points than the previous </span></span>
+          <br/><span id="lategame-ach-status-2">&#x2610;</span><span> Saving Up: <span class="objective_support">Gain at least 4383:00:00 in one Retrofit </span></span>
+          <br/><span id="lategame-ach-status-3">&#x2610;</span><span> Exalted One: <span class="objective_support">Get 10<span class="lowercase">x</span> Leadership boost </span></span>
+          <br/><span id="lategame-ach-status-4">&#x2610;</span><span> The Answer: <span class="objective_support">Complete 42 missions </span></span>
+          <br/><span id="lategame-ach-status-5">&#x2610;</span><span> So Far Ahead: <span class="objective_support">Get a trillion provenance </span></span>
+          <br/><span id="lategame-ach-status-6">&#x2610;</span><span> Galaxy Command: <span class="objective_support">Leader Up<span class="lowercase"> x</span> 80 </span></span>
+          <br/><span id="lategame-ach-status-7">&#x2610;</span><span> Trillion Skillion: <span class="objective_support">Get 1<span class="lowercase">e</span>12 Total Skill </span></span>
+          <br/><span id="lategame-ach-status-8">&#x2610;</span><span> Fighting For Years: <span class="objective_support">Have a starfight that lasts longer than 2 years </span></span>
           <br/> 
         </div>
       </div>
@@ -715,12 +714,12 @@
         <!-- MISSION: -- SOULO -->
         <div class="mission" id="logarithmic-td" style="display: none;">
           <button class="mission_button tooltip" id="logarithmic-button" onclick="enterChallenge('logarithmic')">
-            <span class="button_title">INNER SPACE</span>
+            <span class="button_title">INNER SOULO</span>
             <span class="legacygroup_subtext"><br/>Starfighter skills are nerfed as are many multipliers but you are augmented by your missions complete.<br/></span>
             <span class="legacygroup_subtext">Goal: <span id="logarithmic-goal"></span> Starfight</span>
             <span class="tooltiptext">
               Every 30 minutes Starfight reached grants permanent Leader Ranks, up to 10.
-              <br><br>After 12 hours, you being to produce Provenance which boosts Player Weapons and Fleet Weapons.
+              <br><br>After 12 hours, you being to produce Provenance which boosts Player Weapons and Armada Weapons.
             </span>
           </button>
           <div class="missiongroup_stats">
@@ -764,7 +763,7 @@
         <div class="mission" id="ufd-td" style="display: none;">
           <button class="mission_button tooltip" id="ufd-button" onclick="enterChallenge('ufd')">
             <span class="button_title">HACK, SLICE, RIG</span>
-            <span class="legacygroup_subtext"><br/>Your Starfighter's Systems and your entire Fleet's Systems are broken down.<br/></span>
+            <span class="legacygroup_subtext"><br/>Your Starfighter's Systems and your entire Armada's Systems are broken down.<br/></span>
             <span class="legacygroup_subtext">Goal: <span id="ufd-goal"></span> Starfight</span>
           </button>
           <div class="missiongroup_stats">
@@ -963,7 +962,7 @@
               <div class="guidance_objective"><span id='objectivetext'>STARFIGHT!</span></div>
             </div>
             <div>
-              <div style="display: none;">
+              <div style="display: '';">
                 <span><input class="debugspeedup" id="debug_speedup" type="text" onchange="updateDebugSpeed()"></input>
                 <button onclick="saveGame()">Save</button>
                 <button onclick="exportGame()">Export</button>

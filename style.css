@@ -201,7 +201,7 @@ body {
     text-align: left;
     border-radius: 2px;
     padding: 3px 5px 3px 5px;
-    font-size: 11px;
+    font-size: 10px;
 
     /* Position the tooltip */
     position: absolute;
@@ -373,7 +373,7 @@ body {
     border: var(--debug_border);
     padding: 6px;
     color: var(--text_title);
-    font-size: 16px;
+    font-size: 14px;
 
 }
 
@@ -440,7 +440,7 @@ body {
     border: var(--debug_border);
     padding: 6px;
     color: var(--text_title);
-    font-size: 16px;
+    font-size: 14px;
 }
 .activity_prestige_effect {
     border: var(--debug_border);
@@ -669,15 +669,22 @@ body {
 }
 
 .achievements_grouping {
-    font-size: 12px;
+    font-size: 10px;
     padding: 5px;
     background-color: var(--background_common);
-    box-shadow: var(--box_shadow);
     border: var(--border_black);
     color: var(--text_battlestat);
     width: 100%;
+    text-transform: uppercase;
 }
 
+.objective_support {
+    color: tan;
+}
+
+.lowercase {
+    text-transform: lowercase!important;
+}
 
 .achievements_title {
     box-shadow: var(--box_shadow);
@@ -1185,6 +1192,7 @@ body {
 .guidance_information {
     width: 508px;
     font-size: 12px;
+    border: var(--border_black);
     background-color: var(--background_common);
     box-sizing: border-box;
     color: var(--text_secondary);
@@ -1199,25 +1207,25 @@ body {
     grid-template-columns: 
         auto auto;
     height: 44px;
-    border: 1px solid white;
+    border: 1px solid grey;
 }
 
 .guidance_title_left {
-    width: 122px;
+    width: 120px;
     background-color: dodgerblue;
     color: white;
     text-align: right;
-    padding: 5px;
+    padding: 5px 15px 0px 0px;
     font-size: 30px;
     font-weight: bold;
 }
 
 .guidance_title_right {
-    width: 108px;
+    width: 120px;
     background-color: black;
     color: white;
     text-align: left;
-    padding: 5px;
+    padding: 5px 0px 0px 15px;
     font-size: 30px;
     font-weight: bold;
 }
@@ -1500,7 +1508,7 @@ button, input {
 .tooltip .tooltiptext {
     visibility: hidden;
     width: 250px;
-    background-color: var(--background_lore);
+    background-color: black;
     color: var(--text_secondary);
     border-color: var(--tip_border);
     text-align: left;
@@ -1520,15 +1528,15 @@ button, input {
 }
 
 .tooltip_autoskills {
-    left: -37px!important;
+    left: -10px!important;
     top: 20px!important;
-    width: 170px!important;
+    width: 115px!important;
 }
 
 .tooltip_autoskilltoggle {
-    left: -48px!important;
+    left: 0px!important;
     top: 20px!important;
-    width: 170px!important;
+    width: 120px!important;
 }
 
 

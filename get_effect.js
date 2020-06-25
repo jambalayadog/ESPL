@@ -6,7 +6,7 @@ function getEffect(i, progressOverride) {
     } else {
       return dilationBoost(Decimal.pow(2, x / 1800 * getEffect(7)));
     }
-  } else if (i === 2 || i === 6) {  // Player and Fleet Systems (Refactoring)
+  } else if (i === 2 || i === 6) {  // Player and Armada Systems (Refactoring)
     if (player.currentChallenge === 'ufd') {
       return 0;
     } else {
@@ -145,9 +145,9 @@ function findTimeToNextRetrofits(i) {
 
 function formatEffect(i, progressOverride) {
   let effect = getEffect(i, progressOverride);
-  if (i === 1 || i === 5 || i == 7) {  //  Player and Fleeet Weapons, Leadership
+  if (i === 1 || i === 5 || i == 7) {  //  Player and Armada Weapons, Leadership
     return format(effect,3) + 'x';
-  } else if (i === 2 || i === 6) {  // Player and Fleet Systems (Refactoring)
+  } else if (i === 2 || i === 6) {  // Player and Armada Systems (Refactoring)
     return '+' + format(effect,3);
   } else if (i === 4) {    // Patience
     return toTime(effect, {secondFractions: true});

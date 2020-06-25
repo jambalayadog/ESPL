@@ -52,7 +52,7 @@ function getUpdateGain() {
 }
 
 function confirmUpdate() {
-  let whatWillReset = 'Fleet Systems and Weapons, progress milestones, along with every Retrofit resets,';
+  let whatWillReset = 'Armada Systems and Weapons, progress milestones, along with every Retrofit resets,';
   if (player.updates > 0) {
     whatWillReset = whatWillReset.replace('and progress milestones', 'progress milestones, and Resolve, Resonance, and Resources power')
   }
