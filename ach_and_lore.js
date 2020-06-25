@@ -23,7 +23,6 @@ function getLategameAchievementsPatienceKeptEffect() {
 }
 
 function giveNormalAchievement(i) {
-  console.log('i', i)
   if (!player.achievements.normal.list[i]) {
     player.achievements.normal.list[i] = true;
     player.achievements.normal.number++;

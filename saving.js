@@ -260,7 +260,7 @@ function loadGamePrompt() {
 }
 
 function saveGame () {
-  console.log('saving');
+  //console.log('saving');
   localStorage.setItem('temp4-save', btoa(JSON.stringify(player)))
 }
 
