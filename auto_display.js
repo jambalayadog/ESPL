@@ -151,14 +151,14 @@ function updateAutoDisplay() {
     for (var i = 0; i < ele.length; i++) {
       ele[i].style.visibility=''
     }
-    document.getElementById('auto-assign-update-points-span').style.display = '';
+    document.getElementById('auto-assign-update-points-span').style.visiblity = 'hidden';
   } else {
     /*document.getElementById('auto-assign-update-points-row').style.display = 'none';*/
     var ele = document.getElementsByClassName("legacyfraction");
     for (var i = 0; i < ele.length; i++) {
       ele[i].style.visibility='hidden'
     }
-    document.getElementById('auto-assign-update-points-span').style.display = 'none';
+    document.getElementById('auto-assign-update-points-span').style.visiblity = '';
   }
   /*
   if (hasAuto(AUTO_LIST[0])) {

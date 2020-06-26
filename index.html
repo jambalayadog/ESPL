@@ -286,7 +286,7 @@
           <div class="auto_option">
             <span class="auto_spacewar tooltip" style="display:none">
               <input class="auto_checkbox" id="auto-update-on" onclick="toggleAutoOn('update')" type="checkbox"></input>
-              <span class="autooption_option">STAR WAR PLAN</span>
+              <span class="autooption_option" id="autosettlewar">STAR WAR PLAN</span>
               <span class="tooltiptext tooltip_autosettlewar">Automatically Settle Wars and earn Legacy Points</span>
             </span>
           </div>
@@ -321,7 +321,7 @@
           <div class="auto_option">
             <span class="auto_retrofit tooltip" style="display:none">
               <input class="auto_checkbox" id="systems_gain_auto" onclick="toggleAutoGain('systems')" type="checkbox"></input>
-              <span class="autooption_option">RETROFIT SCHEDULE</span>
+              <span class="autooption_option" id="autosystemsretrofit">RETROFIT SCHEDULE</span>
               <span class="tooltiptext tooltip_autoretrofitSystems">Automatically Retrofit Systems</span>
             </span>
           </div>
@@ -339,7 +339,7 @@
           <div class="auto_option">
             <span class="auto_retrofit tooltip" style="display:none">
               <input class="auto_checkbox" id="weapons_gain_auto" onclick="toggleAutoGain('weapons')" type="checkbox"></input>
-              <span class="autooption_option">RETROFIT SCHEDULE</span>
+              <span class="autooption_option" id="autoweaponsretrofit">RETROFIT SCHEDULE</span>
               <span class="tooltiptext tooltip_autoretrofitWeapons">Automatically Retrofit Weapons</span>
             </span>
           </div>
@@ -355,7 +355,7 @@
           <div class="auto_option">
             <span class="auto_leaderup tooltip" style="display:none">
               <input class="auto_checkbox" id="auto-enlightened-on" onclick="toggleAutoOn('enlightened')" type="checkbox"></input>
-              <span class="autooption_option">LEADERSHIP MATRIX</span>
+              <span class="autooption_option" id="autorankup">LEADERSHIP MATRIX</span>
               <span class="tooltiptext tooltip_autoLeaderUp">Automatically Rank Up</span>
             </span>
           </div>
@@ -591,7 +591,7 @@
               <span class="text_hidden">. </span>
             </div>
             <div> 
-              <span id="auto-assign-update-points-span" style="display: none;">
+              <span id="auto-assign-update-points-span" style="visibility: hidden;">
                 <input class="auto_checkbox" id="auto-assign-update-points-on" onclick="toggleAutoOn('assignUpdatePoints')" type="checkbox"></input>
                 <span class="autooption_option">AUTO-SPEND LEGACY</span>
               </span>

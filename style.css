@@ -292,7 +292,6 @@ body {
 
 .progressstats_stat {
     display: grid;
-    box-shadow: var(--box_shadow);
     border: var(--debug_border);
     font-size: 12px;
     /*background-color: var(--act_bg);*/
@@ -929,9 +928,10 @@ body {
         auto auto;
     grid-column-gap: 5px;
     border: var(--debug_border);
-    padding: 5px;
+    padding: 6px;
     color: var(--text_secondary);
     justify-content: center;
+    height: 26px;
 
 }
 
@@ -1420,6 +1420,10 @@ body {
 
 .text_bold {
     font-weight: bold;
+}
+
+.bold_override {
+    color: firebrick;
 }
 
 .margin_auto {

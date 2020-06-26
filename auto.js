@@ -81,6 +81,9 @@ function shouldEnlightened(x) {
 }
 
 function checkForAutoEnlightened() {
+  if (typeof leadershipautoeffect == 'undefined') {
+    leadershipautoeffect = 0;
+  }
   let table = {
     'Leader Rank': x => getTotalEnlightened() < x,
     'time since last Leader Up': x => Date.now() - player.stats.last.enlightened >= x * 1000,
@@ -90,6 +93,10 @@ function checkForAutoEnlightened() {
   while (player.progress[7] >= 1 && table[player.auto.enlightened.setting](player.auto.enlightened.value.toNumber())) {
     enlightened();
   }
+  leadershipautoeffect -= 1;
+    if(leadershipautoeffect <= 0) {
+      document.getElementById('autorankup').classList.remove('bold_override');
+    }
 }
 
 function getCurrentAutoPrestigeType() {
@@ -131,43 +138,52 @@ function updateAutoGain(type) {
 }
 
 function checkForAutoGain() {
-  //console.log(player.currentChallenge);
   if ( player.currentChallenge != 'upgradeless') {
-    //console.log('checking for autogain');
+    
     let systemsAutoGain = document.getElementById('systems_gain_auto').checked;
-    //console.log(systemsAutoGain);
+    if (typeof systemsautoeffect == 'undefined') {
+      systemsautoeffect = 0;
+    }
     if (systemsAutoGain) {
       let systemsAutoGainValue = player.auto.gain.values[1] + 100;
-      //console.log('new value from prestige: ', newValueFromPrestige());
-      //console.log('player.progress[6]: ', player.progress[6]);
       currentGain = formatEffect(6, newValueFromPrestige())/formatEffect(6);
-      //console.log('current gain: ', currentGain);
-      //console.log('target gain: ', systemsAutoGainValue);
-      //console.log('if: ', currentGain > systemsAutoGainValue / 100)
-      //console.log('if: ', currentGain > systemsAutoGainValue / 100, 'current: ', currentGain, 'auto gain target: ', systemsAutoGainValue / 100);
       if (currentGain > systemsAutoGainValue / 100) {
+        document.getElementById('autosystemsretrofit').classList.add('bold_override');
         prestige(6, true);
+        systemsautoeffect = 2;
       }
     }
+    
     let weaponsAutoGain = document.getElementById('weapons_gain_auto').checked;
-    if (weaponsAutoGain) {
+    if (typeof weaponsautoeffect == 'undefined') {
+      weaponsautoeffect = 0;
+    }
+    if (weaponsAutoGain) { 
       let weaponsAutoGainValue = player.auto.gain.values[0];
-      //console.log('new value from prestige: ', newValueFromPrestige());
-      //console.log('player.progress[5]: ', player.progress[5]);
       currentGain =  getImprovement(5);
-      //console.log('current gain: ', currentGain);
-      //console.log('target gain: ', weaponsAutoGainValue);
       //console.log('if: ', currentGain > weaponsAutoGainValue, 'current: ', currentGain, 'auto gain target: ', weaponsAutoGainValue);
       if (currentGain > weaponsAutoGainValue) {
-        //console.log(' PRESTIGE 5 PRESTIGE 5 PRESTIGE 5 PRESTIGE 5 PRESTIGE 5 PRESTIGE 5 PRESTIGE 5 PRESTIGE 5 PRESTIGE 5 PRESTIGE 5 PRESTIGE 5 PRESTIGE 5 PRESTIGE 5 PRESTIGE 5 ');
+        document.getElementById('autoweaponsretrofit').classList.add('bold_override');
         prestige(5, true);
-      }
+        weaponsautoeffect = 2;
+      }      
+    }
+    systemsautoeffect -= 1;
+    if(systemsautoeffect <= 0) {
+      document.getElementById('autosystemsretrofit').classList.remove('bold_override');
+    }
+    weaponsautoeffect -= 1;
+    if(weaponsautoeffect <= 0) {
+      document.getElementById('autoweaponsretrofit').classList.remove('bold_override');
     }
   }
   
 }
 
 function checkForAutoUpdate() {
+  if (typeof settlewarautoeffect == 'undefined') {
+    settlewarautoeffect = 0;
+  }
   let table = {
     'Starfight time': x => player.progress[0] >= x.toNumber(),
     'Legacy Points': x => getUpdateGain().gte(x),
@@ -175,8 +191,14 @@ function checkForAutoUpdate() {
     'time since last Victory': x => Date.now() - player.stats.last.update >= x.toNumber() * 1000
   }
   if (table[player.auto.update.setting](player.auto.update.value)) {
+    document.getElementById('autosettlewar').classList.add('bold_override');
     update(true);
+    settlewarautoeffect = 2;
   }
+  settlewarautoeffect -= 1;
+    if(settlewarautoeffect <= 0) {
+      document.getElementById('autosettlewar').classList.remove('bold_override');
+    }
 }
 
 function doAutoThings() {
