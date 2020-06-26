@@ -59,7 +59,6 @@ function givePrestigeAchievementsAndLore(i, oldProgress) {
     retrofitOffset += 1;
     player.firstRetrofit = 'Systems';
   }
-  console.log('offset: ', retrofitOffset);
 
   /*if (player.progress[i] - oldProgress >= 3600) {   //1 hour
     giveNormalAchievement(6);
@@ -130,7 +129,7 @@ function checkForAchievementsAndLore() {
     giveNormalAchievement(0);   
     giveLore(1);
   }
-  if (getEffect(2) >= 2 && getEffect(1) >= 1) {  //cap = 1, power = 2
+  if (getEffect(2) >= 1 && getEffect(1) >= 2) {  //cap = 1, power = 2
     giveNormalAchievement(1);
     giveLore(2);
   }
@@ -138,7 +137,7 @@ function checkForAchievementsAndLore() {
     giveNormalAchievement(2);
     giveLore(3);
   }
-  if (getEffect(2) >= 20 && getEffect(1) >= 5) {  //cap = 5, power = 20
+  if (getEffect(6) >= 5 && getEffect(5) >= 20) {  //cap = 5, power = 20
     giveNormalAchievement(5);
     giveLore(6);
   }

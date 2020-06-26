@@ -59,6 +59,7 @@ function findTimeToNextSkillPoint(x) {
 }
 
 function getProgressToNextHundredth(i) {
+  // const showdebug = i == 1 ? console.log('i: ', i, 'getEffect(i): ', getEffect(i)) : '';
   if (typeof skillframes == 'undefined') {
     skillframes = 0;
   }
@@ -71,7 +72,7 @@ function getProgressToNextHundredth(i) {
   let secondDigit = 0;
   let rateComparison = 0;
   //console.log('i: ', i, 'effect: ', getEffect(i));
-  if (isNaN(getEffect(i) >= 10000)) {
+  if (isNaN(getEffect(i))) {
     firstDigit = '9';
     secondDigit = '9';
     rateComparison = 1.000;
@@ -92,28 +93,25 @@ function getProgressToNextHundredth(i) {
     secondDigit = getEffect(i).toString().split('').slice(5,6);
     rateComparison = 1.00062;
   }
-  /*
-  //if (i == 2) { off = 1; } else { off = 0}
-  const aspecttype = i == 2 ? off = 1: off = 2;
-  let firstDigit = getEffect(i).toString().split('').slice(3+off,4+off);
-  let secondDigit = getEffect(i).toString().split('').slice(4+off,5+off);
-  if (firstDigit == '.' ) {
-    firstDigit = getEffect(i).toString().split('').slice(4+off,5+off);
-    secondDigit = getEffect(i).toString().split('').slice(5+off,6+off);
-  }
-  if (secondDigit == '.') {
-    secondDigit = getEffect(i).toString().split('').slice(5+off,6+off);
-  }*/
+  
   digits = Number(firstDigit + secondDigit);
-  //const showdebug = i == 1 ? console.log('i: ', i, (getEffect(i)).toFixed(4), 'digits: ', digits):'';
+  //const showdebug2 = i == 2 ? console.log('i: ', i, (getEffect(i)).toFixed(4), 'digits: ', digits):'';
 
+  if (isNaN(getEffect(i))) {
+    progress = 1;
+    return progress;
+  }
   let quickprogress = getEffect(i);
   let progress = digits / 100;
   let rate = quickprogress / lastUpdate[index_lf];
-  //const showDebugRate = i == 1 ? console.log('i: ', i, 'rate: ', quickprogress / lastUpdate[index_lf]) : '';
-  if ( (i == 1 && rate >= rateComparison) || (i == 2 && rate >= rateComparison && getEffect(i) > 0.5)) {  //1.00125
+  
+  //const showDebugRate = i == 2 ? console.log('i: ', i, 'rate: ', rate) : '';
+  if (isNaN(rate)) {
+    progress = 1;
+    skillframes = 20;
+  } else if ( (i == 1 && rate >= rateComparison) || (i == 2 && rate >= rateComparison && getEffect(i) > 0.5)) {  //1.00125
     //console.log('getEffect(i): ', getEffect(i));
-    progress = 1
+    progress = 1;
     skillframes = 20;
   } else if (skillframes > 20 ){
     progress = 1;

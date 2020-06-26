@@ -284,14 +284,16 @@
         <!--   AUTO BATTLE -->
         <div class="autooption_column" id="auto-update-span" >   <!--   AUTO BATTLE -->
           <div class="auto_option">
-            <span class="auto_spacewar" style="display:none">
+            <span class="auto_spacewar tooltip" style="display:none">
               <input class="auto_checkbox" id="auto-update-on" onclick="toggleAutoOn('update')" type="checkbox"></input>
               <span class="autooption_option">STAR WAR PLAN</span>
+              <span class="tooltiptext tooltip_autosettlewar">Automatically Settle Wars and earn Legacy Points</span>
             </span>
           </div>
           <div class="optionspadding">
-            <span class="auto_spacewar starfight_skill" style="display:none">VALUE: 
+            <span class="auto_spacewar starfight_skill tooltip" style="display:none">VALUE: 
               <input class="auto_input" id="auto-update-value" type="text" onchange="updateAutoValue('update')"></input>
+              <span class="tooltiptext tooltip_autoGain">Enter time (i.e. HH:MM:SS) or number (e.g. 15 or 1e6)</span>
             </span>
           </div>
           <div class="togglebtn optionspadding"><span class="auto_spacewar" style="display:none">
@@ -309,7 +311,7 @@
               <input class="auto_checkbox " id="auto-dev-on" onclick="toggleAutoOn('dev')" type="checkbox"></input>
               <span class="autooption_option">ENGAGE AUTO PILOT</span>
               <span id="auto-dev-lonely-info"></span> 
-              <span class="tooltiptext tooltip_autoskilltoggle">Automatically assign skills</span>
+              <span class="tooltiptext tooltip_autoskilltoggle">Automatically assign Skill</span>
             </span>
           </div>
           <div></div>
@@ -317,14 +319,16 @@
         <!--   LEGACY OPTIONS -->
         <div class="autooption_column">  <!--   LEGACY OPTIONS -->
           <div class="auto_option">
-            <span class="auto_retrofit" style="display:none">
+            <span class="auto_retrofit tooltip" style="display:none">
               <input class="auto_checkbox" id="systems_gain_auto" onclick="toggleAutoGain('systems')" type="checkbox"></input>
               <span class="autooption_option">RETROFIT SCHEDULE</span>
+              <span class="tooltiptext tooltip_autoretrofitSystems">Automatically Retrofit Systems</span>
             </span>
           </div>
           <div class="optionspadding">
-            <span class="auto_retrofit starfight_skill" style="display:none">GAIN: 
+            <span class="auto_retrofit starfight_skill tooltip" style="display:none">GAIN: 
               <input class="auto_input" id="systems_gain_input" type="text" onchange="updateAutoGain('systems')" value="0"></input>
+              <span class="tooltiptext tooltip_autoGain">Enter number (e.g. 100 for 100% or 1e5 for 100,000%)</span>
             </span>
           </div>   
           <div></div>
@@ -333,28 +337,32 @@
         <!--   AUTO RETROFIT   -->
         <div class="autooption_column" id="auto-prestige-span">  <!--   AUTO RETROFIT   -->
           <div class="auto_option">
-            <span class="auto_retrofit" style="display:none">
+            <span class="auto_retrofit tooltip" style="display:none">
               <input class="auto_checkbox" id="weapons_gain_auto" onclick="toggleAutoGain('weapons')" type="checkbox"></input>
               <span class="autooption_option">RETROFIT SCHEDULE</span>
+              <span class="tooltiptext tooltip_autoretrofitWeapons">Automatically Retrofit Weapons</span>
             </span>
           </div>
           <div class="optionspadding">
-            <span class="auto_retrofit starfight_skill" style="display:none">GAIN: 
+            <span class="auto_retrofit starfight_skill tooltip" style="display:none">GAIN: 
               <input class="auto_input" id="weapons_gain_input" type="text" onchange="updateAutoGain('weapons')" value="0"></input>
+              <span class="tooltiptext tooltip_autoGain">Enter number (e.g. 100 for 100% or 1e5 for 100,000%)</span>
             </span>
           </div>
         </div>
         <!--   AUTO LEADER UP   -->
         <div class="autooption_column" id="auto-enlightened-span"> <!--   AUTO LEADER UP   -->
           <div class="auto_option">
-            <span class="auto_leaderup" style="display:none">
+            <span class="auto_leaderup tooltip" style="display:none">
               <input class="auto_checkbox" id="auto-enlightened-on" onclick="toggleAutoOn('enlightened')" type="checkbox"></input>
               <span class="autooption_option">LEADERSHIP MATRIX</span>
+              <span class="tooltiptext tooltip_autoLeaderUp">Automatically Rank Up</span>
             </span>
           </div>
           <div class="optionspadding">
-            <span class="auto_leaderup starfight_skill" style="display:none">VALUE: 
+            <span class="auto_leaderup starfight_skill tooltip" style="display:none">VALUE: 
               <input class="auto_input" id="auto-enlightened-value" type="text" onchange="updateAutoValue('enlightened')"></input>
+              <span class="tooltiptext tooltip_autoGain">Enter time (i.e. HH:MM:SS) or number (e.g. 15 or 1e6)</span>
             </span>
           </div>
           <div class="togglebtn optionspadding"><span class="auto_leaderup" style="display:none">
@@ -425,11 +433,11 @@
         </div>
         <div class="achievements_grouping">
           <span id="normal-ach-status-0">&#x2610;</span><span> Get In The Chopper: <span class="objective_support">Assign a skill</span></span>
-          <br/><span id="normal-ach-status-1">&#x2610;</span><span> Work On Your Starfighter: <span class="objective_support">Get Capacity to 1 + Power to 2</span></span>
+          <br/><span id="normal-ach-status-1">&#x2610;</span><span> Work On Your Starfighter: <span class="objective_support">Get Capacity to 1, Firepower to 2</span></span>
           <br/><span id="normal-ach-status-2">&#x2610;</span><span> Skill Up: <span class="objective_support">Get Total Skill to 15</span></span>
           <br/><span id="normal-ach-status-3">&#x2610;</span><span> Retrofit: <span class="objective_support">Retrofit either your weapons or your systems</span></span>
           <br/><span id="normal-ach-status-4">&#x2610;</span><span> Retrofit²: <span class="objective_support">Retrofit whatever you didn't last objective</span></span>
-          <br/><span id="normal-ach-status-5">&#x2610;</span><span> Super Starfighter Championship Edition: <span class="objective_support">Capacity = 5, Power = 20</span></span>
+          <br/><span id="normal-ach-status-5">&#x2610;</span><span> Super Starfighters Championship Edition: <span class="objective_support">Armada Capacity = 5, Firepower = 20</span></span>
           <br/><span id="normal-ach-status-6">&#x2610;</span><span> Take Charge: <span class="objective_support">Attain Leadership Rank 1</span></span>
           <br/><span id="normal-ach-status-7">&#x2610;</span><span> Take Command: <span class="objective_support">Attain Leadership Rank 5 </span></span>
           <br/><span id="normal-ach-status-8">&#x2610;</span><span> Baby Steps: <span class="objective_support">Settle a Space War</span></span>
@@ -571,7 +579,7 @@
               <span><span id="milestone-status-1">&#x2718;</span> Auto Retrofit Scheduling</span><span class="text_hidden">f1flflllll</span><span>4+ Missions complete</span>
             </div>
             <div class="legacyachievements_grouprow">
-              <span><span id="milestone-status-2">&#x2718;</span> Auto Star War Planning</span><span class="text_hidden">.llflfll1l_</span><span>8+ Missions complete</span>
+              <span><span id="milestone-status-2">&#x2718;</span> Auto Star War Planning</span><span class="text_hidden">lllllflflll_</span><span>8+ Missions complete</span>
             </div>
             <div class="legacyachievements_grouprow">
               <span><span id="milestone-status-3">&#x2718;</span> Auto Legacy Introspection</span><span class="text_hidden"> llfll</span><span>16+ Missions complete</span>
@@ -610,7 +618,7 @@
                 <span class="toggle_3" id="toggle0_3">_</span>
               </div>
             </div>
-            <div class="starfight_skill legacyfraction" id="auto-assign-update-points-row">AUTO-LEGACY: <input class="fraction_input" id="auto-assign-update-points-2" type="text" onchange="updateAutoAssignUpdatePoints(2)"></input></div>
+            <div class="starfight_skill legacyfraction tooltip" id="auto-assign-update-points-row"><span class="tooltiptext tooltip_autolegacy">Use decimals: 0.33 = 33%</span>AUTO-LEGACY: <input class="fraction_input" id="auto-assign-update-points-2" type="text" onchange="updateAutoAssignUpdatePoints(2)"></input></div>
             <div class="legacygroup_stats">
               <div class="provenance_stat">
                 <div><span class="starfight_effect">RESOLVE:</span></div>
@@ -640,7 +648,7 @@
                 <span class="toggle_3" id="toggle1_3">_</span>
               </div>
             </div>
-            <div class="starfight_skill legacyfraction" id="auto-assign-update-points-row">AUTO-LEGACY: <input class="fraction_input" id="auto-assign-update-points-1" type="text" onchange="updateAutoAssignUpdatePoints(1)"></input></div>
+            <div class="starfight_skill legacyfraction tooltip" id="auto-assign-update-points-row"><span class="tooltiptext tooltip_autolegacy">Use decimals: 0.33 = 33%</span>AUTO-LEGACY: <input class="fraction_input" id="auto-assign-update-points-1" type="text" onchange="updateAutoAssignUpdatePoints(1)"></input></div>
             <div class="legacygroup_stats">
               <div class="provenance_stat">
                 <div><span class="starfight_effect">RESONANCE:</span></div>
@@ -670,7 +678,7 @@
                 <span class="toggle_3" id="toggle2_3">_</span>
               </div>
             </div>
-            <div class="starfight_skill legacyfraction" id="auto-assign-update-points-row">AUTO-LEGACY: <input class="fraction_input" id="auto-assign-update-points-0" type="text" onchange="updateAutoAssignUpdatePoints(0)"></input></div>
+            <div class="starfight_skill legacyfraction tooltip" id="auto-assign-update-points-row"><span class="tooltiptext tooltip_autolegacy">Use decimals: 0.33 = 33%</span>AUTO-LEGACY: <input class="fraction_input" id="auto-assign-update-points-0" type="text" onchange="updateAutoAssignUpdatePoints(0)"></input></div>
             <div class="legacygroup_stats">
               <div class="provenance_stat">
                 <div><span class="starfight_effect">RESOURCE:</span></div>
@@ -982,8 +990,8 @@
             <div class="guidance_notes">
               <!--<div>This game was made as part of an effort to learn basic web development.  It is inspired by Dan Simon's '5 hours until the update'.  Google it.</div>-->
               THIS GAME WAS MADE AS PART OF AN EFFORT TO LEARN BASIC WEB DEVELOPMENT.  IT IS INSPIRED BY DAN SIMON'S <span class="guidance_tantext">'5 Hours until the update'</span>.  GOOGLE IT.<br/><br/>
-              <span class="guidance_tantext">ESPL 2</span> IS ALREADY IN DEVELOPMENT AND FEATURES ALL NEW MECHANICS.<br/><br>
-              <span class="guidance_tantext">EPIC STARFIGHTER PILOT LEGACY</span> IS <span class="guidance_tantext">DEDICATED TO EVERYONE</span>.  AND ESPECIALLY TO THE MEMORY OF STARFISH691.  LIFE DID NOT THROW YOU A BREAK.<br/><br>
+              <!--<span class="guidance_tantext">ESPL 2</span> IS ALREADY IN DEVELOPMENT AND FEATURES ALL NEW MECHANICS.<br/><br>-->
+              <span class="guidance_tantext">EPIC STARFIGHTER PILOT LEGACY</span> IS <span class="guidance_tantext">DEDICATED TO EVERYONE</span>.  AND ESPECIALLY TO THE MEMORY OF Starfish691.  LIFE DID NOT THROW YOU A BREAK.<br/><br>
               WE ARE ALL SHAPED BY OUR OWN EXPERIENCES, GIVING US ALL UNIQUE PERSPECTIVE.  LISTEN TO AND UNDERSTAND EACH OTHER.  WORK TO IMPROVE YOURSELF.  <span class="guidance_tantext">LEARN TO PROGRAM?</span>
             </div>
           </div>
@@ -1076,8 +1084,8 @@
         <div><span id="game-speed"></span></div>-->
         <div class="battlestat_title">Last Retrofit:</div>
         <div><span id="time-since-last-prestige"></span><span class="battlestat_stat"> ago</span></div>
-        <div class="battlestat_title"><span class="text_hidden">...</span></div>
-        <div><span id="unassigned-devs"></span></div>
+        <div class="battlestat_title tooltip">Refresh Boost:<span class="tooltiptext tooltip_refreshboost">After 24 hours, Refresh Boost begins to degrade (and memory usage increases).  Refresh the game!</span></div>
+        <div><span id="refresh_boost"></span></div>
         <div class="battlestat_title">Game Speed:</div>
         <div><span id="game-speed"></span></div>
         <div class="battlestat_title">Morale: <span class="smalltext">(per 30min)</span></div>
@@ -1086,8 +1094,8 @@
       <div class="progressstats_stat">
         <div class="battlestat_title">Last Leader Up:</div>
         <div><span id="time-since-last-enlightened"></span><span class="battlestat_stat"> ago</span></div>
-        <div class="battlestat_title"><span class="text_hidden">...</span></div>
-        <div><span id="enlightened"></span></div>
+        <div class="battlestat_title">Last Boost:</div>
+        <div><span id="last_boost"></span></div>
         
         <div class="battlestat_title">Missions Complete:</div>
         <div><span id="total-challenge-completions"></span></div>

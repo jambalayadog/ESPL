@@ -12,6 +12,7 @@ function loadGame(s, offlineProgress) {
     simulateTime((now - player.lastUpdate) / 1000);
   }
   player.lastUpdate = now;
+  player.refreshLast = now;
   saveGame();
   fillInInputs();
   updateTabDisplay();
@@ -217,6 +218,15 @@ function fixPlayer () {
   if (!('firstRetrofit' in player)) {
     player.firstRetrofit = '';
   }
+  if (!('refreshBoost' in player)) {
+    player.refreshBoost = 1;
+  }
+  if (!('refreshLast' in player)) {
+    player.refreshBoost = 0;
+  }
+  if (!('lastLeaderBoost' in player)) {
+    player.lastLeaderBoost = 0;
+  }
   
 }
 
@@ -394,7 +404,10 @@ let initialPlayer = {
   lastUpdate: Date.now(),
   purchaseBoostMultiplier: 100,
   purchases: [0, 0, 0],
-  firstRetrofit: ''
+  firstRetrofit: '',
+  refreshBoost: 1,
+  refreshLast: 0,
+  lastLeaderBoost: 0
 }
 
 function resetGame() {

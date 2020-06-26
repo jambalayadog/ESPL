@@ -181,6 +181,7 @@ function updateDisplay () {
   } else {
     document.getElementById('hard-mode-span').innerHTML = 'Hard mode: off';
   }
+  document.getElementById('last_boost').innerHTML = (player.lastLeaderBoost).toFixed(2) + 'x';
   /* document.getElementById('devs-plural').innerHTML = (getTotalDevs() === 1) ? '' : 's'; */
   /* document.getElementById('update-points-plural').innerHTML = (player.updatePoints.eq(1)) ? '' : 's';*/
  /*  document.getElementById('updates-plural').innerHTML = (player.updates === 1) ? '' : 's';*/

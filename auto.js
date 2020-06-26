@@ -144,20 +144,21 @@ function checkForAutoGain() {
       //console.log('current gain: ', currentGain);
       //console.log('target gain: ', systemsAutoGainValue);
       //console.log('if: ', currentGain > systemsAutoGainValue / 100)
+      //console.log('if: ', currentGain > systemsAutoGainValue / 100, 'current: ', currentGain, 'auto gain target: ', systemsAutoGainValue / 100);
       if (currentGain > systemsAutoGainValue / 100) {
         prestige(6, true);
       }
     }
     let weaponsAutoGain = document.getElementById('weapons_gain_auto').checked;
     if (weaponsAutoGain) {
-      let weaponsAutoGainValue = player.auto.gain.values[0] + 100;
+      let weaponsAutoGainValue = player.auto.gain.values[0];
       //console.log('new value from prestige: ', newValueFromPrestige());
       //console.log('player.progress[5]: ', player.progress[5]);
       currentGain =  getImprovement(5);
       //console.log('current gain: ', currentGain);
       //console.log('target gain: ', weaponsAutoGainValue);
-      //console.log('if: ', currentGain > weaponsAutoGainValue / 100)
-      if (currentGain > weaponsAutoGainValue / 100) {
+      //console.log('if: ', currentGain > weaponsAutoGainValue, 'current: ', currentGain, 'auto gain target: ', weaponsAutoGainValue);
+      if (currentGain > weaponsAutoGainValue) {
         //console.log(' PRESTIGE 5 PRESTIGE 5 PRESTIGE 5 PRESTIGE 5 PRESTIGE 5 PRESTIGE 5 PRESTIGE 5 PRESTIGE 5 PRESTIGE 5 PRESTIGE 5 PRESTIGE 5 PRESTIGE 5 PRESTIGE 5 PRESTIGE 5 ');
         prestige(5, true);
       }
@@ -195,4 +196,5 @@ function doAutoThings() {
   if (hasAuto('assign-update-points') && player.auto.assignUpdatePoints.on) {
     autoAssignUpdatePoints();
   }
+  refreshBoost()
 }

@@ -36,7 +36,7 @@ function updateAchievementDisplay() {
       document.getElementById('lategame-ach-status-' + i).style.color = achievements.checkboxcolor;
     }
   }
-  if (checkForSpecificAchievement(2)) {                                       // when we Retrofit for the first time, unlock Armada and
+  if (checkForSpecificAchievement(3)) {                                       // when we Retrofit for the first time, unlock Armada and
     var ele = document.getElementsByClassName("unlock_prestige");             // show the Armada and leadership stats
     for (var i = 0; i < ele.length; i++) {
       ele[i].style.visibility = 'visible';

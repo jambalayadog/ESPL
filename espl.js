@@ -138,7 +138,7 @@ function getGameSpeed() {
 function realTimeToGameTime(diff) {
   //console.log((diff * getGameSpeed() * player.purchaseBoostMultiplier).toFixed(2), player.purchaseBoostMultiplier);
   //console.log('boost: ', player.purchaseBoostMultiplier/100);
-  return diff * getGameSpeed() * (player.purchaseBoostMultiplier/100);
+  return diff * getGameSpeed() * (player.purchaseBoostMultiplier/100) * (player.refreshBoost);
 }
 
 function gameCode(diff) {
@@ -271,6 +271,8 @@ function prestige(i, noConfirm) {
 
 function enlightened() {
   if (player.progress[7] >= 1) {
+    player.lastLeaderBoost = getEffect(7);
+    //console.log('last leader boost: ', player.lastLeaderBoost);
     player.progress[7] = getPatienceMeterAfterEnlightened();
     player.enlightened++;
     player.stats.last.enlightened = Date.now();
@@ -468,4 +470,16 @@ window.onload = function () {
   loadGameStorage();
   setInterval(tick, 50);
   setInterval(saveGame, 10000);
+}
+
+function refreshBoost() {
+  let refreshTime = Date.now() - player.refreshLast;
+  let refreshTarget = 8.64e+7; //(24 hours)
+  if ( refreshTime >= refreshTarget ) {
+    player.refreshBoost = Math.max(0.5, 1.0 * (refreshTarget/refreshTime));
+  } else {
+    player.refreshBoost = 1.0;
+  }
+  //console.log(player.refreshBoost, refreshTime);
+  document.getElementById('refresh_boost').innerHTML = (player.refreshBoost * 100).toFixed(0) + '%';
 }
