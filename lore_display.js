@@ -8,11 +8,11 @@ const NEW_LORE_LIST = [
   'To really harness everything at my disposal, it\'s time to lead.  I\'ve got to put time in developing my leadership skills and get my first rank.', // leader = 1
   'Wow, Leadership has its benefits.  Everythin is boosted from my Leadership.  I will keep working on my Leadership and attain higher ranks.', // leader = 5
   'Victory is within reach!  Soon, we can settle the first war and begin our Epic Starfighter Pilot Legacy.  Legacy screen opening up soon, near you.', // settle war
-  'With our Legacy we can dedicate ourselves: Resolve, the drive get things done; Resonance, the ability to lead; and Resource; the ability to source.', // one point in each legacy
-  'Our Legacy is starting to take shape and soon we will be winning wars regularly.  Power through more wars and gain experience towards your legacy', // get autopilot
-  'Oh jee, ooooooootto pilot.  Game changer.  So now that we\'re winning wars, how fast can we win a war?  Can we do 5 hours in an hour?  Starfight!', // space war in an hour
-  'On the flip side, if I fight longer wars, there will be bigger stories written, and with bigger stories, comes more legacy.  More legacy = more upgrades.', // 2 legacy points
-  'All this legacy building makes me realize the potential I have.  There are some goals I should commit myself to if I want to truly be a galactic hero', //all legacy upgrades
+  'Legacy is used to expand our abilities: Resolve, the ability to complete; Resonance, the ability to lead; and Resource, the ability to source.', // one point in each legacy
+  'Our Legacy is starting to take shape and soon we will be winning wars regularly.  Power through more wars and firmly establish our legacy', // get autopilot
+  'Jolly Auto-Pilot!  Game changer.  So now that we\'re winning wars, how fast can we win a war?  Can we fight 5 hours in only one hour?', // space war in an hour
+  'If I fight longer wars, there will be bigger stories written, and with bigger stories, comes more legacy.  More legacy = more upgrades.', // 2 legacy points
+  'All this legacy building makes me realize the potential I have.  I should get all the upgrades if I want to truly be a galactic hero', //all legacy upgrades
   'Time to start proving myself.  It\'s time to go out and show the galaxy that I am the Epic Starfighter Pilot and this is my destiny.  My Legacy.', //space war in a minute
   'Not bad!  I bet I can win a space war without being a leader, just on cool alone.  Well, with my Armada and my starfighter to back me up.', // space war without becoming a leader
   'The biggest fights rage beyond just a simple skirmish.  If I prove I can fight for the long haul, then maybe I can take on some serious missions. ', // starfight for a day
@@ -28,13 +28,13 @@ const NEW_LORE_LIST = [
   'How big of a war can I get into?  I think web numbers usually break around 1e308, so let\'s get that many legacy points and see what happens.',  // 1e308 legacy points in one war
   'Oh I did it!   This one\'s a freebie!  I\'ve completed all the Journey Objectives.  Now on to the Master Objectives.  Oh gosh, this may be a while.', // all normal achievements
   'I bet with a good star war plan, I can orchestrate a chain of wars, each larger than the last. Call me crazy but I think my operations are strong.', // 10 space wars e308 bigger than previous
-  'It is my destiny to build the largest Armada that the galaxy has ever seen!  I will set about and build a supreme Armada to awe all those who oppose.', // gain 4383:00:00 in one retrofit
+  'It is my destiny to build the largest Armada that the galaxy has ever seen!  I will build the ultimate Armada and defeat all who oppose.', // gain 4383:00:00 in one retrofit
   'The only way to truly lead, is to lead for a long time.  Everyday leaders come and go, but true Leadership stands the test of time.',  // get 10x leadership boost
   'The answer to life, the universe, and everything.  I will have truly endured if I can say I\'ve bested all the challenges in my life, and then some.', // complete 42 missions
   'I can feel that I\'m almost there, but there is yet still so much to learn about about my lineage within the origins of the universe.', // Trillion Provenance
-  'What rank do you get when you\'re already the highest rank possible?  Make up a new one?  Grand Leader Of Everything?  Ruler Of The Universe?', // Leader up = 80
+  'What rank do you get when you\'re already the best rank possible?  Make up a new one?  Grand Leader Of Everything?  Ruler Of The Universe?', // Leader up = 80
   '1e12, that\'s a trillion, right?  Is there anyone that\'s got a trillion skill points?  I bet it won\'t even take my that long to train myself.', // trillion skill
-  'How long are things worth fighting over, you wonder.  You realize that your ideals are worth fighting for, no matter how many long it takes', // 17532:00:00 space war
+  'How long are things worth fighting over, you wonder.  You realize that your ideals are worth fighting for, no matter the cost.  Starfight forever!', // 17532:00:00 space war
 ];
 
 //   '17 Clicky clicky, I\'m the fastest draw in the galaxy.  The reach of my empire is vast and I can crush my enemies in a second. ', // space war in a second

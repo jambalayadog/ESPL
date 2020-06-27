@@ -178,7 +178,7 @@ body {
     display: flex;
     overflow-y: hidden;
     flex-direction: column-reverse;
-    line-height: normal;
+    line-height: 28px;
     scroll-snap-type: y mandatory;
     scroll-behavior: smooth;
 }
