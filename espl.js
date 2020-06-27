@@ -271,8 +271,7 @@ function prestige(i, noConfirm) {
 
 function enlightened() {
   if (player.progress[7] >= 1) {
-    document.getElementById('autorankup').classList.add('bold_override');
-    leadershipautoeffect = 2;
+    
     player.lastLeaderBoost = getEffect(7);
     //console.log('last leader boost: ', player.lastLeaderBoost);
     player.progress[7] = getPatienceMeterAfterEnlightened();

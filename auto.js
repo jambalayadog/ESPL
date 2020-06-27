@@ -91,6 +91,8 @@ function checkForAutoEnlightened() {
     'X-second-long Retrofit': x => shouldEnlightened(x)
   }
   while (player.progress[7] >= 1 && table[player.auto.enlightened.setting](player.auto.enlightened.value.toNumber())) {
+    document.getElementById('autorankup').classList.add('bold_override');
+    leadershipautoeffect = 2;
     enlightened();
   }
   leadershipautoeffect -= 1;

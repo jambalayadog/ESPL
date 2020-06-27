@@ -41,7 +41,10 @@ function findTimeToNextSkillPoint(x) {
     let rate = newValue / oldValue;
     oldValue = k;
     //console.log('k: ', k, 'j: ', j)
-    if (rate >= 1.00004 && newValue >= 100) {
+    if (rate >= 1.00001 && newValue >= 10000) {
+      document.getElementById("progress_nextdev").value = 1;
+      frames = 20;
+    } else if (rate >= 1.00004 && newValue >= 100) {
       document.getElementById("progress_nextdev").value = 1;
       frames = 20;
     } else if (frames > 0) {
@@ -203,9 +206,13 @@ function getImprovement(i) {
 
 function getNewBase(i) {
   if (i == 5) {  //weapons
-    let trueGain = Number(getEffect(i,(Math.max(player.progress[i], newValueFromPrestige())) / getEffect(7)));
+    //let trueGain = Number(getEffect(i,(Math.max(player.progress[i], newValueFromPrestige())) / getEffect(7)));
+    let trueGain = getEffect(i,(Math.max(player.progress[i], newValueFromPrestige())) / getEffect(7));
     const infiniteGain = trueGain === Infinity ? newBase = 'Infinity' : newBase = format(trueGain);
-    //console.log('i: ', i, 'newBase: ', newBase);
+    //console.log(Number(getEffect(i,(Math.max(player.progress[i], newValueFromPrestige())) / getEffect(7))));
+    //console.log(getEffect(i,(Math.max(player.progress[i], newValueFromPrestige())) / getEffect(7)));
+    //console.log(getEffect(i,(Math.max(player.progress[i], newValueFromPrestige()))));
+    //console.log('i: ', i, 'newBase: ', newBase, 'progress: ', player.progress[i], 'nvfp:', newValueFromPrestige(), 'truegain: ', trueGain);
   } else {  //systems
     rate = formatEffect(i, newValueFromPrestige())/formatEffect(i)
     const noProgress = formatEffect(i) == 0 ? newBase = getEffect(i,newValueFromPrestige()) : newBase = rate * player.stats.retrofits.retrofitSystems;

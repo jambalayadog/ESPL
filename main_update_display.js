@@ -11,6 +11,11 @@ function updateDisplay () {
   //console.log('update display - ')
   updateTabButtonDisplay();
   document.getElementById("current-fight-time").innerHTML = toTime(player.progress[0]);
+  //console.log('new value: ', (newValueFromPrestige()).toFixed(2), toTime(newValueFromPrestige()), typeof( toTime(newValueFromPrestige())));
+  if ( toTime(newValueFromPrestige()) >= '4383:00:00') {
+    //console.log(typeof(toTime(newValueFromPrestige())));
+    //debugger;
+  }
   for (let i = 0; i <= 6; i++) {
     
     if (i == 2 || i == 1)  {
@@ -35,9 +40,9 @@ function updateDisplay () {
     let progid = 'progress' + i + '_nextretrofit';
     let progele = document.getElementById(progid);
     if (canPrestigeWithoutGain(i)) {
-      if (i == 5) {
+      if (i == 5) {  //weapons
         el.innerHTML = 'Base Power: ' + format(getBase(i)) + '<br/>New Base: ' + format(getNewBase(i)) + ''
-      } else {
+      } else {  //systems
         el.innerHTML = 'Base Capacity: ' + format(getBase(i)) + '<br/>New Base: ' + format(getNewBase(i)) + '';
       }
       progele.style.display = '';
@@ -46,9 +51,9 @@ function updateDisplay () {
     } else if (canPrestige(i)) {
       progele.style.display = 'none';
       let newValue = newValueFromPrestige();
-      if (i == 5) {
+      if (i == 5) {  // weapons
         el.innerHTML = 'Base Power: ' + format(getBase(i)) + '<br/>New Base: ' + format(getNewBase(i))  + '<br/> Improvement: ' + getImprovement(i) + '%';
-      } else {  // i == 6
+      } else {  // i == 6 systems
         el.innerHTML = 'Base Capacity: ' + format(getBase(i)) + '<br/>New Base: ' + format(getNewBase(i)) + '<br/> Improvement: ' + getImprovement(i) + '%';  //(((rate-1)*100).toFixed(1) + '%');    //format((rate-1)*100) + '%'
       }
       btn.style.backgroundColor = UIColors.button_active;    //green: active, profitable

@@ -63,7 +63,7 @@ function givePrestigeAchievementsAndLore(i, oldProgress) {
   /*if (player.progress[i] - oldProgress >= 3600) {   //1 hour
     giveNormalAchievement(6);
   }*/
-  if (player.progress[i] - oldProgress >= 15778800) {  //retrofit 4383:00:00
+  if (player.progress[i] - oldProgress >= 15120000) {  //retrofit 4383:00:00
     giveLategameAchievement(2);
     giveLore(30);
   }
