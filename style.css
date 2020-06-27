@@ -1587,6 +1587,18 @@ button, input {
     width: 130px!important;
 }
 
+.tooltip_exitmission {
+    left: -11px!important;
+    top: 20px!important;
+    width: 215px!important;
+}
+
+.tooltip_autolegacy {
+    left: -80px!important;
+    top: 20px!important;
+    width: 288px!important;
+}
+
 
 /* TEXT EFFECT 
 TEXT EFFECT 

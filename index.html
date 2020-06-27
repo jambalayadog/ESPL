@@ -591,9 +591,10 @@
               <span class="text_hidden">. </span>
             </div>
             <div> 
-              <span id="auto-assign-update-points-span" style="visibility: hidden;">
+              <span class="tooltip" id="auto-assign-update-points-span">
                 <input class="auto_checkbox" id="auto-assign-update-points-on" onclick="toggleAutoOn('assignUpdatePoints')" type="checkbox"></input>
                 <span class="autooption_option">AUTO-SPEND LEGACY</span>
+                <span class="tooltiptext tooltip_autolegacy">Automatically convert LP to Resolve, Resonance, and Resource</span>
               </span>
             </div>
           </div>
@@ -715,7 +716,7 @@
       <div class="mission_control">
         <div class="mission_control_element missiontitle_stat"><span id="next-challenge-unlock">NEXT MISSION UNLOCK:</span></div>
         <div class="mission_control_element missiontitle_stat">ACTIVE: <span class="legacypoints_number" id="missioncontrol_currentmission"></span></div>
-        <div class="mission_control_element"><span><button class="mission_abort_button" onclick="exitChallenge()">Exit Current Mission</button></span></div>
+        <div class="mission_control_element"><span><button class="mission_abort_button tooltip" onclick="exitChallenge()">Exit Current Mission<span class="tooltiptext tooltip_exitmission">Note that exiting the mission will Settle The War (if possible) and also earn Legacy Points</span></button></span></div>
         <div class="mission_control_element missiontitle_stat">COMPLETE: <span class="legacypoints_number" id="missioncontrol_missionscomplete"></span></div>
       </div>
       <div class="missions_list">
