@@ -717,7 +717,11 @@
         <div class="mission_control_element missiontitle_stat"><span id="next-challenge-unlock">NEXT MISSION UNLOCK:</span></div>
         <div class="mission_control_element missiontitle_stat">ACTIVE: <span class="legacypoints_number" id="missioncontrol_currentmission"></span></div>
         <div class="mission_control_element"><span><button class="mission_abort_button tooltip" onclick="exitChallenge()">Exit Current Mission<span class="tooltiptext tooltip_exitmission">Note that exiting the mission will Settle The War (if possible) and also earn Legacy Points</span></button></span></div>
-        <div class="mission_control_element missiontitle_stat">COMPLETE: <span class="legacypoints_number" id="missioncontrol_missionscomplete"></span></div>
+        <div class="mission_control_element missiontitle_stat progresstip">COMPLETE: 
+          <span class="legacypoints_number" id="missioncontrol_missionscomplete"></span>
+          <span class="progresstipbar" id="missionprogress"><progress class="p1" id="progress_starfight4" value="0"></progress></span>
+        </div>
+        
       </div>
       <div class="missions_list">
         <!-- MISSION: -- SOULO -->
@@ -726,9 +730,9 @@
             <span class="button_title">INNER SOULO</span>
             <span class="legacygroup_subtext"><br/>Starfighter skills are nerfed as are many multipliers but you are augmented by your missions complete.<br/></span>
             <span class="legacygroup_subtext">Goal: <span id="logarithmic-goal"></span> Starfight</span>
-            <span class="tooltiptext">
-              Every 30 minutes Starfight reached grants permanent Leader Ranks, up to 10.
-              <br><br>After 12 hours, you being to produce Provenance which boosts Player Weapons and Armada Weapons.
+            <span class="tooltiptext tooltip_mission_soulo">
+              Every 30 minutes Starfight reached grants permanent Leader Ranks, up to 9.
+              <br><br>After 12 hours, you begin to produce Provenance which boosts Player & Armada Weapons & Systems
             </span>
           </button>
           <div class="missiongroup_stats">
@@ -1094,15 +1098,15 @@
         <div><span id="progress-milestones-effect"></span><span >x</span></div>
       </div>
       <div class="progressstats_stat">
-        <div class="battlestat_title">Last Leader Up:</div>
+        <div class="battlestat_title">Last Rank Up:</div>
         <div><span id="time-since-last-enlightened"></span><span class="battlestat_stat"> ago</span></div>
         <div class="battlestat_title">Last Boost:</div>
         <div><span id="last_boost"></span></div>
-        
-        <div class="battlestat_title">Missions Complete:</div>
-        <div><span id="total-challenge-completions"></span></div>
-        <div class="battlestat_title">Active Mission:</div>
+        <div class="battlestat_title">Mission:</div>
         <div><span id="current-challenge"></span></div>
+        <div class="battlestat_title">Completed:</div>
+        <div><span id="total-challenge-completions"></span></div>
+        
       </div>
     </div>
     

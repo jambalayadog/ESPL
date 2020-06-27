@@ -105,14 +105,20 @@ function updateDisplay () {
   if (player.currentChallenge !== '') {
     recordDevelopment_currentChallenge = Math.max(player.stats.recordDevelopment[player.currentChallenge], getChallengeGoal(player.currentChallenge));
     document.getElementById("progress_starfight3").style.display = '';
+    document.getElementById("progress_starfight4").style.visibility = '';
+    applyCSSStyling();
     document.getElementById("progress_starfight3").value = player.progress[0] / recordDevelopment_currentChallenge;
+    document.getElementById("progress_starfight4").value = player.progress[0] / recordDevelopment_currentChallenge;
+    
   } else if (player.currentChallenge == '' && canUpdate()) {
     recordDevelopment_currentChallenge = player.stats.recordDevelopment[player.currentChallenge];
     //console.log('progress: ', player.progress[0], 'record dev: ', recordDevelopment_currentChallenge, 'value: ', player.progress[0] / recordDevelopment_currentChallenge, 'challenge goal: ', getChallengeGoal(player.currentChallenge));
     document.getElementById("progress_starfight3").style.display = '';
+    document.getElementById("progress_starfight4").style.visibility = 'hidden';
     document.getElementById("progress_starfight3").value = player.progress[0] / recordDevelopment_currentChallenge;
   } else {
     document.getElementById("progress_starfight3").style.display = 'none';
+    document.getElementById("progress_starfight4").style.visibility = 'hidden';
   }
   //console.log('to next mission: ', getProgressToNextChallenge(), 'current: ', (player.progress[0]).toFixed(4), '%: ', (player.progress[0]/getProgressToNextChallenge()).toFixed(7));
   if (getProgressToNextChallenge() > 1 && player.progress[0]/getProgressToNextChallenge() > 0.5 && player.currentChallenge == '') {

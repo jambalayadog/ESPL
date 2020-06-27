@@ -272,8 +272,8 @@ body {
     color: var(--text_secondary);
     padding: 5px;
     grid-template-columns:
-        auto auto auto;
-    grid-column-gap: 20px;
+        200px 200px 200px;
+    grid-column-gap: 10px;
 }
 
 .battlestat_title {
@@ -1054,10 +1054,10 @@ body {
     box-sizing: border-box;
     color: var(--text_secondary);
     padding: 5px;
-    text-align: center;
+    /*text-align: center;*/
     display: grid;
     grid-template-columns:
-        auto auto auto auto;
+        215px 213px 190px 160px;
     height: 39px;
 }
 
@@ -1504,6 +1504,40 @@ button, input {
 
 */
 
+.progresstip {
+    position: relative;
+    display: inline-block;
+    /*border-bottom: 1px dotted black;*/
+}
+
+.progresstip .progresstipbar {
+    /*visibility: hidden;*/
+    width: 100px;
+    /*background-color: black;
+    color: var(--text_secondary);
+    border-color: var(--tip_border);
+    text-align: left;
+    border-radius: 2px;
+    padding: 5px;
+    font-size: 10px;
+    border: 1px solid slategray;*/
+
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 2;
+}
+
+.progresstip_mission1 {left: -542px!important; top: 96px!important;}
+.progresstip_mission2 {left: -280px!important; top: 96px!important;}
+.progresstip_mission3 {left: -15px!important; top: 96px!important;}
+.progresstip_mission4 {left: -542px!important; top: 228px!important;}
+.progresstip_mission5 {left: -280px!important; top: 228px!important;}
+.progresstip_mission6 {left: -15px!important; top: 228px!important;}
+.progresstip_mission7 {left: -542px!important; top: 360px!important;}
+.progresstip_mission8 {left: -280px!important; top: 360px!important;}
+.progresstip_mission9 {left: -15px!important; top: 360px!important;}
+
+
 .tooltip {
     position: relative;
     display: inline-block;
@@ -1596,6 +1630,12 @@ button, input {
 .tooltip_autolegacy {
     left: -80px!important;
     top: 20px!important;
+    width: 288px!important;
+}
+
+.tooltip_mission_soulo {
+    left: 00px!important;
+    top: 74px!important;
     width: 288px!important;
 }
 

@@ -484,3 +484,40 @@ function refreshBoost() {
   //console.log(player.refreshBoost, refreshTime);
   document.getElementById('refresh_boost').innerHTML = (player.refreshBoost * 100).toFixed(0) + '%';
 }
+
+
+function applyCSSStyling() {
+  currentChallenge = player.currentChallenge;
+  ele = document.getElementById('missionprogress');
+  ele.className = 'progresstipbar';
+  console.log(currentChallenge);
+  switch(currentChallenge) {
+    case 'logarithmic':
+      ele.classList.add('progresstip_mission1');
+      break;
+    case 'inefficient':
+      ele.classList.add('progresstip_mission2');
+      break;
+    case 'ufd':
+      ele.classList.add('progresstip_mission3');
+      break;
+    case 'lonely':
+      ele.classList.add('progresstip_mission4');
+      break;
+    case 'impatient':
+      ele.classList.add('progresstip_mission5');
+      break;
+    case 'unprestigious':
+      ele.classList.add('progresstip_mission6');
+      break;
+    case 'slow':
+      ele.classList.add('progresstip_mission7');
+      break;
+    case 'powerless':
+      ele.classList.add('progresstip_mission8');
+      break;
+    case 'upgradeless':
+      ele.classList.add('progresstip_mission9');
+      break;
+  }
+}
