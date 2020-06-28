@@ -41,7 +41,7 @@ function updateAchievementDisplay() {
     for (var i = 0; i < ele.length; i++) {
       ele[i].style.visibility = 'visible';
     }
-    //document.getElementById("tutorial_help").style.visibility = "hidden";     //hide the first tutorial
+    document.getElementById("tutorial_help").style.visibility = "hidden";     //hide the first tutorial
     //document.getElementById("tutorial2_help").style.visibility = "visible";   //start the second tutorial
   }
   if (checkForSpecificAchievement(8)) {

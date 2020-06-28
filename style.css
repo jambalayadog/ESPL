@@ -1686,19 +1686,20 @@ TEXT EFFECT
 }
 
 .tutorial .tutorial_text {
-    width: 774px;
-    background-color: rgba(80, 80, 80, 0.33);
+    width: 778px;
+    background-color: rgba(80, 80, 80, 0.13);
     color: var(--text_secondary);
     border-color: var(--tip_border);
     text-align: left;
     border-radius: 2px;
-    padding: 5px;
     font-size: 10px;
+    border: 1px solid grey;
+    
 
     /* Position the tooltip */
     position: absolute;
-    left: -156px;
-    top: -66px;
+    left: -154px;
+    top: -63px;
     z-index: 1;
 
     /* tutorial for each column */
@@ -1766,7 +1767,34 @@ TEXT EFFECT
     font-style: italic;
 }
 
+.tutorial_image {
+    height: 100px;
+    width: 778px;
+}
 
+.tutorial_close {
+    
+}
+
+.tutorial_imageX {
+    height: 20px;
+    width: 20px;
+}
+
+.x {
+    position: relative;
+    display: inline-block;
+}
+
+.x .x_close {
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 2;
+    left: 752px;
+    top: -1px;
+    background-color: rgba(0, 0, 0, 0);
+    border: 0px;
+}
 
 
 

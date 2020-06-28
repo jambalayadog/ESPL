@@ -161,7 +161,7 @@ function formatEffect(i, progressOverride) {
 function getBase(i) {
   if (i == 5) {  //weapons
     const noProgress_checkBase = player.progress[i] == 0 ? base = 1 : base = player.stats.retrofits.retrofitWeapons;
-    //console.log('i: ', i, 'baseA: ', base);
+    //console.log('i: ', i, 'baseA: ', base, player.stats.retrofits.retrofitWeapons);
     const infiniteBase = base === Infinity ? base = 'Infinity' : base = base; //THIS IS BETTER, not sure why this was what it was
     //console.log('i: ', i, 'baseB: ', base);
   } else {  //systems
@@ -173,12 +173,17 @@ function getBase(i) {
 
 function getImprovement(i) {
   if (i == 5) {  //weapons
-    let trueGain = Number(getEffect(i,(Math.max(player.progress[i], newValueFromPrestige())) / getEffect(7)));
-    rate = trueGain / getBase(i);
-    //console.log('TrueGain: ', trueGain, 'rate: ', rate);
+    //let trueGain = Number(getEffect(i,(Math.max(player.progress[i], newValueFromPrestige())) / getEffect(7)));
+    let trueGain = getEffect(i,(Math.max(player.progress[i], newValueFromPrestige())) / getEffect(7));
+    rate = trueGain.valueOf() / getBase(i);
+    //console.log('rate: ', rate, 'valueof: ', trueGain.valueOf(), typeof trueGain.valueOf(), 'getbase:', getBase(i), typeof getBase(i));
     if (isNaN(rate)) {
-      //console.log('rate = NaN');
-      improvement = 0;
+      let exponent1index = trueGain.valueOf().indexOf('e');
+      let exponent1 = trueGain.valueOf().slice(exponent1index+1);
+      let exponent2index = getBase(i).valueOf().indexOf('e');
+      let exponent2 = getBase(i).valueOf().slice(exponent2index+1);
+      //console.log('ex1: ', exponent1, 'ex2:', exponent2, 'diff: ', exponent1 - exponent2);
+      improvement = (exponent1 - exponent2) * 100;
     } else if (rate === Infinity) {
       //console.log('rate = Infinity');
       improvement = ((rate-1)*100).toFixed(1);

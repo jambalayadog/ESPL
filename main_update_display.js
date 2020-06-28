@@ -52,9 +52,9 @@ function updateDisplay () {
       progele.style.display = 'none';
       let newValue = newValueFromPrestige();
       if (i == 5) {  // weapons
-        el.innerHTML = 'Base Power: ' + format(getBase(i)) + '<br/>New Base: ' + format(getNewBase(i))  + '<br/> Improvement: ' + getImprovement(i) + '%';
+        el.innerHTML = 'Base Power: ' + format(getBase(i)) + '<br/>New Base: ' + format(getNewBase(i))  + '<br/> Improvement: ' + format(getImprovement(i)) + '%';
       } else {  // i == 6 systems
-        el.innerHTML = 'Base Capacity: ' + format(getBase(i)) + '<br/>New Base: ' + format(getNewBase(i)) + '<br/> Improvement: ' + getImprovement(i) + '%';  //(((rate-1)*100).toFixed(1) + '%');    //format((rate-1)*100) + '%'
+        el.innerHTML = 'Base Capacity: ' + format(getBase(i)) + '<br/>New Base: ' + format(getNewBase(i)) + '<br/> Improvement: ' + format(getImprovement(i)) + '%';  //(((rate-1)*100).toFixed(1) + '%');    //format((rate-1)*100) + '%'
       }
       btn.style.backgroundColor = UIColors.button_active;    //green: active, profitable
     } else if (player.currentChallenge === 'unprestigious') {

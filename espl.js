@@ -247,7 +247,8 @@ function prestigeCore(i, now, oldProgress) {
   player.stats.last.prestigeType = i;
   //console.log('3. - i: ', i, 'progress:',player.progress[i], 'new value: ',newValueFromPrestige(), 'effect: ', Number(getEffect(i)));   // get effect of player.progress[0] in [5]/[6] terms
   //console.log('1. retros: ', player.stats.retrofits);
-  const retrofitType = i == 5 ? player.stats.retrofits.retrofitWeapons = Number(getEffect(i)) : player.stats.retrofits.retrofitSystems = getEffect(i);
+  //const retrofitType = i == 5 ? player.stats.retrofits.retrofitWeapons = Number(getEffect(i)) : player.stats.retrofits.retrofitSystems = getEffect(i);
+  const retrofitType = i == 5 ? player.stats.retrofits.retrofitWeapons = getEffect(i) : player.stats.retrofits.retrofitSystems = getEffect(i);
   //console.log('2. retros: ', player.stats.retrofits);
 }
 
@@ -520,4 +521,8 @@ function applyCSSStyling() {
       ele.classList.add('progresstip_mission9');
       break;
   }
+}
+
+function closeQuickTips() {
+  document.getElementById("tutorial_help").style.visibility = "hidden"; 
 }
