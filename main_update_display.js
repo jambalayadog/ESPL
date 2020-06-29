@@ -63,7 +63,7 @@ function updateDisplay () {
       btn.style.backgroundColor = UIColors.button_inactive;  //dark grey: disabled
     } else {
       progele.style.display = 'none';
-      el.innerHTML = 'Requires ' + toTime(1800) + ' Starfight<br/><br/>';  
+      el.innerHTML = 'Requires ' + toTime(1800) + ' Starfight<br>';  
       btn.style.backgroundColor = UIColors.button_inactive;  //dark grey: disabled
     }
   }
@@ -74,7 +74,7 @@ function updateDisplay () {
     document.getElementById("progress_leader").style.display = 'none';
     document.getElementById('enlightened-button').style.backgroundColor = UIColors.button_active;
   } else {
-    document.getElementById('enlightened-desc').innerHTML = 'Requires 1 Leadership<br/><br/>';
+    document.getElementById('enlightened-desc').innerHTML = 'Requires 1 Leadership';
     document.getElementById("progress_leader").style.display = '';
     document.getElementById("progress_leader").value = player.progress[7];
     document.getElementById('enlightened-button').style.backgroundColor = UIColors.button_inactive;
@@ -99,7 +99,7 @@ function updateDisplay () {
     document.getElementById('update-gain').innerHTML = '<br/><br/>+' + format(gain) + ' Legacy Points<br/><br/><br/>';
     document.getElementById('update-button').style.backgroundColor = UIColors.button_active;
   } else {
-    document.getElementById('update-gain').innerHTML = 'Requires ' + toTime(getChallengeGoal(player.currentChallenge)) + ' Starfight<br/><br/>';
+    document.getElementById('update-gain').innerHTML = 'Requires ' + toTime(getChallengeGoal(player.currentChallenge)) + ' Starfight';
     document.getElementById('update-button').style.backgroundColor = UIColors.button_inactive;
   }
   if (player.currentChallenge !== '') {

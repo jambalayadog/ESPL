@@ -24,7 +24,7 @@
   <!-- kong API -->
   <script src='https://cdn1.kongregate.com/javascripts/kongregate_api.js'></script>
   <!-- STYLE SHEET -->
-  <link href="style.css" rel="stylesheet" type="text/css" >
+  <link href="style.css?version=1" rel="stylesheet" type="text/css" >
   
 </head>
 <body>
@@ -80,7 +80,7 @@
             <div><span class="aspect_effect" id="progress-span-0">0:00:00</span></div>
           </div>
           <div class="activity_effect">
-            <div><progress class="p1" id="progress_starfight3" value="0.5"></progress></div>
+            <div><progress class="p1" id="progress_starfight3" value="0.5" max="1"></progress></div>
           </div>
           <div class="activity_skill">
             <div><span class="starfight_skill">SKILL:</span> <span class="text_hidden">...</span><span id="devs-0"></span></div>
@@ -101,9 +101,9 @@
           </div>
           <div class="activity_prestige_name"></div>
           <div class="activity_progress starfight_effect"><span id="progressVsChallengeText">MISSION UNLOCK:<span> </div>
-          <div class="activity_prestige_effect"><progress class="p1" id="progressVsChallenge" value="0"></progress> </div>
+          <div class="activity_prestige_effect"><progress class="p1" id="progressVsChallenge" value="0" max="1"></progress> </div>
           <div class="activity_prestige_control">
-            <div><button class="prestige_button" id="update-button" onclick="update()"><span class="button_title">SETTLE WAR</span><br/><span class="activity_prestige_info" id="update-gain"></span><progress class="p1" id="progress_armistice" value="0"></progress></button></div>
+            <div><button class="prestige_button" id="update-button" onclick="update()"><span class="button_title">SETTLE WAR</span><br><span class="activity_prestige_info" id="update-gain"></span><br><br><progress class="p1" id="progress_armistice" value="0"></progress></button></div>
           </div>
         </div>
         <!---- PILOTING ---->
@@ -113,7 +113,7 @@
             <div><span class="starfight_effect">TOTAL SKILL:</span><span class="text_hidden">..</span><span class="aspect_effect" id="effect-span-3"></span></div>
           </div>
           <div class="activity_effect">
-            <div><progress class="p2" id="progress_nextdev" value="0"></progress></div>
+            <div><progress class="p2" id="progress_nextdev" value="0" max="100"></progress></div>
           </div>
           <div class="activity_skill">
             <div><span class="starfight_skill">SKILL:</span> <span class="text_hidden">...</span><span id="devs-3"></span></div>
@@ -138,31 +138,6 @@
               <img class="tutorial_image" src="images/ESPL_Tutorial.png"></img>
               <button class="x_close" onclick="closeQuickTips()"><img class="tutorial_imageX" src="images/ESPL_Tutorial_X.png"></img></button>
             </div>
-            <!--<div class="tutorial_text" id="tutorial_help" style="visibility: visible;">
-              <div><span class="text_t1">STARFIGHT</span><br/><br/>
-                You will need <span class="text_t2">Piloting</span>, <span class="text_t3">Systems</span>, <span class="text_t4">Weapons</span>, and <span class="text_t5">Cool</span> to in order to <span class="text_t1">Starfight</span>.<br/><br/>Starfight generates <span class="text_t6">Legacy</span> and eventually unlocks <span class="text_t6">Missions</span>.
-              </div>
-              <div><span class="text_t2">PILOTING</span><br/><br/>
-                Invest in <span class="text_t2">Piloting</span> to develop more <span class="text_t2">Skill</span>.  <br/><br/>Skill can be assigned to improve you and your Starfighter.
-              </div>
-              <div><span class="text_t3">SYSTEMS</span><br/><br/>
-                Improve your ship's <span class="text_t3">Systems</span> to gain more <span class="text_t3">Capacity</span>.<br/><br/>More juice for weapons, more ship to pilot, more cool, and more starfight.
-              </div>
-              <div><span class="text_t4">WEAPONS</span><br/><br/>
-                Augment <span class="text_t4">Weapons</span> to upgrade your ship's overall <span class="text_t4">Power</span>.<br/><br/>Power helps you destroy your enemies and starfight for longer durations.
-              </div>
-              <div><span class="text_t5">COOL</span><br/><br/>
-                You'll need <span class="text_t5">Cool</span> in a bit, but it's how you generate <span class="text_t5">Boost</span>.<br/><br/>In order to <span class="text_t5">Settle War</span>, you'll have to build your <span class="text_t5">Leadership</span>.
-              </div>
-            </div>-->
-            <!--<div class="tutorial2_text" id="tutorial2_help" style="visibility: hidden;">
-              <div><span class="text_t1">SETTLE WAR</span><br/><br/>
-                In order to <span class="text_t1">Settle War</span>: <br/>- Min/Max your <span class="text_t2">Skills</span><br/>- <span class="text_t3">Retrofit</span> your starfighter<br/>- Become a true <span class="text_t5">Leader</span><br/><br/><span class="text_t1">Settling Wars</span> earns <span class="text_t6">Legacy</span>.  Longer wars unlock <span class="text_t6">Missions</span>.
-              </div>
-              <div><span class="text_t3">Armada</span> and <span class="text_t5">LEADERSHIP</span><br/><br/>
-                When you <span class="text_t3">Retrofit</span>, you use your old parts to build a <span class="text_t3">Armada</span>.  <span class="text_t3">Armada</span> provide extra capacity and power.<br/><br/><span class="text_t5">Leadership</span> literally gives you a boost.  <span class="text_t5">Leader Up</span>.
-              </div>
-            </div>-->
           </div>
           <div class="activity_prestige_effect"></div>
           <div class="activity_prestige_control">
@@ -177,7 +152,7 @@
             <div><span class="starfight_effect">CAPACITY:</span><span class="text_hidden">..</span><span class="aspect_effect" id="effect-span-2"></span></div>
           </div>
           <div class="activity_effect">
-            <div><progress class="aspect_progress" id="progress_2" value="0">0</progress></div>
+            <div><progress class="p3" id="progress_2" value="0" max="1"></progress></div>
           </div>
           <div class="activity_skill">
             <div><span class="starfight_skill">SKILL:</span> <span class="text_hidden">...</span><span id="devs-2"></span></div>
@@ -200,7 +175,7 @@
           <div class="unlock_prestige activity_progress" style="visibility: hidden;"><span class="starfight_effect">CAPACITY:</span><span class="text_hidden">..</span><span class="aspect_effect" id="effect-span-6"></span></div>
           <div class="unlock_prestige activity_prestige_effect" style="visibility: hidden;"></div>
           <div class="activity_prestige_control">
-            <div><button class="prestige_button" id="prestige-6-button" onclick="prestige(6)"><span class="button_title">RETROFIT SYSTEMS</span><br/><span class="activity_prestige_info" id="prestige-6"></span><progress class="p1" id="progress_starfight" value="0"></progress><progress class="p3" id="progress6_nextretrofit" value="0"></progress></button></div>
+            <div><button class="prestige_button" id="prestige-6-button" onclick="prestige(6)"><span class="button_title">RETROFIT SYSTEMS</span><br/><span class="activity_prestige_info" id="prestige-6"></span><br><progress class="p1" id="progress_starfight" value="0" max="1"></progress><progress class="p3" id="progress6_nextretrofit" value="0" max="1"></progress></button></div>
           </div>
         </div>
         <!---- WEAPONS ---->
@@ -210,7 +185,7 @@
             <div><span class="starfight_effect">POWER:</span><span class="text_hidden">..</span><span class="aspect_effect" id="effect-span-1"></span></div>
           </div>
           <div class="activity_effect">
-            <div><progress class="aspect_progress" id="progress_1" value="0">0</progress></div>
+            <div><progress class="p4" id="progress_1" value="0" max="1"></progress></div>
           </div>
           <div class="activity_skill">
             <div><span class="starfight_skill">SKILL:</span> <span class="text_hidden">...</span></span><span id="devs-1"></span></div>
@@ -233,7 +208,7 @@
           <div class="unlock_prestige activity_progress" style="visibility: hidden;"><span class="starfight_effect">POWER:</span><span class="text_hidden">..</span><span class="aspect_effect" id="effect-span-5"></span></div>
           <div class="unlock_prestige activity_prestige_effect" style="visibility: hidden;"></div>
           <div class="activity_prestige_control">
-            <div><button class="prestige_button" id="prestige-5-button" onclick="prestige(5)"><span class="button_title">RETROFIT WEAPONS</span><br/><span class="activity_prestige_info" id="prestige-5"></span><progress class="p1" id="progress_starfight2" value="0"></progress><progress class="p3" id="progress5_nextretrofit" value="0"></button></div>
+            <div><button class="prestige_button" id="prestige-5-button" onclick="prestige(5)"><span class="button_title">RETROFIT WEAPONS</span><br/><span class="activity_prestige_info" id="prestige-5"></span><br><progress class="p1" id="progress_starfight2" value="0" max="1"></progress><progress class="p3" id="progress5_nextretrofit" value="0" max="1"></button></div>
           </div>
         </div>
         <!---- COOL ---->
@@ -266,7 +241,7 @@
           <div class="unlock_prestige activity_progress" style="visibility: hidden;"><span class="starfight_effect">BOOST:</span><span class="text_hidden">..</span><span class="aspect_effect" id="effect-span-7"></span></div>
           <div class="unlock_prestige activity_prestige_effect" style="visibility: hidden;"><span class="starfight_effect">LEADER RANK:</span><span class="text_hidden">..</span><span class="aspect_effect" id="enlightened"></span></div>
           <div class="activity_prestige_control">
-            <div><button class="prestige_button" id="enlightened-button" onclick="enlightened()"><span class="button_title">LEADER UP</span><br/><span class="activity_prestige_info" id="enlightened-desc"></span><progress class="p5" id="progress_leader" value="0"></progress></button></div>
+            <div><button class="prestige_button" id="enlightened-button" onclick="enlightened()"><span class="button_title">LEADER UP</span><br><span class="activity_prestige_info" id="enlightened-desc"></span><br><br><progress class="p5" id="progress_leader" value="0" max="1"></progress></button></div>
           </div>
         </div>
       </div>
@@ -723,7 +698,7 @@
         <div class="mission_control_element"><span><button class="mission_abort_button tooltip" onclick="exitChallenge()">Exit Current Mission<span class="tooltiptext tooltip_exitmission">Note that exiting the mission will Settle The War (if possible) and also earn Legacy Points</span></button></span></div>
         <div class="mission_control_element missiontitle_stat progresstip">COMPLETE: 
           <span class="legacypoints_number" id="missioncontrol_missionscomplete"></span>
-          <span class="progresstipbar" id="missionprogress"><progress class="p1" id="progress_starfight4" value="0"></progress></span>
+          <span class="progresstipbar" id="missionprogress"><progress class="p1" id="progress_starfight4" value="0" max="1"></progress></span>
         </div>
         
       </div>

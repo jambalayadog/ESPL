@@ -1816,6 +1816,7 @@ progress {
     height: 8px;
     display: block;
     /* disable defaults */
+    appearance: none;
     -webkit-appearance: none;
     border: none;
 
@@ -1843,22 +1844,47 @@ progress::-webkit-progress-value {
 .p1::-webkit-progress-value {
     /*background: rgba(245,66,105);*/
     background: var(--background_grad4);
+    color: firebrick;
 }
 .p2::-webkit-progress-value {
     /*background: rgba(245,161,66);*/
     background: var(--background_grad3);
+    color: chocolate;
 }
 .p3::-webkit-progress-value {
     /*background:rgb(66,245,117);*/
     background: var(--background_grad2);
+    color: forestgreen;
 }
 .p4::-webkit-progress-value {
     /*background:rgb(66,245,117);*/
     background: var(--background_grad2);
+    color: forestgreen;
 }
 .p5::-webkit-progress-value {
     /*background:rgb(66,200,245);*/
     background: var(--background_grad1);
+    color: cadetblue;
+}
+
+.p1 {
+    color: firebrick;   
+}
+
+.p2 {
+    color: chocolate;   
+}
+
+.p3 {
+    color: forestgreen;   
+}
+
+.p4 {
+    color: forestgreen;   
+}
+
+.p5 {
+    color: cadetblue;   
 }
 
 /*

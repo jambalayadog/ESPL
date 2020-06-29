@@ -42,19 +42,19 @@ function findTimeToNextSkillPoint(x) {
     oldValue = k;
     //console.log('k: ', k, 'j: ', j)
     if (rate >= 1.00001 && newValue >= 10000) {
-      document.getElementById("progress_nextdev").value = 1;
+      document.getElementById("progress_nextdev").value = 100;
       frames = 20;
     } else if (rate >= 1.00004 && newValue >= 100) {
-      document.getElementById("progress_nextdev").value = 1;
+      document.getElementById("progress_nextdev").value = 100;
       frames = 20;
     } else if (frames > 0) {
-      document.getElementById("progress_nextdev").value = 1;
+      document.getElementById("progress_nextdev").value = 100;
     } else if (isNaN(k) || isNaN(j)) {
       //console.log('NAN FOUND');
-      document.getElementById("progress_nextdev").value = 1;
+      document.getElementById("progress_nextdev").value = 100;
     } else {
       //console.log('k: ', k, 'j: ', j, 'k-j: ', k-j);
-      document.getElementById("progress_nextdev").value = k-j;
+      document.getElementById("progress_nextdev").value = (k-j) * 100;
     }
     frames -= 1;
     //console.log('new: ', (newValue).toFixed(4), 'old: ',(oldValue).toFixed(4), 'rate: ',(rate).toFixed(8), 'frames: ', frames);
