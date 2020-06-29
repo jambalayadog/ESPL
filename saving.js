@@ -243,15 +243,12 @@ function convertSaveToDecimal () {
 }
 
 function loadGameStorage () {
-  console.log('no save found, resetGame');
-  if (!localStorage.getItem('esplv1_save')) {
-    console.log('no save found, resetGame');
+  if (!localStorage.getItem('temp4-save')) {
     resetGame();
   } else {
     try {
-      console.log('loadGame from storage');
       // We're loading from storage, player.options.offlineProgress isn't set yet.
-      loadGame(localStorage.getItem('esplv1_save'), null);
+      loadGame(localStorage.getItem('temp4-save'), null);
     } catch (ex) {
       console.log('Exception while loading game, please report this.', ex);
       resetGame();
@@ -274,7 +271,7 @@ function loadGamePrompt() {
 
 function saveGame () {
   //console.log('saving');
-  localStorage.setItem('esplv1_save', btoa(JSON.stringify(player)))
+  localStorage.setItem('temp4-save', btoa(JSON.stringify(player)))
 }
 
 function exportGame () {
