@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en" xml:lang="en">
 <head>
   <title>Epic Starfighter Pilot Legacy</title>  <!-- Just Another Battle in Space -->
@@ -29,21 +30,13 @@
 </head>
 <body>
 
-<!--   NAV BAR -----------------------------------------          
-
-███    ██  █████  ██    ██     ██████   █████  ██████  
-████   ██ ██   ██ ██    ██     ██   ██ ██   ██ ██   ██ 
-██ ██  ██ ███████ ██    ██     ██████  ███████ ██████  
-██  ██ ██ ██   ██  ██  ██      ██   ██ ██   ██ ██   ██ 
-██   ████ ██   ██   ████       ██████  ██   ██ ██   ██
-                                                                          
-   NAV BAR -----------------------------------------          -->
+<!--   NAV BAR  -->
 
 <div class="page_container">
   <!--  TRIALS, TEST, CHALLENGE, UNDERTAKING (TASK, OPERATION, MISSION, PROJECTS, ), QUESTS, ADVENTURES,  -->
   
   <div class="navbar">
-    <button class="navitem" id="main-tab-button" onclick="setTab('main')">STARFIGHT</button>
+    <button class="navitem" id="main-tab-button" onclick="setTab('main')">STARFIGHTa</button>
     <button class="navitem" id="achievements-tab-button" onclick="setTab('achievements')">OBJECTIVES</button>
     <button class="navitem" id="update-tab-button" onclick="setTab('update')" style="display:none;">LEGACY</button>
     <button class="navitem" id="challenges-tab-button" onclick="setTab('challenges')" style="display:none;">MISSIONS</button> 
@@ -52,20 +45,12 @@
   </div>
   <div class="lore_container ">
     <div class="loresections">
-      <div><span class="loretip"><img class="loreicon" src="images/icon_lore.png"></img><span class="loretiptext" id="lore_goal2"></span></span></div>
+      <div><span class="loretip"><img class="loreicon" src="images/icon_lore.png"><span class="loretiptext" id="lore_goal2"></span></span></div>
       <div><span class="lore" id="lore_goal"></span></div>
     </div>
   </div>
 
-  <!--   MAIN PAGE -----------------------------------------          
-
-  ███    ███  █████  ██ ███    ██     ██████   █████   ██████  ███████ 
-  ████  ████ ██   ██ ██ ████   ██     ██   ██ ██   ██ ██       ██      
-  ██ ████ ██ ███████ ██ ██ ██  ██     ██████  ███████ ██   ███ █████   
-  ██  ██  ██ ██   ██ ██ ██  ██ ██     ██      ██   ██ ██    ██ ██      
-  ██      ██ ██   ██ ██ ██   ████     ██      ██   ██  ██████  ███████   
-                                                                                                                                            
-   MAIN PAGE -----------------------------------------          -->
+  <!--   MAIN PAGE  -->
 
 
 
@@ -73,7 +58,7 @@
   <div id="main-div" style="display: none;">
     <div class="main_page">
       <div class="starfight_page">
-        <!---- SPACE BATTLE ---->
+        <!-- SPACE BATTLE -->
         <div class="battle">
           <div class="activity_title bg_starfight">STARFIGHT</div>
           <div class="activity_progress">
@@ -95,18 +80,18 @@
             </div>
           </div>
           <div class="activity_fraction">
-            <div class="starfight_skill tooltip">AUTO-PILOT: <input class="fraction_input" id="auto-dev-0" type="text" onchange="updateAutoDev(0)"></input>
+            <div class="starfight_skill tooltip">AUTO-PILOT: <input class="fraction_input" id="auto-dev-0" type="text" onchange="updateAutoDev(0)">
               <span class="tooltiptext tooltip_autoskills">Use decimals: 0.2 = 20%</span>
             </div>
           </div>
           <div class="activity_prestige_name"></div>
-          <div class="activity_progress starfight_effect"><span id="progressVsChallengeText">MISSION UNLOCK:<span> </div>
+          <div class="activity_progress starfight_effect"><span id="progressVsChallengeText">MISSION UNLOCK:</span> </div>
           <div class="activity_prestige_effect"><progress class="p1" id="progressVsChallenge" value="0"></progress> </div>
           <div class="activity_prestige_control">
             <div><button class="prestige_button" id="update-button" onclick="update()"><span class="button_title">SETTLE WAR</span><br/><span class="activity_prestige_info" id="update-gain"></span><progress class="p1" id="progress_armistice" value="0"></progress></button></div>
           </div>
         </div>
-        <!---- PILOTING ---->
+        <!-- PILOTING -->
         <div class="skill">
           <div class="activity_title bg_piloting">PILOTING</div>
           <div class="activity_progress">
@@ -128,15 +113,15 @@
             </div>
           </div>
           <div class="activity_fraction">
-            <div class="starfight_skill tooltip">AUTO-PILOT: <input class="fraction_input" id="auto-dev-3" type="text" onchange="updateAutoDev(3)"></input>
+            <div class="starfight_skill tooltip">AUTO-PILOT: <input class="fraction_input" id="auto-dev-3" type="text" onchange="updateAutoDev(3)">
               <span class="tooltiptext tooltip_autoskills">Use decimals: 0.2 = 20%</span>
             </div>
           </div>
           <div class="activity_prestige_name"> </div>
           <div class="activity_progress tutorial">
             <div class="tutorial_text x" id="tutorial_help" style="visibility: visible;">
-              <img class="tutorial_image" src="images/ESPL_Tutorial.png"></img>
-              <button class="x_close" onclick="closeQuickTips()"><img class="tutorial_imageX" src="images/ESPL_Tutorial_X.png"></img></button>
+              <img class="tutorial_image" src="images/ESPL_Tutorial.png">
+              <button class="x_close" onclick="closeQuickTips()"><img class="tutorial_imageX" src="images/ESPL_Tutorial_X.png"></button>
             </div>
             <!--<div class="tutorial_text" id="tutorial_help" style="visibility: visible;">
               <div><span class="text_t1">STARFIGHT</span><br/><br/>
@@ -170,7 +155,7 @@
           </div>
           <div class="activity_prestige_info"></div>
         </div>
-        <!---- SYSTEMS ---->
+        <!-- SYSTEMS -->
         <div class="prestige">
           <div class="activity_title bg_systems">SYSTEMS</div>
           <div class="activity_progress">
@@ -192,7 +177,7 @@
             </div>
           </div>
           <div class="activity_fraction">
-            <div class="starfight_skill tooltip">AUTO-PILOT: <input class="fraction_input" id="auto-dev-2" type="text" onchange="updateAutoDev(2)"></input>
+            <div class="starfight_skill tooltip">AUTO-PILOT: <input class="fraction_input" id="auto-dev-2" type="text" onchange="updateAutoDev(2)">
               <span class="tooltiptext tooltip_autoskills">Use decimals: 0.2 = 20%</span>
             </div>
           </div>
@@ -203,7 +188,7 @@
             <div><button class="prestige_button" id="prestige-6-button" onclick="prestige(6)"><span class="button_title">RETROFIT SYSTEMS</span><br/><span class="activity_prestige_info" id="prestige-6"></span><progress class="p1" id="progress_starfight" value="0"></progress><progress class="p3" id="progress6_nextretrofit" value="0"></progress></button></div>
           </div>
         </div>
-        <!---- WEAPONS ---->
+        <!-- WEAPONS -->
         <div class="prestige">
           <div class="activity_title bg_weapons">WEAPONS</div>
           <div class="activity_progress">
@@ -213,7 +198,7 @@
             <div><progress class="aspect_progress" id="progress_1" value="0">0</progress></div>
           </div>
           <div class="activity_skill">
-            <div><span class="starfight_skill">SKILL:</span> <span class="text_hidden">...</span></span><span id="devs-1"></span></div>
+            <div><span class="starfight_skill">SKILL:</span> <span class="text_hidden">...</span><span id="devs-1"></span></div>
             <div>
               <button class="skillassign_button" onclick="addToggle(1)">+</button>
               <div class="togglebtn">
@@ -225,7 +210,7 @@
             </div>
           </div>
           <div class="activity_fraction">
-            <div class="starfight_skill tooltip">AUTO-PILOT: <input class="fraction_input" id="auto-dev-1" type="text" onchange="updateAutoDev(1)"></input>
+            <div class="starfight_skill tooltip">AUTO-PILOT: <input class="fraction_input" id="auto-dev-1" type="text" onchange="updateAutoDev(1)">
               <span class="tooltiptext tooltip_autoskills">Use decimals: 0.2 = 20%</span>
             </div>
           </div>
@@ -233,10 +218,10 @@
           <div class="unlock_prestige activity_progress" style="visibility: hidden;"><span class="starfight_effect">POWER:</span><span class="text_hidden">..</span><span class="aspect_effect" id="effect-span-5"></span></div>
           <div class="unlock_prestige activity_prestige_effect" style="visibility: hidden;"></div>
           <div class="activity_prestige_control">
-            <div><button class="prestige_button" id="prestige-5-button" onclick="prestige(5)"><span class="button_title">RETROFIT WEAPONS</span><br/><span class="activity_prestige_info" id="prestige-5"></span><progress class="p1" id="progress_starfight2" value="0"></progress><progress class="p3" id="progress5_nextretrofit" value="0"></button></div>
+            <div><button class="prestige_button" id="prestige-5-button" onclick="prestige(5)"><span class="button_title">RETROFIT WEAPONS</span><br/><span class="activity_prestige_info" id="prestige-5"></span><progress class="p1" id="progress_starfight2" value="0"></progress><progress class="p3" id="progress5_nextretrofit" value="0"></progress></button></div>
           </div>
         </div>
-        <!---- COOL ---->
+        <!-- COOL -->
         <div class="prestige">
           <div class="activity_title bg_cool">COOL</div>
           <div class="activity_progress">
@@ -246,7 +231,7 @@
             <div><span class="cool_effect" id="progress-span-7">0.0000</span></div>
           </div>
           <div class="activity_skill">
-            <div><span class="starfight_skill">SKILL:</span> <span class="text_hidden">...</span></span><span id="devs-4"></span></div>
+            <div><span class="starfight_skill">SKILL:</span> <span class="text_hidden">...</span><span id="devs-4"></span></div>
             <div>
               <button class="skillassign_button" onclick="addToggle(4)">+</button>
               <div class="togglebtn">
@@ -258,7 +243,7 @@
             </div>
           </div>
           <div class="activity_fraction">
-            <div class="starfight_skill tooltip">AUTO-PILOT: <input class="fraction_input" id="auto-dev-4" type="text" onchange="updateAutoDev(4)"></input>
+            <div class="starfight_skill tooltip">AUTO-PILOT: <input class="fraction_input" id="auto-dev-4" type="text" onchange="updateAutoDev(4)">
               <span class="tooltiptext tooltip_autoskills">Use decimals: 0.2 = 20%</span>
             </div>
           </div>
@@ -273,15 +258,7 @@
 
 
     
-  <!--   AUTO OPTIONS PAGE -----------------------------------------          
-
-  █████  ██    ██ ████████  ██████       ██████  ██████  ████████ ██  ██████  ███    ██ ███████ 
-  ██   ██ ██    ██    ██    ██    ██     ██    ██ ██   ██    ██    ██ ██    ██ ████   ██ ██      
-  ███████ ██    ██    ██    ██    ██     ██    ██ ██████     ██    ██ ██    ██ ██ ██  ██ ███████ 
-  ██   ██ ██    ██    ██    ██    ██     ██    ██ ██         ██    ██ ██    ██ ██  ██ ██      ██ 
-  ██   ██  ██████     ██     ██████       ██████  ██         ██    ██  ██████  ██   ████ ███████ 
-                                                                                                                        
-   AUTO OPTIONS PAGE -----------------------------------------          -->
+  <!--   AUTO OPTIONS PAGE -->
 
       <div class="autooption_container" id="autooptions">
         
@@ -289,14 +266,14 @@
         <div class="autooption_column" id="auto-update-span" >   <!--   AUTO BATTLE -->
           <div class="auto_option">
             <span class="auto_spacewar tooltip" style="display:none">
-              <input class="auto_checkbox" id="auto-update-on" onclick="toggleAutoOn('update')" type="checkbox"></input>
+              <input class="auto_checkbox" id="auto-update-on" onclick="toggleAutoOn('update')" type="checkbox">
               <span class="autooption_option" id="autosettlewar">STAR WAR PLAN</span>
               <span class="tooltiptext tooltip_autosettlewar">Automatically Settle Wars and earn Legacy Points</span>
             </span>
           </div>
           <div class="optionspadding">
             <span class="auto_spacewar starfight_skill tooltip" style="display:none">VALUE: 
-              <input class="auto_input" id="auto-update-value" type="text" onchange="updateAutoValue('update')"></input>
+              <input class="auto_input" id="auto-update-value" type="text" onchange="updateAutoValue('update')">
               <span class="tooltiptext tooltip_autoGain">Enter time (i.e. HH:MM:SS) or number (e.g. 15 or 1e6)</span>
             </span>
           </div>
@@ -312,7 +289,7 @@
         <div class="autooption_column" id="auto-dev-span">  <!--   AUTO SKILL -->
           <div class="auto_option">
             <span class="tooltip">
-              <input class="auto_checkbox " id="auto-dev-on" onclick="toggleAutoOn('dev')" type="checkbox"></input>
+              <input class="auto_checkbox " id="auto-dev-on" onclick="toggleAutoOn('dev')" type="checkbox">
               <span class="autooption_option">ENGAGE AUTO PILOT</span>
               <span id="auto-dev-lonely-info"></span> 
               <span class="tooltiptext tooltip_autoskilltoggle">Automatically assign Skill</span>
@@ -324,14 +301,14 @@
         <div class="autooption_column">  <!--   LEGACY OPTIONS -->
           <div class="auto_option">
             <span class="auto_retrofit tooltip" style="display:none">
-              <input class="auto_checkbox" id="systems_gain_auto" onclick="toggleAutoGain('systems')" type="checkbox"></input>
+              <input class="auto_checkbox" id="systems_gain_auto" onclick="toggleAutoGain('systems')" type="checkbox">
               <span class="autooption_option" id="autosystemsretrofit">RETROFIT SCHEDULE</span>
               <span class="tooltiptext tooltip_autoretrofitSystems">Automatically Retrofit Systems</span>
             </span>
           </div>
           <div class="optionspadding">
             <span class="auto_retrofit starfight_skill tooltip" style="display:none">GAIN: 
-              <input class="auto_input" id="systems_gain_input" type="text" onchange="updateAutoGain('systems')" value="0"></input>
+              <input class="auto_input" id="systems_gain_input" type="text" onchange="updateAutoGain('systems')" value="0">
               <span class="tooltiptext tooltip_autoGain">Enter number (e.g. 100 for 100% or 1e5 for 100,000%)</span>
             </span>
           </div>   
@@ -342,14 +319,14 @@
         <div class="autooption_column" id="auto-prestige-span">  <!--   AUTO RETROFIT   -->
           <div class="auto_option">
             <span class="auto_retrofit tooltip" style="display:none">
-              <input class="auto_checkbox" id="weapons_gain_auto" onclick="toggleAutoGain('weapons')" type="checkbox"></input>
+              <input class="auto_checkbox" id="weapons_gain_auto" onclick="toggleAutoGain('weapons')" type="checkbox">
               <span class="autooption_option" id="autoweaponsretrofit">RETROFIT SCHEDULE</span>
               <span class="tooltiptext tooltip_autoretrofitWeapons">Automatically Retrofit Weapons</span>
             </span>
           </div>
           <div class="optionspadding">
             <span class="auto_retrofit starfight_skill tooltip" style="display:none">GAIN: 
-              <input class="auto_input" id="weapons_gain_input" type="text" onchange="updateAutoGain('weapons')" value="0"></input>
+              <input class="auto_input" id="weapons_gain_input" type="text" onchange="updateAutoGain('weapons')" value="0">
               <span class="tooltiptext tooltip_autoGain">Enter number (e.g. 100 for 100% or 1e5 for 100,000%)</span>
             </span>
           </div>
@@ -358,14 +335,14 @@
         <div class="autooption_column" id="auto-enlightened-span"> <!--   AUTO LEADER UP   -->
           <div class="auto_option">
             <span class="auto_leaderup tooltip" style="display:none">
-              <input class="auto_checkbox" id="auto-enlightened-on" onclick="toggleAutoOn('enlightened')" type="checkbox"></input>
+              <input class="auto_checkbox" id="auto-enlightened-on" onclick="toggleAutoOn('enlightened')" type="checkbox">
               <span class="autooption_option" id="autorankup">LEADERSHIP MATRIX</span>
               <span class="tooltiptext tooltip_autoLeaderUp">Automatically Rank Up</span>
             </span>
           </div>
           <div class="optionspadding">
             <span class="auto_leaderup starfight_skill tooltip" style="display:none">VALUE: 
-              <input class="auto_input" id="auto-enlightened-value" type="text" onchange="updateAutoValue('enlightened')"></input>
+              <input class="auto_input" id="auto-enlightened-value" type="text" onchange="updateAutoValue('enlightened')">
               <span class="tooltiptext tooltip_autoGain">Enter time (i.e. HH:MM:SS) or number (e.g. 15 or 1e6)</span>
             </span>
           </div>
@@ -381,15 +358,7 @@
     </div>
   </div>
 
-  <!--  ACHIEVEMENTS -----------------------------------------          
-
-  ██████  ██████       ██ ███████  ██████ ████████ ██ ██    ██ ███████ ███████ 
-  ██    ██ ██   ██      ██ ██      ██         ██    ██ ██    ██ ██      ██      
-  ██    ██ ██████       ██ █████   ██         ██    ██ ██    ██ █████   ███████ 
-  ██    ██ ██   ██ ██   ██ ██      ██         ██    ██  ██  ██  ██           ██ 
-   ██████  ██████   █████  ███████  ██████    ██    ██   ████   ███████ ███████ 
-                                                                                                     
-  ACHIEVEMENTS -----------------------------------------          -->
+  <!--  ACHIEVEMENTS  -->
 
 
   <div id="achievements-div" style="display: none;">
@@ -504,25 +473,13 @@
     </div>
   </div>
 
-  <!--  LORE AND STORY -----------------------------------------          -->
-  <!--  LORE AND STORY -----------------------------------------          -->
-  <!--  LORE AND STORY -----------------------------------------          -->
-  <!--  LORE AND STORY -----------------------------------------          -->
-  <!--  LORE AND STORY -----------------------------------------          -->
+  <!--  LORE AND STORY -->
 
 
   <div id="lore-div" style="display: none;">
   </div>
 
-  <!--  LEGACY -----------------------------------------      
-
-  ██      ███████  ██████   █████   ██████ ██    ██ 
-  ██      ██      ██       ██   ██ ██       ██  ██  
-  ██      █████   ██   ███ ███████ ██        ████   
-  ██      ██      ██    ██ ██   ██ ██         ██    
-  ███████ ███████  ██████  ██   ██  ██████    ██   
-                                                                
-  LEGACY -----------------------------------------          -->
+  <!--  LEGACY   -->
 
 
   <div id="update-div" style="display: none;">
@@ -596,7 +553,7 @@
             </div>
             <div> 
               <span class="tooltip" id="auto-assign-update-points-span">
-                <input class="auto_checkbox" id="auto-assign-update-points-on" onclick="toggleAutoOn('assignUpdatePoints')" type="checkbox"></input>
+                <input class="auto_checkbox" id="auto-assign-update-points-on" onclick="toggleAutoOn('assignUpdatePoints')" type="checkbox">
                 <span class="autooption_option">AUTO-SPEND LEGACY</span>
                 <span class="tooltiptext tooltip_autolegacy">Automatically convert LP to Resolve, Resonance, and Resource</span>
               </span>
@@ -623,7 +580,7 @@
                 <span class="toggle_3" id="toggle0_3">_</span>
               </div>
             </div>
-            <div class="starfight_skill legacyfraction tooltip" id="auto-assign-update-points-row"><span class="tooltiptext tooltip_autolegacy">Use decimals: 0.33 = 33%</span>AUTO-LEGACY: <input class="fraction_input" id="auto-assign-update-points-2" type="text" onchange="updateAutoAssignUpdatePoints(2)"></input></div>
+            <div class="starfight_skill legacyfraction tooltip" id="auto-assign-update-points-row"><span class="tooltiptext tooltip_autolegacy">Use decimals: 0.33 = 33%</span>AUTO-LEGACY: <input class="fraction_input" id="auto-assign-update-points-2" type="text" onchange="updateAutoAssignUpdatePoints(2)"></div>
             <div class="legacygroup_stats">
               <div class="provenance_stat">
                 <div><span class="starfight_effect">RESOLVE:</span></div>
@@ -653,7 +610,7 @@
                 <span class="toggle_3" id="toggle1_3">_</span>
               </div>
             </div>
-            <div class="starfight_skill legacyfraction tooltip" id="auto-assign-update-points-row"><span class="tooltiptext tooltip_autolegacy">Use decimals: 0.33 = 33%</span>AUTO-LEGACY: <input class="fraction_input" id="auto-assign-update-points-1" type="text" onchange="updateAutoAssignUpdatePoints(1)"></input></div>
+            <div class="starfight_skill legacyfraction tooltip" id="auto-assign-update-points-row"><span class="tooltiptext tooltip_autolegacy">Use decimals: 0.33 = 33%</span>AUTO-LEGACY: <input class="fraction_input" id="auto-assign-update-points-1" type="text" onchange="updateAutoAssignUpdatePoints(1)"></div>
             <div class="legacygroup_stats">
               <div class="provenance_stat">
                 <div><span class="starfight_effect">RESONANCE:</span></div>
@@ -683,7 +640,7 @@
                 <span class="toggle_3" id="toggle2_3">_</span>
               </div>
             </div>
-            <div class="starfight_skill legacyfraction tooltip" id="auto-assign-update-points-row"><span class="tooltiptext tooltip_autolegacy">Use decimals: 0.33 = 33%</span>AUTO-LEGACY: <input class="fraction_input" id="auto-assign-update-points-0" type="text" onchange="updateAutoAssignUpdatePoints(0)"></input></div>
+            <div class="starfight_skill legacyfraction tooltip" id="auto-assign-update-points-row"><span class="tooltiptext tooltip_autolegacy">Use decimals: 0.33 = 33%</span>AUTO-LEGACY: <input class="fraction_input" id="auto-assign-update-points-0" type="text" onchange="updateAutoAssignUpdatePoints(0)"></div>
             <div class="legacygroup_stats">
               <div class="provenance_stat">
                 <div><span class="starfight_effect">RESOURCE:</span></div>
@@ -705,15 +662,7 @@
     </div>
   </div>
 
-  <!--  CHALLENGES -    
-
-  ███    ███ ██ ███████ ███████ ██  ██████  ███    ██ ███████ 
-  ████  ████ ██ ██      ██      ██ ██    ██ ████   ██ ██      
-  ██ ████ ██ ██ ███████ ███████ ██ ██    ██ ██ ██  ██ ███████ 
-  ██  ██  ██ ██      ██      ██ ██ ██    ██ ██  ██ ██      ██ 
-  ██      ██ ██ ███████ ███████ ██  ██████  ██   ████ ███████ 
-                                                                                
-  CHALLENGES           -->
+  <!--  CHALLENGES  -->
 
   <div id="challenges-div" style="display: none;">
     <div class="missions_container">
@@ -728,7 +677,7 @@
         
       </div>
       <div class="missions_list">
-        <!-- MISSION: -- SOULO -->
+        <!-- MISSION:  SOULO -->
         <div class="mission" id="logarithmic-td" style="display: none;">
           <button class="mission_button tooltip" id="logarithmic-button" onclick="enterChallenge('logarithmic')">
             <span class="button_title">INNER SOULO</span>
@@ -754,7 +703,7 @@
             </div>
           </div>  
         </div>
-        <!-- MISSION: -- WEAPONLESS -->
+        <!-- MISSION:  WEAPONLESS -->
         <div class="mission" id="inefficient-td" style="display: none;">
           <button class="mission_button tooltip" id="inefficient-button" onclick="enterChallenge('inefficient')">
             <span class="button_title">PASSIVE WAR</span>
@@ -776,7 +725,7 @@
             </div>
           </div>
         </div>
-        <!-- MISSION: -- SYSTEMS DOWN -->
+        <!-- MISSION:  SYSTEMS DOWN -->
         <div class="mission" id="ufd-td" style="display: none;">
           <button class="mission_button tooltip" id="ufd-button" onclick="enterChallenge('ufd')">
             <span class="button_title">HACK, SLICE, RIG</span>
@@ -798,7 +747,7 @@
             </div>
           </div>
         </div>
-        <!-- MISSION: -- COMMAND ROLE -->
+        <!-- MISSION:  COMMAND ROLE -->
         <div class="mission" id="lonely-td" style="display: none;">
           <button class="mission_button tooltip" id="lonely-button" onclick="enterChallenge('lonely')">
             <span class="button_title">COMMAND ROLE</span>
@@ -820,7 +769,7 @@
             </div>
           </div>
         </div>
-        <!-- MISSION: -- NO LEADERSHIP -->
+        <!-- MISSION:  NO LEADERSHIP -->
         <div class="mission" id="impatient-td" style="display: none;">
           <button class="mission_button tooltip" id="impatient-button" onclick="enterChallenge('impatient')">
             <span class="button_title">WITHOUT A LEADER</span>
@@ -842,7 +791,7 @@
             </div>
           </div>
         </div>
-        <!-- MISSION: -- CANT RETROFIT -->
+        <!-- MISSION:  CANT RETROFIT -->
         <div class="mission" id="unprestigious-td" style="display: none;">
           <button class="mission_button tooltip" id="unprestigious-button" onclick="enterChallenge('unprestigious')">
             <span class="button_title">OLD FARM EQUIPMENT</span>
@@ -864,7 +813,7 @@
             </div>
           </div>
         </div>
-        <!-- MISSION: -- THOUSAND TIMES SLOWER -->
+        <!-- MISSION:  THOUSAND TIMES SLOWER -->
         <div class="mission" id="slow-td" style="display: none;">
           <button class="mission_button tooltip" id="slow-button" onclick="enterChallenge('slow')">
             <span class="button_title">SPACE SHIT CREEK</span>
@@ -886,7 +835,7 @@
             </div>
           </div>
         </div>
-        <!-- MISSION: -- NO LEGACY -->
+        <!-- MISSION:  NO LEGACY -->
         <div class="mission" id="powerless-td" style="display: none;">
           <button class="mission_button tooltip" id="powerless-button" onclick="enterChallenge('powerless')">
             <span class="button_title">WHO DO YOU THINK YOU ARE... I AM</span>
@@ -908,7 +857,7 @@
             </div>
           </div>
         </div>
-        <!-- MISSION: -- UPGRADELESS -->
+        <!-- MISSION:  UPGRADELESS -->
         <div class="mission" id="upgradeless-td" style="display: none;">
           <button class="mission_button tooltip" id="upgradeless-button" onclick="enterChallenge('upgradeless')">
             <span class="button_title">EVERYTHING FOR NOTHING</span>
@@ -934,15 +883,7 @@
     </div>
   </div>
 
-  <!--- HELP ---------------------------------------------------------
-
-  ██████  ██    ██ ██ ██████   █████  ███    ██  ██████ ███████ 
-  ██       ██    ██ ██ ██   ██ ██   ██ ████   ██ ██      ██      
-  ██   ███ ██    ██ ██ ██   ██ ███████ ██ ██  ██ ██      █████   
-  ██    ██ ██    ██ ██ ██   ██ ██   ██ ██  ██ ██ ██      ██      
-   ██████   ██████  ██ ██████  ██   ██ ██   ████  ██████ ███████
-
-  - HELP --------------------------------------------------------- -->
+  <!-- HELP  -->
 
 
   <div id="completion-milestones-div" style="display: none;">
@@ -966,7 +907,7 @@
           </div>
         </div>
         <div class="guidance_copilot">
-          <img class="guidance_image" src="images/Cookie9000.png"></src>
+          <img class="guidance_image" src="images/Cookie9000.png">
         </div>
       </div>
       <div class="guidance_information">
@@ -980,13 +921,13 @@
             </div>
             <div>
               <div style="display: none;">
-                <span><input class="debugspeedup" id="debug_speedup" type="text" onchange="updateDebugSpeed()"></input>
+                <span><input class="debugspeedup" id="debug_speedup" type="text" onchange="updateDebugSpeed()">
                 <button onclick="saveGame()">Save</button>
                 <button onclick="exportGame()">Export</button>
                 <button onclick="loadGamePrompt()">Load</button>
                 <button onclick="resetGameWithConfirmation()">RESET</button></span>
                 <br/>
-                <span style="display: none;">Exported save (also copied to clipboard): <input id="export-output"></input></span>
+                <span style="display: none;">Exported save (also copied to clipboard): <input id="export-output"></span>
               </div>
             </div>
           </div>
@@ -1014,17 +955,17 @@
             <div class="guidance_kredits">
               <div class="kredoffer">
                 <div><span class="contact_text">TIME BOOST:</span><span class="legacypoints_number">  +100%</span></div>
-                <div class="kredoffer_image"><img class="kredoffer_image" src="images/kred_single.png"></img></div>
+                <div class="kredoffer_image"><img class="kredoffer_image" src="images/kred_single.png"></div>
                 <div><span class="contact_text">COST:</span><span class="legacypoints_number"> 10 Kred </span><button class="skilltoggle_button" onclick="buytb('pack1')">BUY</button></div>
               </div>
               <div class="kredoffer">
                 <div><span class="contact_text">TIME BOOST:</span><span class="legacypoints_number">  +1100%</span></div>
-                <div class="kredoffer_image"><img class="kredoffer_image" src="images/kred_double.png"></img></div>
+                <div class="kredoffer_image"><img class="kredoffer_image" src="images/kred_double.png"></div>
                 <div><span class="contact_text">COST:</span><span class="legacypoints_number"> 100 Kred </span><button class="skilltoggle_button" onclick="buytb('pack2')">BUY</button></div>
               </div>
               <div class="kredoffer">
                 <div><span class="contact_text">TIME BOOST:</span><span class="legacypoints_number"> +5600%</span></div>
-                <div class="kredoffer_image"><img class="kredoffer_image" src="images/kred_stack.png"></img></div>
+                <div class="kredoffer_image"><img class="kredoffer_image" src="images/kred_stack.png"></div>
                 <div><span class="contact_text">COST:</span><span class="legacypoints_number"> 500 Kred </span><button class="skilltoggle_button" onclick="buytb('pack3')">BUY</button></div>
               </div>
             </div>
@@ -1040,19 +981,19 @@
           <div class="guidance_contact">
             <div class="guidance_contact_layout">
               <div class="contact_text">CONTACT</div>
-              <div><a href="mailto:feedback@epicstarfighterpilotlegacy.com"><img class="icon_image" src="images/icon_mail.png"><img></a></div>
+              <div><a href="mailto:feedback@epicstarfighterpilotlegacy.com"><img class="icon_image" src="images/icon_mail.png"></a></div>
             </div>
             <div class="guidance_contact_layout" style="visibility:hidden;">
               <div class="contact_text">DISCORD</div>
-              <div><img class="icon_image" src="images/icon_discord.png"><img></div>
+              <div><img class="icon_image" src="images/icon_discord.png"></div>
             </div>
             <div class="guidance_contact_layout" style="visibility:hidden;">
               <div class="contact_text">REDDIT</div>
-              <div><img class="icon_image" src="images/icon-reddit.png"><img></div>
+              <div><img class="icon_image" src="images/icon-reddit.png"></div>
             </div>
             <div class="guidance_contact_layout" style="visibility:hidden;">
               <div class="contact_text">PATREON</div>
-              <div><img class="icon_image" src="images/icon_patreon.png"><img></div>
+              <div><img class="icon_image" src="images/icon_patreon.png"></div>
             </div>
           </div>
         </div>
@@ -1060,15 +1001,7 @@
     </div>
   </div>
 
-  <!--- OTHER INFORMATION ---------------------------------------------------------
-
-  ██████   █████  ████████ ████████ ██      ███████     ███████ ████████  █████  ████████ ███████ 
-  ██   ██ ██   ██    ██       ██    ██      ██          ██         ██    ██   ██    ██    ██      
-  ██████  ███████    ██       ██    ██      █████       ███████    ██    ███████    ██    ███████ 
-  ██   ██ ██   ██    ██       ██    ██      ██               ██    ██    ██   ██    ██         ██ 
-  ██████  ██   ██    ██       ██    ███████ ███████     ███████    ██    ██   ██    ██    ███████
-                                                              
-  - OTHER INFORMATION --------------------------------------------------------- -->
+  <!-- BATTLE STATS -->
 
   <div class="progressstats_container">
     <div class="progressstats_title">
@@ -1118,15 +1051,7 @@
   
 
 
-  <!--- OPTIONS --------------------------------------------------------- 
-
-  ██████  ██████  ████████ ██  ██████  ███    ██ ███████               ██   ██ ██ ██████  ██████  ███████ ███    ██ 
-  ██    ██ ██   ██    ██    ██ ██    ██ ████   ██ ██                    ██   ██ ██ ██   ██ ██   ██ ██      ████   ██ 
-  ██    ██ ██████     ██    ██ ██    ██ ██ ██  ██ ███████     █████     ███████ ██ ██   ██ ██   ██ █████   ██ ██  ██ 
-  ██    ██ ██         ██    ██ ██    ██ ██  ██ ██      ██               ██   ██ ██ ██   ██ ██   ██ ██      ██  ██ ██ 
-   ██████  ██         ██    ██  ██████  ██   ████ ███████               ██   ██ ██ ██████  ██████  ███████ ██   ████
-                                                                                                                                              
-  -- OPTIONS --------------------------------------------------------- -->
+  <!-- OPTIONS -->
 
   <div class="options_container" style="display:none">
     <div class="options_title">
@@ -1134,41 +1059,41 @@
     </div>
     <div class="options_section">
       <div class="options_option">
-        <div><input id="prestige-confirmation" onclick="toggleConfirmation('prestige')" type="checkbox"></input> 
+        <div><input id="prestige-confirmation" onclick="toggleConfirmation('prestige')" type="checkbox"> 
         </div>
         <div>Retrofit confirmation 
         </div>
-        <div><input id="prestige-without-gain-confirmation" onclick="toggleConfirmation('prestigeWithoutGain')" type="checkbox"></input>
+        <div><input id="prestige-without-gain-confirmation" onclick="toggleConfirmation('prestigeWithoutGain')" type="checkbox">
         </div>
         <div>Retrofit-without-gain confirmation 
         </div>
       </div>
       <div class="options_option">
-        <div><input id="update-confirmation" onclick="toggleConfirmation('update')" type="checkbox"></input>
+        <div><input id="update-confirmation" onclick="toggleConfirmation('update')" type="checkbox">
         </div>
         <div>Win Space War confirmation 
         </div>
-        <div><input id="update-challenge" onclick="toggleOption('updateChallenge')" type="checkbox"></input>
+        <div><input id="update-challenge" onclick="toggleOption('updateChallenge')" type="checkbox">
         </div>
         <div>Win a Space War if possible when entering or exiting a challenge 
         </div>
       </div>
       <div class="options_option">
-        <div><input id="enter-challenge-confirmation" onclick="toggleConfirmation('enterChallenge')" type="checkbox"></input>
+        <div><input id="enter-challenge-confirmation" onclick="toggleConfirmation('enterChallenge')" type="checkbox">
         </div>
         <div>Enter-challenge confirmation 
         </div>
-        <div><input id="exit-challenge-confirmation" onclick="toggleConfirmation('exitChallenge')" type="checkbox"></input>
+        <div><input id="exit-challenge-confirmation" onclick="toggleConfirmation('exitChallenge')" type="checkbox">
         </div>
         <div>Exit-challenge confirmation
         </div>
       </div>
       <div class="options_option">
-        <div><input id="turn-all-update-points-into-experience-confirmation" onclick="toggleConfirmation('turnAllUpdatePointsIntoExperience')" type="checkbox"></input>
+        <div><input id="turn-all-update-points-into-experience-confirmation" onclick="toggleConfirmation('turnAllUpdatePointsIntoExperience')" type="checkbox">
         </div>
         <div>Turn-all-Legacy-Points-into-experience confirmation 
         </div>
-        <div><input id="offline-progress" onclick="toggleOption('offlineProgress')" type="checkbox"></input>
+        <div><input id="offline-progress" onclick="toggleOption('offlineProgress')" type="checkbox">
         </div>
         <div>Offline progress 
         </div>
@@ -1182,11 +1107,7 @@
   
   
 </div>
-<!--  END ------------------------------------------------------------------------------------------ -->
-<!--  END ------------------------------------------------------------------------------------------ -->
-<!--  END ------------------------------------------------------------------------------------------ -->
-<!--  END ------------------------------------------------------------------------------------------ -->
-<!--  END ------------------------------------------------------------------------------------------ -->
+<!--  END -->
 
 </body>
 </html>

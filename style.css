@@ -1816,7 +1816,9 @@ progress {
     height: 8px;
     display: block;
     /* disable defaults */
+    appearance: none;
     -webkit-appearance: none;
+    -moz-appearance: none;
     border: none;
 
 }
@@ -1831,13 +1833,22 @@ progress::-webkit-progress-bar {
     /*box-shadow: 0 1px 0px 0 rgba(255, 255, 255, 0.2);*/
 }
 
+progress::-ms-fill {
+    background: green;
+    border-color: grey;
+    color: red;
+    border-style: solid;
+    border-width: 1px;
+    /*padding: 2px;*/
+    /*box-shadow: 0 1px 0px 0 rgba(255, 255, 255, 0.2);*/
+}
+
 /* Setting the appearance of the meter */
 progress::-webkit-progress-value {
     box-shadow: inset 0 1px 1px 0 rgba(255, 255, 255, 0.4); 
     background-size: 800px 25px;
-    background-image: linear-gradient(135deg, rgba(255, 255, 255, .15) 25%, transparent 25%,
-    transparent 75%, rgba(255, 255, 255, .15) 75%, rgba(255, 255, 255, .15) 75%,
-    transparent 75%, transparent);
+    background-image: 
+        linear-gradient(135deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 75%, rgba(255, 255, 255, .15) 75%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
 }
 
 .p1::-webkit-progress-value {
@@ -1860,6 +1871,7 @@ progress::-webkit-progress-value {
     /*background:rgb(66,200,245);*/
     background: var(--background_grad1);
 }
+
 
 /*
     --background_grad1: dodgerblue;
