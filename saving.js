@@ -227,6 +227,9 @@ function fixPlayer () {
   if (!('lastLeaderBoost' in player)) {
     player.lastLeaderBoost = 0;
   }
+  if (!('dismissedQuickTips' in player)) {
+    player.dismissedQuickTips = false;
+  }
   
 }
 
@@ -407,7 +410,8 @@ let initialPlayer = {
   firstRetrofit: '',
   refreshBoost: 1,
   refreshLast: 0,
-  lastLeaderBoost: 0
+  lastLeaderBoost: 0,
+  dismissedQuickTips: false
 }
 
 function resetGame() {

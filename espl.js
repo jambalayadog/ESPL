@@ -524,5 +524,6 @@ function applyCSSStyling() {
 }
 
 function closeQuickTips() {
-  document.getElementById("tutorial_help").style.visibility = "hidden"; 
+  document.getElementById("tutorial_help").style.visibility = "hidden";
+  player.dismissedQuickTips = true; 
 }
