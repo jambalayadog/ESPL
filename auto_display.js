@@ -158,7 +158,7 @@ function updateAutoDisplay() {
     for (var i = 0; i < ele.length; i++) {
       ele[i].style.visibility='hidden'
     }
-    document.getElementById('auto-assign-update-points-span').style.visiblity = 'hidden';
+    document.getElementById('auto-assign-update-points-span').style.visibility = 'hidden';
   }
   /*
   if (hasAuto(AUTO_LIST[0])) {
