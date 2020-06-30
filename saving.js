@@ -200,7 +200,7 @@ function fixPlayer () {
   }
   if (!('toggles' in player.skill)) {
     player.skill = {
-      toggles: ['20%', '20%', '20%', '20%', '20%']
+      toggles: ['1', '1', '1', '1', '1']
     }
   }
   if (!('values' in player.auto.gain)) {
@@ -398,7 +398,7 @@ let initialPlayer = {
     toggles: ['1', '1', '1']
   },
   skill: {
-    toggles: ['20%', '20%', '20%', '20%', '20%']
+    toggles: ['1', '1', '1', '1', '1']
   },
   lore: [],
   dilation: 0,

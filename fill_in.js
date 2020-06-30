@@ -2,6 +2,7 @@ function fillInInputs() {
   fillInAutoDev();
   fillInAutoOther();
   fillInAutoAssignUpdatePoints();
+  fillInSkillToggles();
   fillInOptions();
   fillInConfirmations();
   fillInGuidance();
@@ -86,6 +87,29 @@ function fillInAutoAssignUpdatePoints() {
     }
   }
   document.getElementById('auto-assign-update-points-on').checked = player.auto.assignUpdatePoints.on;
+}
+
+function fillInSkillToggles() {
+  for (let i = 0; i <= 4; i++) {
+    let skillToggleSetting = player.skill.toggles[i];
+    //console.log(skillToggleSetting);
+    //console.log('toggleskill' + i + '_1');
+    document.getElementById('toggleskill' + i + '_1').classList.remove('toggle_active');
+    switch(skillToggleSetting) {
+      case '1':
+        document.getElementById('toggleskill' + i + '_1').classList.add('toggle_active');
+        break;
+      case '5':
+        document.getElementById('toggleskill' + i + '_2').classList.add('toggle_active');
+        break;
+      case '20%':
+        document.getElementById('toggleskill' + i + '_3').classList.add('toggle_active');
+        break;
+      case '100%':
+        document.getElementById('toggleskill' + i + '_4').classList.add('toggle_active');
+        break;
+    }
+  }
 }
 
 function fillInDilationUpgrades() {
