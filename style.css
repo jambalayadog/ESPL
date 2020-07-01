@@ -484,7 +484,7 @@ body {
 
 .button_title {
     font-weight: bold;
-    font-size: 12px;
+    font-size: 80%;
 }
 
 .unlock_prestige {
@@ -773,6 +773,7 @@ body {
     width: 100%;
     font-size: 12px;
     color: var(--text_progress);
+    height: 125px;
 }
 
 .legacysummary {
@@ -783,7 +784,8 @@ body {
     background-color: var(--background_common);
     box-shadow: var(--box_shadow);
     border: var(--border_black);
-    box-sizing: border-box;  
+    box-sizing: border-box;
+    height: 125px;  
 }
 
 .legacystatus_stats {
@@ -833,6 +835,7 @@ body {
     align-items: stretch;
     height: auto;
     width: 350px;
+    height: 125px;
     background-color: var(--background_common);
     box-shadow: var(--box_shadow);
     border: var(--border_black);
@@ -891,7 +894,7 @@ body {
         minmax(160px, 266px) minmax(160px, 266px) minmax(160px, 266px);
     font-size: 12px;
     color: var(--act_color);
-    
+    height: 305px;
     text-align: center;
 }
 
@@ -900,12 +903,13 @@ body {
     grid-template-rows:
         auto auto auto auto auto auto;
     grid-column-gap: 30px;
-    padding: 0px 0px 5px 0px;
     background-color: var(--background_common);
     /*box-shadow: var(--box_shadow);*/
     border: var(--border_black);
     font-size: 12px;
     /*var(--border_black)*/
+    
+    height: 305px;
 }
 
 
@@ -1020,7 +1024,9 @@ body {
     writing-mode: vertical-rl;
 }
 
-
+.legacyupgrade_upgrade {
+    height: 305px;
+}
 
 
 /*  CHALLENGES -     -->
