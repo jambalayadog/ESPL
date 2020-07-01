@@ -1817,6 +1817,7 @@ progress {
     display: block;
     /* disable defaults */
     appearance: none;
+    -moz-appearance: none;
     -webkit-appearance: none;
     border: none;
 
@@ -1831,6 +1832,23 @@ progress::-webkit-progress-bar {
     /*padding: 2px;*/
     /*box-shadow: 0 1px 0px 0 rgba(255, 255, 255, 0.2);*/
 }
+
+.p1::-moz-progress-bar {
+    background-color: firebrick;
+}
+.p2::-moz-progress-bar {
+    background-color: chocolate;
+}
+.p3::-moz-progress-bar {
+    background-color: forestgreen;
+}
+.p4::-moz-progress-bar {
+    background-color: forestgreen;
+}
+.p5::-moz-progress-bar {
+    background-color: var(--background_grad1);
+}
+
 
 /* Setting the appearance of the meter */
 progress::-webkit-progress-value {
@@ -1884,7 +1902,7 @@ progress::-webkit-progress-value {
 }
 
 .p5 {
-    color: cadetblue;   
+    color: var(--background_grad1);;   
 }
 
 /*
