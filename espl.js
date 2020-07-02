@@ -559,19 +559,6 @@ function checkStarfightStatus() {
   }
   if (numFrames >= 5) {
     document.getElementById('starfight_status_holder').style.visibility = 'visible';
-    if (numFrames % 10 >= 9) {
-      document.getElementById('starfight_status').classList.remove('status_stalled');
-      document.getElementById('starfight_status').classList.remove('status_stalled_orange');
-      document.getElementById('starfight_status').classList.add('status_stalled_yellow');
-    } else if (numFrames % 10 >= 7) {
-      document.getElementById('starfight_status').classList.remove('status_stalled');
-      document.getElementById('starfight_status').classList.remove('status_stalled_yellow');
-      document.getElementById('starfight_status').classList.add('status_stalled_orange');
-    } else if (numFrames % 10 >= 5) {
-      document.getElementById('starfight_status').classList.remove('status_stalled_orange');
-      document.getElementById('starfight_status').classList.remove('status_stalled_yellow');
-      document.getElementById('starfight_status').classList.add('status_stalled');
-    }
   } else {
     document.getElementById('starfight_status_holder').style.visibility = 'hidden';
   }
