@@ -1361,7 +1361,7 @@ body {
 
 
 .export_input {
-    width: 200px;
+    width: 300px;
     font-size:12px;
     text-align: center;
     vertical-align: middle;
@@ -1370,7 +1370,15 @@ body {
     border: var(--input_border);
 }
 
-
+.export_button {
+    min-height: 25px;
+    width: 55px;
+    font-size:10px;
+    box-sizing: border-box;
+    border: var(--button_border);
+    background-color: var(--button_bg);
+    color: var(--button_color);
+}
 
 
 /* --- OPTIONS ---------------------------------------------------
