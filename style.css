@@ -1360,7 +1360,15 @@ body {
 }
 
 
-
+.export_input {
+    width: 200px;
+    font-size:12px;
+    text-align: center;
+    vertical-align: middle;
+    background-color: var(--input_bg);
+    color: var(--input_color);
+    border: var(--input_border);
+}
 
 
 
