@@ -70,7 +70,7 @@ function updateDisplay () {
 
 
   if (player.progress[7] >= 1) {
-    document.getElementById('enlightened-desc').innerHTML = '<br/>Reset Leadership and make it slower but stronger<br/>';
+    document.getElementById('enlightened-desc').innerHTML = '<br/>Resets Boost, but it becomes stronger<br/>';
     document.getElementById("progress_leader").style.display = 'none';
     document.getElementById('enlightened-button').style.backgroundColor = UIColors.button_active;
   } else {
@@ -165,6 +165,7 @@ function updateDisplay () {
   updateAutoDisplay();
   updateChallengeDisplay();
   updateCookieObjectives();
+  checkStarfightStatus();
   if (player.dismissedQuickTips == true) {
     document.getElementById("tutorial_help").style.visibility = "hidden";
   }

@@ -230,6 +230,9 @@ function fixPlayer () {
   if (!('dismissedQuickTips' in player)) {
     player.dismissedQuickTips = false;
   }
+  if (!('lastStarfightStatus' in player)) {
+    player.lastStarfightStatus = 0;
+  }
   
 }
 
@@ -411,7 +414,8 @@ let initialPlayer = {
   refreshBoost: 1,
   refreshLast: 0,
   lastLeaderBoost: 0,
-  dismissedQuickTips: false
+  dismissedQuickTips: false,
+  lastStarfightStatus: 0
 }
 
 function resetGame() {

@@ -514,7 +514,20 @@ body {
     background-color: var(--button_bg_hover);
 }
 
+.status_stalled {
+    color: firebrick;
+    font-weight: bolder;
+}
 
+.status_stalled_yellow {
+    color: yellow;
+    font-weight: bolder;
+}
+
+.status_stalled_orange {
+    color: chocolate;
+    font-weight: bolder;
+}
 
 
 
@@ -1676,6 +1689,40 @@ TEXT EFFECT
 
 
 
+.status_tip {
+    position: relative;
+    display: inline-block;
+    /*border-bottom: 1px dotted black;*/
+    z-index: 2;
+  }
+
+.status_tip .status_tip_text {
+    visibility: hidden;
+    width: 600px;
+    background-color: black;
+    color: var(--text_secondary);
+    border-color: var(--tip_border);
+    text-align: left;
+    border-radius: 2px;
+    padding: 5px;
+    font-size: 10px;
+    border: 1px solid slategray;
+    font-weight: normal;
+    line-height: 15px;
+
+    /* Position the tooltip */
+    position: absolute;
+    left: 10px;
+    top: 25px;
+    z-index: 2;
+}
+
+.status_tip:hover .status_tip_text {
+    visibility: visible;
+    z-index: 2;
+}
+
+
 /*
 
 ████████ ██    ██ ████████  ██████  ██████  ██  █████  ██      
@@ -1777,6 +1824,7 @@ TEXT EFFECT
 .tutorial_image {
     height: 100px;
     width: 778px;
+    z-index: -1;
 }
 
 .tutorial_close {

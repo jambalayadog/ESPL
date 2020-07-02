@@ -547,3 +547,33 @@ function closeQuickTips() {
   document.getElementById("tutorial_help").style.visibility = "hidden";
   player.dismissedQuickTips = true; 
 }
+
+function checkStarfightStatus() {
+  if (typeof numFrames === 'undefined') {
+    numFrames = 0;
+  }
+  if ((player.progress[0] - player.lastStarfightStatus) >= 0.01) {
+    numFrames = 0;
+  } else {
+    numFrames += 1;
+  }
+  if (numFrames >= 5) {
+    document.getElementById('starfight_status_holder').style.visibility = 'visible';
+    if (numFrames % 10 >= 9) {
+      document.getElementById('starfight_status').classList.remove('status_stalled');
+      document.getElementById('starfight_status').classList.remove('status_stalled_orange');
+      document.getElementById('starfight_status').classList.add('status_stalled_yellow');
+    } else if (numFrames % 10 >= 7) {
+      document.getElementById('starfight_status').classList.remove('status_stalled');
+      document.getElementById('starfight_status').classList.remove('status_stalled_yellow');
+      document.getElementById('starfight_status').classList.add('status_stalled_orange');
+    } else if (numFrames % 10 >= 5) {
+      document.getElementById('starfight_status').classList.remove('status_stalled_orange');
+      document.getElementById('starfight_status').classList.remove('status_stalled_yellow');
+      document.getElementById('starfight_status').classList.add('status_stalled');
+    }
+  } else {
+    document.getElementById('starfight_status_holder').style.visibility = 'hidden';
+  }
+  player.lastStarfightStatus = player.progress[0];
+}

@@ -106,7 +106,25 @@
               <span class="tooltiptext tooltip_autoskills">Use decimals: 0.2 = 20%</span>
             </div>
           </div>
-          <div class="activity_prestige_name"></div>
+          <div class="activity_prestige_name" id="starfight_status_holder">
+            <span class="status_stalled status_tip" id="starfight_status">- = STALLED = -
+              <span class="status_tip_text" id="starfight_status_tip">
+                Uh oh, you are effectively <span class="">STALLED</span>, and your Starfight isn't going anywhere fast.  What does this mean?<br/><br/>
+                Starfight obeys the laws of economics.  Greater returns require even greater investments.  As such, Starfight will eventually stall out.<br/><br/>
+                1. Assign skill to Starfight<br/>
+                2. Increase Capacity which decreases resistance to Starfighting, Piloting, Weapons, and Cool<br/>
+                3. Increase Power which multiplies your Starfighting ability, enhances Systems, and helps with Cool... naturally<br/>
+                4. Gain more Total Skill - build up Piloting for a bit<br/>
+                5. Retrofit your Systems and Weapons - Retrofit resets and prestiges these aspects of your Starfighter<br/>
+                6. Gain Leadership Ranks to Boost everything with a multiplier - Rank Up is also a prestige, and you'll need time to rebuild your Boost<br/>
+                7. If you're stuck at around 4:50:00 or so, Check the Objectives - you probably need to Rank Up a few times<br/>
+                8. Convert your Legacy Points into Resolve (boosts Skill gain), Resonance (boosts Leadership), and Resource (augments Starfight)<br/>
+                9. Buy all the Legacy Upgrades<br/>
+                10. Unlock and beat Missions<br/>
+                11. Consult Objectives for guidance on what to achieve next to become an Epic Starfighter Pilot<br/>
+              </span>
+            </span>
+          </div>
           <div class="activity_progress starfight_effect"><span id="progressVsChallengeText">MISSION UNLOCK:<span> </div>
           <div class="activity_prestige_effect"><progress class="p1" id="progressVsChallenge" value="0" max="1"></progress> </div>
           <div class="activity_prestige_control">
@@ -254,9 +272,9 @@
           </div>
           <div class="unlock_prestige activity_prestige_name bg_cool" style="visibility: hidden;">LEADERSHIP</div>
           <div class="unlock_prestige activity_progress" style="visibility: hidden;"><span class="starfight_effect">BOOST:</span><span class="text_hidden">..</span><span class="aspect_effect" id="effect-span-7"></span></div>
-          <div class="unlock_prestige activity_prestige_effect" style="visibility: hidden;"><span class="starfight_effect">LEADER RANK:</span><span class="text_hidden">..</span><span class="aspect_effect" id="enlightened"></span></div>
+          <div class="unlock_prestige activity_prestige_effect" style="visibility: hidden;"><span class="starfight_effect">RANK:</span><span class="text_hidden">..</span><span class="aspect_effect" id="enlightened"></span></div>
           <div class="activity_prestige_control">
-            <div><button class="prestige_button" id="enlightened-button" onclick="enlightened()"><span class="button_title">LEADER UP</span><br><span class="activity_prestige_info" id="enlightened-desc"></span><br><br><progress class="p5" id="progress_leader" value="0" max="1"></progress></button></div>
+            <div><button class="prestige_button" id="enlightened-button" onclick="enlightened()"><span class="button_title">RANK UP</span><br><span class="activity_prestige_info" id="enlightened-desc"></span><br><br><progress class="p5" id="progress_leader" value="0" max="1"></progress></button></div>
           </div>
         </div>
       </div>
@@ -400,7 +418,7 @@
               <div class="provenance_number"><span id="normal-achievements-effect"></span>x</div>
               <div class="provenance_stat starfight_effect">LEADERSHIP GAIN:</div>
               <div class="provenance_number"><span id="normal-achievements-patience-effect"></span>x</div>
-              <div class="provenance_stat starfight_effect">LEADERSHIP KEPT ON LEADER UP:</div>
+              <div class="provenance_stat starfight_effect">LEADERSHIP KEPT ON RANK UP:</div>
               <div class="provenance_number"><span id="normal-achievements-patience-kept-effect"></span>x</div>
             </div>
           </div>
@@ -414,7 +432,7 @@
               <div class="provenance_number"><span id="lategame-achievements-patience-effect"></span>x</div>
               <div class="provenance_stat starfight_effect">MISSIONS COMPLETE:</div>
               <div class="provenance_number"><span id="lategame-achievements-completions-effect"></span>x</div>
-              <div class="provenance_stat starfight_effect">LEADERSHIP KEPT ON LEADER UP:</div>
+              <div class="provenance_stat starfight_effect">LEADERSHIP KEPT ON RANK UP:</div>
               <div class="provenance_number"><span id="lategame-achievements-patience-kept-effect"></span>x</div>
             </div>
           </div>
@@ -467,7 +485,7 @@
           <br/><span id="normal-ach-status-21">&#x2610;</span><span> Not Getting Involved: <span class="objective_support">Settle A War without assigning skills </span></span>
           <br/><span id="normal-ach-status-22">&#x2610;</span><span> Getting Ahead: <span class="objective_support">Start production of Provenance </span></span>
           <br/><span id="normal-ach-status-23">&#x2610;</span><span> We're Ahead: <span class="objective_support">Get 33.3333 Pre-Eminence </span></span>
-          <br/><span id="normal-ach-status-24">&#x2610;</span><span> Armada Admiral: <span class="objective_support">Leader Up <span class="lowercase">x</span> 40 </span></span>
+          <br/><span id="normal-ach-status-24">&#x2610;</span><span> Armada Admiral: <span class="objective_support">Rank Up <span class="lowercase">x</span> 40 </span></span>
           <br/><span id="normal-ach-status-25">&#x2610;</span><span> Billion Skillion: <span class="objective_support">Get 1<span class="lowercase">e</span>9 Total Skill </span></span>
           <br/><span id="normal-ach-status-26">&#x2610;</span><span> Stories Of Infinite: <span class="objective_support">Get at least 1.80<span class="lowercase">e</span>308 Legacy Points in one Space War </span></span>
           <br/>
@@ -485,7 +503,7 @@
           <br/><span id="lategame-ach-status-3">&#x2610;</span><span> Exalted One: <span class="objective_support">Get 10<span class="lowercase">x</span> Leadership boost </span></span>
           <br/><span id="lategame-ach-status-4">&#x2610;</span><span> The Answer: <span class="objective_support">Complete 42 missions </span></span>
           <br/><span id="lategame-ach-status-5">&#x2610;</span><span> So Far Ahead: <span class="objective_support">Get a trillion provenance </span></span>
-          <br/><span id="lategame-ach-status-6">&#x2610;</span><span> Galaxy Command: <span class="objective_support">Leader Up<span class="lowercase"> x</span> 80 </span></span>
+          <br/><span id="lategame-ach-status-6">&#x2610;</span><span> Galaxy Command: <span class="objective_support">Rank Up<span class="lowercase"> x</span> 80 </span></span>
           <br/><span id="lategame-ach-status-7">&#x2610;</span><span> Trillion Skillion: <span class="objective_support">Get 1<span class="lowercase">e</span>12 Total Skill </span></span>
           <br/><span id="lategame-ach-status-8">&#x2610;</span><span> Fighting For Years: <span class="objective_support">Have a starfight that lasts longer than 2 years </span></span>
           <br/> 
@@ -656,7 +674,7 @@
                 <div><span id="update-effect-span-1">1</span>x</div>
               </div>
             </div>
-            <div class="legacybutton_padding"><button class="legacyupgrade_button" id="up-0-1-button" onclick="buyUpdateUpgrade(0, 1)"><span class="button_title">USE THE FORCE</span><br/><span class="legacygroup_subtext">Leader Up is available faster<span class="text_hidden"><br/>.......</span></span><br/><span class="legacygroup_subtext">Cost: <span id="up-0-1-cost"></span> Resonance<span id="up-0-1-bought"></span></span></button></div>
+            <div class="legacybutton_padding"><button class="legacyupgrade_button" id="up-0-1-button" onclick="buyUpdateUpgrade(0, 1)"><span class="button_title">USE THE FORCE</span><br/><span class="legacygroup_subtext">Rank Up is available faster<span class="text_hidden"><br/>.......</span></span><br/><span class="legacygroup_subtext">Cost: <span id="up-0-1-cost"></span> Resonance<span id="up-0-1-bought"></span></span></button></div>
             <div><button class="legacyupgrade_button" id="up-1-1-button" onclick="buyUpdateUpgrade(1, 1)"><span class="button_title">THE GRAND POOBAH</span><br/><span class="legacygroup_subtext">Leadership now increases past 1<span class="text_hidden"><br/>(but with reduced effect)</span></span><br/><span class="legacygroup_subtext">Cost: <span id="up-1-1-cost"></span> Resonance<span id="up-1-1-bought"></span></span></button></div>
             
           </div>
